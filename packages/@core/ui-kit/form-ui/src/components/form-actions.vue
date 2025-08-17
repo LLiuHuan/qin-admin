@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed, toRaw, unref, watch } from 'vue';
 
 import { useSimpleLocale } from '@arco-core/composables';
@@ -58,11 +58,11 @@ const actionWrapperClass = computed(() => {
 
   const cls = [
     'flex',
-    'w-full',
     'items-center',
     'gap-3',
     props.compact ? 'pb-2' : 'pb-4',
     props.layout === 'vertical' ? 'self-end' : 'self-center',
+    props.layout === 'inline' ? '' : 'w-full',
     props.actionWrapperClass,
   ];
 
@@ -136,8 +136,8 @@ defineExpose({
         :is="COMPONENT_MAP.PrimaryButton"
         v-if="submitButtonOptions.show"
         type="button"
-        @click="handleSubmit"
         v-bind="submitButtonOptions"
+        @click="handleSubmit"
       >
         {{ submitButtonOptions.content }}
       </component>
@@ -150,8 +150,8 @@ defineExpose({
       :is="COMPONENT_MAP.DefaultButton"
       v-if="resetButtonOptions.show"
       type="button"
-      @click="handleReset"
       v-bind="resetButtonOptions"
+      @click="handleReset"
     >
       {{ resetButtonOptions.content }}
     </component>
@@ -164,8 +164,8 @@ defineExpose({
         :is="COMPONENT_MAP.PrimaryButton"
         v-if="submitButtonOptions.show"
         type="button"
-        @click="handleSubmit"
         v-bind="submitButtonOptions"
+        @click="handleSubmit"
       >
         {{ submitButtonOptions.content }}
       </component>

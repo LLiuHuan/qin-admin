@@ -1,0 +1,168 @@
+{
+  "folders": [
+    {
+      "name": "@arco/web-antd",
+      "path": "apps/web-antd",
+    },
+    {
+      "name": "@arco/web-arco",
+      "path": "apps/web-arco",
+    },
+    {
+      "name": "@arco/web-ele",
+      "path": "apps/web-ele",
+    },
+    {
+      "name": "@arco/web-naive",
+      "path": "apps/web-naive",
+    },
+    {
+      "name": "@arco/commitlint-config",
+      "path": "internal/lint-configs/commitlint-config",
+    },
+    {
+      "name": "@arco/eslint-config",
+      "path": "internal/lint-configs/eslint-config",
+    },
+    {
+      "name": "@arco/prettier-config",
+      "path": "internal/lint-configs/prettier-config",
+    },
+    {
+      "name": "@arco/stylelint-config",
+      "path": "internal/lint-configs/stylelint-config",
+    },
+    {
+      "name": "@arco/node-utils",
+      "path": "internal/node-utils",
+    },
+    {
+      "name": "@arco/tailwind-config",
+      "path": "internal/tailwind-config",
+    },
+    {
+      "name": "@arco/tsconfig",
+      "path": "internal/tsconfig",
+    },
+    {
+      "name": "@arco/vite-config",
+      "path": "internal/vite-config",
+    },
+    {
+      "name": "@arco-core/design",
+      "path": "packages/@core/base/design",
+    },
+    {
+      "name": "@arco-core/icons",
+      "path": "packages/@core/base/icons",
+    },
+    {
+      "name": "@arco-core/shared",
+      "path": "packages/@core/base/shared",
+    },
+    {
+      "name": "@arco-core/typings",
+      "path": "packages/@core/base/typings",
+    },
+    {
+      "name": "@arco-core/composables",
+      "path": "packages/@core/composables",
+    },
+    {
+      "name": "@arco-core/preferences",
+      "path": "packages/@core/preferences",
+    },
+    {
+      "name": "@arco-core/form-ui",
+      "path": "packages/@core/ui-kit/form-ui",
+    },
+    {
+      "name": "@arco-core/layout-ui",
+      "path": "packages/@core/ui-kit/layout-ui",
+    },
+    {
+      "name": "@arco-core/menu-ui",
+      "path": "packages/@core/ui-kit/menu-ui",
+    },
+    {
+      "name": "@arco-core/popup-ui",
+      "path": "packages/@core/ui-kit/popup-ui",
+    },
+    {
+      "name": "@arco-core/shadcn-ui",
+      "path": "packages/@core/ui-kit/shadcn-ui",
+    },
+    {
+      "name": "@arco-core/tabs-ui",
+      "path": "packages/@core/ui-kit/tabs-ui",
+    },
+    {
+      "name": "@arco/constants",
+      "path": "packages/constants",
+    },
+    {
+      "name": "@arco/access",
+      "path": "packages/effects/access",
+    },
+    {
+      "name": "@arco/common-ui",
+      "path": "packages/effects/common-ui",
+    },
+    {
+      "name": "@arco/hooks",
+      "path": "packages/effects/hooks",
+    },
+    {
+      "name": "@arco/layouts",
+      "path": "packages/effects/layouts",
+    },
+    {
+      "name": "@arco/plugins",
+      "path": "packages/effects/plugins",
+    },
+    {
+      "name": "@arco/request",
+      "path": "packages/effects/request",
+    },
+    {
+      "name": "@arco/icons",
+      "path": "packages/icons",
+    },
+    {
+      "name": "@arco/locales",
+      "path": "packages/locales",
+    },
+    {
+      "name": "@arco/preferences",
+      "path": "packages/preferences",
+    },
+    {
+      "name": "@arco/stores",
+      "path": "packages/stores",
+    },
+    {
+      "name": "@arco/styles",
+      "path": "packages/styles",
+    },
+    {
+      "name": "@arco/types",
+      "path": "packages/types",
+    },
+    {
+      "name": "@arco/utils",
+      "path": "packages/utils",
+    },
+    {
+      "name": "@arco/playground",
+      "path": "playground",
+    },
+    {
+      "name": "@arco/turbo-run",
+      "path": "scripts/turbo-run",
+    },
+    {
+      "name": "@arco/vsh",
+      "path": "scripts/vsh",
+    },
+  ],
+}

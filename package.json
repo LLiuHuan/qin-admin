@@ -47,7 +47,7 @@
     "check:cspell": "cspell lint **/*.ts **/README.md .changeset/*.md --no-progress",
     "check:dep": "vsh check-dep",
     "check:type": "turbo run typecheck",
-    "clean": "node ./scripts/clean.mjs",
+    "clean": "node ./scripts/common/clean.mjs",
     "commit": "czg",
     "dev": "turbo-run dev",
     "dev:antd": "pnpm -F @arco/web-antd run dev",
@@ -110,7 +110,7 @@
     "node": ">=20.10.0",
     "pnpm": ">=9.12.0"
   },
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.14.0",
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {

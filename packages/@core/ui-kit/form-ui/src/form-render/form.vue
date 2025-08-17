@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { GenericObject } from 'vee-validate';
 import type { ZodTypeAny } from 'zod';
 
@@ -42,11 +42,16 @@ const emits = defineEmits<{
 }>();
 
 const wrapperClass = computed(() => {
-  const cls = [];
-  if (props.layout === 'vertical') {
-    cls.push(props.compact ? 'gap-x-2' : 'gap-x-4');
+  const cls: string[] = [];
+  if (props.layout === 'inline') {
+    // Inline: flex row that wraps
+    cls.push('flex', 'flex-wrap', 'gap-2');
+  } else if (props.layout === 'vertical') {
+    // Vertical: grid with horizontal gaps (add row gaps if needed)
+    cls.push(props.compact ? 'gap-x-2' : 'gap-x-4', 'grid');
   } else {
-    cls.push('gap-2');
+    // Horizontal (default): grid with standard gaps
+    cls.push('grid', 'gap-2');
   }
   return cn(...cls, props.wrapperClass);
 });
@@ -169,15 +174,15 @@ const computedSchema = computed(
 
 <template>
   <component :is="formComponent" v-bind="formComponentProps">
-    <div ref="wrapperRef" :class="wrapperClass" class="grid">
+    <div ref="wrapperRef" :class="wrapperClass">
       <template v-for="cSchema in computedSchema" :key="cSchema.fieldName">
         <FormField
-          v-bind="cSchema"
           :class="cSchema.formItemClass"
           :rules="cSchema.rules"
+          v-bind="cSchema"
         >
           <template #default="slotProps">
-            <slot v-bind="slotProps" :name="cSchema.fieldName"> </slot>
+            <slot :name="cSchema.fieldName" v-bind="slotProps"> </slot>
           </template>
         </FormField>
       </template>
