@@ -42,14 +42,16 @@ const emits = defineEmits<{
 }>();
 
 const wrapperClass = computed(() => {
-  const cls = ['flex'];
-  if (props.layout === 'vertical') {
-    cls.push(props.compact ? 'gap-x-2' : 'gap-x-4', 'flex-col grid');
-    // cls.push(props.compact ? 'gap-x-2' : 'gap-x-4');
-  } else if (props.layout === 'inline') {
-    cls.push('flex-wrap gap-2');
+  const cls: string[] = [];
+  if (props.layout === 'inline') {
+    // Inline: flex row that wraps
+    cls.push('flex', 'flex-wrap', 'gap-2');
+  } else if (props.layout === 'vertical') {
+    // Vertical: grid with horizontal gaps (add row gaps if needed)
+    cls.push(props.compact ? 'gap-x-2' : 'gap-x-4', 'grid');
   } else {
-    cls.push('gap-2 flex-col grid');
+    // Horizontal (default): grid with standard gaps
+    cls.push('grid', 'gap-2');
   }
   return cn(...cls, props.wrapperClass);
 });

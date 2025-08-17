@@ -342,7 +342,7 @@ export interface ActionButtonOptions extends ArcoButtonProps {
   content?: MaybeComputedRef<string>;
   show?: boolean;
 
-  [key: string]: any;
+  [key: string]: any; // eslint-disable-line perfectionist/sort-interfaces
 }
 
 export interface ArcoFormProps<
