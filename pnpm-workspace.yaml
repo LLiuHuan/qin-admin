@@ -18,7 +18,7 @@ catalog:
   '@arco-plugins/vite-vue': ^1.4.5
   '@ast-grep/napi': ^0.39.3
   '@changesets/changelog-github': ^0.5.1
-  '@changesets/cli': ^2.29.5
+  '@changesets/cli': ^2.29.6
   '@changesets/git': ^3.0.4
   '@clack/prompts': ^0.11.0
   '@commitlint/cli': ^19.8.1
@@ -26,10 +26,10 @@ catalog:
   '@ctrl/tinycolor': ^4.1.0
   '@eslint/js': ^9.33.0
   '@faker-js/faker': ^9.9.0
+  '@iconify-json/logos': ^1.2.9
   '@iconify/json': ^2.2.356
   '@iconify/tailwind': ^1.2.0
   '@iconify/vue': ^4.3.0
-  '@iconify-json/logos': ^1.2.9
   '@intlify/core-base': ^11.1.11
   '@intlify/unplugin-vue-i18n': ^6.0.8
   '@jspm/generator': ^2.6.2
@@ -62,17 +62,17 @@ catalog:
   '@unocss/postcss': ^66.4.2
   '@unocss/preset-wind4': ^66.4.2
   '@vee-validate/zod': ^4.15.1
-  '@vite-pwa/vitepress': ^0.5.4
-  '@vitejs/plugin-vue': ^6.0.1
-  '@vitejs/plugin-vue-jsx': ^5.0.1
   '@visactor/vchart': ^2.0.3
   '@visactor/vchart-theme': ^1.12.2
+  '@vite-pwa/vitepress': ^1.0.0
+  '@vitejs/plugin-vue': ^6.0.1
+  '@vitejs/plugin-vue-jsx': ^5.0.1
   '@vue/reactivity': ^3.5.17
   '@vue/shared': ^3.5.18
   '@vue/test-utils': ^2.4.6
   '@vueuse/core': ^13.6.0
-  '@vueuse/motion': ^3.0.3
   '@vueuse/integrations': ^12.8.2
+  '@vueuse/motion': ^3.0.3
   ant-design-vue: ^4.2.6
   archiver: ^7.0.1
   autoprefixer: ^10.4.21
@@ -139,7 +139,7 @@ catalog:
   nprogress: ^0.2.0
   ora: ^8.2.0
   pinia: ^3.0.3
-  pinia-plugin-persistedstate: ^4.5.0
+  pinia-plugin-persistedstate: ^4.4.1
   pkg-types: ^2.2.0
   playwright: ^1.54.2
   postcss: ^8.5.6
@@ -177,7 +177,7 @@ catalog:
   theme-colors: ^0.1.0
   tippy.js: ^6.2.5
   turbo: ^2.5.6
-  typescript: ^5.9.2
+  typescript: ^5.8.3
   unbuild: ^3.6.1
   unocss: ^66.4.2
   unocss-preset-animations: ^1.2.1
@@ -190,7 +190,7 @@ catalog:
   vite-plugin-html: ^3.2.2
   vite-plugin-lazy-import: ^1.0.7
   vite-plugin-pwa: ^1.0.2
-  vite-plugin-vue-devtools: ^7.7.7
+  vite-plugin-vue-devtools: ^8.0.0
   vitepress: ^1.6.4
   vitepress-plugin-group-icons: ^1.6.3
   vitest: ^3.2.4
@@ -200,7 +200,7 @@ catalog:
   vue-json-viewer: ^3.0.4
   vue-router: ^4.5.1
   vue-tippy: ^6.7.1
-  vue-tsc: 3.0.5
+  vue-tsc: ^2.2.12
   vxe-pc-ui: ^4.8.17
   vxe-table: ^4.15.8
   watermark-js-plus: ^1.6.3
