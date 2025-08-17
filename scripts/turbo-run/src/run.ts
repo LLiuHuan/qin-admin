@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-06-04 17:40:06
- * @LastEditTime: 2025-07-15 02:24:02
+ * @LastEditTime: 2025-08-17 17:41:02
  * @LastEditors: LLiuHuan
  */
 import { execaCommand, getPackages } from '@arco/node-utils';
@@ -26,7 +26,7 @@ export async function run(options: RunOptions) {
   // );
 
   // 只显示有对应命令的包
-  const selectPkgs = packages.filter((pkg) => {
+  const selectPkgs = packages.filter((pkg: any) => {
     return (pkg?.packageJson as Record<string, any>)?.scripts?.[command];
   });
 
@@ -34,7 +34,7 @@ export async function run(options: RunOptions) {
   if (selectPkgs.length > 1) {
     selectPkg = await select<string>({
       message: `Select the app you need to run [${command}]:`,
-      options: selectPkgs.map((item) => ({
+      options: selectPkgs.map((item: any) => ({
         label: item?.packageJson.name,
         value: item?.packageJson.name,
       })),
@@ -53,7 +53,7 @@ export async function run(options: RunOptions) {
     process.exit(1);
   }
 
-  execaCommand(`pnpm --filter=${selectPkg} run ${command}`, {
+  execaCommand(`pnpm --filter=${String(selectPkg)} run ${command}`, {
     stdio: 'inherit',
   });
 }

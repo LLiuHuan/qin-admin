@@ -8,7 +8,7 @@ import type { ClassType, MaybeComputedRef } from '@arco-core/typings';
 
 import type { FormApi } from './form-api';
 
-export type FormLayout = 'horizontal' | 'vertical';
+export type FormLayout = 'horizontal' | 'inline' | 'vertical';
 
 export type BaseFormComponentType =
   | 'ArcoCheckbox'
@@ -339,9 +339,10 @@ export interface FormRenderProps<
 }
 
 export interface ActionButtonOptions extends ArcoButtonProps {
-  [key: string]: any;
   content?: MaybeComputedRef<string>;
   show?: boolean;
+
+  [key: string]: any;
 }
 
 export interface ArcoFormProps<
