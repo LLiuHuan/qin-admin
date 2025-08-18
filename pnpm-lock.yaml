@@ -148,8 +148,8 @@ catalogs:
       specifier: ^13.6.0
       version: 13.6.0
     '@vueuse/integrations':
-      specifier: ^12.8.2
-      version: 12.8.2
+      specifier: ^13.6.0
+      version: 13.6.0
     '@vueuse/motion':
       specifier: ^3.0.3
       version: 3.0.3
@@ -1567,7 +1567,7 @@ importers:
         version: 13.6.0(vue@3.5.18(typescript@5.9.2))
       '@vueuse/integrations':
         specifier: 'catalog:'
-        version: 12.8.2(async-validator@4.2.5)(axios@1.11.0)(change-case@5.4.4)(focus-trap@7.6.5)(jwt-decode@4.0.0)(nprogress@0.2.0)(qrcode@1.5.4)(sortablejs@1.15.6)(typescript@5.9.2)
+        version: 13.6.0(async-validator@4.2.5)(axios@1.11.0)(change-case@5.4.4)(focus-trap@7.6.5)(jwt-decode@4.0.0)(nprogress@0.2.0)(qrcode@1.5.4)(sortablejs@1.15.6)(vue@3.5.18(typescript@5.9.2))
       json-bigint:
         specifier: 'catalog:'
         version: 1.0.0
@@ -4899,6 +4899,48 @@ packages:
       qrcode: ^1.5
       sortablejs: ^1
       universal-cookie: ^7
+    peerDependenciesMeta:
+      async-validator:
+        optional: true
+      axios:
+        optional: true
+      change-case:
+        optional: true
+      drauu:
+        optional: true
+      focus-trap:
+        optional: true
+      fuse.js:
+        optional: true
+      idb-keyval:
+        optional: true
+      jwt-decode:
+        optional: true
+      nprogress:
+        optional: true
+      qrcode:
+        optional: true
+      sortablejs:
+        optional: true
+      universal-cookie:
+        optional: true
+
+  '@vueuse/integrations@13.6.0':
+    resolution: {integrity: sha512-dVFdgwYvkYjdizRL3ESdUW+Hg84i9Yhuzs+Ec3kEcuzJmT5xhiL/IGdw4z394qSBngUQvFi+wbHwhHX3EGbAxQ==}
+    peerDependencies:
+      async-validator: ^4
+      axios: ^1
+      change-case: ^5
+      drauu: ^0.4
+      focus-trap: ^7
+      fuse.js: ^7
+      idb-keyval: ^6
+      jwt-decode: ^4
+      nprogress: ^0.2
+      qrcode: ^1.5
+      sortablejs: ^1
+      universal-cookie: ^7 || ^8
+      vue: ^3.5.17
     peerDependenciesMeta:
       async-validator:
         optional: true
@@ -14520,6 +14562,21 @@ snapshots:
       sortablejs: 1.15.6
     transitivePeerDependencies:
       - typescript
+
+  '@vueuse/integrations@13.6.0(async-validator@4.2.5)(axios@1.11.0)(change-case@5.4.4)(focus-trap@7.6.5)(jwt-decode@4.0.0)(nprogress@0.2.0)(qrcode@1.5.4)(sortablejs@1.15.6)(vue@3.5.18(typescript@5.9.2))':
+    dependencies:
+      '@vueuse/core': 13.6.0(vue@3.5.18(typescript@5.9.2))
+      '@vueuse/shared': 13.6.0(vue@3.5.18(typescript@5.9.2))
+      vue: 3.5.18(typescript@5.9.2)
+    optionalDependencies:
+      async-validator: 4.2.5
+      axios: 1.11.0
+      change-case: 5.4.4
+      focus-trap: 7.6.5
+      jwt-decode: 4.0.0
+      nprogress: 0.2.0
+      qrcode: 1.5.4
+      sortablejs: 1.15.6
 
   '@vueuse/metadata@12.8.2': {}
 
