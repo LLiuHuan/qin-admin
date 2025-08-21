@@ -32,7 +32,7 @@ catalog:
   '@iconify/vue': ^4.3.0
   '@intlify/core-base': ^11.1.11
   '@intlify/unplugin-vue-i18n': ^6.0.8
-  '@jspm/generator': ^2.6.2
+  '@jspm/generator': ^2.6.3
   '@manypkg/get-packages': ^3.1.0
   '@nolebase/vitepress-plugin-git-changelog': ^2.18.1
   '@playwright/test': ^1.54.2
@@ -40,7 +40,7 @@ catalog:
   '@stylistic/stylelint-plugin': ^4.0.0
   '@tailwindcss/nesting': 0.0.0-insiders.565cd3e
   '@tailwindcss/typography': ^0.5.16
-  '@tanstack/vue-query': ^5.85.3
+  '@tanstack/vue-query': ^5.85.5
   '@tanstack/vue-store': ^0.7.3
   '@types/archiver': ^6.0.3
   '@types/eslint': ^9.6.1
@@ -57,8 +57,8 @@ catalog:
   '@types/qrcode': ^1.5.5
   '@types/qs': ^6.14.0
   '@types/sortablejs': ^1.15.8
-  '@typescript-eslint/eslint-plugin': ^8.39.1
-  '@typescript-eslint/parser': ^8.39.1
+  '@typescript-eslint/eslint-plugin': ^8.40.0
+  '@typescript-eslint/parser': ^8.40.0
   '@unocss/postcss': ^66.4.2
   '@unocss/preset-wind4': ^66.4.2
   '@vee-validate/zod': ^4.15.1
@@ -102,7 +102,7 @@ catalog:
   eslint-plugin-command: ^3.3.1
   eslint-plugin-eslint-comments: ^3.2.0
   eslint-plugin-import-x: ^4.16.1
-  eslint-plugin-jsdoc: ^54.0.0
+  eslint-plugin-jsdoc: ^54.1.1
   eslint-plugin-jsonc: ^2.20.1
   eslint-plugin-n: ^17.21.3
   eslint-plugin-no-only-tests: ^3.3.0
@@ -110,7 +110,7 @@ catalog:
   eslint-plugin-prettier: ^5.5.4
   eslint-plugin-regexp: ^2.10.0
   eslint-plugin-unicorn: ^60.0.0
-  eslint-plugin-unused-imports: ^4.1.4
+  eslint-plugin-unused-imports: ^4.2.0
   eslint-plugin-vitest: ^0.5.4
   eslint-plugin-vue: ^10.4.0
   execa: ^9.6.0
@@ -132,7 +132,7 @@ catalog:
   lodash.isequal: ^4.5.0
   lodash.set: ^4.3.2
   lossless-json: ^4.1.1
-  lucide-vue-next: ^0.539.0
+  lucide-vue-next: ^0.540.0
   medium-zoom: ^1.1.0
   naive-ui: ^2.42.0
   nitropack: ^2.12.4
@@ -141,7 +141,7 @@ catalog:
   pinia: ^3.0.3
   pinia-plugin-persistedstate: ^4.4.1
   pkg-types: ^2.2.0
-  playwright: ^1.54.2
+  playwright: ^1.55.0
   postcss: ^8.5.6
   postcss-antd-fixes: ^0.2.0
   postcss-html: ^1.8.0
@@ -177,7 +177,7 @@ catalog:
   theme-colors: ^0.1.0
   tippy.js: ^6.2.5
   turbo: ^2.5.6
-  typescript: ^5.8.3
+  typescript: ^5.9.2
   unbuild: ^3.6.1
   unocss: ^66.4.2
   unocss-preset-animations: ^1.2.1
@@ -189,7 +189,7 @@ catalog:
   vite-plugin-dts: ^4.5.4
   vite-plugin-html: ^3.2.2
   vite-plugin-lazy-import: ^1.0.7
-  vite-plugin-pwa: ^1.0.2
+  vite-plugin-pwa: ^1.0.3
   vite-plugin-vue-devtools: ^8.0.0
   vitepress: ^1.6.4
   vitepress-plugin-group-icons: ^1.6.3
@@ -201,8 +201,8 @@ catalog:
   vue-router: ^4.5.1
   vue-tippy: ^6.7.1
   vue-tsc: ^2.2.12
-  vxe-pc-ui: ^4.8.17
-  vxe-table: ^4.15.8
+  vxe-pc-ui: ^4.8.22
+  vxe-table: ^4.15.10
   watermark-js-plus: ^1.6.3
   xgplayer: ^3.0.23
   zod: ^3.25.76
