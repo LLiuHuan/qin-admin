@@ -24,7 +24,7 @@ catalog:
   '@commitlint/cli': ^19.8.1
   '@commitlint/config-conventional': ^19.8.1
   '@ctrl/tinycolor': ^4.1.0
-  '@eslint/js': ^9.33.0
+  '@eslint/js': ^9.34.0
   '@faker-js/faker': ^9.9.0
   '@iconify-json/logos': ^1.2.9
   '@iconify/json': ^2.2.356
@@ -32,16 +32,16 @@ catalog:
   '@iconify/vue': ^4.3.0
   '@intlify/core-base': ^11.1.11
   '@intlify/unplugin-vue-i18n': ^6.0.8
-  '@jspm/generator': ^2.6.2
+  '@jspm/generator': ^2.6.4
   '@manypkg/get-packages': ^3.1.0
   '@nolebase/vitepress-plugin-git-changelog': ^2.18.1
-  '@playwright/test': ^1.54.2
+  '@playwright/test': ^1.55.0
   '@pnpm/workspace.read-manifest': ^1000.2.2
   '@stylistic/stylelint-plugin': ^4.0.0
   '@tailwindcss/nesting': 0.0.0-insiders.565cd3e
   '@tailwindcss/typography': ^0.5.16
-  '@tanstack/vue-query': ^5.85.3
-  '@tanstack/vue-store': ^0.7.3
+  '@tanstack/vue-query': ^5.85.5
+  '@tanstack/vue-store': ^0.7.4
   '@types/archiver': ^6.0.3
   '@types/eslint': ^9.6.1
   '@types/html-minifier-terser': ^7.0.2
@@ -57,8 +57,8 @@ catalog:
   '@types/qrcode': ^1.5.5
   '@types/qs': ^6.14.0
   '@types/sortablejs': ^1.15.8
-  '@typescript-eslint/eslint-plugin': ^8.39.1
-  '@typescript-eslint/parser': ^8.39.1
+  '@typescript-eslint/eslint-plugin': ^8.41.0
+  '@typescript-eslint/parser': ^8.41.0
   '@unocss/postcss': ^66.4.2
   '@unocss/preset-wind4': ^66.4.2
   '@vee-validate/zod': ^4.15.1
@@ -66,9 +66,9 @@ catalog:
   '@visactor/vchart-theme': ^1.12.2
   '@vite-pwa/vitepress': ^1.0.0
   '@vitejs/plugin-vue': ^6.0.1
-  '@vitejs/plugin-vue-jsx': ^5.0.1
+  '@vitejs/plugin-vue-jsx': ^5.1.0
   '@vue/reactivity': ^3.5.17
-  '@vue/shared': ^3.5.18
+  '@vue/shared': ^3.5.20
   '@vue/test-utils': ^2.4.6
   '@vueuse/core': ^13.6.0
   '@vueuse/integrations': ^12.8.2
@@ -88,7 +88,7 @@ catalog:
   consola: ^3.4.2
   cross-env: ^10.0.0
   cspell: ^9.2.0
-  cssnano: ^7.1.0
+  cssnano: ^7.1.1
   cz-git: ^1.12.0
   czg: ^1.12.0
   dayjs: ^1.11.13
@@ -96,13 +96,13 @@ catalog:
   depcheck: ^1.4.7
   dotenv: ^16.6.1
   echarts: ^6.0.0
-  element-plus: ^2.10.7
-  eslint: ^9.33.0
+  element-plus: ^2.11.1
+  eslint: ^9.34.0
   eslint-config-turbo: ^2.5.5
   eslint-plugin-command: ^3.3.1
   eslint-plugin-eslint-comments: ^3.2.0
   eslint-plugin-import-x: ^4.16.1
-  eslint-plugin-jsdoc: ^54.0.0
+  eslint-plugin-jsdoc: ^54.1.1
   eslint-plugin-jsonc: ^2.20.1
   eslint-plugin-n: ^17.21.3
   eslint-plugin-no-only-tests: ^3.3.0
@@ -110,7 +110,7 @@ catalog:
   eslint-plugin-prettier: ^5.5.4
   eslint-plugin-regexp: ^2.10.0
   eslint-plugin-unicorn: ^60.0.0
-  eslint-plugin-unused-imports: ^4.1.4
+  eslint-plugin-unused-imports: ^4.2.0
   eslint-plugin-vitest: ^0.5.4
   eslint-plugin-vue: ^10.4.0
   execa: ^9.6.0
@@ -132,7 +132,7 @@ catalog:
   lodash.isequal: ^4.5.0
   lodash.set: ^4.3.2
   lossless-json: ^4.1.1
-  lucide-vue-next: ^0.539.0
+  lucide-vue-next: ^0.541.0
   medium-zoom: ^1.1.0
   naive-ui: ^2.42.0
   nitropack: ^2.12.4
@@ -141,7 +141,7 @@ catalog:
   pinia: ^3.0.3
   pinia-plugin-persistedstate: ^4.4.1
   pkg-types: ^2.2.0
-  playwright: ^1.54.2
+  playwright: ^1.55.0
   postcss: ^8.5.6
   postcss-antd-fixes: ^0.2.0
   postcss-html: ^1.8.0
@@ -159,7 +159,7 @@ catalog:
   rimraf: ^6.0.1
   rollup: ^4.46.2
   rollup-plugin-visualizer: ^6.0.3
-  sass: ^1.90.0
+  sass: ^1.91.0
   secure-ls: ^2.0.0
   sortablejs: ^1.15.6
   stylelint: ^16.23.1
@@ -177,7 +177,7 @@ catalog:
   theme-colors: ^0.1.0
   tippy.js: ^6.2.5
   turbo: ^2.5.6
-  typescript: ^5.8.3
+  typescript: ^5.9.2
   unbuild: ^3.6.1
   unocss: ^66.4.2
   unocss-preset-animations: ^1.2.1
@@ -189,20 +189,20 @@ catalog:
   vite-plugin-dts: ^4.5.4
   vite-plugin-html: ^3.2.2
   vite-plugin-lazy-import: ^1.0.7
-  vite-plugin-pwa: ^1.0.2
-  vite-plugin-vue-devtools: ^8.0.0
+  vite-plugin-pwa: ^1.0.3
+  vite-plugin-vue-devtools: ^8.0.1
   vitepress: ^1.6.4
   vitepress-plugin-group-icons: ^1.6.3
   vitest: ^3.2.4
-  vue: ^3.5.17
+  vue: ^3.5.20
   vue-eslint-parser: ^10.2.0
   vue-i18n: ^11.1.10
   vue-json-viewer: ^3.0.4
   vue-router: ^4.5.1
   vue-tippy: ^6.7.1
   vue-tsc: ^2.2.12
-  vxe-pc-ui: ^4.8.17
-  vxe-table: ^4.15.8
+  vxe-pc-ui: ^4.9.2
+  vxe-table: ^4.16.0
   watermark-js-plus: ^1.6.3
   xgplayer: ^3.0.23
   zod: ^3.25.76
