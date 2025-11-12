@@ -96,6 +96,10 @@ interface AppPreferences {
    */
   enableRefreshToken: boolean;
   /**
+   * @zh_CN 是否开启首选项导航栏吸顶效果
+   */
+  enableStickyPreferencesNavigationBar: boolean;
+  /**
    * @zh_CN 是否移动端
    */
   isMobile: boolean;

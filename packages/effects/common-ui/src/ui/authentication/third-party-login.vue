@@ -12,7 +12,7 @@ import {
   SvgGoogleIcon,
   SvgQQChatIcon,
   SvgWeChatIcon,
-} from '@vben/icons';
+} from '@qin/icons';
 import { $t } from '@qin/locales';
 
 import { QinIconButton } from '@qin-core/shadcn-ui';
