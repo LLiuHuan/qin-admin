@@ -5,5 +5,5 @@
  * @LastEditTime: 2025-08-18 10:14:32
  * @LastEditors: LLiuHuan
  */
-export type * from './arco-layout';
-export { default as QinAdminLayout } from './arco-layout.vue';
+export type * from './qin-layout';
+export { default as QinAdminLayout } from './qin-layout.vue';

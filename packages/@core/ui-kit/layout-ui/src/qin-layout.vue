@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { CSSProperties } from 'vue';
 
-import type { QinLayoutProps } from './arco-layout';
+import type { QinLayoutProps } from './qin-layout';
 
 import { computed, ref, watch } from 'vue';
 
@@ -10,7 +10,7 @@ import {
   useLayoutFooterStyle,
   useLayoutHeaderStyle,
 } from '@qin-core/composables';
-import { Menu } from '@qin-core/icons';
+import { IconifyIcon } from '@qin-core/icons';
 import { QinIconButton } from '@qin-core/shadcn-ui';
 import { ELEMENT_ID_MAIN_CONTENT } from '@qin-core/shared/constants';
 
@@ -489,8 +489,6 @@ const idMainContent = ELEMENT_ID_MAIN_CONTENT;
       v-model:expand-on-hovering="sidebarExpandOnHovering"
       v-model:extra-collapse="sidebarExtraCollapse"
       v-model:extra-visible="sidebarExtraVisible"
-      :show-collapse-button="sidebarCollapsedButton"
-      :show-fixed-button="sidebarFixedButton"
       :collapse-width="getSideCollapseWidth"
       :dom-visible="!isMobile"
       :extra-width="sidebarExtraWidth"
@@ -500,6 +498,8 @@ const idMainContent = ELEMENT_ID_MAIN_CONTENT;
       :margin-top="sidebarMarginTop"
       :mixed-width="sidebarMixedWidth"
       :show="showSidebar"
+      :show-collapse-button="sidebarCollapsedButton"
+      :show-fixed-button="sidebarFixedButton"
       :theme="sidebarTheme"
       :width="getSidebarWidth"
       :z-index="sidebarZIndex"
@@ -559,7 +559,8 @@ const idMainContent = ELEMENT_ID_MAIN_CONTENT;
               class="my-0 mr-1 rounded-md"
               @click="handleHeaderToggle"
             >
-              <Menu class="size-4" />
+              <IconifyIcon v-if="showSidebar" icon="ep:fold" />
+              <IconifyIcon v-else icon="ep:expand" />
             </QinIconButton>
           </template>
           <slot name="header"></slot>

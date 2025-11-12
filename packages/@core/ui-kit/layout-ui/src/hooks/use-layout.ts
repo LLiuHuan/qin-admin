@@ -7,7 +7,7 @@
  */
 import type { LayoutType } from '@qin-core/typings';
 
-import type { QinLayoutProps } from '../arco-layout';
+import type { QinLayoutProps } from '../qin-layout';
 
 import { computed } from 'vue';
 
