@@ -28,6 +28,7 @@ const defaultPreferences: Preferences = {
     name: 'Qin Admin',
     preferencesButtonPosition: 'auto',
     watermark: false,
+    watermarkContent: '',
     zIndex: 200,
   },
   breadcrumb: {

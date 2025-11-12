@@ -13,7 +13,7 @@ function clearPreferencesAndLogout() {
 </script>
 <template>
   <Preferences @clear-preferences-and-logout="clearPreferencesAndLogout">
-    <QinIconButton>
+    <QinIconButton class="hover:animate-[shrink_0.3s_ease-in-out]">
       <Settings class="text-foreground size-4" />
     </QinIconButton>
   </Preferences>

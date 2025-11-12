@@ -132,7 +132,7 @@ watch(
     :aria-label="theme"
     :class="[`is-${theme}`]"
     aria-live="polite"
-    class="theme-toggle cursor-pointer border-none bg-none"
+    class="theme-toggle cursor-pointer border-none bg-none hover:animate-[shrink_0.3s_ease-in-out]"
     v-bind="bindProps"
     @click.stop="toggleTheme"
   >

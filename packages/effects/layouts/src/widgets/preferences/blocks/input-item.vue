@@ -1,16 +1,16 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-15 23:01:48
  * @LastEditTime: 2025-08-18 10:06:18
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { SelectOption } from '@qin/types';
 
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@qin/icons';
+import { CircleHelp, CircleX } from '@qin/icons';
 
 import { Input, QinTooltip } from '@qin-core/shadcn-ui';
 
@@ -54,6 +54,17 @@ const slots = useSlots();
         <slot name="tip"></slot>
       </QinTooltip>
     </span>
-    <Input v-model="inputValue" class="h-8 w-[165px]" />
+    <div class="relative">
+      <Input
+        v-model="inputValue"
+        :placeholder="placeholder"
+        class="h-8 w-[165px]"
+      />
+      <CircleX
+        v-if="inputValue"
+        class="hover:text-foreground text-foreground/60 absolute right-2 top-1/2 size-3 -translate-y-1/2 transform cursor-pointer"
+        @click="() => (inputValue = '')"
+      />
+    </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
  * @LastEditTime: 2025-08-18 10:11:27
@@ -28,7 +28,10 @@ isFullscreen.value = !!(
 );
 </script>
 <template>
-  <QinIconButton @click="toggle">
+  <QinIconButton
+    class="hover:animate-[shrink_0.3s_ease-in-out]"
+    @click="toggle"
+  >
     <Minimize v-if="isFullscreen" class="text-foreground size-4" />
     <Maximize v-else class="text-foreground size-4" />
   </QinIconButton>

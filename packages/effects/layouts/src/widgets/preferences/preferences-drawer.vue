@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { SupportedLanguagesType } from '@qin/locales';
 import type {
   BreadcrumbStyleType,
@@ -63,6 +63,7 @@ const appColorGrayMode = defineModel<boolean>('appColorGrayMode');
 const appColorWeakMode = defineModel<boolean>('appColorWeakMode');
 const appContentCompact = defineModel<ContentCompactType>('appContentCompact');
 const appWatermark = defineModel<boolean>('appWatermark');
+const appWatermarkContent = defineModel<string>('appWatermarkContent');
 const appEnableCheckUpdates = defineModel<boolean>('appEnableCheckUpdates');
 const appPreferencesButtonPosition = defineModel<PreferencesButtonPositionType>(
   'appPreferencesButtonPosition',
@@ -263,6 +264,7 @@ async function handleReset() {
                 v-model:app-enable-check-updates="appEnableCheckUpdates"
                 v-model:app-locale="appLocale"
                 v-model:app-watermark="appWatermark"
+                v-model:app-watermark-content="appWatermarkContent"
               />
             </Block>
 
@@ -312,12 +314,12 @@ async function handleReset() {
               <Sidebar
                 v-model:sidebar-auto-activate-child="sidebarAutoActivateChild"
                 v-model:sidebar-collapsed="sidebarCollapsed"
+                v-model:sidebar-collapsed-button="sidebarCollapsedButton"
                 v-model:sidebar-collapsed-show-title="sidebarCollapsedShowTitle"
                 v-model:sidebar-enable="sidebarEnable"
                 v-model:sidebar-expand-on-hover="sidebarExpandOnHover"
-                v-model:sidebar-width="sidebarWidth"
-                v-model:sidebar-collapsed-button="sidebarCollapsedButton"
                 v-model:sidebar-fixed-button="sidebarFixedButton"
+                v-model:sidebar-width="sidebarWidth"
                 :current-layout="appLayout"
                 :disabled="!isSideMode"
               />
@@ -328,8 +330,8 @@ async function handleReset() {
                 v-model:header-enable="headerEnable"
                 v-model:header-menu-align="headerMenuAlign"
                 v-model:header-mode="headerMode"
-                :disabled="isFullContent"
                 :current-layout="appLayout"
+                :disabled="isFullContent"
               />
             </Block>
 
@@ -360,14 +362,14 @@ async function handleReset() {
               <Tabbar
                 v-model:tabbar-draggable="tabbarDraggable"
                 v-model:tabbar-enable="tabbarEnable"
+                v-model:tabbar-max-count="tabbarMaxCount"
+                v-model:tabbar-middle-click-to-close="tabbarMiddleClickToClose"
                 v-model:tabbar-persist="tabbarPersist"
                 v-model:tabbar-show-icon="tabbarShowIcon"
                 v-model:tabbar-show-maximize="tabbarShowMaximize"
                 v-model:tabbar-show-more="tabbarShowMore"
                 v-model:tabbar-style-type="tabbarStyleType"
                 v-model:tabbar-wheelable="tabbarWheelable"
-                v-model:tabbar-max-count="tabbarMaxCount"
-                v-model:tabbar-middle-click-to-close="tabbarMiddleClickToClose"
               />
             </Block>
             <Block :title="$t('preferences.widget.title')">

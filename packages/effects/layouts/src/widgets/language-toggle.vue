@@ -1,11 +1,11 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 12:13:55
  * @LastEditTime: 2025-08-18 10:07:11
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { SupportedLanguagesType } from '@qin/locales';
 
 import { SUPPORT_LANGUAGES } from '@qin/constants';
@@ -38,7 +38,7 @@ async function handleUpdate(value: string | undefined) {
       :model-value="preferences.app.locale"
       @update:model-value="handleUpdate"
     >
-      <QinIconButton>
+      <QinIconButton class="hover:animate-[shrink_0.3s_ease-in-out]">
         <Languages class="text-foreground size-4" />
       </QinIconButton>
     </QinDropdownRadioMenu>
