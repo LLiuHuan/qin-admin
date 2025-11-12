@@ -2,25 +2,25 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:33:35
- * @LastEditTime: 2025-05-27 11:40:18
+ * @LastEditTime: 2025-08-18 10:14:55
  * @LastEditors: LLiuHuan
  */
 import type {
-  ArcoFormProps,
   BaseFormComponentType,
   ExtendedFormApi,
+  QinFormProps,
 } from './types';
 
 import { defineComponent, h, isReactive, onBeforeUnmount, watch } from 'vue';
 
-import { useStore } from '@arco-core/shared/store';
+import { useStore } from '@qin-core/shared/store';
 
-import ArcoUseForm from './arco-use-form.vue';
+import QinUseForm from './arco-use-form.vue';
 import { FormApi } from './form-api';
 
-export function useArcoForm<
+export function useQinForm<
   T extends BaseFormComponentType = BaseFormComponentType,
->(options: ArcoFormProps<T>) {
+>(options: QinFormProps<T>) {
   const IS_REACTIVE = isReactive(options);
   const api = new FormApi(options);
   const extendedApi: ExtendedFormApi = api as never;
@@ -29,16 +29,16 @@ export function useArcoForm<
   };
 
   const Form = defineComponent(
-    (props: ArcoFormProps, { attrs, slots }) => {
+    (props: QinFormProps, { attrs, slots }) => {
       onBeforeUnmount(() => {
         api.unmount();
       });
       api.setState({ ...props, ...attrs });
       return () =>
-        h(ArcoUseForm, { ...props, ...attrs, formApi: extendedApi }, slots);
+        h(QinUseForm, { ...props, ...attrs, formApi: extendedApi }, slots);
     },
     {
-      name: 'ArcoUseForm',
+      name: 'QinUseForm',
       inheritAttrs: false,
     },
   );
