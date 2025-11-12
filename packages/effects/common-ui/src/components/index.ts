@@ -16,6 +16,7 @@ export * from './loading';
 export * from './page';
 export * from './resize';
 export * from './tippy';
+export * from './tree';
 export * from '@qin-core/form-ui';
 export * from '@qin-core/popup-ui';
 
@@ -32,7 +33,7 @@ export {
   QinLogo,
   QinPinInput,
   QinSpinner,
-  QinTree,
+  // QinTree,
 } from '@qin-core/shadcn-ui';
 
 export type { FlattenedItem } from '@qin-core/shadcn-ui';
