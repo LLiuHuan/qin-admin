@@ -5,9 +5,14 @@
  * @LastEditTime: 2025-08-18 10:08:33
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useAppConfig } from '@qin/hooks';
-import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@qin/icons';
+import {
+  SvgGithubIcon,
+  SvgGoogleIcon,
+  SvgQQChatIcon,
+  SvgWeChatIcon,
+} from '@vben/icons';
 import { $t } from '@qin/locales';
 
 import { QinIconButton } from '@qin-core/shadcn-ui';
@@ -36,36 +41,36 @@ const {
     <div class="mt-4 flex flex-wrap justify-center">
       <QinIconButton
         :tooltip="$t('authentication.wechatLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiWechat />
+        <SvgWeChatIcon />
       </QinIconButton>
       <QinIconButton
         :tooltip="$t('authentication.qqLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiQqchat />
+        <SvgQQChatIcon />
       </QinIconButton>
       <QinIconButton
         :tooltip="$t('authentication.githubLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiGithub />
+        <SvgGithubIcon />
       </QinIconButton>
       <QinIconButton
         :tooltip="$t('authentication.googleLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiGoogle />
+        <SvgGoogleIcon />
       </QinIconButton>
       <DingdingLogin
         v-if="dingdingAuthConfig"
-        :corp-id="dingdingAuthConfig.corpId"
         :client-id="dingdingAuthConfig.clientId"
+        :corp-id="dingdingAuthConfig.corpId"
         class="mb-3"
       />
     </div>

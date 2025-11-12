@@ -6,7 +6,7 @@ import { computed, ref, watch } from 'vue';
 import { AuthenticationLoginExpiredModal } from '@qin/common-ui';
 import { QIN_DOC_URL, QIN_GITHUB_URL } from '@qin/constants';
 import { useWatermark } from '@qin/hooks';
-import { BookOpenText, CircleHelp, MdiGithub } from '@qin/icons';
+import { BookOpenText, CircleHelp, SvgGithubIcon } from '@qin/icons';
 import {
   BasicLayout,
   LockScreen,
@@ -76,7 +76,7 @@ const menus = computed(() => [
         target: '_blank',
       });
     },
-    icon: MdiGithub,
+    icon: SvgGithubIcon,
     text: 'GitHub',
   },
   {

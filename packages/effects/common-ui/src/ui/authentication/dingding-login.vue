@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useRoute } from 'vue-router';
 
-import { RiDingding } from '@qin/icons';
+import { SvgDingDingIcon } from '@qin/icons';
 import { $t } from '@qin/locales';
 
 import { alert, useQinModal } from '@qin-core/popup-ui';
@@ -92,11 +92,11 @@ const handleLogin = () => {
 <template>
   <div>
     <QinIconButton
-      @click="handleLogin"
       :tooltip="$t('authentication.dingdingLogin')"
       tooltip-side="top"
+      @click="handleLogin"
     >
-      <RiDingding />
+      <SvgDingDingIcon />
     </QinIconButton>
     <Modal>
       <div id="dingding_qrcode_login_element"></div>
