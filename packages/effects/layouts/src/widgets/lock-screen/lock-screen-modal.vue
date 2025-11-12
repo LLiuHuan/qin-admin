@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { Recordable } from '@qin/types';
 
 import { computed, reactive } from 'vue';
@@ -27,29 +27,30 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, { resetForm, validate, getValues }] = useQinForm(
-  reactive({
-    commonConfig: {
-      hideLabel: true,
-      hideRequiredMark: true,
-    },
-    schema: computed(() => [
-      {
-        component: 'QinInputPassword' as const,
-        componentProps: {
-          placeholder: $t('ui.widgets.lockScreen.placeholder'),
-        },
-        fieldName: 'lockScreenPassword',
-        formFieldProps: { validateOnBlur: false },
-        label: $t('authentication.password'),
-        rules: z
-          .string()
-          .min(1, { message: $t('ui.widgets.lockScreen.placeholder') }),
+const [Form, { resetForm, validate, getValues, getFieldComponentRef }] =
+  useQinForm(
+    reactive({
+      commonConfig: {
+        hideLabel: true,
+        hideRequiredMark: true,
       },
-    ]),
-    showDefaultActions: false,
-  }),
-);
+      schema: computed(() => [
+        {
+          component: 'QinInputPassword' as const,
+          componentProps: {
+            placeholder: $t('ui.widgets.lockScreen.placeholder'),
+          },
+          fieldName: 'lockScreenPassword',
+          formFieldProps: { validateOnBlur: false },
+          label: $t('authentication.password'),
+          rules: z
+            .string()
+            .min(1, { message: $t('ui.widgets.lockScreen.placeholder') }),
+        },
+      ]),
+      showDefaultActions: false,
+    }),
+  );
 
 const [Modal] = useQinModal({
   onConfirm() {
@@ -59,6 +60,13 @@ const [Modal] = useQinModal({
     if (isOpen) {
       resetForm();
     }
+  },
+  onOpened() {
+    requestAnimationFrame(() => {
+      getFieldComponentRef('lockScreenPassword')
+        ?.$el?.querySelector('[name="lockScreenPassword"]')
+        ?.focus();
+    });
   },
 });
 

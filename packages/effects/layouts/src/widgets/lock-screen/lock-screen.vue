@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed, reactive, ref } from 'vue';
 
 import { LockKeyhole } from '@qin/icons';
@@ -37,7 +37,7 @@ const date = useDateFormat(now, 'YYYY-MM-DD dddd', { locales: locale.value });
 const showUnlockForm = ref(false);
 const { lockScreenPassword } = storeToRefs(accessStore);
 
-const [Form, { form, validate }] = useQinForm(
+const [Form, { form, validate, getFieldComponentRef }] = useQinForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -75,6 +75,13 @@ async function handleSubmit() {
 
 function toggleUnlockForm() {
   showUnlockForm.value = !showUnlockForm.value;
+  if (showUnlockForm.value) {
+    requestAnimationFrame(() => {
+      getFieldComponentRef('password')
+        ?.$el?.querySelector('[name="password"]')
+        ?.focus();
+    });
+  }
 }
 
 useScrollLock();
@@ -94,7 +101,7 @@ useScrollLock();
           <span>{{ $t('ui.widgets.lockScreen.unlock') }}</span>
         </div>
         <div class="flex h-full w-full items-center justify-center">
-          <div class="lex w-full justify-center gap-4 px-4 sm:gap-6 md:gap-8">
+          <div class="flex w-full justify-center gap-4 px-4 sm:gap-6 md:gap-8">
             <div
               class="bg-accent relative flex h-[140px] w-[140px] items-center justify-center rounded-xl text-[36px] sm:h-[160px] sm:w-[160px] sm:text-[42px] md:h-[200px] md:w-[200px] md:text-[72px]"
             >
