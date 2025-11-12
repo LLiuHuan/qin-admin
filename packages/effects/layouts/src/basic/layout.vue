@@ -162,7 +162,9 @@ function clickLogo() {
 function autoCollapseMenuByRouteMeta(route: RouteLocationNormalizedLoaded) {
   // 只在双列模式下生效
   if (
-    preferences.app.layout === 'sidebar-mixed-nav' &&
+    ['header-mixed-nav', 'sidebar-mixed-nav'].includes(
+      preferences.app.layout,
+    ) &&
     route.meta &&
     route.meta.hideInMenu
   ) {
@@ -220,19 +222,19 @@ const headerSlots = computed(() => {
     :header-visible="preferences.header.enable"
     :is-mobile="preferences.app.isMobile"
     :layout="layout"
+    :side-collapse-width="preferences.sidebar.collapseWidth"
     :sidebar-collapse="preferences.sidebar.collapsed"
     :sidebar-collapse-show-title="preferences.sidebar.collapsedShowTitle"
-    :sidebar-enable="sidebarVisible"
     :sidebar-collapsed-button="preferences.sidebar.collapsedButton"
-    :sidebar-fixed-button="preferences.sidebar.fixedButton"
+    :sidebar-enable="sidebarVisible"
     :sidebar-expand-on-hover="preferences.sidebar.expandOnHover"
     :sidebar-extra-collapse="preferences.sidebar.extraCollapse"
     :sidebar-extra-collapsed-width="preferences.sidebar.extraCollapsedWidth"
+    :sidebar-fixed-button="preferences.sidebar.fixedButton"
     :sidebar-hidden="preferences.sidebar.hidden"
     :sidebar-mixed-width="preferences.sidebar.mixedWidth"
     :sidebar-theme="sidebarTheme"
     :sidebar-width="preferences.sidebar.width"
-    :side-collapse-width="preferences.sidebar.collapseWidth"
     :tabbar-enable="preferences.tabbar.enable"
     :tabbar-height="preferences.tabbar.height"
     :z-index="preferences.app.zIndex"
@@ -257,9 +259,9 @@ const headerSlots = computed(() => {
     <template #logo>
       <QinLogo
         v-if="preferences.logo.enable"
-        :fit="preferences.logo.fit"
         :class="logoClass"
         :collapsed="logoCollapsed"
+        :fit="preferences.logo.fit"
         :src="preferences.logo.source"
         :text="preferences.app.name"
         :theme="showHeaderNav ? headerTheme : theme"
@@ -330,9 +332,9 @@ const headerSlots = computed(() => {
         :menus="wrapperMenus(mixHeaderMenus, false)"
         :rounded="isMenuRounded"
         :theme="sidebarTheme"
-        @default-select="handleDefaultSelect"
         @enter="handleMenuMouseEnter"
         @select="handleMixedMenuSelect"
+        @default-select="handleDefaultSelect"
       />
     </template>
     <!-- 侧边额外区域 -->
