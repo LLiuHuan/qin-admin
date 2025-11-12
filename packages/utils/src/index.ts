@@ -1,4 +1,4 @@
 export * from './helpers';
-export * from '@arco-core/shared/cache';
-export * from '@arco-core/shared/color';
-export * from '@arco-core/shared/utils';
+export * from '@qin-core/shared/cache';
+export * from '@qin-core/shared/color';
+export * from '@qin-core/shared/utils';

@@ -5,4 +5,4 @@
  * @LastEditTime: 2025-06-15 18:13:53
  * @LastEditors: LLiuHuan
  */
-import '@arco-core/design';
+import '@qin-core/design';

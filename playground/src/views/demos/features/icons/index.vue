@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { h, ref } from 'vue';
 
-import { IconPicker, Page } from '@arco/common-ui';
+import { IconPicker, Page } from '@qin/common-ui';
 import {
   MdiGithub,
   MdiGoogle,
@@ -16,7 +16,7 @@ import {
   SvgCakeIcon,
   SvgCardIcon,
   SvgDownloadIcon,
-} from '@arco/icons';
+} from '@qin/icons';
 
 import { Card, Input } from '@arco-design/web-vue';
 

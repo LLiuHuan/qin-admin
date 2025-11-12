@@ -6,4 +6,4 @@
  * @LastEditors: LLiuHuan
  */
 
-export { default } from '@arco/prettier-config';
+export { default } from '@qin/prettier-config';

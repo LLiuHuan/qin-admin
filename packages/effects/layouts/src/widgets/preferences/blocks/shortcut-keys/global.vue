@@ -8,8 +8,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { $t } from '@arco/locales';
-import { isWindowsOs } from '@arco/utils';
+import { $t } from '@qin/locales';
+import { isWindowsOs } from '@qin/utils';
 
 import SwitchItem from '../switch-item.vue';
 

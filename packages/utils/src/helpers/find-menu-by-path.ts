@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-16 17:13:06
  * @LastEditors: LLiuHuan
  */
-import type { MenuRecordRaw } from '@arco-core/typings';
+import type { MenuRecordRaw } from '@qin-core/typings';
 
 function findMenuByPath(
   list: MenuRecordRaw[],

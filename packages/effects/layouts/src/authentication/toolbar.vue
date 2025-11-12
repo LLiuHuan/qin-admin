@@ -3,7 +3,7 @@ import type { ToolbarType } from './types';
 
 import { computed } from 'vue';
 
-import { preferences } from '@arco/preferences';
+import { preferences } from '@qin/preferences';
 
 import {
   AuthenticationColorToggle,

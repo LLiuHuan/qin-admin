@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SupportedLanguagesType } from '@arco/locales';
+import type { SupportedLanguagesType } from '@qin/locales';
 import type {
   BreadcrumbStyleType,
   BuiltinThemeType,
@@ -10,28 +10,24 @@ import type {
   NavigationStyleType,
   PreferencesButtonPositionType,
   ThemeModeType,
-} from '@arco/types';
+} from '@qin/types';
 
-import type { SegmentedItem } from '@arco-core/shadcn-ui';
+import type { SegmentedItem } from '@qin-core/shadcn-ui';
 
 import { computed, ref } from 'vue';
 
-import { Copy, RotateCw } from '@arco/icons';
-import { $t, loadLocaleMessages } from '@arco/locales';
+import { Copy, RotateCw } from '@qin/icons';
+import { $t, loadLocaleMessages } from '@qin/locales';
 import {
   clearPreferencesCache,
   preferences,
   resetPreferences,
   usePreferences,
-} from '@arco/preferences';
+} from '@qin/preferences';
 
-import { useArcoDrawer } from '@arco-core/popup-ui';
-import {
-  ArcoButton,
-  ArcoIconButton,
-  ArcoSegmented,
-} from '@arco-core/shadcn-ui';
-import { globalShareState } from '@arco-core/shared/global-state';
+import { useQinDrawer } from '@qin-core/popup-ui';
+import { QinButton, QinIconButton, QinSegmented } from '@qin-core/shadcn-ui';
+import { globalShareState } from '@qin-core/shared/global-state';
 
 import { useClipboard } from '@vueuse/core';
 
@@ -177,7 +173,7 @@ const {
 } = usePreferences();
 const { copy } = useClipboard({ legacy: true });
 
-const [Drawer] = useArcoDrawer();
+const [Drawer] = useQinDrawer();
 
 const activeTab = ref('appearance');
 
@@ -244,7 +240,7 @@ async function handleReset() {
     >
       <template #extra>
         <div class="flex items-center">
-          <ArcoIconButton
+          <QinIconButton
             :disabled="!diffPreference"
             :tooltip="$t('preferences.resetTip')"
             class="relative"
@@ -254,12 +250,12 @@ async function handleReset() {
               class="bg-primary absolute right-0.5 top-0.5 h-2 w-2 rounded"
             ></span>
             <RotateCw class="size-4" @click="handleReset" />
-          </ArcoIconButton>
+          </QinIconButton>
         </div>
       </template>
 
       <div class="p-1">
-        <ArcoSegmented v-model="activeTab" :tabs="tabs">
+        <QinSegmented v-model="activeTab" :tabs="tabs">
           <template #general>
             <Block :title="$t('preferences.general')">
               <General
@@ -421,11 +417,11 @@ async function handleReset() {
               />
             </Block>
           </template>
-        </ArcoSegmented>
+        </QinSegmented>
       </div>
 
       <template #footer>
-        <ArcoButton
+        <QinButton
           :disabled="!diffPreference"
           class="mx-4 w-full"
           size="sm"
@@ -434,8 +430,8 @@ async function handleReset() {
         >
           <Copy class="mr-2 size-3" />
           {{ $t('preferences.copyPreferences') }}
-        </ArcoButton>
-        <ArcoButton
+        </QinButton>
+        <QinButton
           :disabled="!diffPreference"
           class="mr-4 w-full"
           size="sm"
@@ -443,7 +439,7 @@ async function handleReset() {
           @click="handleClearCache"
         >
           {{ $t('preferences.clearAndLogout') }}
-        </ArcoButton>
+        </QinButton>
       </template>
     </Drawer>
   </div>

@@ -10,7 +10,7 @@ import type { DropdownMenuItemProps } from 'reka-ui';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { DropdownMenuItem, useForwardProps } from 'reka-ui';
 

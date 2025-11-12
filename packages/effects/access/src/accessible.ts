@@ -2,7 +2,7 @@ import type {
   AccessModeType,
   GenerateMenuAndRoutesOptions,
   RouteRecordRaw,
-} from '@arco/types';
+} from '@qin/types';
 
 import type { Component, DefineComponent } from 'vue';
 
@@ -16,7 +16,7 @@ import {
   isFunction,
   isString,
   mapTree,
-} from '@arco/utils';
+} from '@qin/utils';
 
 async function generateAccessible(
   mode: AccessModeType,

@@ -1,2 +1,2 @@
 export * from './core';
-export * from '@arco-core/shared/constants';
+export * from '@qin-core/shared/constants';

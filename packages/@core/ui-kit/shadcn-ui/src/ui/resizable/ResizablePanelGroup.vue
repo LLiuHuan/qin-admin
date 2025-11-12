@@ -12,7 +12,7 @@ import type { HTMLAttributes } from 'vue';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { SplitterGroup, useForwardPropsEmits } from 'reka-ui';
 

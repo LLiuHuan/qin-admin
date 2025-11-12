@@ -1,8 +1,8 @@
 import type { Component, VNode, VNodeArrayChildren } from 'vue';
 
-import type { Recordable } from '@arco-core/typings';
+import type { Recordable } from '@qin-core/typings';
 
-import { createContext } from '@arco-core/shadcn-ui';
+import { createContext } from '@qin-core/shadcn-ui';
 
 export type IconType = 'error' | 'info' | 'question' | 'success' | 'warning';
 
@@ -90,7 +90,7 @@ export type AlertContext = {
 };
 
 export const [injectAlertContext, provideAlertContext] =
-  createContext<AlertContext>('ArcoAlertContext');
+  createContext<AlertContext>('QinAlertContext');
 
 /**
  * 获取Alert上下文

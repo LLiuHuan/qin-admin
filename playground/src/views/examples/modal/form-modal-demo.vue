@@ -6,17 +6,17 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { useArcoModal } from '@arco/common-ui';
+import { useQinModal } from '@qin/common-ui';
 
 import { Message } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 defineOptions({
   name: 'FormModelDemo',
 });
 
-const [Form, formApi] = useArcoForm({
+const [Form, formApi] = useQinForm({
   handleSubmit: onSubmit,
   schema: [
     {
@@ -54,7 +54,7 @@ const [Form, formApi] = useArcoForm({
   showDefaultActions: false,
 });
 
-const [Modal, modalApi] = useArcoModal({
+const [Modal, modalApi] = useQinModal({
   fullscreenButton: false,
   onCancel() {
     modalApi.close();

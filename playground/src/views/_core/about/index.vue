@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { About } from '@arco/common-ui';
+import { About } from '@qin/common-ui';
 
 defineOptions({ name: 'About' });
 </script>

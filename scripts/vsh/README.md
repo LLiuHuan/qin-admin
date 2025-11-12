@@ -2,13 +2,13 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-06-17 00:55:16
- * @LastEditTime: 2025-07-15 02:24:19
+ * @LastEditTime: 2025-08-18 10:02:43
  * @LastEditors: LLiuHuan
 -->
 
-# @arco/vsh
+# @qin/vsh
 
-一个 Shell 脚本工具集合，用于 Vue Arco Design Pro 项目的开发和管理。
+一个 Shell 脚本工具集合，用于 Qin Admin 项目的开发和管理。
 
 ## 功能特性
 
@@ -22,13 +22,13 @@
 
 ```bash
 # 使用 pnpm 安装
-pnpm add -D @arco/vsh
+pnpm add -D @qin/vsh
 
 # 或者使用 npm
-npm install -D @arco/vsh
+npm install -D @qin/vsh
 
 # 或者使用 yarn
-yarn add -D @arco/vsh
+yarn add -D @qin/vsh
 ```
 
 ## 使用方法
@@ -37,7 +37,7 @@ yarn add -D @arco/vsh
 
 ```bash
 # 全局安装
-pnpm add -g @arco/vsh
+pnpm add -g @qin/vsh
 
 # 使用 vsh 命令
 vsh [command]

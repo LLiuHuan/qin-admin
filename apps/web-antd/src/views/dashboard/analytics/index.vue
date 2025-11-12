@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { TabOption } from '@arco/types';
+import type { TabOption } from '@qin/types';
 
 import { computed } from 'vue';
 
@@ -14,8 +14,8 @@ import {
   AnalysisChartCard,
   AnalysisChartOverview,
   AnalysisChartsTabs,
-} from '@arco/common-ui';
-import { usePreferences } from '@arco/preferences';
+} from '@qin/common-ui';
+import { usePreferences } from '@qin/preferences';
 
 import AnalyticsOverviewDownload from './analytics-overview-download.vue';
 import AnalyticsOverviewUse from './analytics-overview-use.vue';

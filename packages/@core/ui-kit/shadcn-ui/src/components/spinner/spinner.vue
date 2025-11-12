@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 interface Props {
   class?: string;
@@ -17,7 +17,7 @@ interface Props {
 }
 
 defineOptions({
-  name: 'ArcoSpinner',
+  name: 'QinSpinner',
 });
 
 const props = withDefaults(defineProps<Props>(), {

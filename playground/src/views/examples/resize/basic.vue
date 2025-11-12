@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page, VResize } from '@arco/common-ui';
+import { Page, VResize } from '@qin/common-ui';
 
 const colorMap = ['red', 'green', 'yellow', 'gray'];
 

@@ -2,12 +2,12 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 11:59:20
+ * @LastEditTime: 2025-08-18 10:09:04
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { ArcoSpinner } from '@arco-core/shadcn-ui';
-import { cn } from '@arco-core/shared/utils';
+import { QinSpinner } from '@qin-core/shadcn-ui';
+import { cn } from '@qin-core/shared/utils';
 
 interface SpinnerProps {
   class?: string;
@@ -27,7 +27,7 @@ const props = defineProps<SpinnerProps>();
 <template>
   <div :class="cn('relative min-h-20', props.class)">
     <slot></slot>
-    <ArcoSpinner
+    <QinSpinner
       :min-loading-time="props.minLoadingTime"
       :spinning="props.spinning"
     />

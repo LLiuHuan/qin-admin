@@ -1,12 +1,12 @@
 {
-  "name": "@arco/tsconfig",
+  "name": "@qin/tsconfig",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/LLiuHuan/arco-design-pro-vue",
-  "bugs": "https://github.com/LLiuHuan/arco-design-pro-vue/issues",
+  "homepage": "https://github.com/LLiuHuan/qin-admin",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLiuHuan/arco-design-pro-vue.git",
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
     "directory": "internal/tsconfig"
   },
   "license": "MIT",

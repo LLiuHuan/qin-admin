@@ -2,22 +2,22 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-05-27 10:21:00
+ * @LastEditTime: 2025-08-18 10:12:24
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { ArcoButtonProps } from './button';
+import type { QinButtonProps } from './button';
 
 import { computed } from 'vue';
 
-import { LoaderCircle } from '@arco-core/icons';
-import { cn } from '@arco-core/shared/utils';
+import { LoaderCircle } from '@qin-core/icons';
+import { cn } from '@qin-core/shared/utils';
 
 import { Primitive } from 'reka-ui';
 
 import { buttonVariants } from '../../ui';
 
-interface Props extends ArcoButtonProps {}
+interface Props extends QinButtonProps {}
 
 const props = withDefaults(defineProps<Props>(), {
   as: 'button',

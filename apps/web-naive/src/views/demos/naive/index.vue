@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import type { NotificationType } from 'naive-ui';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { NButton, NCard, NSpace, useMessage, useNotification } from 'naive-ui';
 

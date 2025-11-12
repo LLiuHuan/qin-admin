@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-22 17:02:44
  * @LastEditors: LLiuHuan
  */
-import type { BasicUserInfo } from '@arco-core/typings';
+import type { BasicUserInfo } from '@qin-core/typings';
 
 /** 用户信息 */
 interface UserInfo extends BasicUserInfo {

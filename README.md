@@ -4,8 +4,8 @@
 
 <div align="center">
     <a href="https://www.oscs1024.com/project/oscs/LLiuHuan/arco-design-pro-vue?ref=badge_small" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/LLiuHuan/arco-design-pro-vue.svg?size=small"/></a>
-    <a href="https://github.com/LLiuHuan/arco-design-pro-vue"><img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg?sanitize=true" alt="Build Status"></a>
-    <a href="https://github.com/LLiuHuan/arco-design-pro-vue/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
+    <a href="https://github.com/LLiuHuan/qin-admin"><img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg?sanitize=true" alt="Build Status"></a>
+    <a href="https://github.com/LLiuHuan/qin-admin/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
 </div>
 
 <div align="center">
@@ -18,7 +18,7 @@
 
 > It is expected that everything will be completed within 24 years, and at least one front-end + one back-end will be developed.
 
-> In view of time constraints, after comprehensive consideration and analysis, this project has decided to make adjustments to the infrastructure and select vue-vben-admin as the basic framework. During the refactoring process, the latest technologies will be fully adopted to ensure that the project can keep up with the industry's forefront in terms of functionality implementation, performance optimization, and technical architecture, meeting the diverse needs of the project in different scenarios and improving the overall quality and maintainability of the project.
+> In view of time constraints, after comprehensive consideration and analysis, this project has decided to make adjustments to the infrastructure and select qin-admin as the basic framework. During the refactoring process, the latest technologies will be fully adopted to ensure that the project can keep up with the industry's forefront in terms of functionality implementation, performance optimization, and technical architecture, meeting the diverse needs of the project in different scenarios and improving the overall quality and maintainability of the project.
 
 ## 1. Basic introduction
 
@@ -29,7 +29,7 @@
 - Old version
   - [Online preview](http://arco_legacy.0x3.cn/)  
     （Please use Chrome to open）
-  - [Github address](https://github.com/LLiuHuan/arco-design-pro-vue/tree/legacy)
+  - [Github address](https://github.com/LLiuHuan/qin-admin/tree/legacy)
 - New version
   - [Online preview](http://arco.0x3.cn/)
   - Document address Under development
@@ -42,7 +42,7 @@
 
 ```
 # Clone project
-git clone https://github.com/LLiuHuan/arco-design-pro-vue.git
+git clone https://github.com/LLiuHuan/qin-admin.git
 
 # Enter the project directory
 cd arco-design-pro-vue
@@ -240,4 +240,4 @@ I’ll add it later, it’s not decided yet, it will mainly be based on function
 
 ## License
 
-Ths project is [MIT licensed](https://github.com/LLiuHuan/arco-design-pro-vue/blob/master/LICENSE).
+Ths project is [MIT licensed](https://github.com/LLiuHuan/qin-admin/blob/master/LICENSE).

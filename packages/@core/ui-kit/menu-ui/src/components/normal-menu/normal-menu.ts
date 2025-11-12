@@ -1,4 +1,4 @@
-import type { MenuRecordRaw } from '@arco-core/typings';
+import type { MenuRecordRaw } from '@qin-core/typings';
 
 interface NormalMenuProps {
   /**

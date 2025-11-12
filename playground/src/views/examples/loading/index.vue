@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Loading, Page, Spinner } from '@arco/common-ui';
-import { IconifyIcon } from '@arco/icons';
+import { Loading, Page, Spinner } from '@qin/common-ui';
+import { IconifyIcon } from '@qin/icons';
 
 import { Button, Card, Spin } from '@arco-design/web-vue';
 import { refAutoReset } from '@vueuse/core';
@@ -13,19 +13,19 @@ const loadingV = refAutoReset(false, 3000);
 </script>
 <template>
   <Page
-    title="Arco Loading"
+    title="Qin Loading"
     description="加载中状态组件。这个组件可以为其它作为容器的组件添加一个加载中的遮罩层。使用它们时，容器需要relative定位。"
   >
     <Spin class="w-full" :loading="spinning" tip="加载中...">
-      <Card title="Arco Spin">
+      <Card title="Qin Spin">
         <template #actions>
-          <div class="">这是Arco 组件库自带的Spin组件演示</div>
+          <div class="">这是Qin 组件库自带的Spin组件演示</div>
         </template>
         <Button type="primary" @click="spinning = true">显示Spin</Button>
       </Card>
     </Spin>
 
-    <Card title="Arco Loading" v-loading="loadingV" class="mt-4">
+    <Card title="Qin Loading" v-loading="loadingV" class="mt-4">
       <template #extra>
         <Button type="primary" @click="loadingV = true">
           v-loading 指令
@@ -78,7 +78,7 @@ const loadingV = refAutoReset(false, 3000);
     </Card>
 
     <Card
-      title="Arco Spinner"
+      title="Qin Spinner"
       v-spinning="spinningV"
       class="mt-4 overflow-hidden"
       :body-style="{

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-16 10:24:21
- * @LastEditTime: 2025-05-16 14:31:57
+ * @LastEditTime: 2025-08-18 11:28:37
  * @LastEditors: LLiuHuan
  */
 import type { Linter } from 'eslint';
@@ -11,7 +11,6 @@ import { interopDefault } from '../util';
 
 export async function perfectionist(): Promise<Linter.Config[]> {
   const perfectionistPlugin = await interopDefault(
-    // @ts-expect-error - no types
     import('eslint-plugin-perfectionist'),
   );
 
@@ -31,13 +30,13 @@ export async function perfectionist(): Promise<Linter.Config[]> {
           {
             customGroups: {
               type: {
-                'arco-core-type': ['^@arco-core/.+'],
+                'arco-core-type': ['^@qin-core/.+'],
                 'arco-type': ['^@varco/.+'],
                 'vue-type': ['^vue$', '^vue-.+', '^@vue/.+'],
               },
               value: {
-                arco: ['^@arco/.+'],
-                'arco-core': ['^@arco-core/.+'],
+                arco: ['^@qin/.+'],
+                'arco-core': ['^@qin-core/.+'],
                 vue: ['^vue$', '^vue-.+', '^@vue/.+'],
               },
             },

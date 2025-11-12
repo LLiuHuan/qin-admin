@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { useArcoModal } from '@arco/common-ui';
+import { useQinModal } from '@qin/common-ui';
 
 import { Button } from '@arco-design/web-vue';
 
 import DragDemo from './drag-demo.vue';
 
-const [Modal] = useArcoModal({
+const [Modal] = useQinModal({
   destroyOnClose: true,
 });
-const [BaseModal, baseModalApi] = useArcoModal({
+const [BaseModal, baseModalApi] = useQinModal({
   connectedComponent: DragDemo,
 });
 

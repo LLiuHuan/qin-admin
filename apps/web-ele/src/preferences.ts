@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-27 15:34:57
  * @LastEditors: LLiuHuan
  */
-import { defineOverridesPreferences } from '@arco/preferences';
+import { defineOverridesPreferences } from '@qin/preferences';
 
 /**
  * @description 项目配置文件

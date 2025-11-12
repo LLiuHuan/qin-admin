@@ -4,7 +4,7 @@ import type {
   WorkbenchQuickNavItem,
   WorkbenchTodoItem,
   WorkbenchTrendItem,
-} from '@arco/common-ui';
+} from '@qin/common-ui';
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -16,10 +16,10 @@ import {
   WorkbenchQuickNav,
   WorkbenchTodo,
   WorkbenchTrends,
-} from '@arco/common-ui';
-import { preferences } from '@arco/preferences';
-import { useUserStore } from '@arco/stores';
-import { openWindow } from '@arco/utils';
+} from '@qin/common-ui';
+import { preferences } from '@qin/preferences';
+import { useUserStore } from '@qin/stores';
+import { openWindow } from '@qin/utils';
 
 import AnalyticsVisitsSource from '../analytics/analytics-visits-source.vue';
 

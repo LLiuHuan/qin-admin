@@ -1,6 +1,6 @@
 import { execSync } from 'node:child_process';
 
-import { getPackagesSync } from '@arco/node-utils';
+import { getPackagesSync } from '@qin/node-utils';
 
 const { packages } = getPackagesSync();
 

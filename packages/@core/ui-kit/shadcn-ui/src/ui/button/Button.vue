@@ -10,7 +10,7 @@ import type { PrimitiveProps } from 'reka-ui';
 
 import type { ButtonVariants, ButtonVariantSize } from './types';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { Primitive } from 'reka-ui';
 

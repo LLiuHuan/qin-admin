@@ -11,9 +11,9 @@ import type {
   ComponentRecordType,
   GenerateMenuAndRoutesOptions,
   RouteRecordStringComponent,
-} from '@arco-core/typings';
+} from '@qin-core/typings';
 
-import { mapTree } from '@arco-core/shared/utils';
+import { mapTree } from '@qin-core/shared/utils';
 
 /**
  * 动态生成路由 - 后端方式

@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { SelectOption } from '@arco/types';
+import type { SelectOption } from '@qin/types';
 
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@arco/icons';
+import { CircleHelp } from '@qin/icons';
 
 import {
-  ArcoTooltip,
+  QinTooltip,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@arco-core/shadcn-ui';
+} from '@qin-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSelectItem',
@@ -47,12 +47,12 @@ const slots = useSlots();
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <ArcoTooltip v-if="slots.tip" side="bottom">
+      <QinTooltip v-if="slots.tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
         <slot name="tip"></slot>
-      </ArcoTooltip>
+      </QinTooltip>
     </span>
     <Select v-model="selectValue">
       <SelectTrigger class="h-8 w-[165px]">

@@ -3,9 +3,9 @@ import type { MenuItemProps } from '../types';
 
 import { computed } from 'vue';
 
-import { useNamespace } from '@arco-core/composables';
-import { ChevronDown, ChevronRight } from '@arco-core/icons';
-import { ArcoIcon } from '@arco-core/shadcn-ui';
+import { useNamespace } from '@qin-core/composables';
+import { ChevronDown, ChevronRight } from '@qin-core/icons';
+import { QinIcon } from '@qin-core/shadcn-ui';
 
 import { useMenuContext } from '../hooks';
 
@@ -82,7 +82,7 @@ const iconArrowStyle = computed(() => {
   >
     <slot></slot>
 
-    <ArcoIcon
+    <QinIcon
       v-if="!isMenuMore"
       :class="nsMenu.e('icon')"
       :icon="icon"

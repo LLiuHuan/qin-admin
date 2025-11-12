@@ -2,21 +2,21 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 11:55:47
+ * @LastEditTime: 2025-08-18 10:08:23
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
 import type { AnalysisOverviewItem } from '../typing';
 
 import {
-  ArcoCountToAnimator,
-  ArcoIcon,
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@arco-core/shadcn-ui';
+  QinCountToAnimator,
+  QinIcon,
+} from '@qin-core/shadcn-ui';
 
 interface Props {
   items?: AnalysisOverviewItem[];
@@ -40,17 +40,17 @@ withDefaults(defineProps<Props>(), {
         </CardHeader>
 
         <CardContent class="flex items-center justify-between">
-          <ArcoCountToAnimator
+          <QinCountToAnimator
             :end-val="item.value"
             :start-val="1"
             class="text-xl"
             prefix=""
           />
-          <ArcoIcon :icon="item.icon" class="size-8 flex-shrink-0" />
+          <QinIcon :icon="item.icon" class="size-8 flex-shrink-0" />
         </CardContent>
         <CardFooter class="justify-between">
           <span>{{ item.totalTitle }}</span>
-          <ArcoCountToAnimator
+          <QinCountToAnimator
             :end-val="item.totalValue"
             :start-val="1"
             prefix=""

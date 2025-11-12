@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 
-import { diff } from '@arco-core/shared/utils';
+import { diff } from '@qin-core/shared/utils';
 
 import { preferencesManager } from './preferences';
 import { isDarkTheme } from './update-css-variables';

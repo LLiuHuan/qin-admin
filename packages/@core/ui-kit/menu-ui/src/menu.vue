@@ -6,11 +6,11 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@arco-core/typings';
+import type { MenuRecordRaw } from '@qin-core/typings';
 
 import type { MenuProps } from './types';
 
-import { useForwardProps } from '@arco-core/composables';
+import { useForwardProps } from '@qin-core/composables';
 
 import { Menu } from './components';
 import SubMenu from './sub-menu.vue';

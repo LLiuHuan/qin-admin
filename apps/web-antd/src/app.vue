@@ -8,8 +8,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-import { useAntdDesignTokens } from '@arco/hooks';
-import { preferences, usePreferences } from '@arco/preferences';
+import { useAntdDesignTokens } from '@qin/hooks';
+import { preferences, usePreferences } from '@qin/preferences';
 
 import { App, ConfigProvider, theme } from 'ant-design-vue';
 

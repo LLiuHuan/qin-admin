@@ -7,13 +7,13 @@ import type {
 
 import type { ComponentPublicInstance } from 'vue';
 
-import type { Recordable } from '@arco-core/typings';
+import type { Recordable } from '@qin-core/typings';
 
-import type { ArcoFormProps, FormActions, FormSchema } from './types';
+import type { QinFormProps, FormActions, FormSchema } from './types';
 
 import { isRef, toRaw } from 'vue';
 
-import { Store } from '@arco-core/shared/store';
+import { Store } from '@qin-core/shared/store';
 import {
   bindMethods,
   createMerge,
@@ -24,9 +24,9 @@ import {
   isObject,
   mergeWithArrayOverride,
   StateHandler,
-} from '@arco-core/shared/utils';
+} from '@qin-core/shared/utils';
 
-function getDefaultState(): ArcoFormProps {
+function getDefaultState(): QinFormProps {
   return {
     actionWrapperClass: '',
     collapsed: false,
@@ -50,14 +50,14 @@ function getDefaultState(): ArcoFormProps {
 }
 
 export class FormApi {
-  // private api: Pick<ArcoFormProps, 'handleReset' | 'handleSubmit'>;
+  // private api: Pick<QinFormProps, 'handleReset' | 'handleSubmit'>;
   public form = {} as FormActions;
   isMounted = false;
 
-  public state: ArcoFormProps | null = null;
+  public state: QinFormProps | null = null;
   stateHandler: StateHandler;
 
-  public store: Store<ArcoFormProps>;
+  public store: Store<QinFormProps>;
 
   /**
    * 组件实例映射
@@ -67,14 +67,14 @@ export class FormApi {
   // 最后一次点击提交时的表单值
   private latestSubmissionValues: null | Recordable<any> = null;
 
-  private prevState: ArcoFormProps | null = null;
+  private prevState: QinFormProps | null = null;
 
-  constructor(options: ArcoFormProps = {}) {
+  constructor(options: QinFormProps = {}) {
     const { ...storeState } = options;
 
     const defaultState = getDefaultState();
 
-    this.store = new Store<ArcoFormProps>(
+    this.store = new Store<QinFormProps>(
       {
         ...defaultState,
         ...storeState,
@@ -300,8 +300,8 @@ export class FormApi {
 
   setState(
     stateOrFn:
-      | ((prev: ArcoFormProps) => Partial<ArcoFormProps>)
-      | Partial<ArcoFormProps>,
+      | ((prev: QinFormProps) => Partial<QinFormProps>)
+      | Partial<QinFormProps>,
   ) {
     if (isFunction(stateOrFn)) {
       this.store.setState((prev) => {
@@ -453,7 +453,7 @@ export class FormApi {
       await this.stateHandler.waitForCondition();
     }
     if (!this.form?.meta) {
-      throw new Error('<ArcoForm /> is not mounted');
+      throw new Error('<QinForm /> is not mounted');
     }
     return this.form;
   }

@@ -6,8 +6,8 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { SUPPORT_LANGUAGES } from '@arco/constants';
-import { $t } from '@arco/locales';
+import { SUPPORT_LANGUAGES } from '@qin/constants';
+import { $t } from '@qin/locales';
 
 import SelectItem from '../select-item.vue';
 import SwitchItem from '../switch-item.vue';

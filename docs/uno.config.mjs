@@ -5,4 +5,4 @@
  * @LastEditTime: 2025-05-16 17:43:51
  * @LastEditors: LLiuHuan
  */
-export { default } from '@arco/uno-config';
+export { default } from '@qin/uno-config';

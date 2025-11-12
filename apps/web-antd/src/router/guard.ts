@@ -1,9 +1,9 @@
 import type { Router } from 'vue-router';
 
-import { LOGIN_PATH } from '@arco/constants';
-import { preferences } from '@arco/preferences';
-import { useAccessStore, useUserStore } from '@arco/stores';
-import { startProgress, stopProgress } from '@arco/utils';
+import { LOGIN_PATH } from '@qin/constants';
+import { preferences } from '@qin/preferences';
+import { useAccessStore, useUserStore } from '@qin/stores';
+import { startProgress, stopProgress } from '@qin/utils';
 
 import { accessRoutes, coreRouteNames } from '#/router/routes';
 import { useAuthStore } from '#/store';

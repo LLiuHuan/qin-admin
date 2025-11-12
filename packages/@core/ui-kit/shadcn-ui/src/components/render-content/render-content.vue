@@ -10,7 +10,7 @@ import type { Component, PropType } from 'vue';
 
 import { defineComponent, h } from 'vue';
 
-import { isFunction, isObject, isString } from '@arco-core/shared/utils';
+import { isFunction, isObject, isString } from '@qin-core/shared/utils';
 
 export default defineComponent({
   name: 'RenderContent',

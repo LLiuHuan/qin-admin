@@ -8,8 +8,8 @@
 <script lang="ts" setup>
 import { computed, watch } from 'vue';
 
-import { useArcoDesignTokens } from '@arco/hooks';
-import { preferences } from '@arco/preferences';
+import { useQinDesignTokens } from '@qin/hooks';
+import { preferences } from '@qin/preferences';
 
 import { ConfigProvider } from '@arco-design/web-vue';
 import enUS from '@arco-design/web-vue/es/locale/lang/en-us';
@@ -33,7 +33,7 @@ watch(
   { immediate: true },
 );
 
-useArcoDesignTokens();
+useQinDesignTokens();
 </script>
 
 <template>

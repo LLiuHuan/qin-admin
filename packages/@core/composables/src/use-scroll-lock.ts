@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-22 17:28:06
  * @LastEditors: LLiuHuan
  */
-import { getScrollbarWidth, needsScrollbar } from '@arco-core/shared/utils';
+import { getScrollbarWidth, needsScrollbar } from '@qin-core/shared/utils';
 
 import {
   useScrollLock as _useScrollLock,

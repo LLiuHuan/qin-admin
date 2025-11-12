@@ -5,12 +5,12 @@
  * @LastEditTime: 2025-05-27 15:04:35
  * @LastEditors: LLiuHuan
  */
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 import type { VxeGridProps, VxeUIExport } from 'vxe-table';
 
 import type { VxeGridApi } from './api';
 
-import { formatDate, formatDateTime, isFunction } from '@arco/utils';
+import { formatDate, formatDateTime, isFunction } from '@qin/utils';
 
 export function extendProxyOptions(
   api: VxeGridApi,

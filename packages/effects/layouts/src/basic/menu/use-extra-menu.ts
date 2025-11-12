@@ -1,13 +1,13 @@
-import type { MenuRecordRaw } from '@arco/types';
+import type { MenuRecordRaw } from '@qin/types';
 
 import type { ComputedRef } from 'vue';
 
 import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { preferences } from '@arco/preferences';
-import { useAccessStore } from '@arco/stores';
-import { findRootMenuByPath } from '@arco/utils';
+import { preferences } from '@qin/preferences';
+import { useAccessStore } from '@qin/stores';
+import { findRootMenuByPath } from '@qin/utils';
 
 import { useNavigation } from './use-navigation';
 

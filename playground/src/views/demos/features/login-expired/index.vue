@@ -6,10 +6,10 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { LoginExpiredModeType } from '@arco/types';
+import type { LoginExpiredModeType } from '@qin/types';
 
-import { Page } from '@arco/common-ui';
-import { preferences, updatePreferences } from '@arco/preferences';
+import { Page } from '@qin/common-ui';
+import { preferences, updatePreferences } from '@qin/preferences';
 
 import { Button, Card } from '@arco-design/web-vue';
 

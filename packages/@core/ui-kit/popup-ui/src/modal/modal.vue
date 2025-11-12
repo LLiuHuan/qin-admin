@@ -16,24 +16,24 @@ import {
   useIsMobile,
   usePriorityValues,
   useSimpleLocale,
-} from '@arco-core/composables';
-import { Expand, Shrink } from '@arco-core/icons';
+} from '@qin-core/composables';
+import { Expand, Shrink } from '@qin-core/icons';
 import {
-  ArcoButton,
-  ArcoHelpTooltip,
-  ArcoIconButton,
-  ArcoLoading,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
+  QinButton,
+  QinHelpTooltip,
+  QinIconButton,
+  QinLoading,
   VisuallyHidden,
-} from '@arco-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@arco-core/shared/constants';
-import { globalShareState } from '@arco-core/shared/global-state';
-import { cn } from '@arco-core/shared/utils';
+} from '@qin-core/shadcn-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@qin-core/shared/constants';
+import { globalShareState } from '@qin-core/shared/global-state';
+import { cn } from '@qin-core/shared/utils';
 
 import { useModalDraggable } from './use-modal-draggable';
 
@@ -274,9 +274,9 @@ function handleClosed() {
             {{ title }}
 
             <slot v-if="titleTooltip" name="titleTooltip">
-              <ArcoHelpTooltip trigger-class="pb-1">
+              <QinHelpTooltip trigger-class="pb-1">
                 {{ titleTooltip }}
-              </ArcoHelpTooltip>
+              </QinHelpTooltip>
             </slot>
           </slot>
         </DialogTitle>
@@ -300,15 +300,15 @@ function handleClosed() {
       >
         <slot></slot>
       </div>
-      <ArcoLoading v-if="showLoading || submitting" spinning />
-      <ArcoIconButton
+      <QinLoading v-if="showLoading || submitting" spinning />
+      <QinIconButton
         v-if="fullscreenButton"
         class="hover:bg-accent hover:text-accent-foreground text-foreground/80 flex-center focus:outline-hidden absolute right-10 top-3 hidden size-6 rounded-full px-1 text-lg opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none sm:block"
         @click="handleFullscreen"
       >
         <Shrink v-if="fullscreen" class="size-3.5" />
         <Expand v-else class="size-3.5" />
-      </ArcoIconButton>
+      </QinIconButton>
 
       <DialogFooter
         v-if="showFooter"
@@ -326,7 +326,7 @@ function handleClosed() {
         <slot name="prepend-footer"></slot>
         <slot name="footer">
           <component
-            :is="components.DefaultButton || ArcoButton"
+            :is="components.DefaultButton || QinButton"
             v-if="showCancelButton"
             variant="ghost"
             :disabled="submitting"
@@ -338,7 +338,7 @@ function handleClosed() {
           </component>
           <slot name="center-footer"></slot>
           <component
-            :is="components.PrimaryButton || ArcoButton"
+            :is="components.PrimaryButton || QinButton"
             v-if="showConfirmButton"
             :disabled="confirmDisabled"
             :loading="confirmLoading || submitting"

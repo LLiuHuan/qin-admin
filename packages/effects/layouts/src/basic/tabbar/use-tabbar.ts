@@ -1,13 +1,13 @@
-import type { TabDefinition } from '@arco/types';
+import type { TabDefinition } from '@qin/types';
 
 import type { RouteLocationNormalizedGeneric } from 'vue-router';
 
-import type { IContextMenuItem } from '@arco-core/tabs-ui';
+import type { IContextMenuItem } from '@qin-core/tabs-ui';
 
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import { useContentMaximize, useTabs } from '@arco/hooks';
+import { useContentMaximize, useTabs } from '@qin/hooks';
 import {
   ArrowLeftToLine,
   ArrowRightLeft,
@@ -20,10 +20,10 @@ import {
   PinOff,
   RotateCw,
   X,
-} from '@arco/icons';
-import { $t, useI18n } from '@arco/locales';
-import { getTabKey, useAccessStore, useTabbarStore } from '@arco/stores';
-import { filterTree } from '@arco/utils';
+} from '@qin/icons';
+import { $t, useI18n } from '@qin/locales';
+import { getTabKey, useAccessStore, useTabbarStore } from '@qin/stores';
+import { filterTree } from '@qin/utils';
 
 export function useTabbar() {
   const router = useRouter();

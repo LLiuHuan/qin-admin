@@ -9,7 +9,7 @@ import type { RouteRecordNormalized } from 'vue-router';
 
 import { useRouter } from 'vue-router';
 
-import { isHttpUrl, openRouteInNewWindow, openWindow } from '@arco/utils';
+import { isHttpUrl, openRouteInNewWindow, openWindow } from '@qin/utils';
 
 function useNavigation() {
   const router = useRouter();

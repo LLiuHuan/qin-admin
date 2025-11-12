@@ -23,13 +23,13 @@ const style = computed(() => {
 });
 </script>
 <template>
-  <div :style="style" class="adp-spine-text !bg-clip-text text-transparent">
+  <div :style="style" class="qin-spine-text !bg-clip-text text-transparent">
     <slot></slot>
   </div>
 </template>
 <style>
 .success {
-  .adp-spine-text {
+  .qin-spine-text {
     background:
       radial-gradient(circle at center, rgb(24 24 26 / 80%), transparent) -200%
         50% / 200% 100% no-repeat,
@@ -37,7 +37,7 @@ const style = computed(() => {
   }
 }
 
-.adp-spine-text {
+.qin-spine-text {
   background:
     radial-gradient(circle at center, rgb(255 255 255 / 80%), #f000) -200% 50% /
       200% 100% no-repeat,
@@ -46,7 +46,7 @@ const style = computed(() => {
   /* animation: shine 3s linear infinite; */
 }
 
-.dark .adp-spine-text {
+.dark .qin-spine-text {
   background:
     radial-gradient(circle at center, rgb(24 24 26 / 80%), transparent) -200%
       50% / 200% 100% no-repeat,

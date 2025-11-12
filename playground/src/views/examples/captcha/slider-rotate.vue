@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { Page, SliderRotateCaptcha } from '@arco/common-ui';
-import { preferences } from '@arco/preferences';
-import { useUserStore } from '@arco/stores';
+import { Page, SliderRotateCaptcha } from '@qin/common-ui';
+import { preferences } from '@qin/preferences';
+import { useUserStore } from '@qin/stores';
 
 import { Card, Message } from '@arco-design/web-vue';
 

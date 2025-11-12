@@ -1,6 +1,6 @@
 import type { CAC } from 'cac';
 
-import { getPackages } from '@arco/node-utils';
+import { getPackages } from '@qin/node-utils';
 
 import depcheck from 'depcheck';
 
@@ -11,24 +11,24 @@ const DEFAULT_CONFIG = {
     'vite',
     'vitest',
     'unbuild',
-    '@arco/tsconfig',
-    '@arco/vite-config',
-    '@arco/tailwind-config',
+    '@qin/tsconfig',
+    '@qin/vite-config',
+    '@qin/tailwind-config',
     '@types/*',
-    '@arco-core/design',
+    '@qin-core/design',
   ],
   // 需要忽略的包
   ignorePackages: [
-    '@arco/backend-mock',
-    '@arco/commitlint-config',
-    '@arco/eslint-config',
-    '@arco/node-utils',
-    '@arco/prettier-config',
-    '@arco/stylelint-config',
-    '@arco/tailwind-config',
-    '@arco/tsconfig',
-    '@arco/vite-config',
-    '@arco/vsh',
+    '@qin/backend-mock',
+    '@qin/commitlint-config',
+    '@qin/eslint-config',
+    '@qin/node-utils',
+    '@qin/prettier-config',
+    '@qin/stylelint-config',
+    '@qin/tailwind-config',
+    '@qin/tsconfig',
+    '@qin/vite-config',
+    '@qin/vsh',
   ],
   // 需要忽略的文件模式
   ignorePatterns: ['dist', 'node_modules', 'public'],

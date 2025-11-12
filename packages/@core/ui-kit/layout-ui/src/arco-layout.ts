@@ -3,9 +3,9 @@ import type {
   LayoutHeaderModeType,
   LayoutType,
   ThemeModeType,
-} from '@arco-core/typings';
+} from '@qin-core/typings';
 
-interface ArcoLayoutProps {
+interface QinLayoutProps {
   /**
    * 内容区域定宽
    * @default 'wide'
@@ -172,4 +172,4 @@ interface ArcoLayoutProps {
    */
   zIndex?: number;
 }
-export type { ArcoLayoutProps };
+export type { QinLayoutProps };

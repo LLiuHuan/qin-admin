@@ -5,7 +5,7 @@ import type { SheetVariants } from './sheet';
 
 import { computed, ref } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { DialogContent, DialogPortal, useForwardPropsEmits } from 'reka-ui';
 

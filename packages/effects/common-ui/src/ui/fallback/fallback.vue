@@ -4,10 +4,10 @@ import type { FallbackProps } from './fallback';
 import { computed, defineAsyncComponent } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { ArrowLeft, RotateCw } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { ArrowLeft, RotateCw } from '@qin/icons';
+import { $t } from '@qin/locales';
 
-import { ArcoButton } from '@arco-core/shadcn-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 interface Props extends FallbackProps {}
 
@@ -150,14 +150,14 @@ function refresh() {
         {{ descText }}
       </p>
       <slot v-if="$slots.action" name="action"></slot>
-      <ArcoButton v-else-if="showBack" size="lg" @click="back">
+      <QinButton v-else-if="showBack" size="lg" @click="back">
         <ArrowLeft class="mr-2 size-4" />
         {{ $t('common.backToHome') }}
-      </ArcoButton>
-      <ArcoButton v-else-if="showRefresh" size="lg" @click="refresh">
+      </QinButton>
+      <QinButton v-else-if="showRefresh" size="lg" @click="refresh">
         <RotateCw class="mr-2 size-4" />
         {{ $t('common.refresh') }}
-      </ArcoButton>
+      </QinButton>
     </div>
   </div>
 </template>

@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
 import InputItem from '../input-item.vue';
 import SwitchItem from '../switch-item.vue';

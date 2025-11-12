@@ -10,7 +10,7 @@ import type { PinInputInputProps } from 'reka-ui';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { PinInputInput, useForwardProps } from 'reka-ui';
 

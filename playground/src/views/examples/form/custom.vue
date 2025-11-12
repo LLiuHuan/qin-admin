@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { h, markRaw } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Card, Input, Message } from '@arco-design/web-vue';
 
-import { useArcoForm, z } from '#/adapter/form';
+import { useQinForm, z } from '#/adapter/form';
 
 import TwoFields from './modules/two-fields.vue';
 
-const [Form] = useArcoForm({
+const [Form] = useQinForm({
   // 所有表单项共用，可单独在表单内覆盖
   commonConfig: {
     // 所有表单项

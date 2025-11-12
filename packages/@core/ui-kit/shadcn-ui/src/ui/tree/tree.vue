@@ -2,14 +2,14 @@
 import type { Arrayable } from '@vueuse/core';
 import type { FlattenedItem } from 'reka-ui';
 
-import type { ClassType, Recordable } from '@arco-core/typings';
+import type { ClassType, Recordable } from '@qin-core/typings';
 
 import type { TreeProps } from './types';
 
 import { onMounted, ref, watchEffect } from 'vue';
 
-import { ChevronRight, IconifyIcon } from '@arco-core/icons';
-import { cn, get } from '@arco-core/shared/utils';
+import { ChevronRight, IconifyIcon } from '@qin-core/icons';
+import { cn, get } from '@qin-core/shared/utils';
 
 import { TreeItem, TreeRoot } from 'reka-ui';
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ToolbarType } from './types';
 
-import { preferences, usePreferences } from '@arco/preferences';
+import { preferences, usePreferences } from '@qin/preferences';
 
 import { Copyright } from '../basic/copyright';
 import AuthenticationFormView from './form.vue';

@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { BuiltinThemePreset } from '@arco/preferences';
-import type { BuiltinThemeType } from '@arco/types';
+import type { BuiltinThemePreset } from '@qin/preferences';
+import type { BuiltinThemeType } from '@qin/types';
 
 import { computed, ref, watch } from 'vue';
 
-import { UserRoundPen } from '@arco/icons';
-import { $t } from '@arco/locales';
-import { BUILT_IN_THEME_PRESETS } from '@arco/preferences';
-import { convertToHsl, TinyColor } from '@arco/utils';
+import { UserRoundPen } from '@qin/icons';
+import { $t } from '@qin/locales';
+import { BUILT_IN_THEME_PRESETS } from '@qin/preferences';
+import { convertToHsl, TinyColor } from '@qin/utils';
 
 import { useThrottleFn } from '@vueuse/core';
 

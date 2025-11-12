@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type { ArcoFormProps } from '#/adapter/form';
+import type { QinFormProps } from '#/adapter/form';
 import type { VxeTableGridOptions } from '#/adapter/vxe-table';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Message } from '@arco-design/web-vue';
 import dayjs from 'dayjs';
 
-import { useArcoVxeGrid } from '#/adapter/vxe-table';
+import { useQinVxeGrid } from '#/adapter/vxe-table';
 import TableAPI from '#/api/examples/table';
 
 interface RowType {
@@ -19,7 +19,7 @@ interface RowType {
   releaseDate: string;
 }
 
-const formOptions: ArcoFormProps = {
+const formOptions: QinFormProps = {
   // 默认展开
   collapsed: false,
   fieldMappingTime: [['date', ['start', 'end']]],
@@ -114,7 +114,7 @@ const gridOptions: VxeTableGridOptions<RowType> = {
   },
 };
 
-const [Grid] = useArcoVxeGrid({
+const [Grid] = useQinVxeGrid({
   formOptions,
   gridOptions,
 });

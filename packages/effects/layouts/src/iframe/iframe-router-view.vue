@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 12:13:55
- * @LastEditTime: 2025-05-27 12:21:24
+ * @LastEditTime: 2025-08-18 10:07:25
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -11,10 +11,10 @@ import type { RouteLocationNormalized } from 'vue-router';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { preferences } from '@arco/preferences';
-import { useTabbarStore } from '@arco/stores';
+import { preferences } from '@qin/preferences';
+import { useTabbarStore } from '@qin/stores';
 
-import { ArcoSpinner } from '@arco-core/shadcn-ui';
+import { QinSpinner } from '@qin-core/shadcn-ui';
 
 defineOptions({ name: 'IFrameRouterView' });
 
@@ -81,7 +81,7 @@ function showSpinning(index: number) {
         v-show="routeShow(item)"
         class="relative size-full"
       >
-        <ArcoSpinner :spinning="showSpinning(index)" />
+        <QinSpinner :spinning="showSpinning(index)" />
         <iframe
           :src="item.meta.iframeSrc as string"
           class="size-full"

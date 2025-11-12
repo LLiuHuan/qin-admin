@@ -10,7 +10,7 @@ import type {
 
 import type { SetupContext } from 'vue';
 
-import type { ArcoFormProps } from '@arco-core/form-ui';
+import type { QinFormProps } from '@qin-core/form-ui';
 
 import type { ExtendedVxeGridApi, VxeGridProps } from './types';
 
@@ -25,19 +25,19 @@ import {
   watch,
 } from 'vue';
 
-import { usePriorityValues } from '@arco/hooks';
-import { EmptyIcon } from '@arco/icons';
-import { $t } from '@arco/locales';
-import { usePreferences } from '@arco/preferences';
+import { usePriorityValues } from '@qin/hooks';
+import { EmptyIcon } from '@qin/icons';
+import { $t } from '@qin/locales';
+import { usePreferences } from '@qin/preferences';
 import {
   cloneDeep,
   cn,
   isBoolean,
   isEqual,
   mergeWithArrayOverride,
-} from '@arco/utils';
+} from '@qin/utils';
 
-import { ArcoHelpTooltip, ArcoLoading } from '@arco-core/shadcn-ui';
+import { QinHelpTooltip, QinLoading } from '@qin-core/shadcn-ui';
 
 import { VxeButton } from 'vxe-pc-ui';
 import { VxeGrid, VxeUI } from 'vxe-table';
@@ -312,7 +312,7 @@ async function init() {
   // 因为第一次初始化之后会把defaultGridOptions和gridOptions合并后缓存进State
   if (formConfig && formConfig.enabled) {
     console.warn(
-      '[Arco Vxe Table]: The formConfig in the grid is not supported, please use the `formOptions` props',
+      '[Qin Vxe Table]: The formConfig in the grid is not supported, please use the `formOptions` props',
     );
   }
   props.api?.setState?.({ gridOptions: defaultGridOptions });
@@ -327,7 +327,7 @@ watch(
   formOptions,
   () => {
     formApi.setState((prev) => {
-      const finalFormOptions: ArcoFormProps = mergeWithArrayOverride(
+      const finalFormOptions: QinFormProps = mergeWithArrayOverride(
         {},
         formOptions.value,
         prev,
@@ -379,9 +379,9 @@ onUnmounted(() => {
         <slot v-if="showTableTitle" name="table-title">
           <div class="mr-1 pl-1 text-[1rem]">
             {{ tableTitle }}
-            <ArcoHelpTooltip v-if="tableTitleHelp" trigger-class="pb-1">
+            <QinHelpTooltip v-if="tableTitleHelp" trigger-class="pb-1">
               {{ tableTitleHelp }}
-            </ArcoHelpTooltip>
+            </QinHelpTooltip>
           </div>
         </slot>
         <slot name="toolbar-actions" v-bind="slotProps"> </slot>
@@ -464,7 +464,7 @@ onUnmounted(() => {
       <!-- loading -->
       <template #loading>
         <slot name="loading">
-          <ArcoLoading :spinning="true" />
+          <QinLoading :spinning="true" />
         </slot>
       </template>
       <!-- 统一控状态 -->

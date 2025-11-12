@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { ToggleGroup, ToggleGroupItem } from '@arco-core/shadcn-ui';
+import { ToggleGroup, ToggleGroupItem } from '@qin-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceColorMode',

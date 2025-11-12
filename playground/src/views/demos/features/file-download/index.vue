@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 import {
   downloadFileFromBase64,
   downloadFileFromBlobPart,
   downloadFileFromImageUrl,
   downloadFileFromUrl,
-} from '@arco/utils';
+} from '@qin/utils';
 
 import { Button, Card } from '@arco-design/web-vue';
 
@@ -45,8 +45,7 @@ function getResponse() {
         type="primary"
         @click="
           downloadFileFromUrl({
-            source:
-              'https://codeload.github.com/lliuhuan/arco-design-pro-vue/zip/master',
+            source: 'https://codeload.github.com/lliuhuan/qin-admin/zip/master',
             target: '_self',
           })
         "

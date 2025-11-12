@@ -6,9 +6,9 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { JsonViewerAction, JsonViewerValue } from '@arco/common-ui';
+import type { JsonViewerAction, JsonViewerValue } from '@qin/common-ui';
 
-import { JsonViewer, Page } from '@arco/common-ui';
+import { JsonViewer, Page } from '@qin/common-ui';
 
 import { Card, Message } from '@arco-design/web-vue';
 

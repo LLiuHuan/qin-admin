@@ -11,9 +11,9 @@ import type {
   ExRouteRecordRaw,
   MenuRecordRaw,
   RouteMeta,
-} from '@arco-core/typings';
+} from '@qin-core/typings';
 
-import { filterTree, mapTree } from '@arco-core/shared/utils';
+import { filterTree, mapTree } from '@qin-core/shared/utils';
 
 /**
  * 根据 routes 生成菜单列表

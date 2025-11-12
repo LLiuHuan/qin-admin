@@ -10,7 +10,7 @@ import type { ContextMenuSubTriggerProps } from 'reka-ui';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { ChevronRight } from 'lucide-vue-next';
 import { ContextMenuSubTrigger, useForwardProps } from 'reka-ui';

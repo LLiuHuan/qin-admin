@@ -9,21 +9,21 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit" />
-    <meta name="description" content="A Modern Back-end Management System" />
-    <meta name="keywords" content="Arco Admin Vue3 Vite" />
-    <meta name="author" content="Arco" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta content="webkit" name="renderer" />
+    <meta content="A Modern Back-end Management System" name="description" />
+    <meta content="Qin Admin Vue3 Vite" name="keywords" />
+    <meta content="LLiuHuan" name="author" />
     <meta
-      name="viewport"
       content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0"
+      name="viewport"
     />
     <!-- 由 vite 注入 VITE_APP_TITLE 变量，在 .env 文件内配置 -->
     <title><%= VITE_APP_TITLE %></title>
-    <link rel="icon" href="/favicon.ico" />
+    <link href="/favicon.ico" rel="icon" />
     <script>
       // 生产环境下注入百度统计
-      if (window._ARCO_DESIGN_PRO_APP_CONF_) {
+      if (window._QIN_ADMIN_APP_CONF_) {
         var _hmt = _hmt || [];
         (function () {
           var hm = document.createElement('script');
@@ -37,6 +37,6 @@
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <script src="/src/main.ts" type="module"></script>
   </body>
 </html>

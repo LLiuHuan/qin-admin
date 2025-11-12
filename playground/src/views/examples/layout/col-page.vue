@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
 
-import { ColPage } from '@arco/common-ui';
-import { IconifyIcon } from '@arco/icons';
+import { ColPage } from '@qin/common-ui';
+import { IconifyIcon } from '@qin/icons';
 
 import {
   Alert,

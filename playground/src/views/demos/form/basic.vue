@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { h } from 'vue';
 
-import { Page, useArcoDrawer } from '@arco/common-ui';
+import { Page, useQinDrawer } from '@qin/common-ui';
 
 import { Checkbox, Message } from '@arco-design/web-vue';
 
 // import { ElButton, ElCard, ElCheckbox, ElMessage } from 'element-plus';
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 import MenuAPI from '#/api/core/menu';
 
-const [Form, formApi] = useArcoForm({
+const [Form, formApi] = useQinForm({
   commonConfig: {
     // 所有表单项
     componentProps: {
@@ -157,7 +157,7 @@ const [Form, formApi] = useArcoForm({
   ],
 });
 
-const [Drawer, drawerApi] = useArcoDrawer();
+const [Drawer, drawerApi] = useQinDrawer();
 function setFormValues() {
   formApi.setValues({
     string: 'string',

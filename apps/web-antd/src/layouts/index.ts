@@ -8,6 +8,6 @@
 const BasicLayout = () => import('./basic.vue');
 const AuthPageLayout = () => import('./auth.vue');
 
-const IFrameView = () => import('@arco/layouts').then((m) => m.IFrameView);
+const IFrameView = () => import('@qin/layouts').then((m) => m.IFrameView);
 
 export { AuthPageLayout, BasicLayout, IFrameView };

@@ -8,7 +8,7 @@
 import type { Arrayable } from '@vueuse/core';
 import type { FlattenedItem } from 'reka-ui';
 
-import type { Recordable } from '@arco-core/typings';
+import type { Recordable } from '@qin-core/typings';
 
 export interface TreeProps {
   /** 单选时允许取消已有选项 */

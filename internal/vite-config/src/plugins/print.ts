@@ -9,7 +9,7 @@ import type { PluginOption } from 'vite';
 
 import type { PrintPluginOptions } from '../typing';
 
-import { colors } from '@arco/node-utils';
+import { colors } from '@qin/node-utils';
 
 export const vitePrintPlugin = (
   options: PrintPluginOptions = {},

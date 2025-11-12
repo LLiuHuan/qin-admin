@@ -2,8 +2,8 @@ import type { App, Directive, DirectiveBinding } from 'vue';
 
 import { h, render } from 'vue';
 
-import { ArcoLoading, ArcoSpinner } from '@arco-core/shadcn-ui';
-import { isString } from '@arco-core/shared/utils';
+import { QinLoading, QinSpinner } from '@qin-core/shadcn-ui';
+import { isString } from '@qin-core/shared/utils';
 
 const LOADING_INSTANCE_KEY = Symbol('loading');
 const SPINNER_INSTANCE_KEY = Symbol('spinner');
@@ -12,7 +12,7 @@ const CLASS_NAME_RELATIVE = 'spinner-parent--relative';
 
 const loadingDirective: Directive = {
   mounted(el, binding) {
-    const instance = h(ArcoLoading, getOptions(binding));
+    const instance = h(QinLoading, getOptions(binding));
     render(instance, el);
 
     el.classList.add(CLASS_NAME_RELATIVE);
@@ -58,7 +58,7 @@ function getOptions(binding: DirectiveBinding) {
 
 const spinningDirective: Directive = {
   mounted(el, binding) {
-    const instance = h(ArcoSpinner, getOptions(binding));
+    const instance = h(QinSpinner, getOptions(binding));
     render(instance, el);
 
     el.classList.add(CLASS_NAME_RELATIVE);

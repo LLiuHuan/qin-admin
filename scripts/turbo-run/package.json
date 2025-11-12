@@ -1,5 +1,5 @@
 {
-  "name": "@arco/turbo-run",
+  "name": "@qin/turbo-run",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -22,7 +22,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@arco/node-utils": "workspace:*",
+    "@qin/node-utils": "workspace:*",
     "@clack/prompts": "catalog:",
     "cac": "catalog:"
   }

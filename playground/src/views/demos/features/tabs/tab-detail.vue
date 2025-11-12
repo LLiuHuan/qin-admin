@@ -9,8 +9,8 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { Page } from '@arco/common-ui';
-import { useTabs } from '@arco/hooks';
+import { Page } from '@qin/common-ui';
+import { useTabs } from '@qin/hooks';
 
 const route = useRoute();
 

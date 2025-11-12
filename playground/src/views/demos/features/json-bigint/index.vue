@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Alert, Button, Card } from '@arco-design/web-vue';
 

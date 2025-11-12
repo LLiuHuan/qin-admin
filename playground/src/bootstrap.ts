@@ -7,23 +7,23 @@
  */
 import { createApp, watchEffect } from 'vue';
 
-import { registerAccessDirective } from '@arco/access';
+import { registerAccessDirective } from '@qin/access';
 import {
   registerLoadingDirective,
   setDefaultDrawerProps,
   setDefaultModalProps,
-} from '@arco/common-ui';
-import { preferences } from '@arco/preferences';
-import { initStores } from '@arco/stores';
-import '@arco/styles';
-import '@arco/styles/arco';
+} from '@qin/common-ui';
+import { preferences } from '@qin/preferences';
+import { initStores } from '@qin/stores';
+import '@qin/styles';
+import '@qin/styles/arco';
 
 import { useTitle } from '@vueuse/core';
 
 import { $t, setupI18n } from '#/locales';
 
 import { initComponentAdapter } from './adapter/component';
-import { initSetupArcoForm } from './adapter/form';
+import { initSetupQinForm } from './adapter/form';
 import App from './app.vue';
 import { router } from './router';
 
@@ -32,7 +32,7 @@ async function bootstrap(namespace: string) {
   await initComponentAdapter();
 
   // 初始化表单组件
-  await initSetupArcoForm();
+  await initSetupQinForm();
 
   // 设置弹窗的默认配置
   setDefaultModalProps({
@@ -61,7 +61,7 @@ async function bootstrap(namespace: string) {
   registerAccessDirective(app);
 
   // 初始化 tippy
-  const { initTippy } = await import('@arco/common-ui/es/tippy');
+  const { initTippy } = await import('@qin/common-ui/es/tippy');
   initTippy(app);
 
   // 配置路由及路由守卫
@@ -72,7 +72,7 @@ async function bootstrap(namespace: string) {
   app.use(VueQueryPlugin);
 
   // 配置Motion插件
-  const { MotionPlugin } = await import('@arco/plugins/motion');
+  const { MotionPlugin } = await import('@qin/plugins/motion');
   app.use(MotionPlugin);
 
   // 动态更新标题

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import {
   Button,
@@ -12,7 +12,7 @@ import {
   Switch,
 } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 const currentTab = ref(0);
 function onFirstSubmit(values: Record<string, any>) {
@@ -30,7 +30,7 @@ function onSecondSubmit(values: Record<string, any>) {
   });
 }
 
-const [FirstForm, firstFormApi] = useArcoForm({
+const [FirstForm, firstFormApi] = useQinForm({
   commonConfig: {
     componentProps: {
       class: 'w-full',
@@ -57,7 +57,7 @@ const [FirstForm, firstFormApi] = useArcoForm({
   },
   wrapperClass: 'grid-cols-1 md:grid-cols-1 lg:grid-cols-1',
 });
-const [SecondForm, secondFormApi] = useArcoForm({
+const [SecondForm, secondFormApi] = useQinForm({
   commonConfig: {
     componentProps: {
       class: 'w-full',

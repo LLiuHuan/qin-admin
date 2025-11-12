@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { Fullscreen, Minimize2 } from '@arco-core/icons';
+import { Fullscreen, Minimize2 } from '@qin-core/icons';
 
 const screen = defineModel<boolean>('screen');
 

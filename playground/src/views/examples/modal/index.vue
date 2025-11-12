@@ -7,8 +7,8 @@ import {
   confirm,
   Page,
   prompt,
-  useArcoModal,
-} from '@arco/common-ui';
+  useQinModal,
+} from '@qin/common-ui';
 
 import { Button, Card, Message, Space } from '@arco-design/web-vue';
 
@@ -26,41 +26,41 @@ import SharedDataDemo from './shared-data-demo.vue';
 
 defineOptions({ name: 'ModalExample' });
 
-const [BaseModal, baseModalApi] = useArcoModal({
+const [BaseModal, baseModalApi] = useQinModal({
   // 连接抽离的组件
   connectedComponent: BaseDemo,
 });
 
-const [InContentModal, inContentModalApi] = useArcoModal({
+const [InContentModal, inContentModalApi] = useQinModal({
   // 连接抽离的组件
   connectedComponent: InContentModalDemo,
 });
 
-const [AutoHeightModal, autoHeightModalApi] = useArcoModal({
+const [AutoHeightModal, autoHeightModalApi] = useQinModal({
   connectedComponent: AutoHeightDemo,
 });
 
-const [DragModal, dragModalApi] = useArcoModal({
+const [DragModal, dragModalApi] = useQinModal({
   connectedComponent: DragDemo,
 });
 
-const [DynamicModal, dynamicModalApi] = useArcoModal({
+const [DynamicModal, dynamicModalApi] = useQinModal({
   connectedComponent: DynamicDemo,
 });
 
-const [SharedDataModal, sharedModalApi] = useArcoModal({
+const [SharedDataModal, sharedModalApi] = useQinModal({
   connectedComponent: SharedDataDemo,
 });
 
-const [FormModal, formModalApi] = useArcoModal({
+const [FormModal, formModalApi] = useQinModal({
   connectedComponent: FormModalDemo,
 });
 
-const [NestedModal, nestedModalApi] = useArcoModal({
+const [NestedModal, nestedModalApi] = useQinModal({
   connectedComponent: NestedDemo,
 });
 
-const [BlurModal, blurModalApi] = useArcoModal({
+const [BlurModal, blurModalApi] = useQinModal({
   connectedComponent: BlurDemo,
 });
 

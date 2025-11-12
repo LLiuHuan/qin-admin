@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@arco/tsconfig/library.json",
+  "extends": "@qin/tsconfig/library.json",
   "compilerOptions": {
-    "types": ["@arco-core/typings/vue-router"]
+    "types": ["@qin-core/typings/vue-router"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]

@@ -1,4 +1,4 @@
-import type { Nullable } from '@arco/types';
+import type { Nullable } from '@qin/types';
 import type { EChartsOption } from 'echarts';
 
 import type { Ref } from 'vue';
@@ -7,7 +7,7 @@ import type EchartsUI from './echarts-ui.vue';
 
 import { computed, nextTick, watch } from 'vue';
 
-import { usePreferences } from '@arco/preferences';
+import { usePreferences } from '@qin/preferences';
 
 import {
   tryOnUnmounted,

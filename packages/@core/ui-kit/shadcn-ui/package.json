@@ -1,14 +1,14 @@
 {
-  "name": "@arco-core/shadcn-ui",
+  "name": "@qin-core/shadcn-ui",
   "version": "1.0.0",
   "#main": "./dist/index.mjs",
   "#module": "./dist/index.mjs",
-  "homepage": "https://github.com/LLiuHuan/arco-design-pro-vue",
-  "bugs": "https://github.com/LLiuHuan/arco-design-pro-vue/issues",
+  "homepage": "https://github.com/LLiuHuan/qin-admin",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLiuHuan/arco-design-pro-vue.git",
-    "directory": "packages/@arco-core/uikit/shadcn-ui"
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
+    "directory": "packages/@qin-core/uikit/shadcn-ui"
   },
   "license": "MIT",
   "type": "module",
@@ -40,10 +40,10 @@
     }
   },
   "dependencies": {
-    "@arco-core/composables": "workspace:*",
-    "@arco-core/icons": "workspace:*",
-    "@arco-core/shared": "workspace:*",
-    "@arco-core/typings": "workspace:*",
+    "@qin-core/composables": "workspace:*",
+    "@qin-core/icons": "workspace:*",
+    "@qin-core/shared": "workspace:*",
+    "@qin-core/typings": "workspace:*",
     "@vueuse/core": "catalog:",
     "class-variance-authority": "catalog:",
     "lucide-vue-next": "catalog:",

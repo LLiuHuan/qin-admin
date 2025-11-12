@@ -5,4 +5,4 @@
  * @LastEditTime: 2025-05-27 10:25:42
  * @LastEditors: LLiuHuan
  */
-export { default as ArcoSpineText } from './spine-text.vue';
+export { default as QinSpineText } from './spine-text.vue';

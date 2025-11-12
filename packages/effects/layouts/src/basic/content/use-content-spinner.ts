@@ -8,7 +8,7 @@
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { preferences } from '@arco/preferences';
+import { preferences } from '@qin/preferences';
 
 function useContentSpinner() {
   const spinning = ref(false);

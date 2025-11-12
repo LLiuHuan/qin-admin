@@ -2,15 +2,15 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 12:13:55
- * @LastEditTime: 2025-06-04 02:31:39
+ * @LastEditTime: 2025-08-18 10:05:54
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@arco/icons';
+import { CircleHelp } from '@qin/icons';
 
-import { ArcoTooltip, Switch } from '@arco-core/shadcn-ui';
+import { QinTooltip, Switch } from '@qin-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSwitchItem',
@@ -41,7 +41,7 @@ function handleClick() {
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <ArcoTooltip v-if="slots.tip || tip" side="bottom">
+      <QinTooltip v-if="slots.tip || tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
@@ -52,7 +52,7 @@ function handleClick() {
             </p>
           </template>
         </slot>
-      </ArcoTooltip>
+      </QinTooltip>
     </span>
     <span v-if="$slots.shortcut" class="ml-auto mr-2 text-xs opacity-60">
       <slot name="shortcut"></slot>

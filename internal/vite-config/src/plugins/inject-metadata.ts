@@ -12,7 +12,7 @@ import {
   findMonorepoRoot,
   getPackages,
   readPackageJSON,
-} from '@arco/node-utils';
+} from '@qin/node-utils';
 
 import { readWorkspaceManifest } from '@pnpm/workspace.read-manifest';
 
@@ -94,7 +94,7 @@ async function viteMetadataPlugin(
 
       return {
         define: {
-          __ARCO_DESIGN_METADATA__: JSON.stringify({
+          __QIN_DESIGN_METADATA__: JSON.stringify({
             authorEmail,
             authorName,
             authorUrl,

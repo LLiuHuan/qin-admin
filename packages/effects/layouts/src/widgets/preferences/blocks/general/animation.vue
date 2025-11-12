@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
 import SwitchItem from '../switch-item.vue';
 

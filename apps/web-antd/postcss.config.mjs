@@ -5,4 +5,4 @@
  * @LastEditTime: 2025-07-15 02:07:25
  * @LastEditors: LLiuHuan
  */
-export { default } from '@arco/uno-config/postcss';
+export { default } from '@qin/uno-config/postcss';

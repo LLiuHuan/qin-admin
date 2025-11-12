@@ -1,11 +1,11 @@
 {
-  "name": "@arco/types",
+  "name": "@qin/types",
   "version": "1.0.0",
-  "homepage": "https://github.com/LLiuHuan/arco-design-pro-vue",
-  "bugs": "https://github.com/LLiuHuan/arco-design-pro-vue/issues",
+  "homepage": "https://github.com/LLiuHuan/qin-admin",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLiuHuan/arco-design-pro-vue.git",
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
     "directory": "packages/types"
   },
   "license": "MIT",
@@ -20,7 +20,7 @@
     }
   },
   "dependencies": {
-    "@arco-core/typings": "workspace:*",
+    "@qin-core/typings": "workspace:*",
     "vue": "catalog:",
     "vue-router": "catalog:"
   }

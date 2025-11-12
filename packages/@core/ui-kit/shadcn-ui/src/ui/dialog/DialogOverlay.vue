@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 
-import { useScrollLock } from '@arco-core/composables';
+import { useScrollLock } from '@qin-core/composables';
 
 useScrollLock();
 const id = inject('DISMISSABLE_MODAL_ID');

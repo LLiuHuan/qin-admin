@@ -6,11 +6,11 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { ArcoFormProps, ExtendedFormApi } from './types';
+import type { QinFormProps, ExtendedFormApi } from './types';
 
 import { ref, watchEffect } from 'vue';
 
-import { useForwardPropsEmits } from '@arco-core/composables';
+import { useForwardPropsEmits } from '@qin-core/composables';
 
 import FormActions from './components/form-actions.vue';
 import {
@@ -22,7 +22,7 @@ import { Form } from './form-render';
 import { provideFormProps, useFormInitial } from './use-form-context';
 
 // 通过 extends 会导致热更新卡死
-interface Props extends ArcoFormProps {
+interface Props extends QinFormProps {
   formApi: ExtendedFormApi;
 }
 const props = withDefaults(defineProps<Props>(), {

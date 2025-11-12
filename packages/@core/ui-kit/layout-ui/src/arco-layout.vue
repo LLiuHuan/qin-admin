@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
 
-import type { ArcoLayoutProps } from './arco-layout';
+import type { QinLayoutProps } from './arco-layout';
 
 import { computed, ref, watch } from 'vue';
 
@@ -9,10 +9,10 @@ import {
   SCROLL_FIXED_CLASS,
   useLayoutFooterStyle,
   useLayoutHeaderStyle,
-} from '@arco-core/composables';
-import { Menu } from '@arco-core/icons';
-import { ArcoIconButton } from '@arco-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@arco-core/shared/constants';
+} from '@qin-core/composables';
+import { Menu } from '@qin-core/icons';
+import { QinIconButton } from '@qin-core/shadcn-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@qin-core/shared/constants';
 
 import { useMouse, useScroll, useThrottleFn } from '@vueuse/core';
 
@@ -25,10 +25,10 @@ import {
 } from './components';
 import { useLayout } from './hooks/use-layout';
 
-interface Props extends ArcoLayoutProps {}
+interface Props extends QinLayoutProps {}
 
 defineOptions({
-  name: 'ArcoLayout',
+  name: 'QinLayout',
 });
 
 const props = withDefaults(defineProps<Props>(), {
@@ -554,13 +554,13 @@ const idMainContent = ELEMENT_ID_MAIN_CONTENT;
           </template>
 
           <template #toggle-button>
-            <ArcoIconButton
+            <QinIconButton
               v-if="showHeaderToggleButton"
               class="my-0 mr-1 rounded-md"
               @click="handleHeaderToggle"
             >
               <Menu class="size-4" />
-            </ArcoIconButton>
+            </QinIconButton>
           </template>
           <slot name="header"></slot>
         </LayoutHeader>

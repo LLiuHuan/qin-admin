@@ -2,19 +2,19 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 11:56:18
+ * @LastEditTime: 2025-08-18 10:08:10
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
 import type { WorkbenchQuickNavItem } from '../typing';
 
 import {
-  ArcoIcon,
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '@arco-core/shadcn-ui';
+  QinIcon,
+} from '@qin-core/shadcn-ui';
 
 interface Props {
   items?: WorkbenchQuickNavItem[];
@@ -50,7 +50,7 @@ defineEmits(['click']);
           class="flex-col-center border-border group w-1/3 cursor-pointer border-r border-t py-8 hover:shadow-xl"
           @click="$emit('click', item)"
         >
-          <ArcoIcon
+          <QinIcon
             :color="item.color"
             :icon="item.icon"
             class="size-7 transition-all duration-300 group-hover:scale-125"

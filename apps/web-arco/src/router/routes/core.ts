@@ -7,8 +7,8 @@
  */
 import type { RouteRecordRaw } from 'vue-router';
 
-import { LOGIN_PATH } from '@arco/constants';
-import { preferences } from '@arco/preferences';
+import { LOGIN_PATH } from '@qin/constants';
+import { preferences } from '@qin/preferences';
 
 import { $t } from '#/locales';
 

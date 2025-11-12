@@ -5,16 +5,16 @@ import type {
   RouteRecordNormalized,
 } from 'vue-router';
 
-import type { TabDefinition } from '@arco-core/typings';
+import type { TabDefinition } from '@qin-core/typings';
 
 import { toRaw } from 'vue';
 
-import { preferences } from '@arco-core/preferences';
+import { preferences } from '@qin-core/preferences';
 import {
   openRouteInNewWindow,
   startProgress,
   stopProgress,
-} from '@arco-core/shared/utils';
+} from '@qin-core/shared/utils';
 
 import { acceptHMRUpdate, defineStore } from 'pinia';
 

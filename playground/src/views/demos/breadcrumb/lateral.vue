@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-import { Fallback } from '@arco/common-ui';
+import { Fallback } from '@qin/common-ui';
 
 import { Button } from '@arco-design/web-vue';
 

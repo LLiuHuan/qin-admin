@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Card, Message } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
-const [Form, formApi] = useArcoForm({
+const [Form, formApi] = useQinForm({
   // 提交函数
   handleSubmit: onSubmit,
   schema: [
@@ -163,7 +163,7 @@ const [Form, formApi] = useArcoForm({
   wrapperClass: 'grid-cols-1 md:grid-cols-3 lg:grid-cols-4',
 });
 
-const [SyncForm] = useArcoForm({
+const [SyncForm] = useQinForm({
   handleSubmit: onSubmit,
   schema: [
     {

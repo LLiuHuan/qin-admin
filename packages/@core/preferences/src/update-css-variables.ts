@@ -1,7 +1,7 @@
 import type { Preferences } from './types';
 
-import { generatorColorVariables } from '@arco-core/shared/color';
-import { updateCSSVariables as executeUpdateCSSVariables } from '@arco-core/shared/utils';
+import { generatorColorVariables } from '@qin-core/shared/color';
+import { updateCSSVariables as executeUpdateCSSVariables } from '@qin-core/shared/utils';
 
 import { BUILT_IN_THEME_PRESETS } from './constants';
 

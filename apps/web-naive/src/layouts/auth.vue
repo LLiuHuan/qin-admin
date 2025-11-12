@@ -8,8 +8,8 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-import { AuthPageLayout } from '@arco/layouts';
-import { preferences } from '@arco/preferences';
+import { AuthPageLayout } from '@qin/layouts';
+import { preferences } from '@qin/preferences';
 
 import { $t } from '#/locales';
 

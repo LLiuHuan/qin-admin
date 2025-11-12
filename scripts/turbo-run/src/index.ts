@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-06-04 17:40:47
  * @LastEditors: LLiuHuan
  */
-import { colors, consola } from '@arco/node-utils';
+import { colors, consola } from '@qin/node-utils';
 
 import { cac } from 'cac';
 

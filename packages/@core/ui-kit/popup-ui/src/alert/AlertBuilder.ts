@@ -1,14 +1,14 @@
 import type { Component, VNode } from 'vue';
 
-import type { Recordable } from '@arco-core/typings';
+import type { Recordable } from '@qin-core/typings';
 
 import type { AlertProps, BeforeCloseScope, PromptProps } from './alert';
 
 import { h, nextTick, ref, render } from 'vue';
 
-import { useSimpleLocale } from '@arco-core/composables';
-import { ArcoRenderContent, Input } from '@arco-core/shadcn-ui';
-import { isFunction, isString } from '@arco-core/shared/utils';
+import { useSimpleLocale } from '@qin-core/composables';
+import { Input, QinRenderContent } from '@qin-core/shadcn-ui';
+import { isFunction, isString } from '@qin-core/shared/utils';
 
 import Alert from './alert.vue';
 
@@ -16,18 +16,18 @@ const alerts = ref<Array<{ container: HTMLElement; instance: Component }>>([]);
 
 const { $t } = useSimpleLocale();
 
-export function arcoAlert(options: AlertProps): Promise<void>;
-export function arcoAlert(
+export function qinAlert(options: AlertProps): Promise<void>;
+export function qinAlert(
   message: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
-export function arcoAlert(
+export function qinAlert(
   message: string,
   title?: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
 
-export function arcoAlert(
+export function qinAlert(
   arg0: AlertProps | string,
   arg1?: Partial<AlertProps> | string,
   arg2?: Partial<AlertProps>,
@@ -116,14 +116,14 @@ export function arcoConfirm(
   };
   if (!arg1) {
     return isString(arg0)
-      ? arcoAlert(arg0, defaultProps)
-      : arcoAlert({ ...defaultProps, ...arg0 });
+      ? qinAlert(arg0, defaultProps)
+      : qinAlert({ ...defaultProps, ...arg0 });
   } else if (!arg2) {
     return isString(arg1)
-      ? arcoAlert(arg0 as string, arg1, defaultProps)
-      : arcoAlert(arg0 as string, { ...defaultProps, ...arg1 });
+      ? qinAlert(arg0 as string, arg1, defaultProps)
+      : qinAlert(arg0 as string, { ...defaultProps, ...arg1 });
   }
-  return arcoAlert(arg0 as string, arg1 as string, {
+  return qinAlert(arg0 as string, arg1 as string, {
     ...defaultProps,
     ...arg2,
   });
@@ -146,7 +146,7 @@ export async function arcoPrompt<T = any>(
   const inputComponentRef = ref<null | VNode>(null);
   const staticContents: Component[] = [];
 
-  staticContents.push(h(ArcoRenderContent, { content, renderBr: true }));
+  staticContents.push(h(QinRenderContent, { content, renderBr: true }));
 
   const modelPropName = _modelPropName || 'modelValue';
   const componentProps = { ..._componentProps };

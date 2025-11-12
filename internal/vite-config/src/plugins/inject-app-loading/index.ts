@@ -5,7 +5,7 @@ import fsp from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { readPackageJSON } from '@arco/node-utils';
+import { readPackageJSON } from '@qin/node-utils';
 
 /**
  * 用于生成将loading样式注入到项目中

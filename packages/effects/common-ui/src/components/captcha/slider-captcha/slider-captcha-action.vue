@@ -3,9 +3,9 @@ import type { CSSProperties } from 'vue';
 
 import { computed, ref, useTemplateRef } from 'vue';
 
-import { Check, ChevronsRight } from '@arco/icons';
+import { Check, ChevronsRight } from '@qin/icons';
 
-import { Slot } from '@arco-core/shadcn-ui';
+import { Slot } from '@qin-core/shadcn-ui';
 
 const props = defineProps<{
   actionStyle: CSSProperties;

@@ -7,7 +7,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from '@arco-core/shadcn-ui';
+} from '@qin-core/shadcn-ui';
 
 import Page from '../page/page.vue';
 

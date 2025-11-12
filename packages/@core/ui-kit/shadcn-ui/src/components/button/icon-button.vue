@@ -2,21 +2,21 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-05-27 10:21:46
+ * @LastEditTime: 2025-08-18 10:12:11
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
 import type { ButtonVariants } from '../../ui';
-import type { ArcoButtonProps } from './button';
+import type { QinButtonProps } from './button';
 
 import { computed, useSlots } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
-import { ArcoTooltip } from '../tooltip';
-import ArcoButton from './button.vue';
+import { QinTooltip } from '../tooltip';
+import QinButton from './button.vue';
 
-interface Props extends ArcoButtonProps {
+interface Props extends QinButtonProps {
   class?: any;
   disabled?: boolean;
   onClick?: () => void;
@@ -40,7 +40,7 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
 </script>
 
 <template>
-  <ArcoButton
+  <QinButton
     v-if="!showTooltip"
     :class="cn('rounded-full', props.class)"
     :disabled="disabled"
@@ -49,15 +49,11 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
     @click="onClick"
   >
     <slot></slot>
-  </ArcoButton>
+  </QinButton>
 
-  <ArcoTooltip
-    v-else
-    :delay-duration="tooltipDelayDuration"
-    :side="tooltipSide"
-  >
+  <QinTooltip v-else :delay-duration="tooltipDelayDuration" :side="tooltipSide">
     <template #trigger>
-      <ArcoButton
+      <QinButton
         :class="cn('rounded-full', props.class)"
         :disabled="disabled"
         :variant="variant"
@@ -65,11 +61,11 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
         @click="onClick"
       >
         <slot></slot>
-      </ArcoButton>
+      </QinButton>
     </template>
     <slot v-if="slots.tooltip" name="tooltip"> </slot>
     <template v-else>
       {{ tooltip }}
     </template>
-  </ArcoTooltip>
+  </QinTooltip>
 </template>

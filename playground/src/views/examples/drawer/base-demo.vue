@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { useArcoDrawer } from '@arco/common-ui';
+import { useQinDrawer } from '@qin/common-ui';
 
 import { Button, Message } from '@arco-design/web-vue';
 
-const [Drawer, drawerApi] = useArcoDrawer({
+const [Drawer, drawerApi] = useQinDrawer({
   onCancel() {
     drawerApi.close();
   },

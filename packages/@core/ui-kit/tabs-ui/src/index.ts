@@ -7,4 +7,4 @@
  */
 export * from './components/widgets';
 export { default as TabsView } from './tabs-view.vue';
-export type { IContextMenuItem } from '@arco-core/shadcn-ui';
+export type { IContextMenuItem } from '@qin-core/shadcn-ui';

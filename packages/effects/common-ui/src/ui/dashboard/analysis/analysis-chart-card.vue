@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Card, CardContent, CardHeader, CardTitle } from '@arco-core/shadcn-ui';
+import { Card, CardContent, CardHeader, CardTitle } from '@qin-core/shadcn-ui';
 
 interface Props {
   title: string;

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { useArcoModal } from '@arco-core/popup-ui';
+import { useQinModal } from '@qin-core/popup-ui';
 
 interface Props {
   // 轮询时间，分钟
@@ -24,7 +24,7 @@ const currentVersionTag = ref('');
 const lastVersionTag = ref('');
 const timer = ref<ReturnType<typeof setInterval>>();
 
-const [UpdateNoticeModal, modalApi] = useArcoModal({
+const [UpdateNoticeModal, modalApi] = useQinModal({
   closable: false,
   closeOnPressEscape: false,
   closeOnClickModal: false,

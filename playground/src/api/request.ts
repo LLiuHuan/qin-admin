@@ -1,18 +1,18 @@
 /**
  * 该文件可自行根据业务逻辑进行调整
  */
-import type { AxiosResponseHeaders, RequestClientOptions } from '@arco/request';
+import type { AxiosResponseHeaders, RequestClientOptions } from '@qin/request';
 
-import { useAppConfig } from '@arco/hooks';
-import { preferences } from '@arco/preferences';
+import { useAppConfig } from '@qin/hooks';
+import { preferences } from '@qin/preferences';
 import {
   authenticateResponseInterceptor,
   defaultResponseInterceptor,
   errorMessageResponseInterceptor,
   RequestClient,
-} from '@arco/request';
-import { useAccessStore } from '@arco/stores';
-import { cloneDeep } from '@arco/utils';
+} from '@qin/request';
+import { useAccessStore } from '@qin/stores';
+import { cloneDeep } from '@qin/utils';
 
 import { Message } from '@arco-design/web-vue';
 import JSONBigInt from 'json-bigint';

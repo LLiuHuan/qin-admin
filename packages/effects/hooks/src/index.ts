@@ -13,4 +13,4 @@ export * from './use-pagination';
 export * from './use-refresh';
 export * from './use-tabs';
 export * from './use-watermark';
-export * from '@arco-core/composables';
+export * from '@qin-core/composables';

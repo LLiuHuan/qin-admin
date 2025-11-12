@@ -11,13 +11,13 @@ import type {
 
 import { computed } from 'vue';
 
-import { Form } from '@arco-core/shadcn-ui';
+import { Form } from '@qin-core/shadcn-ui';
 import {
   cn,
   isFunction,
   isString,
   mergeWithArrayOverride,
-} from '@arco-core/shared/utils';
+} from '@qin-core/shared/utils';
 
 import { provideFormRenderProps } from './context';
 import { useExpandable } from './expandable';

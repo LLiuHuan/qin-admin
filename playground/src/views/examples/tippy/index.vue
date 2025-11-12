@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type { TippyProps } from '@arco/common-ui';
+import type { TippyProps } from '@qin/common-ui';
 
 import { reactive } from 'vue';
 
-import { Page, Tippy } from '@arco/common-ui';
+import { Page, Tippy } from '@qin/common-ui';
 
 import { Button, Card, Space } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 const tippyProps = reactive<TippyProps>({
   animation: 'shift-away',
@@ -38,7 +38,7 @@ function parseBoolean(value: string) {
   }
 }
 
-const [Form] = useArcoForm({
+const [Form] = useQinForm({
   handleValuesChange(values) {
     Object.assign(tippyProps, {
       ...values,

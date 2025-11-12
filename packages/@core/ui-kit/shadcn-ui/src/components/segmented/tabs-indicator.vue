@@ -10,7 +10,7 @@ import type { TabsIndicatorProps } from 'reka-ui';
 
 import { computed, reactive } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { TabsIndicator, useForwardProps } from 'reka-ui';
 

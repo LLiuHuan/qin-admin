@@ -2,13 +2,13 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-06-15 17:19:27
+ * @LastEditTime: 2025-08-18 10:12:36
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
-defineOptions({ name: 'ArcoButtonGroup' });
+defineOptions({ name: 'QinButtonGroup' });
 
 withDefaults(
   defineProps<{
@@ -23,7 +23,7 @@ withDefaults(
   <div
     :class="
       cn(
-        'adp-button-group rounded-md',
+        'qin-button-group rounded-md',
         `size-${size}`,
         gap ? 'with-gap' : 'no-gap',
         $attrs.class as string,
@@ -36,7 +36,7 @@ withDefaults(
 </template>
 
 <style lang="scss" scoped>
-.adp-button-group {
+.qin-button-group {
   display: inline-flex;
 
   &.size-large :deep(button) {

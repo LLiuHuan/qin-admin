@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useArcoDrawer } from '@arco/common-ui';
+import { useQinDrawer } from '@qin/common-ui';
 
 import { Input, Message } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 const value = ref('');
 
-const [Form] = useArcoForm({
+const [Form] = useQinForm({
   schema: [
     {
       component: 'Input',
@@ -24,7 +24,7 @@ const [Form] = useArcoForm({
   showDefaultActions: false,
 });
 
-const [Drawer, drawerApi] = useArcoDrawer({
+const [Drawer, drawerApi] = useQinDrawer({
   destroyOnClose: false,
   onCancel() {
     drawerApi.close();

@@ -5,4 +5,4 @@
  * @LastEditTime: 2025-05-22 15:34:01
  * @LastEditors: LLiuHuan
  */
-export { default } from '@arco/commitlint-config';
+export { default } from '@qin/commitlint-config';

@@ -5,17 +5,17 @@ import type { FormSchema, MaybeComponentProps } from '../types';
 
 import { computed, nextTick, onUnmounted, useTemplateRef, watch } from 'vue';
 
-import { CircleAlert } from '@arco-core/icons';
+import { CircleAlert } from '@qin-core/icons';
 import {
-  ArcoRenderContent,
-  ArcoTooltip,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormMessage,
-} from '@arco-core/shadcn-ui';
-import { cn, isFunction, isObject, isString } from '@arco-core/shared/utils';
+  QinRenderContent,
+  QinTooltip,
+} from '@qin-core/shadcn-ui';
+import { cn, isFunction, isObject, isString } from '@qin-core/shared/utils';
 
 import { toTypedSchema } from '@vee-validate/zod';
 import { useFieldError, useFormValues } from 'vee-validate';
@@ -318,7 +318,7 @@ onUnmounted(() => {
         :style="labelStyle"
       >
         <template v-if="label">
-          <ArcoRenderContent :content="label" />
+          <QinRenderContent :content="label" />
         </template>
       </FormLabel>
       <div class="flex-auto overflow-hidden p-[1px]">
@@ -347,14 +347,14 @@ onUnmounted(() => {
                   :key="name"
                   #[name]="renderSlotProps"
                 >
-                  <ArcoRenderContent
+                  <QinRenderContent
                     :content="customContentRender[name]"
                     v-bind="{ ...renderSlotProps, formContext: slotProps }"
                   />
                 </template>
                 <!-- <slot></slot> -->
               </component>
-              <ArcoTooltip
+              <QinTooltip
                 v-if="compact && isInValid"
                 :delay-duration="300"
                 side="left"
@@ -371,15 +371,15 @@ onUnmounted(() => {
                   </slot>
                 </template>
                 <FormMessage />
-              </ArcoTooltip>
+              </QinTooltip>
             </slot>
           </FormControl>
           <!-- 自定义后缀 -->
           <div v-if="suffix" class="ml-1">
-            <ArcoRenderContent :content="suffix" />
+            <QinRenderContent :content="suffix" />
           </div>
           <FormDescription v-if="description" class="ml-1">
-            <ArcoRenderContent :content="description" />
+            <QinRenderContent :content="description" />
           </FormDescription>
         </div>
 

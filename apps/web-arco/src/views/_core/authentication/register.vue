@@ -2,26 +2,26 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 15:35:10
- * @LastEditTime: 2025-05-27 15:53:36
+ * @LastEditTime: 2025-08-18 10:16:44
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { ArcoFormSchema } from '@arco/common-ui';
-import type { Recordable } from '@arco/types';
+import type { QinFormSchema } from '@qin/common-ui';
+import type { Recordable } from '@qin/types';
 
 import { computed, h, ref } from 'vue';
 
-import { AuthenticationRegister, z } from '@arco/common-ui';
-import { $t } from '@arco/locales';
+import { AuthenticationRegister, z } from '@qin/common-ui';
+import { $t } from '@qin/locales';
 
 defineOptions({ name: 'Register' });
 
 const loading = ref(false);
 
-const formSchema = computed((): ArcoFormSchema[] => {
+const formSchema = computed((): QinFormSchema[] => {
   return [
     {
-      component: 'ArcoInput',
+      component: 'QinInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
@@ -30,7 +30,7 @@ const formSchema = computed((): ArcoFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'ArcoInputPassword',
+      component: 'QinInputPassword',
       componentProps: {
         passwordStrength: true,
         placeholder: $t('authentication.password'),
@@ -45,7 +45,7 @@ const formSchema = computed((): ArcoFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
     },
     {
-      component: 'ArcoInputPassword',
+      component: 'QinInputPassword',
       componentProps: {
         placeholder: $t('authentication.confirmPassword'),
       },
@@ -65,7 +65,7 @@ const formSchema = computed((): ArcoFormSchema[] => {
       label: $t('authentication.confirmPassword'),
     },
     {
-      component: 'ArcoCheckbox',
+      component: 'QinCheckbox',
       fieldName: 'agreePolicy',
       renderComponentContent: () => ({
         default: () =>
@@ -74,7 +74,7 @@ const formSchema = computed((): ArcoFormSchema[] => {
             h(
               'a',
               {
-                class: 'adp-link ml-1 ',
+                class: 'qin-link ml-1 ',
                 href: '',
               },
               `${$t('authentication.privacyPolicy')} & ${$t('authentication.terms')}`,

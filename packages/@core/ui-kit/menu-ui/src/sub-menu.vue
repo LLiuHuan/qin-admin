@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@arco-core/typings';
+import type { MenuRecordRaw } from '@qin-core/typings';
 
 import { computed } from 'vue';
 

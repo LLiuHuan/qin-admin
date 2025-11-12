@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { computed, ref, watchEffect } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Card, Radio, RadioGroup } from '@arco-design/web-vue';
 

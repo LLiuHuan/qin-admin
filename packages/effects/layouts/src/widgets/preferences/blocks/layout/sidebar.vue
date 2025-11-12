@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { LayoutType } from '@arco/types';
+import type { LayoutType } from '@qin/types';
 
 import { onMounted } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
 import CheckboxItem from '../checkbox-item.vue';
 import NumberFieldItem from '../number-field-item.vue';

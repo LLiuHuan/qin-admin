@@ -2,10 +2,10 @@
  * @Description: 导出全部svg图标
  * @Author: LLiuHuan
  * @Date: 2025-05-22 17:22:12
- * @LastEditTime: 2025-07-15 09:52:41
+ * @LastEditTime: 2025-08-18 10:05:03
  * @LastEditors: LLiuHuan
  */
-import { createIconifyIcon } from '@arco-core/icons';
+import { createIconifyIcon } from '@qin-core/icons';
 
 import './load.js';
 
@@ -18,11 +18,10 @@ const SvgCardIcon = createIconifyIcon('svg:card');
 const SvgBellIcon = createIconifyIcon('svg:bell');
 const SvgCakeIcon = createIconifyIcon('svg:cake');
 const SvgAntdvLogoIcon = createIconifyIcon('svg:antdv-logo');
-const SvgArcoLogoIcon = createIconifyIcon('svg:arco-logo');
+const SvgQinLogoIcon = createIconifyIcon('svg:arco-logo');
 
 export {
   SvgAntdvLogoIcon,
-  SvgArcoLogoIcon,
   SvgAvatar1Icon,
   SvgAvatar2Icon,
   SvgAvatar3Icon,
@@ -31,4 +30,5 @@ export {
   SvgCakeIcon,
   SvgCardIcon,
   SvgDownloadIcon,
+  SvgQinLogoIcon,
 };

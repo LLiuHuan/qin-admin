@@ -1,4 +1,4 @@
-import type { ClassType } from '@arco/types';
+import type { ClassType } from '@qin/types';
 
 import type { CSSProperties } from 'vue';
 

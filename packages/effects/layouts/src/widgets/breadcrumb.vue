@@ -1,14 +1,21 @@
+<!--
+ * @Description: 
+ * @Author: LLiuHuan
+ * @Date: 2025-07-15 23:01:48
+ * @LastEditTime: 2025-08-18 10:07:20
+ * @LastEditors: LLiuHuan
+-->
 <script lang="ts" setup>
-import type { BreadcrumbStyleType } from '@arco/types';
+import type { BreadcrumbStyleType } from '@qin/types';
 
-import type { IBreadcrumb } from '@arco-core/shadcn-ui';
+import type { IBreadcrumb } from '@qin-core/shadcn-ui';
 
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { ArcoBreadcrumbView } from '@arco-core/shadcn-ui';
+import { QinBreadcrumbView } from '@qin-core/shadcn-ui';
 
 interface Props {
   hideWhenOnlyOne?: boolean;
@@ -64,7 +71,7 @@ function handleSelect(path: string) {
 }
 </script>
 <template>
-  <ArcoBreadcrumbView
+  <QinBreadcrumbView
     :breadcrumbs="breadcrumbs"
     :show-icon="showIcon"
     :style-type="type"

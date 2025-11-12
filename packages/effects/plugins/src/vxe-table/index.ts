@@ -5,11 +5,11 @@
  * @LastEditTime: 2025-05-27 15:06:38
  * @LastEditors: LLiuHuan
  */
-export { setupArcoVxeTable } from './init';
+export { setupQinVxeTable } from './init';
 export type { VxeTableGridOptions } from './types';
 export * from './use-vxe-grid';
 
-export { default as ArcoVxeGrid } from './use-vxe-grid.vue';
+export { default as QinVxeGrid } from './use-vxe-grid.vue';
 export type {
   VxeGridListeners,
   VxeGridProps,

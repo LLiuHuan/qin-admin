@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, nextTick, onMounted, watch } from 'vue';
 
-import { ArcoButton } from '@arco-core/shadcn-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 interface TransitionParams {
   distance: number;
@@ -127,7 +127,7 @@ watch(
 </script>
 
 <template>
-  <ArcoButton
+  <QinButton
     :aria-label="theme"
     :class="[`is-${theme}`]"
     aria-live="polite"
@@ -164,7 +164,7 @@ watch(
         <line x1="18.36" x2="19.78" y1="5.64" y2="4.22" />
       </g>
     </svg>
-  </ArcoButton>
+  </QinButton>
 </template>
 
 <style lang="scss" scoped>

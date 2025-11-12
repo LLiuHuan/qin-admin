@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { Page, SliderTranslateCaptcha } from '@arco/common-ui';
+import { Page, SliderTranslateCaptcha } from '@qin/common-ui';
 
 import { Card, Message } from '@arco-design/web-vue';
 

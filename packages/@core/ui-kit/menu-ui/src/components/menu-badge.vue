@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { MenuRecordBadgeRaw } from '@arco-core/typings';
+import type { MenuRecordBadgeRaw } from '@qin-core/typings';
 
 import { computed } from 'vue';
 
-import { isValidColor } from '@arco-core/shared/color';
+import { isValidColor } from '@qin-core/shared/color';
 
 import BadgeDot from './menu-badge-dot.vue';
 

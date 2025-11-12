@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-06-20 23:35:14
- * @LastEditTime: 2025-06-22 04:43:34
+ * @LastEditTime: 2025-08-18 10:15:25
  * @LastEditors: LLiuHuan
 -->
 
@@ -23,4 +23,4 @@ features:
 
 ---
 
-<ArcoContributors />
+<QinContributors />

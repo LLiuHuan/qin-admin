@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@arco/types';
+import type { MenuRecordRaw } from '@qin/types';
 
 import type { SetupContext } from 'vue';
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
@@ -7,18 +7,18 @@ import type { RouteLocationNormalizedLoaded } from 'vue-router';
 import { computed, onMounted, useSlots, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { useRefresh } from '@arco/hooks';
-import { $t, i18n } from '@arco/locales';
+import { useRefresh } from '@qin/hooks';
+import { $t, i18n } from '@qin/locales';
 import {
   preferences,
   updatePreferences,
   usePreferences,
-} from '@arco/preferences';
-import { useAccessStore } from '@arco/stores';
-import { cloneDeep, mapTree } from '@arco/utils';
+} from '@qin/preferences';
+import { useAccessStore } from '@qin/stores';
+import { cloneDeep, mapTree } from '@qin/utils';
 
-import { ArcoAdminLayout } from '@arco-core/layout-ui';
-import { ArcoBackTop, ArcoLogo } from '@arco-core/shadcn-ui';
+import { QinAdminLayout } from '@qin-core/layout-ui';
+import { QinBackTop, QinLogo } from '@qin-core/shadcn-ui';
 
 import { Breadcrumb, CheckUpdates, Preferences } from '../widgets';
 import { LayoutContent, LayoutContentSpinner } from './content';
@@ -200,7 +200,7 @@ const headerSlots = computed(() => {
 </script>
 
 <template>
-  <ArcoAdminLayout
+  <QinAdminLayout
     v-model:sidebar-extra-visible="sidebarExtraVisible"
     :content-compact="preferences.app.contentCompact"
     :content-compact-width="preferences.app.contentCompactWidth"
@@ -255,7 +255,7 @@ const headerSlots = computed(() => {
   >
     <!-- logo -->
     <template #logo>
-      <ArcoLogo
+      <QinLogo
         v-if="preferences.logo.enable"
         :fit="preferences.logo.fit"
         :class="logoClass"
@@ -268,7 +268,7 @@ const headerSlots = computed(() => {
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </ArcoLogo>
+      </QinLogo>
     </template>
     <!-- 头部区域 -->
     <template #header>
@@ -346,7 +346,7 @@ const headerSlots = computed(() => {
       />
     </template>
     <template #side-extra-title>
-      <ArcoLogo
+      <QinLogo
         v-if="preferences.logo.enable"
         :fit="preferences.logo.fit"
         :text="preferences.app.name"
@@ -355,7 +355,7 @@ const headerSlots = computed(() => {
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </ArcoLogo>
+      </QinLogo>
     </template>
 
     <template #tabbar>
@@ -402,7 +402,7 @@ const headerSlots = computed(() => {
           @clear-preferences-and-logout="clearPreferencesAndLogout"
         />
       </template>
-      <ArcoBackTop />
+      <QinBackTop />
     </template>
-  </ArcoAdminLayout>
+  </QinAdminLayout>
 </template>

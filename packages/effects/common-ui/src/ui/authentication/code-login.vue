@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 
-import type { ArcoFormSchema } from '@arco-core/form-ui';
+import type { QinFormSchema } from '@qin-core/form-ui';
 
 import { computed, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { useArcoForm } from '@arco-core/form-ui';
-import { ArcoButton } from '@arco-core/shadcn-ui';
+import { useQinForm } from '@qin-core/form-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 
 interface Props {
-  formSchema: ArcoFormSchema[];
+  formSchema: QinFormSchema[];
   /**
    * @zh_CN 是否处于加载处理状态
    */
@@ -55,7 +55,7 @@ const emit = defineEmits<{
 
 const router = useRouter();
 
-const [Form, formApi] = useArcoForm(
+const [Form, formApi] = useQinForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -98,7 +98,7 @@ defineExpose({
       </template>
     </Title>
     <Form />
-    <ArcoButton
+    <QinButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -109,9 +109,9 @@ defineExpose({
       <slot name="submitButtonText">
         {{ submitButtonText || $t('common.login') }}
       </slot>
-    </ArcoButton>
-    <ArcoButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
+    </QinButton>
+    <QinButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
       {{ $t('common.back') }}
-    </ArcoButton>
+    </QinButton>
   </div>
 </template>

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 12:01:07
+ * @LastEditTime: 2025-08-18 10:09:22
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
@@ -10,7 +10,7 @@ import type { CSSProperties } from 'vue';
 
 import { computed, useTemplateRef } from 'vue';
 
-import { ArcoSpineText } from '@arco-core/shadcn-ui';
+import { QinSpineText } from '@qin-core/shadcn-ui';
 
 const props = defineProps<{
   contentStyle: CSSProperties;
@@ -47,9 +47,9 @@ defineExpose({
     class="absolute top-0 flex size-full select-none items-center justify-center text-xs"
   >
     <slot name="text">
-      <ArcoSpineText class="flex h-full items-center">
+      <QinSpineText class="flex h-full items-center">
         {{ isPassing ? successText : text }}
-      </ArcoSpineText>
+      </QinSpineText>
     </slot>
   </div>
 </template>

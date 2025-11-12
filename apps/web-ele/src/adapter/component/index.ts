@@ -3,8 +3,8 @@
  * 可用于 arco-form、arco-modal、arco-drawer 等组件使用,
  */
 
-import type { BaseFormComponentType } from '@arco/common-ui';
-import type { Recordable } from '@arco/types';
+import type { BaseFormComponentType } from '@qin/common-ui';
+import type { Recordable } from '@qin/types';
 
 import type { Component } from 'vue';
 
@@ -16,8 +16,8 @@ import {
   ref,
 } from 'vue';
 
-import { ApiComponent, globalShareState, IconPicker } from '@arco/common-ui';
-import { $t } from '@arco/locales';
+import { ApiComponent, globalShareState, IconPicker } from '@qin/common-ui';
+import { $t } from '@qin/locales';
 
 import { ElNotification } from 'element-plus';
 

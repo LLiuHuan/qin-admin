@@ -7,7 +7,7 @@
  */
 import type { Component } from 'vue';
 
-import type { BreadcrumbStyleType } from '@arco-core/typings';
+import type { BreadcrumbStyleType } from '@qin-core/typings';
 
 export interface IBreadcrumb {
   icon?: Component | string;

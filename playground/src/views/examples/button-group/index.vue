@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 
 import { reactive, ref } from 'vue';
 
 import {
-  ArcoButton,
-  ArcoButtonGroup,
-  ArcoCheckButtonGroup,
   Page,
-} from '@arco/common-ui';
-import { LoaderCircle, Square, SquareCheckBig } from '@arco/icons';
+  QinButton,
+  QinButtonGroup,
+  QinCheckButtonGroup,
+} from '@qin/common-ui';
+import { LoaderCircle, Square, SquareCheckBig } from '@qin/icons';
 
 import { Button, Card, Message } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 const radioValue = ref<string | undefined>('a');
 const checkValue = ref(['a', 'b']);
@@ -55,7 +55,7 @@ const compProps = reactive({
   allowClear: false,
 } as Recordable<any>);
 
-const [Form] = useArcoForm({
+const [Form] = useQinForm({
   handleValuesChange(values) {
     Object.keys(values).forEach((k) => {
       if (k === 'beforeChange') {
@@ -142,8 +142,8 @@ function onBtnClick(value: any) {
 </script>
 <template>
   <Page
-    title="ArcoButtonGroup 按钮组"
-    description="ArcoButtonGroup是一个按钮容器，用于包裹一组按钮，协调整体样式。ArcoCheckButtonGroup则可以作为一个表单组件，提供单选或多选功能"
+    title="QinButtonGroup 按钮组"
+    description="QinButtonGroup是一个按钮容器，用于包裹一组按钮，协调整体样式。QinCheckButtonGroup则可以作为一个表单组件，提供单选或多选功能"
   >
     <Card title="基本用法">
       <template #extra>
@@ -151,30 +151,30 @@ function onBtnClick(value: any) {
       </template>
       <p class="mt-4">按钮组：</p>
       <div class="mt-2 flex flex-col gap-2">
-        <ArcoButtonGroup v-bind="compProps" border>
-          <ArcoButton
+        <QinButtonGroup v-bind="compProps" border>
+          <QinButton
             v-for="btn in options"
             :key="btn.value"
             variant="link"
             @click="onBtnClick(btn.value)"
           >
             {{ btn.label }}
-          </ArcoButton>
-        </ArcoButtonGroup>
-        <ArcoButtonGroup v-bind="compProps" border>
-          <ArcoButton
+          </QinButton>
+        </QinButtonGroup>
+        <QinButtonGroup v-bind="compProps" border>
+          <QinButton
             v-for="btn in options"
             :key="btn.value"
             variant="outline"
             @click="onBtnClick(btn.value)"
           >
             {{ btn.label }}
-          </ArcoButton>
-        </ArcoButtonGroup>
+          </QinButton>
+        </QinButtonGroup>
       </div>
       <p class="mt-4">单选：{{ radioValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <ArcoCheckButtonGroup
+        <QinCheckButtonGroup
           v-model="radioValue"
           :options="options"
           v-bind="compProps"
@@ -182,7 +182,7 @@ function onBtnClick(value: any) {
       </div>
       <p class="mt-4">单选插槽：{{ radioValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <ArcoCheckButtonGroup
+        <QinCheckButtonGroup
           v-model="radioValue"
           :options="options"
           v-bind="compProps"
@@ -194,11 +194,11 @@ function onBtnClick(value: any) {
               <span v-if="data.num" class="white ml-2">{{ data.num }}</span>
             </div>
           </template>
-        </ArcoCheckButtonGroup>
+        </QinCheckButtonGroup>
       </div>
       <p class="mt-4">多选{{ checkValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <ArcoCheckButtonGroup
+        <QinCheckButtonGroup
           v-model="checkValue"
           multiple
           :options="options"
@@ -207,7 +207,7 @@ function onBtnClick(value: any) {
       </div>
       <p class="mt-4">自定义图标{{ checkValue }}</p>
       <div class="mt-2 flex flex-col gap-2">
-        <ArcoCheckButtonGroup
+        <QinCheckButtonGroup
           v-model="checkValue"
           multiple
           :options="options"
@@ -218,7 +218,7 @@ function onBtnClick(value: any) {
             <SquareCheckBig v-else-if="checked" />
             <Square v-else />
           </template>
-        </ArcoCheckButtonGroup>
+        </QinCheckButtonGroup>
       </div>
     </Card>
 

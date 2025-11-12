@@ -2,7 +2,7 @@ import type { AxiosInstance, AxiosResponse } from 'axios';
 
 import type { RequestClientConfig, RequestClientOptions } from './types';
 
-import { bindMethods, isString, merge } from '@arco/utils';
+import { bindMethods, isString, merge } from '@qin/utils';
 
 import axios from 'axios';
 import qs from 'qs';

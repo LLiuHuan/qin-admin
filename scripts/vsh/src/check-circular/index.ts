@@ -2,7 +2,7 @@ import type { CAC } from 'cac';
 
 import { extname } from 'node:path';
 
-import { getStagedFiles } from '@arco/node-utils';
+import { getStagedFiles } from '@qin/node-utils';
 
 import { circularDepsDetect } from 'circular-dependency-scanner';
 

@@ -1,7 +1,7 @@
 import { reactive, watch } from 'vue';
 
-import { preferences, usePreferences } from '@arco/preferences';
-import { convertToRgb, updateCSSVariables } from '@arco/utils';
+import { preferences, usePreferences } from '@qin/preferences';
+import { convertToRgb, updateCSSVariables } from '@qin/utils';
 
 /**
  * 用于适配各个框架的设计系统
@@ -320,7 +320,7 @@ export function useElementPlusDesignTokens() {
   );
 }
 
-export function useArcoDesignTokens() {
+export function useQinDesignTokens() {
   const { isDark } = usePreferences();
   const rootStyles = getComputedStyle(document.documentElement);
 

@@ -1,7 +1,7 @@
 import type { DrawerApiOptions, DrawerState } from './drawer';
 
-import { Store } from '@arco-core/shared/store';
-import { bindMethods, isFunction } from '@arco-core/shared/utils';
+import { Store } from '@qin-core/shared/store';
+import { bindMethods, isFunction } from '@qin-core/shared/utils';
 
 export class DrawerApi {
   // 共享数据

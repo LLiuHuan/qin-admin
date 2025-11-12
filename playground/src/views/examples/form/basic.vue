@@ -3,13 +3,13 @@ import type { FileItem } from '@arco-design/web-vue/es';
 
 import { h, ref, toRaw } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Card, Message, Spin, Tag } from '@arco-design/web-vue';
 import { useDebounceFn } from '@vueuse/core';
 import dayjs from 'dayjs';
 
-import { useArcoForm, z } from '#/adapter/form';
+import { useQinForm, z } from '#/adapter/form';
 import MenuAPI from '#/api/core/menu';
 import DocButton from '#/components/DocButton/index.vue';
 // import { upload_file } from '#/api/examples/upload';
@@ -32,7 +32,7 @@ function fetchRemoteOptions({ keyword = '选项' }: Record<string, any>) {
   });
 }
 
-const [BaseForm, baseFormApi] = useArcoForm({
+const [BaseForm, baseFormApi] = useQinForm({
   // 所有表单项共用，可单独在表单内覆盖
   commonConfig: {
     // 在label后显示一个冒号

@@ -5,8 +5,8 @@ import type { PageProps } from './types';
 
 import { computed, nextTick, onMounted, ref, useTemplateRef } from 'vue';
 
-import { CSS_VARIABLE_LAYOUT_CONTENT_HEIGHT } from '@arco-core/shared/constants';
-import { cn } from '@arco-core/shared/utils';
+import { CSS_VARIABLE_LAYOUT_CONTENT_HEIGHT } from '@qin-core/shared/constants';
+import { cn } from '@qin-core/shared/utils';
 
 defineOptions({
   name: 'Page',

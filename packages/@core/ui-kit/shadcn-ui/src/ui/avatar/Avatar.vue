@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import type { AvatarVariants } from './avatar';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { AvatarRoot } from 'reka-ui';
 

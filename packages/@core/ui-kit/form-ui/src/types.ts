@@ -3,21 +3,21 @@ import type { ZodTypeAny } from 'zod';
 
 import type { Component, HtmlHTMLAttributes, Ref } from 'vue';
 
-import type { ArcoButtonProps } from '@arco-core/shadcn-ui';
-import type { ClassType, MaybeComputedRef } from '@arco-core/typings';
+import type { QinButtonProps } from '@qin-core/shadcn-ui';
+import type { ClassType, MaybeComputedRef } from '@qin-core/typings';
 
 import type { FormApi } from './form-api';
 
 export type FormLayout = 'horizontal' | 'vertical';
 
 export type BaseFormComponentType =
-  | 'ArcoCheckbox'
-  | 'ArcoInput'
-  | 'ArcoInputPassword'
-  | 'ArcoPinInput'
-  | 'ArcoSelect'
   | 'DefaultButton'
   | 'PrimaryButton'
+  | 'QinCheckbox'
+  | 'QinInput'
+  | 'QinInputPassword'
+  | 'QinPinInput'
+  | 'QinSelect'
   | (Record<never, never> & string);
 
 type Breakpoints = '2xl:' | '3xl:' | '' | 'lg:' | 'md:' | 'sm:' | 'xl:';
@@ -338,13 +338,13 @@ export interface FormRenderProps<
   wrapperClass?: WrapperClassType;
 }
 
-export interface ActionButtonOptions extends ArcoButtonProps {
+export interface ActionButtonOptions extends QinButtonProps {
   [key: string]: any;
   content?: MaybeComputedRef<string>;
   show?: boolean;
 }
 
-export interface ArcoFormProps<
+export interface QinFormProps<
   T extends BaseFormComponentType = BaseFormComponentType,
 > extends Omit<
     FormRenderProps<T>,
@@ -427,12 +427,12 @@ export interface ArcoFormProps<
 }
 
 export type ExtendedFormApi = FormApi & {
-  useStore: <T = NoInfer<ArcoFormProps>>(
-    selector?: (state: NoInfer<ArcoFormProps>) => T,
+  useStore: <T = NoInfer<QinFormProps>>(
+    selector?: (state: NoInfer<QinFormProps>) => T,
   ) => Readonly<Ref<T>>;
 };
 
-export interface ArcoFormAdapterOptions<
+export interface QinFormAdapterOptions<
   T extends BaseFormComponentType = BaseFormComponentType,
 > {
   config?: {

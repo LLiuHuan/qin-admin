@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
 
-import { LockKeyhole } from '@arco/icons';
-import { $t, useI18n } from '@arco/locales';
-import { storeToRefs, useAccessStore } from '@arco/stores';
+import { LockKeyhole } from '@qin/icons';
+import { $t, useI18n } from '@qin/locales';
+import { storeToRefs, useAccessStore } from '@qin/stores';
 
-import { useScrollLock } from '@arco-core/composables';
-import { useArcoForm, z } from '@arco-core/form-ui';
-import { ArcoAvatar, ArcoButton } from '@arco-core/shadcn-ui';
+import { useScrollLock } from '@qin-core/composables';
+import { useQinForm, z } from '@qin-core/form-ui';
+import { QinAvatar, QinButton } from '@qin-core/shadcn-ui';
 
 import { useDateFormat, useNow } from '@vueuse/core';
 
@@ -37,7 +37,7 @@ const date = useDateFormat(now, 'YYYY-MM-DD dddd', { locales: locale.value });
 const showUnlockForm = ref(false);
 const { lockScreenPassword } = storeToRefs(accessStore);
 
-const [Form, { form, validate }] = useArcoForm(
+const [Form, { form, validate }] = useQinForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -45,7 +45,7 @@ const [Form, { form, validate }] = useArcoForm(
     },
     schema: computed(() => [
       {
-        component: 'ArcoInputPassword' as const,
+        component: 'QinInputPassword' as const,
         componentProps: {
           placeholder: $t('ui.widgets.lockScreen.placeholder'),
         },
@@ -122,28 +122,28 @@ useScrollLock();
         @keydown.enter.prevent="handleSubmit"
       >
         <div class="flex-col-center mb-10 w-[90%] max-w-[300px] px-4">
-          <ArcoAvatar :src="avatar" class="enter-x mb-6 size-20" />
+          <QinAvatar :src="avatar" class="enter-x mb-6 size-20" />
 
           <div class="enter-x mb-2 w-full items-center">
             <Form />
           </div>
-          <ArcoButton class="enter-x w-full" @click="handleSubmit">
+          <QinButton class="enter-x w-full" @click="handleSubmit">
             {{ $t('ui.widgets.lockScreen.entry') }}
-          </ArcoButton>
-          <ArcoButton
+          </QinButton>
+          <QinButton
             class="enter-x my-2 w-full"
             variant="ghost"
             @click="$emit('toLogin')"
           >
             {{ $t('ui.widgets.lockScreen.backToLogin') }}
-          </ArcoButton>
-          <ArcoButton
+          </QinButton>
+          <QinButton
             class="enter-x mr-2 w-full"
             variant="ghost"
             @click="toggleUnlockForm"
           >
             {{ $t('common.back') }}
-          </ArcoButton>
+          </QinButton>
         </div>
       </div>
     </transition>

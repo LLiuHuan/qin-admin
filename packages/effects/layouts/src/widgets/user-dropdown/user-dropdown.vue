@@ -1,21 +1,19 @@
 <script setup lang="ts">
-import type { AnyFunction } from '@arco/types';
+import type { AnyFunction } from '@qin/types';
 
 import type { Component } from 'vue';
 
 import { computed, useTemplateRef, watch } from 'vue';
 
-import { useHoverToggle } from '@arco/hooks';
-import { LockKeyhole, LogOut } from '@arco/icons';
-import { $t } from '@arco/locales';
-import { preferences, usePreferences } from '@arco/preferences';
-import { useAccessStore } from '@arco/stores';
-import { isWindowsOs } from '@arco/utils';
+import { useHoverToggle } from '@qin/hooks';
+import { LockKeyhole, LogOut } from '@qin/icons';
+import { $t } from '@qin/locales';
+import { preferences, usePreferences } from '@qin/preferences';
+import { useAccessStore } from '@qin/stores';
+import { isWindowsOs } from '@qin/utils';
 
-import { useArcoModal } from '@arco-core/popup-ui';
+import { useQinModal } from '@qin-core/popup-ui';
 import {
-  ArcoAvatar,
-  ArcoIcon,
   Badge,
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +22,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@arco-core/shadcn-ui';
+  QinAvatar,
+  QinIcon,
+} from '@qin-core/shadcn-ui';
 
 import { useMagicKeys, whenever } from '@vueuse/core';
 
@@ -87,10 +87,10 @@ const emit = defineEmits<{ logout: [] }>();
 const { globalLockScreenShortcutKey, globalLogoutShortcutKey } =
   usePreferences();
 const accessStore = useAccessStore();
-const [LockModal, lockModalApi] = useArcoModal({
+const [LockModal, lockModalApi] = useQinModal({
   connectedComponent: LockScreenModal,
 });
-const [LogoutModal, logoutModalApi] = useArcoModal({
+const [LogoutModal, logoutModalApi] = useQinModal({
   onConfirm() {
     handleSubmitLogout();
   },
@@ -192,14 +192,14 @@ if (enableShortcutKey.value) {
     <DropdownMenuTrigger ref="refTrigger" :disabled="props.trigger === 'hover'">
       <div class="hover:bg-accent ml-1 mr-2 cursor-pointer rounded-full p-1.5">
         <div class="hover:text-accent-foreground flex-center">
-          <ArcoAvatar :alt="text" :src="avatar" class="size-8" dot />
+          <QinAvatar :alt="text" :src="avatar" class="size-8" dot />
         </div>
       </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="mr-2 min-w-[240px] p-0 pb-1">
       <div ref="refContent">
         <DropdownMenuLabel class="flex items-center p-3">
-          <ArcoAvatar
+          <QinAvatar
             :alt="text"
             :src="avatar"
             class="size-12"
@@ -230,7 +230,7 @@ if (enableShortcutKey.value) {
           class="mx-1 flex cursor-pointer items-center rounded-sm py-1 leading-8"
           @click="menu.handler"
         >
-          <ArcoIcon :icon="menu.icon" class="mr-2 size-4" />
+          <QinIcon :icon="menu.icon" class="mr-2 size-4" />
           {{ menu.text }}
         </DropdownMenuItem>
         <DropdownMenuSeparator />

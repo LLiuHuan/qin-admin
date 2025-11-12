@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-22 17:09:28
  * @LastEditors: LLiuHuan
  */
-import type { BuiltinThemeType } from '@arco-core/typings';
+import type { BuiltinThemeType } from '@qin-core/typings';
 
 interface BuiltinThemePreset {
   color: string;

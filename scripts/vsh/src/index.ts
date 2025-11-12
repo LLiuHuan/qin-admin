@@ -1,4 +1,4 @@
-import { colors, consola } from '@arco/node-utils';
+import { colors, consola } from '@qin/node-utils';
 
 import { cac } from 'cac';
 

@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Recordable } from '@arco-core/typings';
+import type { Recordable } from '@qin-core/typings';
 
-import type { ArcoFormProps, ExtendedFormApi } from './types';
+import type { QinFormProps, ExtendedFormApi } from './types';
 
 // import { toRaw, watch } from 'vue';
 import { nextTick, onMounted, watch } from 'vue';
 
-import { useForwardPriorityValues } from '@arco-core/composables';
-import { cloneDeep, get, isEqual, set } from '@arco-core/shared/utils';
+import { useForwardPriorityValues } from '@qin-core/composables';
+import { cloneDeep, get, isEqual, set } from '@qin-core/shared/utils';
 
 import { useDebounceFn } from '@vueuse/core';
 
@@ -24,7 +24,7 @@ import {
   useFormInitial,
 } from './use-form-context';
 // 通过 extends 会导致热更新卡死，所以重复写了一遍
-interface Props extends ArcoFormProps {
+interface Props extends QinFormProps {
   formApi: ExtendedFormApi;
 }
 

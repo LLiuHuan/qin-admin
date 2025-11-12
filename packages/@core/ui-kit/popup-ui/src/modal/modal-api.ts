@@ -1,7 +1,7 @@
 import type { ModalApiOptions, ModalState } from './modal';
 
-import { Store } from '@arco-core/shared/store';
-import { bindMethods, isFunction } from '@arco-core/shared/utils';
+import { Store } from '@qin-core/shared/store';
+import { bindMethods, isFunction } from '@qin-core/shared/utils';
 
 export class ModalApi {
   // 共享数据

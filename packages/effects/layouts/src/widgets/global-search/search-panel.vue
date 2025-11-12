@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@arco/types';
+import type { MenuRecordRaw } from '@qin/types';
 
 import { nextTick, onMounted, ref, shallowRef, watch } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { SearchX, X } from '@arco/icons';
-import { $t } from '@arco/locales';
-import { mapTree, traverseTreeValues, uniqueByField } from '@arco/utils';
+import { SearchX, X } from '@qin/icons';
+import { $t } from '@qin/locales';
+import { mapTree, traverseTreeValues, uniqueByField } from '@qin/utils';
 
-import { ArcoIcon, ArcoScrollbar } from '@arco-core/shadcn-ui';
-import { isHttpUrl } from '@arco-core/shared/utils';
+import { QinIcon, QinScrollbar } from '@qin-core/shadcn-ui';
+import { isHttpUrl } from '@qin-core/shared/utils';
 
 import { onKeyStroke, useLocalStorage, useThrottleFn } from '@vueuse/core';
 
@@ -222,7 +222,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <ArcoScrollbar>
+  <QinScrollbar>
     <div class="!flex h-full justify-center px-2 sm:max-h-[450px]">
       <!-- 无搜索结果 -->
       <div
@@ -268,7 +268,7 @@ onMounted(() => {
           @click="handleEnter"
           @mouseenter="handleMouseenter"
         >
-          <ArcoIcon
+          <QinIcon
             :icon="item.icon"
             class="mr-2 size-5 flex-shrink-0"
             fallback
@@ -284,5 +284,5 @@ onMounted(() => {
         </li>
       </ul>
     </div>
-  </ArcoScrollbar>
+  </QinScrollbar>
 </template>

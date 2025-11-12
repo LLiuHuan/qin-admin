@@ -6,4 +6,4 @@
  * @LastEditors: LLiuHuan
  */
 export type * from './user';
-export type * from '@arco-core/typings';
+export type * from '@qin-core/typings';

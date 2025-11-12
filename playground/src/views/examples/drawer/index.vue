@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { DrawerPlacement, DrawerState } from '@arco/common-ui';
+import type { DrawerPlacement, DrawerState } from '@qin/common-ui';
 
-import { Page, useArcoDrawer } from '@arco/common-ui';
+import { Page, useQinDrawer } from '@qin/common-ui';
 
 import { Button, Card } from '@arco-design/web-vue';
 
@@ -15,31 +15,31 @@ import inContentDemo from './in-content-demo.vue';
 import SharedDataDemo from './shared-data-demo.vue';
 
 defineOptions({ name: 'DrawerExample' });
-const [BaseDrawer, baseDrawerApi] = useArcoDrawer({
+const [BaseDrawer, baseDrawerApi] = useQinDrawer({
   // 连接抽离的组件
   connectedComponent: BaseDemo,
   // placement: 'left',
 });
 
-const [InContentDrawer, inContentDrawerApi] = useArcoDrawer({
+const [InContentDrawer, inContentDrawerApi] = useQinDrawer({
   // 连接抽离的组件
   connectedComponent: inContentDemo,
   // placement: 'left',
 });
 
-const [AutoHeightDrawer, autoHeightDrawerApi] = useArcoDrawer({
+const [AutoHeightDrawer, autoHeightDrawerApi] = useQinDrawer({
   connectedComponent: AutoHeightDemo,
 });
 
-const [DynamicDrawer, dynamicDrawerApi] = useArcoDrawer({
+const [DynamicDrawer, dynamicDrawerApi] = useQinDrawer({
   connectedComponent: DynamicDemo,
 });
 
-const [SharedDataDrawer, sharedDrawerApi] = useArcoDrawer({
+const [SharedDataDrawer, sharedDrawerApi] = useQinDrawer({
   connectedComponent: SharedDataDemo,
 });
 
-const [FormDrawer, formDrawerApi] = useArcoDrawer({
+const [FormDrawer, formDrawerApi] = useQinDrawer({
   connectedComponent: FormDrawerDemo,
 });
 
@@ -103,7 +103,7 @@ function openFormDrawer() {
     title="抽屉组件示例"
   >
     <template #extra>
-      <DocButton path="/components/common-ui/vben-drawer" />
+      <DocButton path="/components/common-ui/qin-drawer" />
     </template>
     <BaseDrawer />
     <InContentDrawer />

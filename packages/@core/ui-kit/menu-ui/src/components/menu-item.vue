@@ -3,8 +3,8 @@ import type { MenuItemProps, MenuItemRegistered } from '../types';
 
 import { computed, onBeforeUnmount, onMounted, reactive, useSlots } from 'vue';
 
-import { useNamespace } from '@arco-core/composables';
-import { ArcoIcon, ArcoTooltip } from '@arco-core/shadcn-ui';
+import { useNamespace } from '@qin-core/composables';
+import { QinIcon, QinTooltip } from '@qin-core/shadcn-ui';
 
 import { MenuBadge } from '../components';
 import { useMenu, useMenuContext, useSubMenuContext } from '../hooks';
@@ -92,14 +92,14 @@ onBeforeUnmount(() => {
     role="menuitem"
     @click.stop="handleClick"
   >
-    <ArcoTooltip
+    <QinTooltip
       v-if="showTooltip"
       :content-class="[rootMenu.theme]"
       side="right"
     >
       <template #trigger>
         <div :class="[nsMenu.be('tooltip', 'trigger')]">
-          <ArcoIcon :class="nsMenu.e('icon')" :icon="menuIcon" fallback />
+          <QinIcon :class="nsMenu.e('icon')" :icon="menuIcon" fallback />
           <slot></slot>
           <span v-if="collapseShowTitle" :class="nsMenu.e('name')">
             <slot name="title"></slot>
@@ -107,14 +107,14 @@ onBeforeUnmount(() => {
         </div>
       </template>
       <slot name="title"></slot>
-    </ArcoTooltip>
+    </QinTooltip>
     <div v-show="!showTooltip" :class="[e('content')]">
       <MenuBadge
         v-if="rootMenu.props.mode !== 'horizontal'"
         class="right-2"
         v-bind="props"
       />
-      <ArcoIcon :class="nsMenu.e('icon')" :icon="menuIcon" />
+      <QinIcon :class="nsMenu.e('icon')" :icon="menuIcon" />
       <slot></slot>
       <slot name="title"></slot>
     </div>

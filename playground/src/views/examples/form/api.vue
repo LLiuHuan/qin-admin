@@ -3,15 +3,15 @@ import type { SelectProps } from '@arco-design/web-vue';
 
 import { ref } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Card, Message, Space } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 const isReverseActionButtons = ref(false);
 
-const [BaseForm, formApi] = useArcoForm({
+const [BaseForm, formApi] = useQinForm({
   // 翻转操作按钮的位置
   actionButtonsReverse: isReverseActionButtons.value,
   // 所有表单项共用，可单独在表单内覆盖

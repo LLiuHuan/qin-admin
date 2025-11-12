@@ -11,7 +11,7 @@
  */
 function updateCSSVariables(
   variables: { [key: string]: string },
-  id = '__adp-styles__',
+  id = '__qin-styles__',
   element = ':root',
 ): void {
   // 获取或创建内联样式表元素

@@ -6,11 +6,11 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 
 import { useQuery } from '@tanstack/vue-query';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 import MenuAPI from '#/api/core/menu';
 
 const queryKey = ['demo', 'api', 'options'];
@@ -52,7 +52,7 @@ for (let i = 0; i < count; i++) {
   });
 }
 
-const [Form] = useArcoForm({
+const [Form] = useQinForm({
   schema,
   showDefaultActions: false,
 });

@@ -35,7 +35,7 @@ export const shared = defineConfig({
 //         },
 //       ],
 //       id: '/',
-//       name: 'Arco Design Pro Doc',
+//       name: 'Qin Admin Doc',
 //       short_name: 'arco_admin_doc',
 //       theme_color: '#ffffff',
 //     },

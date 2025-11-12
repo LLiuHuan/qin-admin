@@ -2,12 +2,12 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 12:00:20
+ * @LastEditTime: 2025-08-18 10:09:07
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { ArcoLoading } from '@arco-core/shadcn-ui';
-import { cn } from '@arco-core/shared/utils';
+import { QinLoading } from '@qin-core/shadcn-ui';
+import { cn } from '@qin-core/shared/utils';
 
 interface LoadingProps {
   class?: string;
@@ -33,7 +33,7 @@ const props = defineProps<LoadingProps>();
 <template>
   <div :class="cn('relative min-h-20', props.class)">
     <slot></slot>
-    <ArcoLoading
+    <QinLoading
       :min-loading-time="props.minLoadingTime"
       :spinning="props.spinning"
       :text="props.text"
@@ -41,6 +41,6 @@ const props = defineProps<LoadingProps>();
       <template v-if="$slots.icon" #icon>
         <slot name="icon"></slot>
       </template>
-    </ArcoLoading>
+    </QinLoading>
   </div>
 </template>

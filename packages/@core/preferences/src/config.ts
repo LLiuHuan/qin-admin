@@ -25,7 +25,7 @@ const defaultPreferences: Preferences = {
     layout: 'sidebar-nav',
     locale: 'zh-CN',
     loginExpiredMode: 'page',
-    name: 'Arco Design Pro',
+    name: 'Qin Admin',
     preferencesButtonPosition: 'auto',
     watermark: false,
     zIndex: 200,

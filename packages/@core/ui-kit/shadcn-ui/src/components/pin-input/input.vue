@@ -4,7 +4,7 @@ import type { PinInputProps } from './types';
 import { computed, onBeforeUnmount, ref, useId, watch } from 'vue';
 
 import { PinInput, PinInputGroup, PinInputInput } from '../../ui';
-import { ArcoButton } from '../button';
+import { QinButton } from '../button';
 
 defineOptions({
   inheritAttrs: false,
@@ -105,7 +105,7 @@ const id = useId();
           :index="index"
         />
       </PinInputGroup>
-      <ArcoButton
+      <QinButton
         :disabled="disabled"
         :loading="btnLoading"
         class="flex-grow"
@@ -114,7 +114,7 @@ const id = useId();
         @click="handleSend"
       >
         {{ btnText }}
-      </ArcoButton>
+      </QinButton>
     </div>
   </PinInput>
 </template>

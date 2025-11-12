@@ -2,20 +2,20 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 09:37:08
- * @LastEditTime: 2025-08-12 15:13:05
+ * @LastEditTime: 2025-08-18 10:55:37
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
 
 import {
-  ARCO_DESIGN_PREVIEW_URL,
-  ARCO_DOC_URL,
-  ARCO_ELE_PREVIEW_URL,
-  ARCO_GITHUB_URL,
-  ARCO_LOGO_URL,
-  ARCO_NAIVE_PREVIEW_URL,
-} from '@arco/constants';
-import { SvgArcoLogoIcon } from '@arco/icons';
+  QIN_DESIGN_PREVIEW_URL,
+  QIN_DOC_URL,
+  QIN_ELE_PREVIEW_URL,
+  QIN_GITHUB_URL,
+  QIN_LOGO_URL,
+  QIN_NAIVE_PREVIEW_URL,
+} from '@qin/constants';
+import { SvgQinLogoIcon } from '@qin/icons';
 
 import { IFrameView } from '#/layouts';
 import { $t } from '#/locales';
@@ -24,75 +24,75 @@ const routes: RouteRecordRaw[] = [
   {
     meta: {
       badgeType: 'dot',
-      icon: ARCO_LOGO_URL,
+      icon: QIN_LOGO_URL,
       order: 9998,
-      title: $t('demos.adp.title'),
+      title: $t('demos.qin.title'),
     },
-    name: 'ArcoProject',
-    path: '/arco',
+    name: 'QinProject',
+    path: '/qin',
     children: [
       {
-        name: 'ArcoDocument',
-        path: '/arco/document',
+        name: 'QinDocument',
+        path: '/qin/document',
         component: IFrameView,
         meta: {
           icon: 'lucide:book-open-text',
-          link: ARCO_DOC_URL,
-          title: $t('demos.adp.document'),
+          link: QIN_DOC_URL,
+          title: $t('demos.qin.document'),
         },
       },
       {
-        name: 'ArcoGithub',
-        path: '/arco/github',
+        name: 'QinGithub',
+        path: '/qin/github',
         component: IFrameView,
         meta: {
           icon: 'mdi:github',
-          link: ARCO_GITHUB_URL,
+          link: QIN_GITHUB_URL,
           title: 'Github',
         },
       },
       {
-        name: 'ArcoAntd',
-        path: '/arco/arco',
+        name: 'QinAntd',
+        path: '/qin/arco',
         component: IFrameView,
         meta: {
           badgeType: 'dot',
-          icon: SvgArcoLogoIcon,
-          link: ARCO_DESIGN_PREVIEW_URL,
-          title: $t('demos.adp.arco'),
+          icon: SvgQinLogoIcon,
+          link: QIN_DESIGN_PREVIEW_URL,
+          title: $t('demos.qin.arco'),
         },
       },
       {
-        name: 'ArcoElementPlus',
-        path: '/arco/ele',
+        name: 'QinElementPlus',
+        path: '/qin/ele',
         component: IFrameView,
         meta: {
           badgeType: 'dot',
           icon: 'logos:element',
-          link: ARCO_ELE_PREVIEW_URL,
-          title: $t('demos.adp.element-plus'),
+          link: QIN_ELE_PREVIEW_URL,
+          title: $t('demos.qin.element-plus'),
         },
       },
       {
-        name: 'ArcoNaive',
-        path: '/arco/naive',
+        name: 'QinNaive',
+        path: '/qin/naive',
         component: IFrameView,
         meta: {
           badgeType: 'dot',
           icon: 'logos:naiveui',
-          link: ARCO_NAIVE_PREVIEW_URL,
-          title: $t('demos.adp.naive-ui'),
+          link: QIN_NAIVE_PREVIEW_URL,
+          title: $t('demos.qin.naive-ui'),
         },
       },
     ],
   },
   {
-    name: 'ArcoAbout',
-    path: '/arco/about',
+    name: 'QinAbout',
+    path: '/qin/about',
     component: () => import('#/views/_core/about/index.vue'),
     meta: {
       icon: 'lucide:copyright',
-      title: $t('demos.adp.about'),
+      title: $t('demos.qin.about'),
       order: 9999,
     },
   },

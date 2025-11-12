@@ -1,26 +1,26 @@
-import type { VxeTableGridOptions } from '@arco/plugins/vxe-table';
-import type { Recordable } from '@arco/types';
+import type { VxeTableGridOptions } from '@qin/plugins/vxe-table';
+import type { Recordable } from '@qin/types';
 
 import type { ComponentType } from './component';
 
 import { h } from 'vue';
 
-import { IconifyIcon } from '@arco/icons';
-import { $te } from '@arco/locales';
+import { IconifyIcon } from '@qin/icons';
+import { $te } from '@qin/locales';
 import {
-  setupArcoVxeTable,
-  useArcoVxeGrid as useGrid,
-} from '@arco/plugins/vxe-table';
-import { get, isFunction, isString } from '@arco/utils';
+  setupQinVxeTable,
+  useQinVxeGrid as useGrid,
+} from '@qin/plugins/vxe-table';
+import { get, isFunction, isString } from '@qin/utils';
 
 import { Button, Image, Popconfirm, Switch, Tag } from '@arco-design/web-vue';
 import { objectOmit } from '@vueuse/core';
 
 import { $t } from '#/locales';
 
-import { useArcoForm } from './form';
+import { useQinForm } from './form';
 
-setupArcoVxeTable({
+setupQinVxeTable({
   configVxeTable: (vxeUI) => {
     vxeUI.setConfig({
       grid: {
@@ -280,10 +280,10 @@ setupArcoVxeTable({
     // 这里可以自行扩展 vxe-table 的全局配置，比如自定义格式化
     // vxeUI.formats.add
   },
-  useArcoForm,
+  useQinForm,
 });
 
-export const useArcoVxeGrid = <T extends Record<string, any>>(
+export const useQinVxeGrid = <T extends Record<string, any>>(
   ...rest: Parameters<typeof useGrid<T, ComponentType>>
 ) => useGrid<T, ComponentType>(...rest);
 
@@ -294,4 +294,4 @@ export type OnActionClickParams<T = Recordable<any>> = {
 export type OnActionClickFn<T = Recordable<any>> = (
   params: OnActionClickParams<T>,
 ) => void;
-export type * from '@arco/plugins/vxe-table';
+export type * from '@qin/plugins/vxe-table';

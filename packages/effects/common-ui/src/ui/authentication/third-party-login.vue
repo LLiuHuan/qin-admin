@@ -2,15 +2,15 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-07-31 12:07:50
+ * @LastEditTime: 2025-08-18 10:08:33
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { useAppConfig } from '@arco/hooks';
-import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { useAppConfig } from '@qin/hooks';
+import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@qin/icons';
+import { $t } from '@qin/locales';
 
-import { ArcoIconButton } from '@arco-core/shadcn-ui';
+import { QinIconButton } from '@qin-core/shadcn-ui';
 
 import DingdingLogin from './dingding-login.vue';
 
@@ -34,34 +34,34 @@ const {
     </div>
 
     <div class="mt-4 flex flex-wrap justify-center">
-      <ArcoIconButton
+      <QinIconButton
         :tooltip="$t('authentication.wechatLogin')"
         tooltip-side="top"
         class="mb-3"
       >
         <MdiWechat />
-      </ArcoIconButton>
-      <ArcoIconButton
+      </QinIconButton>
+      <QinIconButton
         :tooltip="$t('authentication.qqLogin')"
         tooltip-side="top"
         class="mb-3"
       >
         <MdiQqchat />
-      </ArcoIconButton>
-      <ArcoIconButton
+      </QinIconButton>
+      <QinIconButton
         :tooltip="$t('authentication.githubLogin')"
         tooltip-side="top"
         class="mb-3"
       >
         <MdiGithub />
-      </ArcoIconButton>
-      <ArcoIconButton
+      </QinIconButton>
+      <QinIconButton
         :tooltip="$t('authentication.googleLogin')"
         tooltip-side="top"
         class="mb-3"
       >
         <MdiGoogle />
-      </ArcoIconButton>
+      </QinIconButton>
       <DingdingLogin
         v-if="dingdingAuthConfig"
         :corp-id="dingdingAuthConfig.corpId"

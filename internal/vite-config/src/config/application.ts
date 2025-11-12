@@ -12,7 +12,7 @@ import type { DefineApplicationOptions } from '../typing';
 
 import path, { relative } from 'node:path';
 
-import { findMonorepoRoot } from '@arco/node-utils';
+import { findMonorepoRoot } from '@qin/node-utils';
 
 import { NodePackageImporter } from 'sass';
 import { defineConfig, loadEnv, mergeConfig } from 'vite';
@@ -52,7 +52,7 @@ function defineApplicationConfig(userConfigPromise?: DefineApplicationOptions) {
       nitroMockOptions: {},
       print: !isBuild,
       printInfoMap: {
-        'Arco Design Pro Docs': 'https://desc.0x3.cn',
+        'Qin Admin Docs': 'https://desc.0x3.cn',
       },
       pwa: true,
       pwaOptions: getDefaultPwaOptions(appTitle),
@@ -118,7 +118,7 @@ function createCssOptions(injectGlobalScss = true): CSSOptions {
               const relativePath = relative(root, filepath);
               // apps下的包注入全局样式
               if (relativePath.startsWith(`apps${path.sep}`)) {
-                return `@use "@arco/styles/global" as *;\n${content}`;
+                return `@use "@qin/styles/global" as *;\n${content}`;
               }
               return content;
             },

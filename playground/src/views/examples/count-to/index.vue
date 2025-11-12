@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { CountToProps, TransitionPresets } from '@arco/common-ui';
+import type { CountToProps, TransitionPresets } from '@qin/common-ui';
 
 import { reactive } from 'vue';
 
-import { CountTo, Page, TransitionPresetsKeys } from '@arco/common-ui';
-import { IconifyIcon } from '@arco/icons';
+import { CountTo, Page, TransitionPresetsKeys } from '@qin/common-ui';
+import { IconifyIcon } from '@qin/icons';
 
 import {
   Button,

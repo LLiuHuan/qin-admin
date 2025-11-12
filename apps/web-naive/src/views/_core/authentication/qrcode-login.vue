@@ -6,8 +6,8 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { AuthenticationQrCodeLogin } from '@arco/common-ui';
-import { LOGIN_PATH } from '@arco/constants';
+import { AuthenticationQrCodeLogin } from '@qin/common-ui';
+import { LOGIN_PATH } from '@qin/constants';
 
 defineOptions({ name: 'QrCodeLogin' });
 </script>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { reactive } from 'vue';
 
-import { Page } from '@arco/common-ui';
-import { Motion, MotionGroup, MotionPresets } from '@arco/plugins/motion';
+import { Page } from '@qin/common-ui';
+import { Motion, MotionGroup, MotionPresets } from '@qin/plugins/motion';
 
 import {
   Button,

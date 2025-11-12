@@ -8,11 +8,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useArcoModal } from '@arco/common-ui';
+import { useQinModal } from '@qin/common-ui';
 
 import { Input, Message } from '@arco-design/web-vue';
 
-const [Modal, modalApi] = useArcoModal({
+const [Modal, modalApi] = useQinModal({
   destroyOnClose: false,
   onCancel() {
     modalApi.close();

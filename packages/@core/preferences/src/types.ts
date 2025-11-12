@@ -14,7 +14,7 @@ import type {
   PreferencesButtonPositionType,
   TabsStyleType,
   ThemeModeType,
-} from '@arco-core/typings';
+} from '@qin-core/typings';
 
 type SupportedLanguagesType = 'en-US' | 'zh-CN';
 

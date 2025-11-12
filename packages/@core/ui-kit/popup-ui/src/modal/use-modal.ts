@@ -10,12 +10,12 @@ import {
   ref,
 } from 'vue';
 
-import { useStore } from '@arco-core/shared/store';
+import { useStore } from '@qin-core/shared/store';
 
 import { ModalApi } from './modal-api';
-import ArcoModal from './modal.vue';
+import QinModal from './modal.vue';
 
-const USER_MODAL_INJECT_KEY = Symbol('ARCO_MODAL_INJECT');
+const USER_MODAL_INJECT_KEY = Symbol('QIN_MODAL_INJECT');
 
 const DEFAULT_MODAL_PROPS: Partial<ModalProps> = {};
 
@@ -23,7 +23,7 @@ export function setDefaultModalProps(props: Partial<ModalProps>) {
   Object.assign(DEFAULT_MODAL_PROPS, props);
 }
 
-export function useArcoModal<TParentModalProps extends ModalProps = ModalProps>(
+export function useQinModal<TParentModalProps extends ModalProps = ModalProps>(
   options: ModalApiOptions = {},
 ) {
   // Modal一般会抽离出来，所以如果有传入 connectedComponent，则表示为外部调用，与内部组件进行连接
@@ -65,7 +65,7 @@ export function useArcoModal<TParentModalProps extends ModalProps = ModalProps>(
       },
       // eslint-disable-next-line vue/one-component-per-file
       {
-        name: 'ArcoParentModal',
+        name: 'QinParentModal',
         inheritAttrs: false,
       },
     );
@@ -106,7 +106,7 @@ export function useArcoModal<TParentModalProps extends ModalProps = ModalProps>(
     (props: ModalProps, { attrs, slots }) => {
       return () =>
         h(
-          ArcoModal,
+          QinModal,
           {
             ...props,
             ...attrs,
@@ -117,7 +117,7 @@ export function useArcoModal<TParentModalProps extends ModalProps = ModalProps>(
     },
     // eslint-disable-next-line vue/one-component-per-file
     {
-      name: 'ArcoModal',
+      name: 'QinModal',
       inheritAttrs: false,
     },
   );
@@ -143,7 +143,7 @@ async function checkProps(api: ExtendedModalApi, attrs: Record<string, any>) {
     if (stateKeys.has(attr) && !['class'].includes(attr)) {
       // connectedComponent存在时，不要传入Modal的props，会造成复杂度提升，如果你需要修改Modal的props，请使用 useModal 或者api
       console.warn(
-        `[Arco Modal]: When 'connectedComponent' exists, do not set props or slots '${attr}', which will increase complexity. If you need to modify the props of Modal, please use useArcoModal or api.`,
+        `[Qin Modal]: When 'connectedComponent' exists, do not set props or slots '${attr}', which will increase complexity. If you need to modify the props of Modal, please use useQinModal or api.`,
       );
     }
   }

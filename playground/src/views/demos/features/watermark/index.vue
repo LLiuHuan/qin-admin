@@ -6,8 +6,8 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { Page } from '@arco/common-ui';
-import { useWatermark } from '@arco/hooks';
+import { Page } from '@qin/common-ui';
+import { useWatermark } from '@qin/hooks';
 
 import { Button, Card } from '@arco-design/web-vue';
 

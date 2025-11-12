@@ -1,6 +1,6 @@
 import type { Component, Ref } from 'vue';
 
-import type { MenuRecordBadgeRaw, ThemeModeType } from '@arco-core/typings';
+import type { MenuRecordBadgeRaw, ThemeModeType } from '@qin-core/typings';
 
 interface MenuProps {
   /**

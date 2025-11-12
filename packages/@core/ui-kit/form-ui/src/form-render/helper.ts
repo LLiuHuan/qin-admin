@@ -14,7 +14,7 @@ import type {
   ZodTypeAny,
 } from 'zod';
 
-import { isObject, isString } from '@arco-core/shared/utils';
+import { isObject, isString } from '@qin-core/shared/utils';
 
 /**
  * Get the lowest level Zod type.

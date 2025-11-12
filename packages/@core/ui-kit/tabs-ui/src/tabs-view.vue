@@ -2,15 +2,15 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:47:21
- * @LastEditTime: 2025-06-15 17:15:38
+ * @LastEditTime: 2025-08-18 10:09:51
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
 import type { TabsEmits, TabsProps } from './types';
 
-import { useForwardPropsEmits } from '@arco-core/composables';
-import { ChevronLeft, ChevronRight } from '@arco-core/icons';
-import { ArcoScrollbar } from '@arco-core/shadcn-ui';
+import { useForwardPropsEmits } from '@qin-core/composables';
+import { ChevronLeft, ChevronRight } from '@qin-core/icons';
+import { QinScrollbar } from '@qin-core/shadcn-ui';
 
 import { Tabs, TabsChrome } from './components';
 import { useTabsDrag } from './use-tabs-drag';
@@ -23,7 +23,7 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<Props>(), {
-  contentClass: 'adp-tabs-content',
+  contentClass: 'qin-tabs-content',
   draggable: true,
   styleType: 'chrome',
   wheelable: true,
@@ -75,7 +75,7 @@ useTabsDrag(props, emit);
       }"
       class="size-full flex-1 overflow-hidden"
     >
-      <ArcoScrollbar
+      <QinScrollbar
         ref="scrollbarRef"
         :shadow-bottom="false"
         :shadow-top="false"
@@ -94,7 +94,7 @@ useTabsDrag(props, emit);
         />
 
         <Tabs v-else v-bind="{ ...forward, ...$attrs, ...$props }" />
-      </ArcoScrollbar>
+      </QinScrollbar>
     </div>
 
     <!-- 右侧滚动按钮 -->
