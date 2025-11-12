@@ -103,10 +103,15 @@ function updateTreeValue() {
     treeValue.value = undefined;
   } else {
     if (Array.isArray(val)) {
-      const filteredValues = val.filter((v) => {
+      let filteredValues = val.filter((v) => {
         const item = getItemByValue(v);
         return item && !get(item, props.disabledField);
       });
+
+      if (!props.checkStrictly && props.autoCheckParent) {
+        filteredValues = processParentSelection(filteredValues);
+      }
+
       treeValue.value = filteredValues.map((v) => getItemByValue(v));
 
       if (filteredValues.length !== val.length) {
@@ -122,6 +127,36 @@ function updateTreeValue() {
       }
     }
   }
+}
+
+function processParentSelection(
+  selectedValues: Array<number | string>,
+): Array<number | string> {
+  if (props.checkStrictly) return selectedValues;
+
+  const result = [...selectedValues];
+
+  for (let i = result.length - 1; i >= 0; i--) {
+    const currentValue = result[i];
+    if (currentValue === undefined) continue;
+    const currentItem = getItemByValue(currentValue);
+
+    if (!currentItem) continue;
+
+    const children = get(currentItem, props.childrenField);
+    if (Array.isArray(children) && children.length > 0) {
+      const hasSelectedChildren = children.some((child) => {
+        const childValue = get(child, props.valueField);
+        return result.includes(childValue);
+      });
+
+      if (!hasSelectedChildren) {
+        result.splice(i, 1);
+      }
+    }
+  }
+
+  return result;
 }
 
 function updateModelValue(val: Arrayable<Recordable<any>>) {
@@ -230,18 +265,8 @@ defineExpose({
 </script>
 <template>
   <TreeRoot
-    :get-key="(item) => get(item, valueField)"
-    :get-children="(item) => get(item, childrenField)"
-    :items="treeData"
-    :model-value="treeValue"
-    v-model:expanded="expanded as string[]"
-    :default-expanded="defaultExpandedKeys as string[]"
-    :propagate-select="!checkStrictly"
-    :multiple="multiple"
-    :disabled="disabled"
-    :selection-behavior="allowClear || multiple ? 'toggle' : 'replace'"
-    @update:model-value="updateModelValue"
     v-slot="{ flattenItems }"
+    v-model:expanded="expanded as string[]"
     :class="
       cn(
         'text-blackA11 container select-none list-none rounded-lg p-2 text-sm font-medium',
@@ -249,13 +274,24 @@ defineExpose({
         bordered ? 'border' : '',
       )
     "
+    :default-expanded="defaultExpandedKeys as string[]"
+    :disabled="disabled"
+    :get-children="(item) => get(item, childrenField)"
+    :get-key="(item) => get(item, valueField)"
+    :items="treeData"
+    :model-value="treeValue"
+    :multiple="multiple"
+    :propagate-select="!checkStrictly"
+    :selection-behavior="allowClear || multiple ? 'toggle' : 'replace'"
+    @update:model-value="updateModelValue"
   >
-    <div class="w-full" v-if="$slots.header">
+    <div v-if="$slots.header" class="w-full">
       <slot name="header"> </slot>
     </div>
     <TransitionGroup :name="transition ? 'fade' : ''">
       <TreeItem
         v-for="item in flattenItems"
+        :key="item._id"
         v-slot="{
           isExpanded,
           isSelected,
@@ -263,14 +299,14 @@ defineExpose({
           handleSelect,
           handleToggle,
         }"
-        :key="item._id"
-        :style="{ 'padding-left': `${item.level - 0.5}rem` }"
         :class="
           cn('cursor-pointer', getNodeClass?.(item), {
             'data-[selected]:bg-accent': !multiple,
             'cursor-not-allowed': isNodeDisabled(item),
           })
         "
+        :style="{ 'padding-left': `${item.level - 0.5}rem` }"
+        class="tree-node focus:ring-grass8 outline-hidden my-0.5 flex items-center rounded-sm px-2 py-1 focus:ring-2"
         v-bind="
           Object.assign(item.bind, {
             onfocus: isNodeDisabled(item) ? 'this.blur()' : undefined,
@@ -299,7 +335,6 @@ defineExpose({
             !disabled && onToggle(item);
           }
         "
-        class="tree-node focus:ring-grass8 outline-hidden my-0.5 flex items-center rounded-sm px-2 py-1 focus:ring-2"
       >
         <ChevronRight
           v-if="
@@ -307,8 +342,8 @@ defineExpose({
             Array.isArray(item.value[childrenField]) &&
             item.value[childrenField].length > 0
           "
-          class="size-4 cursor-pointer transition"
           :class="{ 'rotate-90': isExpanded }"
+          class="size-4 cursor-pointer transition"
           @click.stop="
             () => {
               handleToggle();
@@ -354,16 +389,16 @@ defineExpose({
         >
           <slot name="node" v-bind="item">
             <IconifyIcon
-              class="size-4"
               v-if="showIcon && get(item.value, iconField)"
               :icon="get(item.value, iconField)"
+              class="size-4"
             />
             {{ get(item.value, labelField) }}
           </slot>
         </div>
       </TreeItem>
     </TransitionGroup>
-    <div class="w-full" v-if="$slots.footer">
+    <div v-if="$slots.footer" class="w-full">
       <slot name="footer"> </slot>
     </div>
   </TreeRoot>
