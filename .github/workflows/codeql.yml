@@ -49,7 +49,7 @@ jobs:
 
       # 步骤2：初始化 CodeQL 工具（加载分析器和查询规则）
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3 # 使用官方 CodeQL 初始化动作
+        uses: github/codeql-action/init@v4 # 使用官方 CodeQL 初始化动作
         with:
           languages: ${{ matrix.language }} # 指定分析的语言
           build-mode: ${{ matrix.build-mode }} # 构建模式（none 表示无需构建，适用于 JS/TS）
@@ -67,6 +67,6 @@ jobs:
 
       # 步骤4：执行 CodeQL 分析（检测漏洞并生成报告）
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3 # 使用官方分析动作
+        uses: github/codeql-action/analyze@v4 # 使用官方分析动作
         with:
           category: '/language:${{matrix.language}}' # 按语言分类报告结果
