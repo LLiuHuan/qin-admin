@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-08-12 22:48:44
  * @LastEditTime: 2025-08-18 10:06:38
@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import type { NotificationItem } from './types';
 
-import { Bell, MailCheck } from '@qin/icons';
+import { Bell, CircleCheckBig, CircleX, MailCheck } from '@qin/icons';
 import { $t } from '@qin/locales';
 
 import {
@@ -42,6 +42,7 @@ const emit = defineEmits<{
   clear: [];
   makeAll: [];
   read: [NotificationItem];
+  remove: [NotificationItem];
   viewAll: [];
 }>();
 
@@ -98,7 +99,7 @@ function handleClick(item: NotificationItem) {
       </div>
       <QinScrollbar v-if="notifications.length > 0">
         <ul class="!flex max-h-[360px] w-full flex-col">
-          <template v-for="item in notifications" :key="item.title">
+          <template v-for="item in notifications" :key="item.id ?? item.title">
             <li
               class="hover:bg-accent border-border relative flex w-full cursor-pointer items-start gap-5 border-t px-3 py-3"
               @click="handleClick(item)"
@@ -125,6 +126,30 @@ function handleClick(item: NotificationItem) {
                 <p class="text-muted-foreground line-clamp-2 text-xs">
                   {{ item.date }}
                 </p>
+              </div>
+              <div
+                class="absolute right-3 top-1/2 flex -translate-y-1/2 flex-col gap-2"
+              >
+                <QinIconButton
+                  v-if="!item.isRead"
+                  :tooltip="$t('common.confirm')"
+                  class="h-6 px-2"
+                  size="xs"
+                  variant="ghost"
+                  @click.stop="emit('read', item)"
+                >
+                  <CircleCheckBig class="size-4" />
+                </QinIconButton>
+                <QinIconButton
+                  v-if="item.isRead"
+                  :tooltip="$t('common.delete')"
+                  class="text-destructive h-6 px-2"
+                  size="xs"
+                  variant="ghost"
+                  @click.stop="emit('remove', item)"
+                >
+                  <CircleX class="size-4" />
+                </QinIconButton>
               </div>
             </li>
           </template>
