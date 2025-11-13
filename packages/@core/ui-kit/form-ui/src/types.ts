@@ -314,6 +314,10 @@ export interface FormRenderProps<
    */
   fieldMappingTime?: FieldMappingTime;
   /**
+   * 表单收起展开状态变化回调
+   */
+  handleCollapsedChange?: (collapsed: boolean) => void;
+  /**
    * 表单实例
    */
   form?: FormContext<GenericObject>;
@@ -342,10 +346,10 @@ export interface FormRenderProps<
 }
 
 export interface ActionButtonOptions extends QinButtonProps {
-  [key: string]: any;
   content?: MaybeComputedRef<string>;
-
   show?: boolean;
+
+  [key: string]: any;
 }
 
 export interface QinFormProps<

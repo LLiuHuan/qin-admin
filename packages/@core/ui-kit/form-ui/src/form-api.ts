@@ -36,6 +36,7 @@ function getDefaultState(): QinFormProps {
     handleReset: undefined,
     handleSubmit: undefined,
     handleValuesChange: undefined,
+    handleCollapsedChange: undefined,
     layout: 'horizontal',
     resetButtonOptions: {},
     schema: [],

@@ -1,11 +1,11 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:33:35
  * @LastEditTime: 2025-05-27 11:45:21
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { ExtendedFormApi, QinFormProps } from './types';
 
 import { ref, watchEffect } from 'vue';
@@ -49,7 +49,9 @@ const { delegatedSlots, form } = useFormInitial(props);
 provideFormProps([props, form]);
 
 const handleUpdateCollapsed = (value: boolean) => {
-  currentCollapsed.value = !!value;
+  currentCollapsed.value = value;
+  // 触发收起展开状态变化回调
+  props.handleCollapsedChange?.(value);
 };
 
 watchEffect(() => {
@@ -59,12 +61,12 @@ watchEffect(() => {
 
 <template>
   <Form
-    v-bind="forward"
     :collapsed="currentCollapsed"
     :component-bind-event-map="COMPONENT_BIND_EVENT_MAP"
     :component-map="COMPONENT_MAP"
     :form="form"
     :global-common-config="DEFAULT_FORM_COMMON_CONFIG"
+    v-bind="forward"
   >
     <template
       v-for="slotName in delegatedSlots"
