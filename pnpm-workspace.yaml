@@ -96,7 +96,7 @@ catalog:
   depcheck: ^1.4.7
   dotenv: ^16.6.1
   echarts: ^6.0.0
-  element-plus: ^2.10.7
+  element-plus: ^2.11.1
   eslint: ^9.33.0
   eslint-config-turbo: ^2.5.5
   eslint-plugin-command: ^3.3.1
