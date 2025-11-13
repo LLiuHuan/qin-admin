@@ -18,7 +18,7 @@ catalog:
   '@arco-plugins/vite-vue': ^1.4.5
   '@ast-grep/napi': ^0.39.3
   '@changesets/changelog-github': ^0.5.1
-  '@changesets/cli': ^2.29.5
+  '@changesets/cli': ^2.29.6
   '@changesets/git': ^3.0.4
   '@clack/prompts': ^0.11.0
   '@commitlint/cli': ^19.8.1
@@ -62,11 +62,11 @@ catalog:
   '@unocss/postcss': ^66.4.2
   '@unocss/preset-wind4': ^66.4.2
   '@vee-validate/zod': ^4.15.1
-  '@vite-pwa/vitepress': ^0.5.4
-  '@vitejs/plugin-vue': ^6.0.1
-  '@vitejs/plugin-vue-jsx': ^5.0.1
   '@visactor/vchart': ^2.0.3
   '@visactor/vchart-theme': ^1.12.2
+  '@vite-pwa/vitepress': ^1.0.0
+  '@vitejs/plugin-vue': ^6.0.1
+  '@vitejs/plugin-vue-jsx': ^5.0.1
   '@vue/reactivity': ^3.5.17
   '@vue/shared': ^3.5.18
   '@vue/test-utils': ^2.4.6
@@ -139,7 +139,7 @@ catalog:
   nprogress: ^0.2.0
   ora: ^8.2.0
   pinia: ^3.0.3
-  pinia-plugin-persistedstate: ^4.4.1
+  pinia-plugin-persistedstate: ^4.5.0
   pkg-types: ^2.2.0
   playwright: ^1.54.2
   postcss: ^8.5.6
