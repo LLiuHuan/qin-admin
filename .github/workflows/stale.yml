@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 使用官方的 stale 动作处理陈旧内容
-      - uses: actions/stale@v9
+      - uses: actions/stale@v10
         with:
           # 用于访问 GitHub API 的令牌
           repo-token: ${{ secrets.GITHUB_TOKEN }}
