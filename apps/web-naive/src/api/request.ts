@@ -11,7 +11,7 @@ import {
   errorMessageResponseInterceptor,
   RequestClient,
 } from '@qin/request';
-import { useAccessStore } from '@qin/stores';
+import { useAccessStore, useTimezoneStore } from '@qin/stores';
 
 import { message } from '#/adapter/naive';
 import { useAuthStore } from '#/store';
@@ -63,9 +63,11 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
   client.addRequestInterceptor({
     fulfilled: async (config) => {
       const accessStore = useAccessStore();
+      const timezoneStore = useTimezoneStore();
 
       config.headers.Authorization = formatToken(accessStore.accessToken);
       config.headers['Accept-Language'] = preferences.app.locale;
+      config.headers['X-Timezone'] = timezoneStore.timezone;
       return config;
     },
   });

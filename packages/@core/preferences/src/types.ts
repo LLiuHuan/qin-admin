@@ -479,6 +479,10 @@ interface WidgetPreferences {
    * @zh_CN 是否显示主题切换部件
    */
   themeToggle: boolean;
+  /**
+   * @zh_CN 是否显示时区部件
+   */
+  timezone: boolean;
 }
 
 interface Preferences {
