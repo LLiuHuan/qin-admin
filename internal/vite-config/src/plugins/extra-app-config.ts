@@ -7,11 +7,7 @@
  */
 import type { PluginOption } from 'vite';
 
-import {
-  colors,
-  generatorContentHash,
-  readPackageJSON,
-} from '@qin/node-utils';
+import { colors, generatorContentHash, readPackageJSON } from '@qin/node-utils';
 
 import { loadEnv } from '../utils/env';
 

@@ -23,9 +23,9 @@
     }
   },
   "dependencies": {
-    "@qin/node-utils": "workspace:*",
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
+    "@qin/node-utils": "workspace:*",
     "commitlint-plugin-function-rules": "catalog:",
     "cz-git": "catalog:",
     "czg": "catalog:"

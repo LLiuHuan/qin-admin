@@ -3,9 +3,8 @@ import { Page, useQinModal } from '@qin/common-ui';
 
 import { Button, Card } from 'tdesign-vue-next';
 
-import { message, notification } from '#/adapter/tdesign';
-
 import { useQinForm } from '#/adapter/form';
+import { message } from '#/adapter/tdesign';
 import MenuAPI from '#/api/core/menu';
 
 import modalDemo from './modal.vue';

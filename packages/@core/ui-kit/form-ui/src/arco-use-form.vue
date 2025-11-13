@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Recordable } from '@qin-core/typings';
 
-import type { QinFormProps, ExtendedFormApi } from './types';
+import type { ExtendedFormApi, QinFormProps } from './types';
 
 // import { toRaw, watch } from 'vue';
 import { nextTick, onMounted, watch } from 'vue';

@@ -5,10 +5,7 @@
  * @LastEditTime: 2025-08-12 15:12:52
  * @LastEditors: LLiuHuan
  */
-import type {
-  QinFormProps,
-  QinFormSchema as FormSchema,
-} from '@qin/common-ui';
+import type { QinFormSchema as FormSchema, QinFormProps } from '@qin/common-ui';
 
 import type { ComponentType } from './component';
 

@@ -263,6 +263,7 @@ const headerSlots = computed(() => {
         :collapsed="logoCollapsed"
         :fit="preferences.logo.fit"
         :src="preferences.logo.source"
+        :src-dark="preferences.logo.sourceDark"
         :text="preferences.app.name"
         :theme="showHeaderNav ? headerTheme : theme"
         @click="clickLogo"
@@ -354,6 +355,8 @@ const headerSlots = computed(() => {
       <QinLogo
         v-if="preferences.logo.enable"
         :fit="preferences.logo.fit"
+        :src="preferences.logo.source"
+        :src-dark="preferences.logo.sourceDark"
         :text="preferences.app.name"
         :theme="theme"
       >

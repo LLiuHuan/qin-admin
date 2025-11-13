@@ -56,6 +56,7 @@
     "dev:ele": "pnpm -F @qin/web-ele run dev",
     "dev:naive": "pnpm -F @qin/web-naive run dev",
     "dev:arco": "pnpm -F @qin/web-arco run dev",
+    "dev:tdesign": "pnpm -F @qin/web-tdesign run dev",
     "dev:play": "pnpm -F @qin/playground run dev",
     "format": "vsh lint --format",
     "lint": "vsh lint",

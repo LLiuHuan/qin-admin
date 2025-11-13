@@ -12,5 +12,3 @@ declare module 'pinia' {
     hot: any,
   ): (newModule: any) => any;
 }
-
-export {};

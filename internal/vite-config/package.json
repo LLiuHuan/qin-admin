@@ -39,8 +39,8 @@
     "vite-plugin-vue-devtools": "catalog:"
   },
   "devDependencies": {
-    "@qin/node-utils": "workspace:*",
     "@pnpm/workspace.read-manifest": "catalog:",
+    "@qin/node-utils": "workspace:*",
     "@types/archiver": "catalog:",
     "@types/html-minifier-terser": "catalog:",
     "@vitejs/plugin-vue": "catalog:",

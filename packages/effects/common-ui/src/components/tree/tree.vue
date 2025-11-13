@@ -4,7 +4,7 @@ import type { TreeProps } from '@qin-core/shadcn-ui';
 import { Inbox } from '@qin/icons';
 import { $t } from '@qin/locales';
 
-import { treePropsDefaults, QinTree } from '@qin-core/shadcn-ui';
+import { QinTree, treePropsDefaults } from '@qin-core/shadcn-ui';
 
 const props = withDefaults(defineProps<TreeProps>(), treePropsDefaults());
 </script>

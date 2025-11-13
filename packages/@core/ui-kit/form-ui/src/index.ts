@@ -8,10 +8,10 @@
 export { setupQinForm } from './config';
 
 export type {
-  QinFormProps,
-  FormSchema as QinFormSchema,
   BaseFormComponentType,
   ExtendedFormApi,
+  QinFormProps,
+  FormSchema as QinFormSchema,
 } from './types';
 
 export * from './use-qin-form';

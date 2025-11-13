@@ -41,10 +41,10 @@
     "@qin/types": "workspace:*",
     "@qin/utils": "workspace:*",
     "@vueuse/core": "catalog:",
-    "tdesign-vue-next": "^1.17.1",
     "dayjs": "catalog:",
     "lodash-es": "^4.17.21",
     "pinia": "catalog:",
+    "tdesign-vue-next": "^1.17.1",
     "vue": "catalog:",
     "vue-router": "catalog:"
   },

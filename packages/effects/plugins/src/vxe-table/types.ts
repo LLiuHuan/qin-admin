@@ -15,7 +15,7 @@ import type {
 
 import type { Ref } from 'vue';
 
-import type { QinFormProps, BaseFormComponentType } from '@qin-core/form-ui';
+import type { BaseFormComponentType, QinFormProps } from '@qin-core/form-ui';
 
 import type { VxeGridApi } from './api';
 

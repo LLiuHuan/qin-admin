@@ -9,7 +9,7 @@ import type { ComponentPublicInstance } from 'vue';
 
 import type { Recordable } from '@qin-core/typings';
 
-import type { QinFormProps, FormActions, FormSchema } from './types';
+import type { FormActions, FormSchema, QinFormProps } from './types';
 
 import { isRef, toRaw } from 'vue';
 
@@ -54,7 +54,7 @@ export class FormApi {
   public form = {} as FormActions;
   isMounted = false;
 
-  public state: QinFormProps | null = null;
+  public state: null | QinFormProps = null;
   stateHandler: StateHandler;
 
   public store: Store<QinFormProps>;
@@ -67,7 +67,7 @@ export class FormApi {
   // 最后一次点击提交时的表单值
   private latestSubmissionValues: null | Recordable<any> = null;
 
-  private prevState: QinFormProps | null = null;
+  private prevState: null | QinFormProps = null;
 
   constructor(options: QinFormProps = {}) {
     const { ...storeState } = options;

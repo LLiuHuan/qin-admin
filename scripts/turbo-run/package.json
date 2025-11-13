@@ -22,8 +22,8 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@qin/node-utils": "workspace:*",
     "@clack/prompts": "catalog:",
+    "@qin/node-utils": "workspace:*",
     "cac": "catalog:"
   }
 }

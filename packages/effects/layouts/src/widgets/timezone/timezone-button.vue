@@ -6,7 +6,7 @@ import { $t } from '@qin/locales';
 import { useTimezoneStore } from '@qin/stores';
 
 import { useQinModal } from '@qin-core/popup-ui';
-import { RadioGroup, RadioGroupItem, QinIconButton } from '@qin-core/shadcn-ui';
+import { QinIconButton, RadioGroup, RadioGroupItem } from '@qin-core/shadcn-ui';
 
 const TimezoneIcon = createIconifyIcon('fluent-mdl2:world-clock');
 

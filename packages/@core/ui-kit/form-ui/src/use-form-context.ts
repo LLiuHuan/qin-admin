@@ -2,7 +2,7 @@ import type { ZodRawShape } from 'zod';
 
 import type { ComputedRef } from 'vue';
 
-import type { QinFormProps, ExtendedFormApi, FormActions } from './types';
+import type { ExtendedFormApi, FormActions, QinFormProps } from './types';
 
 import { computed, unref, useSlots } from 'vue';
 
@@ -24,7 +24,7 @@ export const [injectComponentRefMap, provideComponentRefMap] =
   createContext<Map<string, unknown>>('ComponentRefMap');
 
 export function useFormInitial(
-  props: QinFormProps | ComputedRef<QinFormProps>,
+  props: ComputedRef<QinFormProps> | QinFormProps,
 ) {
   const slots = useSlots();
   const initialValues = generateInitialValues();

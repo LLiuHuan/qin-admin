@@ -7,11 +7,11 @@
  */
 import { computed } from 'vue';
 
+import { useNaiveDesignTokens } from '@qin/hooks';
 import { preferences } from '@qin/preferences';
 import '@qin/styles';
 
 import { createDiscreteApi, darkTheme, lightTheme } from 'naive-ui';
-import { useNaiveDesignTokens } from '@qin/hooks';
 
 const { commonTokens } = useNaiveDesignTokens();
 

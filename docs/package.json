@@ -28,8 +28,8 @@
     "vitepress-plugin-group-icons": "catalog:"
   },
   "devDependencies": {
-    "@qin/vite-config": "workspace:*",
     "@nolebase/vitepress-plugin-git-changelog": "catalog:",
+    "@qin/vite-config": "workspace:*",
     "@vite-pwa/vitepress": "catalog:",
     "vitepress": "catalog:",
     "vue": "catalog:"

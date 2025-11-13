@@ -342,10 +342,10 @@ export interface FormRenderProps<
 }
 
 export interface ActionButtonOptions extends QinButtonProps {
-  content?: MaybeComputedRef<string>;
-  show?: boolean;
-
   [key: string]: any;
+  content?: MaybeComputedRef<string>;
+
+  show?: boolean;
 }
 
 export interface QinFormProps<

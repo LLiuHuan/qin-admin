@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { QinFormProps, ExtendedFormApi } from './types';
+import type { ExtendedFormApi, QinFormProps } from './types';
 
 import { ref, watchEffect } from 'vue';
 

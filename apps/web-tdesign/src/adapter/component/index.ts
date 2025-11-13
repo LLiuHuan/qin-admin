@@ -1,7 +1,7 @@
-import type { Component } from 'vue';
-
 import type { BaseFormComponentType } from '@qin/common-ui';
 import type { Recordable } from '@qin/types';
+
+import type { Component } from 'vue';
 
 import { defineAsyncComponent, defineComponent, h, ref } from 'vue';
 
@@ -106,9 +106,9 @@ export type ComponentType =
   | 'ApiSelect'
   | 'ApiTreeSelect'
   | 'AutoComplete'
+  | 'Cascader'
   | 'Checkbox'
   | 'CheckboxGroup'
-  | 'Cascader'
   | 'DatePicker'
   | 'DefaultButton'
   | 'Divider'

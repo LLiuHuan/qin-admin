@@ -34,11 +34,11 @@ export {
   SvgBellIcon,
   SvgCakeIcon,
   SvgCardIcon,
-  SvgDownloadIcon,
-  SvgQinLogoIcon,
   SvgDingDingIcon,
+  SvgDownloadIcon,
   SvgGithubIcon,
   SvgGoogleIcon,
+  SvgQinLogoIcon,
   SvgQQChatIcon,
   SvgWeChatIcon,
 };

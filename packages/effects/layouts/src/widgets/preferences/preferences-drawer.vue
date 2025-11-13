@@ -16,7 +16,7 @@ import type { SegmentedItem } from '@qin-core/shadcn-ui';
 
 import { computed, ref } from 'vue';
 
-import { Copy, RotateCw, Pin, PinOff } from '@qin/icons';
+import { Copy, Pin, PinOff, RotateCw } from '@qin/icons';
 import { $t, loadLocaleMessages } from '@qin/locales';
 import {
   clearPreferencesCache,
