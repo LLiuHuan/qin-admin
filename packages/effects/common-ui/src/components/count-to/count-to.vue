@@ -3,7 +3,7 @@ import type { CountToProps } from './types';
 
 import { computed, onMounted, ref, watch } from 'vue';
 
-import { isString } from '@arco-core/shared/utils';
+import { isString } from '@qin-core/shared/utils';
 
 import { TransitionPresets, useTransition } from '@vueuse/core';
 

@@ -2,15 +2,20 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-07-31 12:07:50
+ * @LastEditTime: 2025-08-18 10:08:33
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
-import { useAppConfig } from '@arco/hooks';
-import { MdiGithub, MdiGoogle, MdiQqchat, MdiWechat } from '@arco/icons';
-import { $t } from '@arco/locales';
+<script lang="ts" setup>
+import { useAppConfig } from '@qin/hooks';
+import {
+  SvgGithubIcon,
+  SvgGoogleIcon,
+  SvgQQChatIcon,
+  SvgWeChatIcon,
+} from '@qin/icons';
+import { $t } from '@qin/locales';
 
-import { ArcoIconButton } from '@arco-core/shadcn-ui';
+import { QinIconButton } from '@qin-core/shadcn-ui';
 
 import DingdingLogin from './dingding-login.vue';
 
@@ -34,38 +39,38 @@ const {
     </div>
 
     <div class="mt-4 flex flex-wrap justify-center">
-      <ArcoIconButton
+      <QinIconButton
         :tooltip="$t('authentication.wechatLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiWechat />
-      </ArcoIconButton>
-      <ArcoIconButton
+        <SvgWeChatIcon />
+      </QinIconButton>
+      <QinIconButton
         :tooltip="$t('authentication.qqLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiQqchat />
-      </ArcoIconButton>
-      <ArcoIconButton
+        <SvgQQChatIcon />
+      </QinIconButton>
+      <QinIconButton
         :tooltip="$t('authentication.githubLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiGithub />
-      </ArcoIconButton>
-      <ArcoIconButton
+        <SvgGithubIcon />
+      </QinIconButton>
+      <QinIconButton
         :tooltip="$t('authentication.googleLogin')"
-        tooltip-side="top"
         class="mb-3"
+        tooltip-side="top"
       >
-        <MdiGoogle />
-      </ArcoIconButton>
+        <SvgGoogleIcon />
+      </QinIconButton>
       <DingdingLogin
         v-if="dingdingAuthConfig"
-        :corp-id="dingdingAuthConfig.corpId"
         :client-id="dingdingAuthConfig.clientId"
+        :corp-id="dingdingAuthConfig.corpId"
         class="mb-3"
       />
     </div>

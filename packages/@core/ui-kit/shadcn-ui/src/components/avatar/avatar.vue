@@ -14,7 +14,7 @@ import type {
 
 import type { CSSProperties } from 'vue';
 
-import type { ClassType } from '@arco-core/typings';
+import type { ClassType } from '@qin-core/typings';
 
 import { computed } from 'vue';
 

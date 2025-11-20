@@ -7,7 +7,7 @@
  */
 import type { CSSProperties } from 'vue';
 
-import type { VisibleDomRect } from '@arco-core/shared/utils';
+import type { VisibleDomRect } from '@qin-core/shared/utils';
 
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 
@@ -16,8 +16,8 @@ import {
   CSS_VARIABLE_LAYOUT_CONTENT_WIDTH,
   CSS_VARIABLE_LAYOUT_FOOTER_HEIGHT,
   CSS_VARIABLE_LAYOUT_HEADER_HEIGHT,
-} from '@arco-core/shared/constants';
-import { getElementVisibleRect } from '@arco-core/shared/utils';
+} from '@qin-core/shared/constants';
+import { getElementVisibleRect } from '@qin-core/shared/utils';
 
 import { useCssVar, useDebounceFn } from '@vueuse/core';
 

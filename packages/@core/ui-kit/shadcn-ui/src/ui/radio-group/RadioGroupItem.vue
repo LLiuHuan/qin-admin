@@ -10,7 +10,7 @@ import type { RadioGroupItemProps } from 'reka-ui';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { Circle } from 'lucide-vue-next';
 import { RadioGroupIndicator, RadioGroupItem, useForwardProps } from 'reka-ui';

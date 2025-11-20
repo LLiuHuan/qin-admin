@@ -1,13 +1,13 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-08-01 03:43:04
  * @LastEditTime: 2025-08-01 09:19:42
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { Page } from '@arco/common-ui';
-import { useWatermark } from '@arco/hooks';
+import { Page } from '@qin/common-ui';
+import { useWatermark } from '@qin/hooks';
 
 import { Button, Card } from '@arco-design/web-vue';
 
@@ -15,7 +15,7 @@ const { destroyWatermark, updateWatermark, watermark } = useWatermark();
 
 async function recreateWaterMark() {
   destroyWatermark();
-  await updateWatermark({});
+  await createWaterMark({});
 }
 
 async function createWaterMark() {

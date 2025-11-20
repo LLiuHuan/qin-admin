@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-08-12 15:13:47
  * @LastEditors: LLiuHuan
  */
-import type { LocaleSetupOptions, SupportedLanguagesType } from '@arco/locales';
+import type { LocaleSetupOptions, SupportedLanguagesType } from '@qin/locales';
 
 import type { App } from 'vue';
 
@@ -13,8 +13,8 @@ import {
   $t,
   setupI18n as coreSetup,
   loadLocalesMapFromDir,
-} from '@arco/locales';
-import { preferences } from '@arco/preferences';
+} from '@qin/locales';
+import { preferences } from '@qin/preferences';
 
 const modules = import.meta.glob('./langs/**/*.json');
 

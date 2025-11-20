@@ -13,7 +13,7 @@ import {
   outputJSON,
   readJSON,
   UNICODE,
-} from '@arco/node-utils';
+} from '@qin/node-utils';
 
 import { publint } from 'publint';
 import { formatMessage } from 'publint/utils';

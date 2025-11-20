@@ -20,7 +20,7 @@ jobs:
       contents: write # 允许创建 GitHub Release（必须有写入权限）
       pull-requests: write # 允许自动为 PR 打标签（用于分类变更到对应 Release 板块）
     # 仅在官方仓库执行（避免 fork 仓库误触发）
-    if: github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.repository == 'LLiuHuan/qin-admin'
     runs-on: ubuntu-latest # 运行环境：Ubuntu 最新版
     steps:
       # 步骤1：使用 release-drafter 工具自动生成/更新发布草稿

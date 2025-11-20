@@ -10,7 +10,7 @@ import type { Component } from 'vue';
 
 import { computed } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
 import { ContentCompact, ContentWide } from '../../icons';
 

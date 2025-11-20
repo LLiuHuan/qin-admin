@@ -1,5 +1,5 @@
-import type { IContextMenuItem } from '@arco-core/shadcn-ui';
-import type { TabDefinition, TabsStyleType } from '@arco-core/typings';
+import type { IContextMenuItem } from '@qin-core/shadcn-ui';
+import type { TabDefinition, TabsStyleType } from '@qin-core/typings';
 
 export type TabsEmits = {
   close: [string];

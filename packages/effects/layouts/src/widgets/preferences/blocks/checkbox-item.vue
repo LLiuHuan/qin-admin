@@ -2,17 +2,17 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 12:13:55
- * @LastEditTime: 2025-05-27 12:22:57
+ * @LastEditTime: 2025-08-18 10:06:25
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { SelectOption } from '@arco/types';
+import type { SelectOption } from '@qin/types';
 
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@arco/icons';
+import { CircleHelp } from '@qin/icons';
 
-import { ArcoCheckButtonGroup, ArcoTooltip } from '@arco-core/shadcn-ui';
+import { QinCheckButtonGroup, QinTooltip } from '@qin-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceCheckboxItem',
@@ -51,14 +51,14 @@ const slots = useSlots();
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <ArcoTooltip v-if="slots.tip" side="bottom">
+      <QinTooltip v-if="slots.tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
         <slot name="tip"></slot>
-      </ArcoTooltip>
+      </QinTooltip>
     </span>
-    <ArcoCheckButtonGroup
+    <QinCheckButtonGroup
       v-model="inputValue"
       class="h-8 w-[165px]"
       :options="items"

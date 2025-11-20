@@ -8,7 +8,7 @@
 import type {
   ApplicationConfig,
   ArcoDesignProAppConfigRaw,
-} from '@arco/types/global';
+} from '@qin/types/global';
 
 /**
  * 由 vite-inject-app-config 注入的全局配置
@@ -17,9 +17,9 @@ export function useAppConfig(
   env: Record<string, any>,
   isProduction: boolean,
 ): ApplicationConfig {
-  // 生产环境下，直接使用 window._ARCO_DESIGN_PRO_APP_CONF_ 全局变量
+  // 生产环境下，直接使用 window._QIN_ADMIN_APP_CONF_ 全局变量
   const config = isProduction
-    ? window._ARCO_DESIGN_PRO_APP_CONF_
+    ? window._QIN_ADMIN_APP_CONF_
     : (env as ArcoDesignProAppConfigRaw);
 
   const {

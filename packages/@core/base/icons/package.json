@@ -1,12 +1,12 @@
 {
-  "name": "@arco-core/icons",
+  "name": "@qin-core/icons",
   "version": "1.0.0",
-  "homepage": "https://github.com/LLiuHuan/arco-design-pro-vue",
-  "bugs": "https://github.com/LLiuHuan/arco-design-pro-vue/issues",
+  "homepage": "https://github.com/LLiuHuan/qin-admin",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLiuHuan/arco-design-pro-vue.git",
-    "directory": "packages/@arco-core/base/icons"
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
+    "directory": "packages/@qin-core/base/icons"
   },
   "license": "MIT",
   "type": "module",

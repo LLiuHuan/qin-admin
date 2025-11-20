@@ -7,13 +7,13 @@ import type {
 
 import type { ComponentPublicInstance } from 'vue';
 
-import type { Recordable } from '@arco-core/typings';
+import type { Recordable } from '@qin-core/typings';
 
-import type { ArcoFormProps, FormActions, FormSchema } from './types';
+import type { FormActions, FormSchema, QinFormProps } from './types';
 
 import { isRef, toRaw } from 'vue';
 
-import { Store } from '@arco-core/shared/store';
+import { Store } from '@qin-core/shared/store';
 import {
   bindMethods,
   createMerge,
@@ -24,9 +24,9 @@ import {
   isObject,
   mergeWithArrayOverride,
   StateHandler,
-} from '@arco-core/shared/utils';
+} from '@qin-core/shared/utils';
 
-function getDefaultState(): ArcoFormProps {
+function getDefaultState(): QinFormProps {
   return {
     actionWrapperClass: '',
     collapsed: false,
@@ -36,6 +36,7 @@ function getDefaultState(): ArcoFormProps {
     handleReset: undefined,
     handleSubmit: undefined,
     handleValuesChange: undefined,
+    handleCollapsedChange: undefined,
     layout: 'horizontal',
     resetButtonOptions: {},
     schema: [],
@@ -50,14 +51,14 @@ function getDefaultState(): ArcoFormProps {
 }
 
 export class FormApi {
-  // private api: Pick<ArcoFormProps, 'handleReset' | 'handleSubmit'>;
+  // private api: Pick<QinFormProps, 'handleReset' | 'handleSubmit'>;
   public form = {} as FormActions;
   isMounted = false;
 
-  public state: ArcoFormProps | null = null;
+  public state: null | QinFormProps = null;
   stateHandler: StateHandler;
 
-  public store: Store<ArcoFormProps>;
+  public store: Store<QinFormProps>;
 
   /**
    * 组件实例映射
@@ -67,14 +68,14 @@ export class FormApi {
   // 最后一次点击提交时的表单值
   private latestSubmissionValues: null | Recordable<any> = null;
 
-  private prevState: ArcoFormProps | null = null;
+  private prevState: null | QinFormProps = null;
 
-  constructor(options: ArcoFormProps = {}) {
+  constructor(options: QinFormProps = {}) {
     const { ...storeState } = options;
 
     const defaultState = getDefaultState();
 
-    this.store = new Store<ArcoFormProps>(
+    this.store = new Store<QinFormProps>(
       {
         ...defaultState,
         ...storeState,
@@ -300,8 +301,8 @@ export class FormApi {
 
   setState(
     stateOrFn:
-      | ((prev: ArcoFormProps) => Partial<ArcoFormProps>)
-      | Partial<ArcoFormProps>,
+      | ((prev: QinFormProps) => Partial<QinFormProps>)
+      | Partial<QinFormProps>,
   ) {
     if (isFunction(stateOrFn)) {
       this.store.setState((prev) => {
@@ -342,13 +343,12 @@ export class FormApi {
           isObject(obj[key]) &&
           !isDayjsObject(obj[key]) &&
           !isDate(obj[key])
-            ? fieldMergeFn(obj[key], value)
+            ? fieldMergeFn(value, obj[key])
             : value;
       }
       return true;
     });
     const filteredFields = fieldMergeFn(fields, form.values);
-    this.handleStringToArrayFields(filteredFields);
     form.setValues(filteredFields, shouldValidate);
   }
 
@@ -358,7 +358,6 @@ export class FormApi {
     const form = await this.getForm();
     await form.submitForm();
     const rawValues = toRaw(await this.getValues());
-    this.handleArrayToStringFields(rawValues);
     await this.state?.handleSubmit?.(rawValues);
 
     return rawValues;
@@ -453,21 +452,36 @@ export class FormApi {
       await this.stateHandler.waitForCondition();
     }
     if (!this.form?.meta) {
-      throw new Error('<ArcoForm /> is not mounted');
+      throw new Error('<QinForm /> is not mounted');
     }
     return this.form;
   }
 
-  private handleArrayToStringFields = (originValues: Record<string, any>) => {
+  private handleMultiFields = (originValues: Record<string, any>) => {
     const arrayToStringFields = this.state?.arrayToStringFields;
     if (!arrayToStringFields || !Array.isArray(arrayToStringFields)) {
       return;
     }
 
     const processFields = (fields: string[], separator: string = ',') => {
-      this.processFields(fields, separator, originValues, (value, sep) =>
-        Array.isArray(value) ? value.join(sep) : value,
-      );
+      this.processFields(fields, separator, originValues, (value, sep) => {
+        if (Array.isArray(value)) {
+          return value.join(sep);
+        } else if (typeof value === 'string') {
+          // 处理空字符串的情况
+          if (value === '') {
+            return [];
+          }
+          // 处理复杂分隔符的情况
+          const escapedSeparator = sep.replaceAll(
+            /[.*+?^${}()|[\]\\]/g,
+            String.raw`\$&`,
+          );
+          return value.split(new RegExp(escapedSeparator));
+        } else {
+          return value;
+        }
+      });
     };
 
     // 处理简单数组格式 ['field1', 'field2', ';'] 或 ['field1', 'field2']
@@ -503,7 +517,7 @@ export class FormApi {
     const values = { ...originValues };
     const fieldMappingTime = this.state?.fieldMappingTime;
 
-    this.handleStringToArrayFields(values);
+    this.handleMultiFields(values);
 
     if (!fieldMappingTime || !Array.isArray(fieldMappingTime)) {
       return values;
@@ -548,65 +562,6 @@ export class FormApi {
       },
     );
     return values;
-  };
-
-  private handleStringToArrayFields = (originValues: Record<string, any>) => {
-    const arrayToStringFields = this.state?.arrayToStringFields;
-    if (!arrayToStringFields || !Array.isArray(arrayToStringFields)) {
-      return;
-    }
-
-    const processFields = (fields: string[], separator: string = ',') => {
-      this.processFields(fields, separator, originValues, (value, sep) => {
-        if (typeof value !== 'string') {
-          return value;
-        }
-        // 处理空字符串的情况
-        if (value === '') {
-          return [];
-        }
-        // 处理复杂分隔符的情况
-        const escapedSeparator = sep.replaceAll(
-          /[.*+?^${}()|[\]\\]/g,
-          String.raw`\$&`,
-        );
-        return value.split(new RegExp(escapedSeparator));
-      });
-    };
-
-    // 处理简单数组格式 ['field1', 'field2', ';'] 或 ['field1', 'field2']
-    if (arrayToStringFields.every((item) => typeof item === 'string')) {
-      const lastItem =
-        arrayToStringFields[arrayToStringFields.length - 1] || '';
-      const fields =
-        lastItem.length === 1
-          ? arrayToStringFields.slice(0, -1)
-          : arrayToStringFields;
-      const separator = lastItem.length === 1 ? lastItem : ',';
-      processFields(fields, separator);
-      return;
-    }
-
-    // 处理嵌套数组格式 [['field1'], ';']
-    arrayToStringFields.forEach((fieldConfig) => {
-      if (Array.isArray(fieldConfig)) {
-        const [fields, separator = ','] = fieldConfig;
-        if (Array.isArray(fields)) {
-          processFields(fields, separator);
-        } else if (typeof originValues[fields] === 'string') {
-          const value = originValues[fields];
-          if (value === '') {
-            originValues[fields] = [];
-          } else {
-            const escapedSeparator = separator.replaceAll(
-              /[.*+?^${}()|[\]\\]/g,
-              String.raw`\$&`,
-            );
-            originValues[fields] = value.split(new RegExp(escapedSeparator));
-          }
-        }
-      }
-    });
   };
 
   private processFields = (

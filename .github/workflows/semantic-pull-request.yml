@@ -10,7 +10,7 @@ on:
 jobs:
   main:
     name: Semantic Pull Request
-    if: github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.repository == 'LLiuHuan/qin-admin'
     runs-on: ubuntu-latest
     steps:
       - name: Validate PR title

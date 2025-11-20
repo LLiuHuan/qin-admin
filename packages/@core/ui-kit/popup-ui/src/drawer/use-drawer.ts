@@ -14,12 +14,12 @@ import {
   ref,
 } from 'vue';
 
-import { useStore } from '@arco-core/shared/store';
+import { useStore } from '@qin-core/shared/store';
 
 import { DrawerApi } from './drawer-api';
-import ArcoDrawer from './drawer.vue';
+import QinDrawer from './drawer.vue';
 
-const USER_DRAWER_INJECT_KEY = Symbol('ARCO_DRAWER_INJECT');
+const USER_DRAWER_INJECT_KEY = Symbol('QIN_DRAWER_INJECT');
 
 const DEFAULT_DRAWER_PROPS: Partial<DrawerProps> = {};
 
@@ -27,7 +27,7 @@ export function setDefaultDrawerProps(props: Partial<DrawerProps>) {
   Object.assign(DEFAULT_DRAWER_PROPS, props);
 }
 
-export function useArcoDrawer<
+export function useQinDrawer<
   TParentDrawerProps extends DrawerProps = DrawerProps,
 >(options: DrawerApiOptions = {}) {
   // Drawer一般会抽离出来，所以如果有传入 connectedComponent，则表示为外部调用，与内部组件进行连接
@@ -66,7 +66,7 @@ export function useArcoDrawer<
       },
       // eslint-disable-next-line vue/one-component-per-file
       {
-        name: 'ArcoParentDrawer',
+        name: 'QinParentDrawer',
         inheritAttrs: false,
       },
     );
@@ -105,11 +105,11 @@ export function useArcoDrawer<
   const Drawer = defineComponent(
     (props: DrawerProps, { attrs, slots }) => {
       return () =>
-        h(ArcoDrawer, { ...props, ...attrs, drawerApi: extendedApi }, slots);
+        h(QinDrawer, { ...props, ...attrs, drawerApi: extendedApi }, slots);
     },
     // eslint-disable-next-line vue/one-component-per-file
     {
-      name: 'ArcoDrawer',
+      name: 'QinDrawer',
       inheritAttrs: false,
     },
   );
@@ -133,9 +133,9 @@ async function checkProps(api: ExtendedDrawerApi, attrs: Record<string, any>) {
 
   for (const attr of Object.keys(attrs)) {
     if (stateKeys.has(attr) && !['class'].includes(attr)) {
-      // connectedComponent存在时，不要传入Drawer的props，会造成复杂度提升，如果你需要修改Drawer的props，请使用 useArcoDrawer 或者api
+      // connectedComponent存在时，不要传入Drawer的props，会造成复杂度提升，如果你需要修改Drawer的props，请使用 useQinDrawer 或者api
       console.warn(
-        `[Arco Drawer]: When 'connectedComponent' exists, do not set props or slots '${attr}', which will increase complexity. If you need to modify the props of Drawer, please use useArcoDrawer or api.`,
+        `[Qin Drawer]: When 'connectedComponent' exists, do not set props or slots '${attr}', which will increase complexity. If you need to modify the props of Drawer, please use useQinDrawer or api.`,
       );
     }
   }

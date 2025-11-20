@@ -1,4 +1,4 @@
-import type { Nullable } from '@arco/types';
+import type { Nullable } from '@qin/types';
 import type { EChartsOption } from 'echarts';
 
 import type { Ref } from 'vue';
@@ -7,7 +7,7 @@ import type EchartsUI from './echarts-ui.vue';
 
 import { computed, nextTick, watch } from 'vue';
 
-import { usePreferences } from '@arco/preferences';
+import { usePreferences } from '@qin/preferences';
 
 import {
   tryOnUnmounted,
@@ -30,6 +30,21 @@ function useEcharts(chartRef: Ref<EchartsUIType>) {
   const { isDark } = usePreferences();
   const { height, width } = useWindowSize();
   const resizeHandler: () => void = useDebounceFn(resize, 200);
+
+  const getChartEl = (): HTMLElement | null => {
+    const refValue = chartRef?.value as unknown;
+    if (!refValue) return null;
+    if (refValue instanceof HTMLElement) {
+      return refValue;
+    }
+    const maybeComponent = refValue as { $el?: HTMLElement };
+    return maybeComponent.$el ?? null;
+  };
+
+  const isElHidden = (el: HTMLElement | null): boolean => {
+    if (!el) return true;
+    return el.offsetHeight === 0 || el.offsetWidth === 0;
+  };
 
   const getOptions = computed((): EChartsOption => {
     if (!isDark.value) {
@@ -68,6 +83,13 @@ function useEcharts(chartRef: Ref<EchartsUIType>) {
         return;
       }
       nextTick(() => {
+        const el = getChartEl();
+        if (isElHidden(el)) {
+          useTimeoutFn(async () => {
+            resolve(await renderEcharts(currentOptions));
+          }, 30);
+          return;
+        }
         useTimeoutFn(() => {
           if (!chartInstance) {
             const instance = initCharts();
@@ -82,6 +104,10 @@ function useEcharts(chartRef: Ref<EchartsUIType>) {
   };
 
   function resize() {
+    const el = getChartEl();
+    if (isElHidden(el)) {
+      return;
+    }
     chartInstance?.resize({
       animation: {
         duration: 300,

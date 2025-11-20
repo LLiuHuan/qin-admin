@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { computed, toRaw, unref, watch } from 'vue';
 
-import { useSimpleLocale } from '@arco-core/composables';
-import { ArcoExpandableArrow } from '@arco-core/shadcn-ui';
-import { cn, isFunction, triggerWindowResize } from '@arco-core/shared/utils';
+import { useSimpleLocale } from '@qin-core/composables';
+import { QinExpandableArrow } from '@qin-core/shadcn-ui';
+import { cn, isFunction, triggerWindowResize } from '@qin-core/shared/utils';
 
 import { COMPONENT_MAP } from '../config';
 import { injectFormProps } from '../use-form-context';
@@ -47,7 +47,7 @@ async function handleSubmit(e: Event) {
     return;
   }
 
-  const values = toRaw(await props.formApi.getValues());
+  const values = toRaw(await props.formApi.getValues()) ?? {};
   await props.handleSubmit?.(values);
 }
 
@@ -102,7 +102,7 @@ async function handleReset(e: Event) {
   e?.stopPropagation();
   const props = unref(rootProps);
 
-  const values = toRaw(await props.formApi?.getValues());
+  const values = toRaw(await props.formApi?.getValues()) ?? {};
 
   if (isFunction(props.handleReset)) {
     await props.handleReset?.(values);
@@ -174,13 +174,13 @@ defineExpose({
     <!-- 展开按钮前 -->
     <slot name="expand-before"></slot>
 
-    <ArcoExpandableArrow
+    <QinExpandableArrow
       v-if="rootProps.showCollapseButton"
       v-model:model-value="collapsed"
       class="ml-[-0.3em]"
     >
       <span>{{ collapsed ? $t('expand') : $t('collapse') }}</span>
-    </ArcoExpandableArrow>
+    </QinExpandableArrow>
 
     <!-- 展开按钮后 -->
     <slot name="expand-after"></slot>

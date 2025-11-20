@@ -9,11 +9,11 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { useContentMaximize, useTabs } from '@arco/hooks';
-import { preferences } from '@arco/preferences';
-import { useTabbarStore } from '@arco/stores';
+import { useContentMaximize, useTabs } from '@qin/hooks';
+import { preferences } from '@qin/preferences';
+import { useTabbarStore } from '@qin/stores';
 
-import { TabsToolMore, TabsToolScreen, TabsView } from '@arco-core/tabs-ui';
+import { TabsToolMore, TabsToolScreen, TabsView } from '@qin-core/tabs-ui';
 
 import { useTabbar } from './use-tabbar';
 

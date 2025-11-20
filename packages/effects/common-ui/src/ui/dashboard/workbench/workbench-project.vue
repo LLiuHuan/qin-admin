@@ -2,19 +2,19 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 11:56:13
+ * @LastEditTime: 2025-08-18 10:08:14
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
 import type { WorkbenchProjectItem } from '../typing';
 
 import {
-  ArcoIcon,
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '@arco-core/shadcn-ui';
+  QinIcon,
+} from '@qin-core/shadcn-ui';
 
 interface Props {
   items?: WorkbenchProjectItem[];
@@ -50,7 +50,7 @@ defineEmits(['click']);
           class="border-border group w-full cursor-pointer border-r border-t p-4 transition-all hover:shadow-xl md:w-1/2 lg:w-1/3"
         >
           <div class="flex items-center">
-            <ArcoIcon
+            <QinIcon
               :color="item.color"
               :icon="item.icon"
               class="size-8 transition-all duration-300 group-hover:scale-110"

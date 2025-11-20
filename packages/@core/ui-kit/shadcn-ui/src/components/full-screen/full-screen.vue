@@ -1,16 +1,16 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-05-27 10:23:35
+ * @LastEditTime: 2025-08-18 10:11:27
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { Maximize, Minimize } from '@arco-core/icons';
+import { Maximize, Minimize } from '@qin-core/icons';
 
 import { useFullscreen } from '@vueuse/core';
 
-import { ArcoIconButton } from '../button';
+import { QinIconButton } from '../button';
 
 defineOptions({ name: 'FullScreen' });
 
@@ -28,8 +28,11 @@ isFullscreen.value = !!(
 );
 </script>
 <template>
-  <ArcoIconButton @click="toggle">
+  <QinIconButton
+    class="hover:animate-[shrink_0.3s_ease-in-out]"
+    @click="toggle"
+  >
     <Minimize v-if="isFullscreen" class="text-foreground size-4" />
     <Maximize v-else class="text-foreground size-4" />
-  </ArcoIconButton>
+  </QinIconButton>
 </template>

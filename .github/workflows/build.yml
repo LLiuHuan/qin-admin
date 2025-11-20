@@ -28,7 +28,7 @@ jobs:
   # 任务名称：post-update（实际为构建验证任务）
   post-update:
     # 仅在官方仓库执行，避免 fork 仓库误触发
-    if: github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.repository == 'LLiuHuan/qin-admin'
     # 运行环境：多系统验证（当前启用 Ubuntu 和 Windows，macOS 可按需开启）
     runs-on: ${{ matrix.os }}
     strategy:

@@ -2,14 +2,14 @@
 import { reactive } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { Page } from '@arco/common-ui';
-import { useAccessStore } from '@arco/stores';
+import { Page } from '@qin/common-ui';
+import { useAccessStore } from '@qin/stores';
 
-import { MenuBadge } from '@arco-core/menu-ui';
+import { MenuBadge } from '@qin-core/menu-ui';
 
 import { Button, Card, Radio, RadioGroup } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 const colors = [
   { label: '预设：默认', value: 'default' },
@@ -30,7 +30,7 @@ const badgeProps = reactive({
   badgeVariants: (menu?.badgeVariants as string) || 'default',
 });
 
-const [Form] = useArcoForm({
+const [Form] = useQinForm({
   handleValuesChange(values) {
     badgeProps.badge = values.badge;
     badgeProps.badgeType = values.badgeType;

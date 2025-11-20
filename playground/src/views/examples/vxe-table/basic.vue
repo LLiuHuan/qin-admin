@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import type { VxeGridListeners, VxeGridProps } from '#/adapter/vxe-table';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Message } from '@arco-design/web-vue';
 
-import { useArcoVxeGrid } from '#/adapter/vxe-table';
+import { useQinVxeGrid } from '#/adapter/vxe-table';
 import DocButton from '#/components/DocButton/index.vue';
 
 import { MOCK_TABLE_DATA } from './table-data';
@@ -43,7 +43,7 @@ const gridEvents: VxeGridListeners<RowType> = {
   },
 };
 
-const [Grid, gridApi] = useArcoVxeGrid<RowType>({
+const [Grid, gridApi] = useQinVxeGrid<RowType>({
   // 放开注释查看表单组件的类型
   // formOptions: {
   //   schema: [

@@ -8,12 +8,12 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
 
-import type { ContentCompactType } from '@arco-core/typings';
+import type { ContentCompactType } from '@qin-core/typings';
 
 import { computed } from 'vue';
 
-import { useLayoutContentStyle } from '@arco-core/composables';
-import { Slot } from '@arco-core/shadcn-ui';
+import { useLayoutContentStyle } from '@qin-core/composables';
+import { Slot } from '@qin-core/shadcn-ui';
 
 interface Props {
   /**

@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import type { SupportedLanguagesType } from '@arco/locales';
+<script lang="ts" setup>
+import type { SupportedLanguagesType } from '@qin/locales';
 import type {
   BreadcrumbStyleType,
   BuiltinThemeType,
@@ -10,28 +10,24 @@ import type {
   NavigationStyleType,
   PreferencesButtonPositionType,
   ThemeModeType,
-} from '@arco/types';
+} from '@qin/types';
 
-import type { SegmentedItem } from '@arco-core/shadcn-ui';
+import type { SegmentedItem } from '@qin-core/shadcn-ui';
 
 import { computed, ref } from 'vue';
 
-import { Copy, RotateCw } from '@arco/icons';
-import { $t, loadLocaleMessages } from '@arco/locales';
+import { Copy, Pin, PinOff, RotateCw } from '@qin/icons';
+import { $t, loadLocaleMessages } from '@qin/locales';
 import {
   clearPreferencesCache,
   preferences,
   resetPreferences,
   usePreferences,
-} from '@arco/preferences';
+} from '@qin/preferences';
 
-import { useArcoDrawer } from '@arco-core/popup-ui';
-import {
-  ArcoButton,
-  ArcoIconButton,
-  ArcoSegmented,
-} from '@arco-core/shadcn-ui';
-import { globalShareState } from '@arco-core/shared/global-state';
+import { useQinDrawer } from '@qin-core/popup-ui';
+import { QinButton, QinIconButton, QinSegmented } from '@qin-core/shadcn-ui';
+import { globalShareState } from '@qin-core/shared/global-state';
 
 import { useClipboard } from '@vueuse/core';
 
@@ -67,7 +63,11 @@ const appColorGrayMode = defineModel<boolean>('appColorGrayMode');
 const appColorWeakMode = defineModel<boolean>('appColorWeakMode');
 const appContentCompact = defineModel<ContentCompactType>('appContentCompact');
 const appWatermark = defineModel<boolean>('appWatermark');
+const appWatermarkContent = defineModel<string>('appWatermarkContent');
 const appEnableCheckUpdates = defineModel<boolean>('appEnableCheckUpdates');
+const appEnableStickyPreferencesNavigationBar = defineModel<boolean>(
+  'appEnableStickyPreferencesNavigationBar',
+);
 const appPreferencesButtonPosition = defineModel<PreferencesButtonPositionType>(
   'appPreferencesButtonPosition',
 );
@@ -177,7 +177,7 @@ const {
 } = usePreferences();
 const { copy } = useClipboard({ legacy: true });
 
-const [Drawer] = useArcoDrawer();
+const [Drawer] = useQinDrawer();
 
 const activeTab = ref('appearance');
 
@@ -240,26 +240,52 @@ async function handleReset() {
     <Drawer
       :description="$t('preferences.subtitle')"
       :title="$t('preferences.title')"
-      class="sm:max-w-sm"
+      class="!border-0 sm:max-w-sm"
     >
       <template #extra>
         <div class="flex items-center">
-          <ArcoIconButton
+          <QinIconButton
             :disabled="!diffPreference"
             :tooltip="$t('preferences.resetTip')"
             class="relative"
+            @click="handleReset"
           >
             <span
               v-if="diffPreference"
               class="bg-primary absolute right-0.5 top-0.5 h-2 w-2 rounded"
             ></span>
-            <RotateCw class="size-4" @click="handleReset" />
-          </ArcoIconButton>
+            <RotateCw class="size-4" />
+          </QinIconButton>
+          <QinIconButton
+            :tooltip="
+              appEnableStickyPreferencesNavigationBar
+                ? $t('preferences.disableStickyPreferencesNavigationBar')
+                : $t('preferences.enableStickyPreferencesNavigationBar')
+            "
+            class="relative"
+            @click="
+              () =>
+                (appEnableStickyPreferencesNavigationBar =
+                  !appEnableStickyPreferencesNavigationBar)
+            "
+          >
+            <PinOff
+              v-if="appEnableStickyPreferencesNavigationBar"
+              class="size-4"
+            />
+            <Pin v-else class="size-4" />
+          </QinIconButton>
         </div>
       </template>
 
-      <div class="p-1">
-        <ArcoSegmented v-model="activeTab" :tabs="tabs">
+      <div>
+        <QinSegmented
+          v-model="activeTab"
+          :class="{
+            'sticky-tabs-header': appEnableStickyPreferencesNavigationBar,
+          }"
+          :tabs="tabs"
+        >
           <template #general>
             <Block :title="$t('preferences.general')">
               <General
@@ -267,6 +293,7 @@ async function handleReset() {
                 v-model:app-enable-check-updates="appEnableCheckUpdates"
                 v-model:app-locale="appLocale"
                 v-model:app-watermark="appWatermark"
+                v-model:app-watermark-content="appWatermarkContent"
               />
             </Block>
 
@@ -316,12 +343,12 @@ async function handleReset() {
               <Sidebar
                 v-model:sidebar-auto-activate-child="sidebarAutoActivateChild"
                 v-model:sidebar-collapsed="sidebarCollapsed"
+                v-model:sidebar-collapsed-button="sidebarCollapsedButton"
                 v-model:sidebar-collapsed-show-title="sidebarCollapsedShowTitle"
                 v-model:sidebar-enable="sidebarEnable"
                 v-model:sidebar-expand-on-hover="sidebarExpandOnHover"
-                v-model:sidebar-width="sidebarWidth"
-                v-model:sidebar-collapsed-button="sidebarCollapsedButton"
                 v-model:sidebar-fixed-button="sidebarFixedButton"
+                v-model:sidebar-width="sidebarWidth"
                 :current-layout="appLayout"
                 :disabled="!isSideMode"
               />
@@ -332,8 +359,8 @@ async function handleReset() {
                 v-model:header-enable="headerEnable"
                 v-model:header-menu-align="headerMenuAlign"
                 v-model:header-mode="headerMode"
-                :disabled="isFullContent"
                 :current-layout="appLayout"
+                :disabled="isFullContent"
               />
             </Block>
 
@@ -364,14 +391,14 @@ async function handleReset() {
               <Tabbar
                 v-model:tabbar-draggable="tabbarDraggable"
                 v-model:tabbar-enable="tabbarEnable"
+                v-model:tabbar-max-count="tabbarMaxCount"
+                v-model:tabbar-middle-click-to-close="tabbarMiddleClickToClose"
                 v-model:tabbar-persist="tabbarPersist"
                 v-model:tabbar-show-icon="tabbarShowIcon"
                 v-model:tabbar-show-maximize="tabbarShowMaximize"
                 v-model:tabbar-show-more="tabbarShowMore"
                 v-model:tabbar-style-type="tabbarStyleType"
                 v-model:tabbar-wheelable="tabbarWheelable"
-                v-model:tabbar-max-count="tabbarMaxCount"
-                v-model:tabbar-middle-click-to-close="tabbarMiddleClickToClose"
               />
             </Block>
             <Block :title="$t('preferences.widget.title')">
@@ -421,11 +448,11 @@ async function handleReset() {
               />
             </Block>
           </template>
-        </ArcoSegmented>
+        </QinSegmented>
       </div>
 
       <template #footer>
-        <ArcoButton
+        <QinButton
           :disabled="!diffPreference"
           class="mx-4 w-full"
           size="sm"
@@ -434,8 +461,8 @@ async function handleReset() {
         >
           <Copy class="mr-2 size-3" />
           {{ $t('preferences.copyPreferences') }}
-        </ArcoButton>
-        <ArcoButton
+        </QinButton>
+        <QinButton
           :disabled="!diffPreference"
           class="mr-4 w-full"
           size="sm"
@@ -443,8 +470,16 @@ async function handleReset() {
           @click="handleClearCache"
         >
           {{ $t('preferences.clearAndLogout') }}
-        </ArcoButton>
+        </QinButton>
       </template>
     </Drawer>
   </div>
 </template>
+
+<style scoped>
+:deep(.sticky-tabs-header [role='tablist']) {
+  position: sticky;
+  top: -12px;
+  z-index: 10;
+}
+</style>

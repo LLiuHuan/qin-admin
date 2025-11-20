@@ -3,7 +3,7 @@ import type { RouteLocationNormalized } from 'vue-router';
 
 import { useRoute, useRouter } from 'vue-router';
 
-import { useTabbarStore } from '@arco/stores';
+import { useTabbarStore } from '@qin/stores';
 
 export function useTabs() {
   const router = useRouter();

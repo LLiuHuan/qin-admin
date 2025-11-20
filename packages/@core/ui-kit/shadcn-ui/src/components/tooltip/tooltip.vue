@@ -10,7 +10,7 @@ import type { TooltipContentProps } from 'reka-ui';
 
 import type { StyleValue } from 'vue';
 
-import type { ClassType } from '@arco-core/typings';
+import type { ClassType } from '@qin-core/typings';
 
 import {
   Tooltip,

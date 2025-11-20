@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { Settings } from '@arco/icons';
+import { Settings } from '@qin/icons';
 
-import { ArcoIconButton } from '@arco-core/shadcn-ui';
+import { QinIconButton } from '@qin-core/shadcn-ui';
 
 import Preferences from './preferences.vue';
 
@@ -13,8 +13,8 @@ function clearPreferencesAndLogout() {
 </script>
 <template>
   <Preferences @clear-preferences-and-logout="clearPreferencesAndLogout">
-    <ArcoIconButton>
+    <QinIconButton class="hover:animate-[shrink_0.3s_ease-in-out]">
       <Settings class="text-foreground size-4" />
-    </ArcoIconButton>
+    </QinIconButton>
   </Preferences>
 </template>

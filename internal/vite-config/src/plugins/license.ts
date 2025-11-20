@@ -14,7 +14,7 @@ import type { PluginOption } from 'vite';
 
 import { EOL } from 'node:os';
 
-import { dateUtil, readPackageJSON } from '@arco/node-utils';
+import { dateUtil, readPackageJSON } from '@qin/node-utils';
 
 /**
  * 用于注入版权信息
@@ -37,7 +37,7 @@ async function viteLicensePlugin(
       handler: (_options: NormalizedOutputOptions, bundle: OutputBundle) => {
         const date = dateUtil().format('YYYY-MM-DD ');
         const copyrightText = `/*!
-  * Arco Design Pro
+  * Qin Admin
   * Version: ${version}
   * Author: LLiuHuan
   * Copyright (C) 2024 Arco

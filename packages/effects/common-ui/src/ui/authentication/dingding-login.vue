@@ -1,12 +1,12 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useRoute } from 'vue-router';
 
-import { RiDingding } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { SvgDingDingIcon } from '@qin/icons';
+import { $t } from '@qin/locales';
 
-import { alert, useArcoModal } from '@arco-core/popup-ui';
-import { ArcoIconButton } from '@arco-core/shadcn-ui';
-import { loadScript } from '@arco-core/shared/utils';
+import { alert, useQinModal } from '@qin-core/popup-ui';
+import { QinIconButton } from '@qin-core/shadcn-ui';
+import { loadScript } from '@qin-core/shared/utils';
 
 interface Props {
   clientId: string;
@@ -21,7 +21,7 @@ const props = defineProps<Props>();
 
 const route = useRoute();
 
-const [Modal, modalApi] = useArcoModal({
+const [Modal, modalApi] = useQinModal({
   header: false,
   footer: false,
   fullscreenButton: false,
@@ -91,13 +91,13 @@ const handleLogin = () => {
 
 <template>
   <div>
-    <ArcoIconButton
-      @click="handleLogin"
+    <QinIconButton
       :tooltip="$t('authentication.dingdingLogin')"
       tooltip-side="top"
+      @click="handleLogin"
     >
-      <RiDingding />
-    </ArcoIconButton>
+      <SvgDingDingIcon />
+    </QinIconButton>
     <Modal>
       <div id="dingding_qrcode_login_element"></div>
     </Modal>

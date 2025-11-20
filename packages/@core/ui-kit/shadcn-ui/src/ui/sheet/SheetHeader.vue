@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 const props = defineProps<{ class?: any }>();
 </script>

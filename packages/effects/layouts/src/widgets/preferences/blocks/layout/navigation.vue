@@ -6,9 +6,9 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { SelectOption } from '@arco/types';
+import type { SelectOption } from '@qin/types';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
 import SwitchItem from '../switch-item.vue';
 import ToggleItem from '../toggle-item.vue';

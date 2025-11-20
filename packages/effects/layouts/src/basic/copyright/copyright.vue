@@ -19,7 +19,7 @@ defineOptions({
 });
 
 withDefaults(defineProps<Props>(), {
-  companyName: 'Arco Design Pro',
+  companyName: 'Qin Admin',
   companySiteLink: '',
   date: '2024',
   icp: '',

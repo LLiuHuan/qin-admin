@@ -1,11 +1,11 @@
-import type { Recordable, UserInfo } from '@arco/types';
+import type { Recordable, UserInfo } from '@qin/types';
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { LOGIN_PATH } from '@arco/constants';
-import { preferences } from '@arco/preferences';
-import { resetAllStores, useAccessStore, useUserStore } from '@arco/stores';
+import { LOGIN_PATH } from '@qin/constants';
+import { preferences } from '@qin/preferences';
+import { resetAllStores, useAccessStore, useUserStore } from '@qin/stores';
 
 import { defineStore } from 'pinia';
 

@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { PinInputProps } from './types';
 
 import { computed, onBeforeUnmount, ref, useId, watch } from 'vue';
 
 import { PinInput, PinInputGroup, PinInputInput } from '../../ui';
-import { ArcoButton } from '../button';
+import { QinButton } from '../button';
 
 defineOptions({
   inheritAttrs: false,
@@ -59,9 +59,9 @@ function handleComplete(e: string[]) {
 async function handleSend(e: Event) {
   try {
     e?.preventDefault();
-    await handleSendCode();
     countdown.value = maxTime;
     startCountdown();
+    await handleSendCode();
   } catch (error) {
     console.error('Failed to send code:', error);
     // Consider emitting an error event or showing a notification
@@ -84,6 +84,8 @@ onBeforeUnmount(() => {
 });
 
 const id = useId();
+
+const pinType = 'text' as const;
 </script>
 
 <template>
@@ -91,10 +93,10 @@ const id = useId();
     :id="id"
     v-model="inputValue"
     :disabled="disabled"
+    :type="pinType"
     class="flex w-full justify-between"
     otp
     placeholder="○"
-    type="number"
     @complete="handleComplete"
   >
     <div class="relative flex w-full">
@@ -105,7 +107,7 @@ const id = useId();
           :index="index"
         />
       </PinInputGroup>
-      <ArcoButton
+      <QinButton
         :disabled="disabled"
         :loading="btnLoading"
         class="flex-grow"
@@ -114,7 +116,7 @@ const id = useId();
         @click="handleSend"
       >
         {{ btnText }}
-      </ArcoButton>
+      </QinButton>
     </div>
   </PinInput>
 </template>

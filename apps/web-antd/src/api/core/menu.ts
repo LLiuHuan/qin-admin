@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-07-24 01:18:13
  * @LastEditors: LLiuHuan
  */
-import type { RouteRecordStringComponent } from '@arco/types';
+import type { RouteRecordStringComponent } from '@qin/types';
 
 import { requestClient } from '#/api/request';
 

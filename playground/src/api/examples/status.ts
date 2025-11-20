@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-08-01 04:49:28
  * @LastEditors: LLiuHuan
  */
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 
 import { requestClient } from '../request';
 

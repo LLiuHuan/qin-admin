@@ -1,4 +1,4 @@
-import type { ECOption } from '@arco/plugins/echarts';
+import type { ECOption } from '@qin/plugins/echarts';
 
 export const lineOptions: ECOption = {
   xAxis: {

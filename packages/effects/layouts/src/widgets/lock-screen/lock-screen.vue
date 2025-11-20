@@ -1,13 +1,13 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed, reactive, ref } from 'vue';
 
-import { LockKeyhole } from '@arco/icons';
-import { $t, useI18n } from '@arco/locales';
-import { storeToRefs, useAccessStore } from '@arco/stores';
+import { LockKeyhole } from '@qin/icons';
+import { $t, useI18n } from '@qin/locales';
+import { storeToRefs, useAccessStore } from '@qin/stores';
 
-import { useScrollLock } from '@arco-core/composables';
-import { useArcoForm, z } from '@arco-core/form-ui';
-import { ArcoAvatar, ArcoButton } from '@arco-core/shadcn-ui';
+import { useScrollLock } from '@qin-core/composables';
+import { useQinForm, z } from '@qin-core/form-ui';
+import { QinAvatar, QinButton } from '@qin-core/shadcn-ui';
 
 import { useDateFormat, useNow } from '@vueuse/core';
 
@@ -37,7 +37,7 @@ const date = useDateFormat(now, 'YYYY-MM-DD dddd', { locales: locale.value });
 const showUnlockForm = ref(false);
 const { lockScreenPassword } = storeToRefs(accessStore);
 
-const [Form, { form, validate }] = useArcoForm(
+const [Form, { form, validate, getFieldComponentRef }] = useQinForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -45,7 +45,7 @@ const [Form, { form, validate }] = useArcoForm(
     },
     schema: computed(() => [
       {
-        component: 'ArcoInputPassword' as const,
+        component: 'QinInputPassword' as const,
         componentProps: {
           placeholder: $t('ui.widgets.lockScreen.placeholder'),
         },
@@ -75,6 +75,13 @@ async function handleSubmit() {
 
 function toggleUnlockForm() {
   showUnlockForm.value = !showUnlockForm.value;
+  if (showUnlockForm.value) {
+    requestAnimationFrame(() => {
+      getFieldComponentRef('password')
+        ?.$el?.querySelector('[name="password"]')
+        ?.focus();
+    });
+  }
 }
 
 useScrollLock();
@@ -94,7 +101,7 @@ useScrollLock();
           <span>{{ $t('ui.widgets.lockScreen.unlock') }}</span>
         </div>
         <div class="flex h-full w-full items-center justify-center">
-          <div class="lex w-full justify-center gap-4 px-4 sm:gap-6 md:gap-8">
+          <div class="flex w-full justify-center gap-4 px-4 sm:gap-6 md:gap-8">
             <div
               class="bg-accent relative flex h-[140px] w-[140px] items-center justify-center rounded-xl text-[36px] sm:h-[160px] sm:w-[160px] sm:text-[42px] md:h-[200px] md:w-[200px] md:text-[72px]"
             >
@@ -122,28 +129,28 @@ useScrollLock();
         @keydown.enter.prevent="handleSubmit"
       >
         <div class="flex-col-center mb-10 w-[90%] max-w-[300px] px-4">
-          <ArcoAvatar :src="avatar" class="enter-x mb-6 size-20" />
+          <QinAvatar :src="avatar" class="enter-x mb-6 size-20" />
 
           <div class="enter-x mb-2 w-full items-center">
             <Form />
           </div>
-          <ArcoButton class="enter-x w-full" @click="handleSubmit">
+          <QinButton class="enter-x w-full" @click="handleSubmit">
             {{ $t('ui.widgets.lockScreen.entry') }}
-          </ArcoButton>
-          <ArcoButton
+          </QinButton>
+          <QinButton
             class="enter-x my-2 w-full"
             variant="ghost"
             @click="$emit('toLogin')"
           >
             {{ $t('ui.widgets.lockScreen.backToLogin') }}
-          </ArcoButton>
-          <ArcoButton
+          </QinButton>
+          <QinButton
             class="enter-x mr-2 w-full"
             variant="ghost"
             @click="toggleUnlockForm"
           >
             {{ $t('common.back') }}
-          </ArcoButton>
+          </QinButton>
         </div>
       </div>
     </transition>

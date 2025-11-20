@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 
-import type { ArcoFormSchema } from '@arco-core/form-ui';
+import type { QinFormSchema } from '@qin-core/form-ui';
 
 import { computed, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { useArcoForm } from '@arco-core/form-ui';
-import { ArcoButton } from '@arco-core/shadcn-ui';
+import { useQinForm } from '@qin-core/form-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 
 interface Props {
-  formSchema?: ArcoFormSchema[];
+  formSchema?: QinFormSchema[];
   /**
    * @zh_CN 是否处于加载处理状态
    */
@@ -52,7 +52,7 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, formApi] = useArcoForm(
+const [Form, formApi] = useQinForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -96,7 +96,7 @@ defineExpose({
     </Title>
     <Form />
 
-    <ArcoButton
+    <QinButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -108,10 +108,10 @@ defineExpose({
       <slot name="submitButtonText">
         {{ submitButtonText || $t('authentication.signUp') }}
       </slot>
-    </ArcoButton>
+    </QinButton>
     <div class="mt-4 text-center text-sm">
       {{ $t('authentication.alreadyHaveAccount') }}
-      <span class="adp-link text-sm font-normal" @click="goToLogin()">
+      <span class="qin-link text-sm font-normal" @click="goToLogin()">
         {{ $t('authentication.goToLogin') }}
       </span>
     </div>

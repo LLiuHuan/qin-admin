@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 
 import { useRouter } from 'vue-router';
 
-import { AccessControl, useAccess } from '@arco/access';
-import { Page } from '@arco/common-ui';
-import { resetAllStores, useUserStore } from '@arco/stores';
+import { AccessControl, useAccess } from '@qin/access';
+import { Page } from '@qin/common-ui';
+import { resetAllStores, useUserStore } from '@qin/stores';
 
 import { Button, Card } from '@arco-design/web-vue';
 

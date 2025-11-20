@@ -2,7 +2,7 @@ import type { TabsProps } from './types';
 
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
-import { ArcoScrollbar } from '@arco-core/shadcn-ui';
+import { QinScrollbar } from '@qin-core/shadcn-ui';
 
 import { useDebounceFn } from '@vueuse/core';
 
@@ -12,7 +12,7 @@ export function useTabsViewScroll(props: TabsProps) {
   let resizeObserver: null | ResizeObserver = null;
   let mutationObserver: MutationObserver | null = null;
   let tabItemCount = 0;
-  const scrollbarRef = ref<InstanceType<typeof ArcoScrollbar> | null>(null);
+  const scrollbarRef = ref<InstanceType<typeof QinScrollbar> | null>(null);
   const scrollViewportEl = ref<DomElement>(null);
   const showScrollButton = ref(false);
   const scrollIsAtLeft = ref(true);

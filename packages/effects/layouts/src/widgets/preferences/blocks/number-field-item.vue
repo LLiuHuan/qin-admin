@@ -6,20 +6,20 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { SelectOption } from '@arco/types';
+import type { SelectOption } from '@qin/types';
 
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@arco/icons';
+import { CircleHelp } from '@qin/icons';
 
 import {
-  ArcoTooltip,
   NumberField,
   NumberFieldContent,
   NumberFieldDecrement,
   NumberFieldIncrement,
   NumberFieldInput,
-} from '@arco-core/shadcn-ui';
+  QinTooltip,
+} from '@qin-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceSelectItem',
@@ -56,7 +56,7 @@ const slots = useSlots();
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <ArcoTooltip v-if="slots.tip || tip" side="bottom">
+      <QinTooltip v-if="slots.tip || tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
@@ -67,7 +67,7 @@ const slots = useSlots();
             </p>
           </template>
         </slot>
-      </ArcoTooltip>
+      </QinTooltip>
     </span>
 
     <NumberField v-model="inputValue" v-bind="$attrs" class="w-[165px]">

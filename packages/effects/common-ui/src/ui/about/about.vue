@@ -1,15 +1,11 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { AboutProps, DescriptionItem } from './about';
 
 import { h } from 'vue';
 
-import {
-  ARCO_DOC_URL,
-  ARCO_GITHUB_URL,
-  ARCO_PREVIEW_URL,
-} from '@arco/constants';
+import { QIN_DOC_URL, QIN_GITHUB_URL, QIN_PREVIEW_URL } from '@qin/constants';
 
-import { ArcoRenderContent } from '@arco-core/shadcn-ui';
+import { QinRenderContent } from '@qin-core/shadcn-ui';
 
 import { Page } from '../../components';
 
@@ -22,12 +18,12 @@ defineOptions({
 withDefaults(defineProps<Props>(), {
   description:
     '是一个现代化开箱即用的中后台解决方案，采用最新的技术栈，包括 Vue 3.0、Vite、Unocss 和 TypeScript 等前沿技术，代码规范严谨，提供丰富的配置选项，旨在为中大型项目的开发提供现成的开箱即用解决方案及丰富的示例，同时，它也是学习和深入前端技术的一个极佳示例。',
-  name: 'Arco Design Pro',
+  name: 'Qin Admin',
   title: '关于项目',
 });
 
 declare global {
-  const __ARCO_DESIGN_METADATA__: {
+  const __QIN_DESIGN_METADATA__: {
     authorEmail: string;
     authorName: string;
     authorUrl: string;
@@ -45,7 +41,7 @@ declare global {
 const renderLink = (href: string, text: string) =>
   h(
     'a',
-    { href, target: '_blank', class: 'adp-link' },
+    { href, target: '_blank', class: 'qin-link' },
     { default: () => text },
   );
 
@@ -60,7 +56,7 @@ const {
   license,
   version,
   // vite inject-metadata 插件注入的全局变量
-} = __ARCO_DESIGN_METADATA__ || {};
+} = __QIN_DESIGN_METADATA__ || {};
 
 const arcoDescriptionItems: DescriptionItem[] = [
   {
@@ -80,15 +76,15 @@ const arcoDescriptionItems: DescriptionItem[] = [
     title: '主页',
   },
   {
-    content: renderLink(ARCO_DOC_URL, '点击查看'),
+    content: renderLink(QIN_DOC_URL, '点击查看'),
     title: '文档地址',
   },
   {
-    content: renderLink(ARCO_PREVIEW_URL, '点击查看'),
+    content: renderLink(QIN_PREVIEW_URL, '点击查看'),
     title: '预览地址',
   },
   {
-    content: renderLink(ARCO_GITHUB_URL, '点击查看'),
+    content: renderLink(QIN_GITHUB_URL, '点击查看'),
     title: 'Github',
   },
   {
@@ -115,7 +111,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
   <Page :title="title">
     <template #description>
       <p class="text-foreground mt-3 text-sm leading-6">
-        <a :href="ARCO_GITHUB_URL" class="adp-link" target="_blank">
+        <a :href="QIN_GITHUB_URL" class="qin-link" target="_blank">
           {{ name }}
         </a>
         {{ description }}
@@ -133,7 +129,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
                 {{ item.title }}
               </dt>
               <dd class="text-foreground mt-1 text-sm leading-6 sm:mt-2">
-                <ArcoRenderContent :content="item.content" />
+                <QinRenderContent :content="item.content" />
               </dd>
             </div>
           </template>
@@ -153,7 +149,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
                 {{ item.title }}
               </dt>
               <dd class="text-foreground/80 mt-1 text-sm sm:mt-2">
-                <ArcoRenderContent :content="item.content" />
+                <QinRenderContent :content="item.content" />
               </dd>
             </div>
           </template>
@@ -172,7 +168,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
                 {{ item.title }}
               </dt>
               <dd class="text-foreground/80 mt-1 text-sm sm:mt-2">
-                <ArcoRenderContent :content="item.content" />
+                <QinRenderContent :content="item.content" />
               </dd>
             </div>
           </template>

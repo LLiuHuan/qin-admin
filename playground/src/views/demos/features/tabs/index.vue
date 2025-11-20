@@ -2,8 +2,8 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { Page } from '@arco/common-ui';
-import { useTabs } from '@arco/hooks';
+import { Page } from '@qin/common-ui';
+import { useTabs } from '@qin/hooks';
 
 import { Button, Card, Input } from '@arco-design/web-vue';
 
@@ -24,7 +24,7 @@ const {
 
 function openTab() {
   // 这里就是路由跳转，也可以用path
-  router.push({ name: 'ArcoAbout' });
+  router.push({ name: 'QinAbout' });
 }
 
 function openTabWithParams(id: number) {

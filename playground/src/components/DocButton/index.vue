@@ -6,8 +6,8 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { ARCO_DOC_URL } from '@arco/constants';
-import { openWindow } from '@arco/utils';
+import { QIN_DOC_URL } from '@qin/constants';
+import { openWindow } from '@qin/utils';
 
 import { Button } from '@arco-design/web-vue';
 
@@ -18,7 +18,7 @@ function handleClick() {
   if (!path.toLowerCase().startsWith('http')) {
     // 如果没有.html，打开页面时可能会出现404
     path =
-      ARCO_DOC_URL +
+      QIN_DOC_URL +
       (props.path.toLowerCase().endsWith('.html')
         ? props.path
         : `${props.path}.html`);

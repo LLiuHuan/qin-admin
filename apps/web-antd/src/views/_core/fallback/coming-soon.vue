@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { Fallback } from '@arco/common-ui';
+import { Fallback } from '@qin/common-ui';
 </script>
 
 <template>

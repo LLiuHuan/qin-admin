@@ -11,9 +11,9 @@ import type {
   LayoutHeaderModeType,
   LayoutType,
   SelectOption,
-} from '@arco/types';
+} from '@qin/types';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
 import SelectItem from '../select-item.vue';
 import SwitchItem from '../switch-item.vue';

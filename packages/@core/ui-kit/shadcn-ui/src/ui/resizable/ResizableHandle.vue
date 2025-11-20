@@ -15,8 +15,8 @@ import type { HTMLAttributes } from 'vue';
 
 import { computed } from 'vue';
 
-import { GripVertical } from '@arco-core/icons';
-import { cn } from '@arco-core/shared/utils';
+import { GripVertical } from '@qin-core/icons';
+import { cn } from '@qin-core/shared/utils';
 
 import { SplitterResizeHandle, useForwardPropsEmits } from 'reka-ui';
 

@@ -2,10 +2,10 @@
  * @Description: 全局类型
  * @Author: LLiuHuan
  * @Date: 2025-05-22 17:00:46
- * @LastEditTime: 2025-07-31 12:11:39
+ * @LastEditTime: 2025-08-18 10:53:10
  * @LastEditors: LLiuHuan
  */
-import type { RouteMeta as IRouteMeta } from '@arco-core/typings';
+import type { RouteMeta as IRouteMeta } from '@qin-core/typings';
 
 import 'vue-router';
 
@@ -14,7 +14,7 @@ declare module 'vue-router' {
   interface RouteMeta extends IRouteMeta {}
 }
 
-export interface ArcoDesignProAppConfigRaw {
+export interface QinDesignProAppConfigRaw {
   VITE_GLOB_API_URL: string;
   VITE_GLOB_AUTH_DINGDING_CLIENT_ID: string;
   VITE_GLOB_AUTH_DINGDING_CORP_ID: string;
@@ -34,6 +34,6 @@ export interface ApplicationConfig {
 
 declare global {
   interface Window {
-    _ARCO_DESIGN_PRO_APP_CONF_: ArcoDesignProAppConfigRaw;
+    _QIN_ADMIN_APP_CONF_: QinDesignProAppConfigRaw;
   }
 }

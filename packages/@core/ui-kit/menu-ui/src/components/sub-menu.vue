@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import type { HoverCardContentProps } from '@arco-core/shadcn-ui';
+import type { HoverCardContentProps } from '@qin-core/shadcn-ui';
 
 import type { MenuItemRegistered, MenuProvider, SubMenuProps } from '../types';
 
 import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 
-import { useNamespace } from '@arco-core/composables';
-import { ArcoHoverCard } from '@arco-core/shadcn-ui';
+import { useNamespace } from '@qin-core/composables';
+import { QinHoverCard } from '@qin-core/shadcn-ui';
 
 import {
   createSubMenuContext,
@@ -202,7 +202,7 @@ onBeforeUnmount(() => {
     @mouseleave="() => handleMouseleave()"
   >
     <template v-if="rootMenu.isMenuPopup">
-      <ArcoHoverCard
+      <QinHoverCard
         :content-class="[
           rootMenu.theme,
           nsMenu.e('popup-container'),
@@ -243,7 +243,7 @@ onBeforeUnmount(() => {
             <slot></slot>
           </ul>
         </div>
-      </ArcoHoverCard>
+      </QinHoverCard>
     </template>
 
     <template v-else>

@@ -8,11 +8,11 @@
 <script lang="ts" setup>
 import type { VxeGridProps } from '#/adapter/vxe-table';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Message } from '@arco-design/web-vue';
 
-import { useArcoVxeGrid } from '#/adapter/vxe-table';
+import { useQinVxeGrid } from '#/adapter/vxe-table';
 import TableAPI from '#/api/examples/table';
 
 interface RowType {
@@ -57,7 +57,7 @@ const gridOptions: VxeGridProps<RowType> = {
   showOverflow: true,
 };
 
-const [Grid, gridApi] = useArcoVxeGrid({ gridOptions });
+const [Grid, gridApi] = useQinVxeGrid({ gridOptions });
 
 function hasEditStatus(row: RowType) {
   return gridApi.grid?.isEditByRow(row);

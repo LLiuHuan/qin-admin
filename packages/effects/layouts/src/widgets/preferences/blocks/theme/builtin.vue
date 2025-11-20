@@ -1,13 +1,13 @@
-<script setup lang="ts">
-import type { BuiltinThemePreset } from '@arco/preferences';
-import type { BuiltinThemeType } from '@arco/types';
+<script lang="ts" setup>
+import type { BuiltinThemePreset } from '@qin/preferences';
+import type { BuiltinThemeType } from '@qin/types';
 
 import { computed, ref, watch } from 'vue';
 
-import { UserRoundPen } from '@arco/icons';
-import { $t } from '@arco/locales';
-import { BUILT_IN_THEME_PRESETS } from '@arco/preferences';
-import { convertToHsl, TinyColor } from '@arco/utils';
+import { UserRoundPen } from '@qin/icons';
+import { $t } from '@qin/locales';
+import { BUILT_IN_THEME_PRESETS } from '@qin/preferences';
+import { convertToHsl, TinyColor } from '@qin/utils';
 
 import { useThrottleFn } from '@vueuse/core';
 
@@ -104,7 +104,7 @@ function selectColor() {
 
 watch(
   () => [modelValue.value, props.isDark] as [BuiltinThemeType, boolean],
-  ([themeType, isDark]) => {
+  ([themeType, isDark], [_, isDarkPrev]) => {
     const theme = builtinThemePresets.value.find(
       (item) => item.type === themeType,
     );
@@ -113,7 +113,9 @@ watch(
         ? theme.darkPrimaryColor || theme.primaryColor
         : theme.primaryColor;
 
-      themeColorPrimary.value = primaryColor || theme.color;
+      if (!(theme.type === 'custom' && isDark !== isDarkPrev)) {
+        themeColorPrimary.value = primaryColor || theme.color;
+      }
     }
   },
 );
@@ -132,14 +134,14 @@ watch(
           <template v-if="theme.type !== 'custom'">
             <div
               :style="{ backgroundColor: theme.color }"
-              class="mx-10 my-2 size-5 rounded-md"
+              class="mx-9 my-2 size-5 rounded-md"
             ></div>
           </template>
           <template v-else>
-            <div class="size-full px-10 py-2" @click.stop="selectColor">
+            <div class="size-full px-9 py-2" @click.stop="selectColor">
               <div class="flex-center relative size-5 rounded-sm">
                 <UserRoundPen
-                  class="absolute z-10 size-5 opacity-60 group-hover:opacity-100"
+                  class="z-1 absolute size-5 opacity-60 group-hover:opacity-100"
                 />
                 <input
                   ref="colorInput"

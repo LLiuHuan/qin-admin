@@ -15,8 +15,8 @@ import {
   watch,
 } from 'vue';
 
-// import { useAntdDesignTokens } from '@arco/hooks';
-// import { initPreferences } from '@arco/preferences';
+// import { useAntdDesignTokens } from '@qin/hooks';
+// import { initPreferences } from '@qin/preferences';
 import { ConfigProvider, theme } from 'ant-design-vue';
 import mediumZoom from 'medium-zoom';
 import { useRoute } from 'vitepress';

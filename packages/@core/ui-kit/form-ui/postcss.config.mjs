@@ -1,1 +1,1 @@
-export { default } from '@arco/uno-config/postcss';
+export { default } from '@qin/uno-config/postcss';

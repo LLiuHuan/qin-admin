@@ -6,11 +6,11 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { SelectOption } from '@arco/types';
+import type { SelectOption } from '@qin/types';
 
 import { computed } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
 import SelectItem from '../select-item.vue';
 import SwitchItem from '../switch-item.vue';

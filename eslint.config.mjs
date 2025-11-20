@@ -7,6 +7,6 @@
  */
 // @ts-check
 
-import { defineConfig } from '@arco/eslint-config';
+import { defineConfig } from '@qin/eslint-config';
 
 export default defineConfig();

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import {
   ElButton,

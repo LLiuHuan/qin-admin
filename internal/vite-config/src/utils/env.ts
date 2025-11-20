@@ -3,7 +3,7 @@ import type { ApplicationPluginOptions } from '../typing';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { fs } from '@arco/node-utils';
+import { fs } from '@qin/node-utils';
 
 import dotenv from 'dotenv';
 
@@ -93,7 +93,7 @@ async function loadAndConvertEnv(
     .filter((item) => item === 'brotli' || item === 'gzip');
 
   return {
-    appTitle: getString(VITE_APP_TITLE, 'Arco Design Pro'),
+    appTitle: getString(VITE_APP_TITLE, 'Qin Admin'),
     archiver: getBoolean(VITE_ARCHIVER),
     base: getString(VITE_BASE, '/'),
     compress: compressTypes.length > 0,

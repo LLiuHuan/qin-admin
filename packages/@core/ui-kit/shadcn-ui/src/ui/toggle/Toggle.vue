@@ -12,7 +12,7 @@ import type { ToggleVariants } from './toggle';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { Toggle, useForwardPropsEmits } from 'reka-ui';
 

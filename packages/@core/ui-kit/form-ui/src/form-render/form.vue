@@ -11,13 +11,13 @@ import type {
 
 import { computed } from 'vue';
 
-import { Form } from '@arco-core/shadcn-ui';
+import { Form } from '@qin-core/shadcn-ui';
 import {
   cn,
   isFunction,
   isString,
   mergeWithArrayOverride,
-} from '@arco-core/shared/utils';
+} from '@qin-core/shared/utils';
 
 import { provideFormRenderProps } from './context';
 import { useExpandable } from './expandable';
@@ -42,16 +42,11 @@ const emits = defineEmits<{
 }>();
 
 const wrapperClass = computed(() => {
-  const cls: string[] = [];
+  const cls = ['flex'];
   if (props.layout === 'inline') {
-    // Inline: flex row that wraps
-    cls.push('flex', 'flex-wrap', 'gap-2');
-  } else if (props.layout === 'vertical') {
-    // Vertical: grid with horizontal gaps (add row gaps if needed)
-    cls.push(props.compact ? 'gap-x-2' : 'gap-x-4', 'grid');
+    cls.push('flex-wrap gap-x-2');
   } else {
-    // Horizontal (default): grid with standard gaps
-    cls.push('grid', 'gap-2');
+    cls.push(props.compact ? 'gap-x-2' : 'gap-x-4', 'flex-col grid');
   }
   return cn(...cls, props.wrapperClass);
 });

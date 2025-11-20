@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { h } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Card } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 import DocButton from '#/components/DocButton/index.vue';
 
-const [CustomLayoutForm] = useArcoForm({
+const [CustomLayoutForm] = useQinForm({
   // 所有表单项共用，可单独在表单内覆盖
   commonConfig: {
     // 所有表单项
@@ -101,7 +101,7 @@ const [CustomLayoutForm] = useArcoForm({
       </div>
     </template>
     <template #extra>
-      <DocButton class="mb-2" path="/components/common-ui/arco-form" />
+      <DocButton class="mb-2" path="/components/common-ui/qin-form" />
     </template>
     <Card title="使用tailwind自定义布局">
       <CustomLayoutForm />

@@ -8,11 +8,11 @@
 <script lang="ts" setup>
 import type { VxeGridProps } from '#/adapter/vxe-table';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button } from '@arco-design/web-vue';
 
-import { useArcoVxeGrid } from '#/adapter/vxe-table';
+import { useQinVxeGrid } from '#/adapter/vxe-table';
 
 import { MOCK_TREE_TABLE_DATA } from './table-data';
 
@@ -44,7 +44,7 @@ const gridOptions: VxeGridProps<RowType> = {
   },
 };
 
-const [Grid, gridApi] = useArcoVxeGrid({ gridOptions });
+const [Grid, gridApi] = useQinVxeGrid({ gridOptions });
 
 const expandAll = () => {
   gridApi.grid?.setAllTreeExpand(true);

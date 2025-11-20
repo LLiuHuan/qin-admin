@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-import type { NotificationItem } from '@arco/layouts';
+import type { NotificationItem } from '@qin/layouts';
 
 import { computed, ref, watch } from 'vue';
 
-import { AuthenticationLoginExpiredModal } from '@arco/common-ui';
-import { ARCO_DOC_URL, ARCO_GITHUB_URL } from '@arco/constants';
-import { useWatermark } from '@arco/hooks';
-import { BookOpenText, CircleHelp, MdiGithub } from '@arco/icons';
+import { AuthenticationLoginExpiredModal } from '@qin/common-ui';
+import { QIN_DOC_URL, QIN_GITHUB_URL } from '@qin/constants';
+import { useWatermark } from '@qin/hooks';
+import { BookOpenText, CircleHelp, SvgGithubIcon } from '@qin/icons';
 import {
   BasicLayout,
   LockScreen,
   Notification,
   UserDropdown,
-} from '@arco/layouts';
-import { preferences } from '@arco/preferences';
-import { useAccessStore, useUserStore } from '@arco/stores';
-import { openWindow } from '@arco/utils';
+} from '@qin/layouts';
+import { preferences } from '@qin/preferences';
+import { useAccessStore, useUserStore } from '@qin/stores';
+import { openWindow } from '@qin/utils';
 
 import { $t } from '#/locales';
 import { useAuthStore } from '#/store';
@@ -23,6 +23,7 @@ import LoginForm from '#/views/_core/authentication/login.vue';
 
 const notifications = ref<NotificationItem[]>([
   {
+    id: 1,
     avatar: 'https://avatar.vercel.sh/vercel.svg?text=A',
     date: '3小时前',
     isRead: true,
@@ -30,6 +31,7 @@ const notifications = ref<NotificationItem[]>([
     title: '收到了 14 份新周报',
   },
   {
+    id: 2,
     avatar: 'https://avatar.vercel.sh/vercel.svg?text=A',
     date: '刚刚',
     isRead: false,
@@ -37,6 +39,7 @@ const notifications = ref<NotificationItem[]>([
     title: '乔布斯 回复了你',
   },
   {
+    id: 3,
     avatar: 'https://avatar.vercel.sh/vercel.svg?text=A',
     date: '2024-01-01',
     isRead: false,
@@ -44,6 +47,7 @@ const notifications = ref<NotificationItem[]>([
     title: '乔布斯 评论了你',
   },
   {
+    id: 4,
     avatar: 'https://avatar.vercel.sh/vercel.svg?text=A',
     date: '1天前',
     isRead: false,
@@ -63,7 +67,7 @@ const showDot = computed(() =>
 const menus = computed(() => [
   {
     handler: () => {
-      openWindow(ARCO_DOC_URL, {
+      openWindow(QIN_DOC_URL, {
         target: '_blank',
       });
     },
@@ -72,16 +76,16 @@ const menus = computed(() => [
   },
   {
     handler: () => {
-      openWindow(ARCO_GITHUB_URL, {
+      openWindow(QIN_GITHUB_URL, {
         target: '_blank',
       });
     },
-    icon: MdiGithub,
+    icon: SvgGithubIcon,
     text: 'GitHub',
   },
   {
     handler: () => {
-      openWindow(`${ARCO_GITHUB_URL}/issues`, {
+      openWindow(`${QIN_GITHUB_URL}/issues`, {
         target: '_blank',
       });
     },
@@ -102,15 +106,31 @@ function handleNoticeClear() {
   notifications.value = [];
 }
 
+function markRead(id: number | string) {
+  const item = notifications.value.find((item) => item.id === id);
+  if (item) {
+    item.isRead = true;
+  }
+}
+
+function remove(id: number | string) {
+  notifications.value = notifications.value.filter((item) => item.id !== id);
+}
+
 function handleMakeAll() {
   notifications.value.forEach((item) => (item.isRead = true));
 }
 watch(
-  () => preferences.app.watermark,
-  async (enable) => {
+  () => ({
+    enable: preferences.app.watermark,
+    content: preferences.app.watermarkContent,
+  }),
+  async ({ enable, content }) => {
     if (enable) {
       await updateWatermark({
-        content: `${userStore.userInfo?.username} - ${userStore.userInfo?.realName}`,
+        content:
+          content ||
+          `${userStore.userInfo?.username} - ${userStore.userInfo?.realName}`,
       });
     } else {
       destroyWatermark();
@@ -139,6 +159,8 @@ watch(
         :dot="showDot"
         :notifications="notifications"
         @clear="handleNoticeClear"
+        @read="(item) => item.id && markRead(item.id)"
+        @remove="(item) => item.id && remove(item.id)"
         @make-all="handleMakeAll"
       />
     </template>

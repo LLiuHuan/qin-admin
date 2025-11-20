@@ -8,8 +8,8 @@
 <script setup lang="ts">
 import { ref, useSlots } from 'vue';
 
-import { Eye, EyeOff } from '@arco-core/icons';
-import { cn } from '@arco-core/shared/utils';
+import { Eye, EyeOff } from '@qin-core/icons';
+import { cn } from '@qin-core/shared/utils';
 
 import { Input } from '../../ui';
 import PasswordStrength from './password-strength.vue';

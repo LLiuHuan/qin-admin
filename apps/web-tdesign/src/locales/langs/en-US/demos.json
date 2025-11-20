@@ -1,0 +1,15 @@
+{
+  "title": "Demos",
+  "tdesign": "TDesign Vue",
+  "table": "Table",
+  "form": "Form",
+  "qin": {
+    "title": "Project",
+    "about": "About",
+    "document": "Document",
+    "antdv": "Ant Design Vue Version",
+    "arco": "Qin Admin Vue Version",
+    "naive-ui": "Naive UI Version",
+    "element-plus": "Element Plus Version"
+  }
+}

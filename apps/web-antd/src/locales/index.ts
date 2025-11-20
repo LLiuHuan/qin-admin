@@ -1,4 +1,4 @@
-import type { LocaleSetupOptions, SupportedLanguagesType } from '@arco/locales';
+import type { LocaleSetupOptions, SupportedLanguagesType } from '@qin/locales';
 import type { Locale } from 'ant-design-vue/es/locale';
 
 import type { App } from 'vue';
@@ -9,8 +9,8 @@ import {
   $t,
   setupI18n as coreSetup,
   loadLocalesMapFromDir,
-} from '@arco/locales';
-import { preferences } from '@arco/preferences';
+} from '@qin/locales';
+import { preferences } from '@qin/preferences';
 
 import antdEnLocale from 'ant-design-vue/es/locale/en_US';
 import antdDefaultLocale from 'ant-design-vue/es/locale/zh_CN';

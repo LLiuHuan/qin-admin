@@ -4,7 +4,7 @@
   "configurations": [
     {
       "type": "chrome",
-      "name": "arco admin playground dev",
+      "name": "qin admin playground dev",
       "request": "launch",
       "url": "http://localhost:5555",
       "env": { "NODE_ENV": "development" },
@@ -13,7 +13,7 @@
     },
     {
       "type": "chrome",
-      "name": "arco admin antd dev",
+      "name": "qin admin antd dev",
       "request": "launch",
       "url": "http://localhost:5666",
       "env": { "NODE_ENV": "development" },
@@ -22,7 +22,7 @@
     },
     {
       "type": "chrome",
-      "name": "arco admin ele dev",
+      "name": "qin admin ele dev",
       "request": "launch",
       "url": "http://localhost:5777",
       "env": { "NODE_ENV": "development" },
@@ -31,7 +31,7 @@
     },
     {
       "type": "chrome",
-      "name": "arco admin naive dev",
+      "name": "qin admin naive dev",
       "request": "launch",
       "url": "http://localhost:5888",
       "env": { "NODE_ENV": "development" },

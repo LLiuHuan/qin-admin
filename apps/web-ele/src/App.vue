@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { useElementPlusDesignTokens } from '@arco/hooks';
+import { useElementPlusDesignTokens } from '@qin/hooks';
 
 import { ElConfigProvider } from 'element-plus';
 

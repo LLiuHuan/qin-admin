@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import type { BadgeVariants } from './badge';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { badgeVariants } from './badge';
 

@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import type { VxeGridProps } from '#/adapter/vxe-table';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Image, Switch, Tag } from '@arco-design/web-vue';
 
-import { useArcoVxeGrid } from '#/adapter/vxe-table';
+import { useQinVxeGrid } from '#/adapter/vxe-table';
 // import { getExampleTableApi } from '#/api';
 import TableAPI from '#/api/examples/table';
 
@@ -87,7 +87,7 @@ const gridOptions: VxeGridProps<RowType> = {
   showOverflow: false,
 };
 
-const [Grid] = useArcoVxeGrid({ gridOptions });
+const [Grid] = useQinVxeGrid({ gridOptions });
 </script>
 
 <template>
@@ -97,7 +97,7 @@ const [Grid] = useArcoVxeGrid({ gridOptions });
         <Image :src="row.imageUrl" height="30" width="30" />
       </template>
       <template #open="{ row }">
-        <Switch v-model:checked="row.open" />
+        <Switch v-model="row.open" />
       </template>
       <template #status="{ row }">
         <Tag :color="row.color">{{ row.status }}</Tag>

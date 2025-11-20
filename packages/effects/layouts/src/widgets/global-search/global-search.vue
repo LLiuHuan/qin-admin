@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@arco/types';
+import type { MenuRecordRaw } from '@qin/types';
 
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
@@ -9,11 +9,11 @@ import {
   CornerDownLeft,
   MdiKeyboardEsc,
   Search,
-} from '@arco/icons';
-import { $t } from '@arco/locales';
-import { isWindowsOs } from '@arco/utils';
+} from '@qin/icons';
+import { $t } from '@qin/locales';
+import { isWindowsOs } from '@qin/utils';
 
-import { useArcoModal } from '@arco-core/popup-ui';
+import { useQinModal } from '@qin-core/popup-ui';
 
 import { useMagicKeys, whenever } from '@vueuse/core';
 
@@ -34,7 +34,7 @@ const props = withDefaults(
 const keyword = ref('');
 const searchInputRef = ref<HTMLInputElement>();
 
-const [Modal, modalApi] = useArcoModal({
+const [Modal, modalApi] = useQinModal({
   onCancel() {
     modalApi.close();
   },

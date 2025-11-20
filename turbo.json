@@ -25,7 +25,7 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "@arco/backend-mock#build": {
+    "@qin/backend-mock#build": {
       "dependsOn": ["^build"],
       "outputs": [".nitro/**", ".output/**"]
     },

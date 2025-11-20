@@ -8,8 +8,8 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted } from 'vue';
 
-import { Page } from '@arco/common-ui';
-import { useEcharts } from '@arco/plugins/echarts';
+import { Page } from '@qin/common-ui';
+import { useEcharts } from '@qin/plugins/echarts';
 
 import { Card, Grid, GridItem } from '@arco-design/web-vue';
 

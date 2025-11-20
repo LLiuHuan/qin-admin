@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import type { PrimitiveProps } from 'reka-ui';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { Primitive } from 'reka-ui';
 

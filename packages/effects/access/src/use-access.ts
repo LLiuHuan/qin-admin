@@ -7,8 +7,8 @@
  */
 import { computed } from 'vue';
 
-import { preferences, updatePreferences } from '@arco/preferences';
-import { useAccessStore, useUserStore } from '@arco/stores';
+import { preferences, updatePreferences } from '@qin/preferences';
+import { useAccessStore, useUserStore } from '@qin/stores';
 
 function useAccess() {
   const accessStore = useAccessStore();

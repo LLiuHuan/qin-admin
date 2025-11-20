@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Card, Input } from '@arco-design/web-vue';
 import { useClipboard } from '@vueuse/core';

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { Page, useArcoModal } from '@arco/common-ui';
+import { Page, useQinModal } from '@qin/common-ui';
 
 import { NButton, NCard, useMessage } from 'naive-ui';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 import MenuAPI from '#/api/core/menu';
 
 import modalDemo from './modal.vue';
 
 const message = useMessage();
-const [Form, formApi] = useArcoForm({
+const [Form, formApi] = useQinForm({
   commonConfig: {
     // 所有表单项
     componentProps: {
@@ -146,7 +146,7 @@ function setFormValues() {
   });
 }
 
-const [Modal, modalApi] = useArcoModal({
+const [Modal, modalApi] = useQinModal({
   connectedComponent: modalDemo,
 });
 </script>

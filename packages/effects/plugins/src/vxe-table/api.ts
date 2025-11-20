@@ -1,19 +1,19 @@
 import type { VxeGridInstance } from 'vxe-table';
 
-import type { ExtendedFormApi } from '@arco-core/form-ui';
+import type { ExtendedFormApi } from '@qin-core/form-ui';
 
 import type { VxeGridProps } from './types';
 
 import { toRaw } from 'vue';
 
-import { Store } from '@arco-core/shared/store';
+import { Store } from '@qin-core/shared/store';
 import {
   bindMethods,
   isBoolean,
   isFunction,
   mergeWithArrayOverride,
   StateHandler,
-} from '@arco-core/shared/utils';
+} from '@qin-core/shared/utils';
 
 function getDefaultState(): VxeGridProps {
   return {

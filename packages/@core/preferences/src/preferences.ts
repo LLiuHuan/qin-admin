@@ -1,11 +1,11 @@
-import type { DeepPartial } from '@arco-core/typings';
+import type { DeepPartial } from '@qin-core/typings';
 
 import type { InitialOptions, Preferences } from './types';
 
 import { markRaw, reactive, readonly, watch } from 'vue';
 
-import { StorageManager } from '@arco-core/shared/cache';
-import { isMacOs, merge } from '@arco-core/shared/utils';
+import { StorageManager } from '@qin-core/shared/cache';
+import { isMacOs, merge } from '@qin-core/shared/utils';
 
 import {
   breakpointsTailwind,

@@ -1,5 +1,5 @@
 {
-  "name": "@arco/docs",
+  "name": "@qin/docs",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -16,11 +16,11 @@
     }
   },
   "dependencies": {
-    "@arco-core/shadcn-ui": "workspace:*",
-    "@arco/common-ui": "workspace:*",
-    "@arco/locales": "workspace:*",
-    "@arco/plugins": "workspace:*",
-    "@arco/styles": "workspace:*",
+    "@qin-core/shadcn-ui": "workspace:*",
+    "@qin/common-ui": "workspace:*",
+    "@qin/locales": "workspace:*",
+    "@qin/plugins": "workspace:*",
+    "@qin/styles": "workspace:*",
     "ant-design-vue": "catalog:",
     "lucide-vue-next": "catalog:",
     "medium-zoom": "catalog:",
@@ -28,8 +28,8 @@
     "vitepress-plugin-group-icons": "catalog:"
   },
   "devDependencies": {
-    "@arco/vite-config": "workspace:*",
     "@nolebase/vitepress-plugin-git-changelog": "catalog:",
+    "@qin/vite-config": "workspace:*",
     "@vite-pwa/vitepress": "catalog:",
     "vitepress": "catalog:",
     "vue": "catalog:"

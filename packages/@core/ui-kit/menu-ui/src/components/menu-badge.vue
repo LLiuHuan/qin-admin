@@ -1,9 +1,9 @@
-<script setup lang="ts">
-import type { MenuRecordBadgeRaw } from '@arco-core/typings';
+<script lang="ts" setup>
+import type { MenuRecordBadgeRaw } from '@qin-core/typings';
 
 import { computed } from 'vue';
 
-import { isValidColor } from '@arco-core/shared/color';
+import { isValidColor } from '@qin-core/shared/color';
 
 import BadgeDot from './menu-badge-dot.vue';
 
@@ -43,7 +43,7 @@ const badgeStyle = computed(() => {
 });
 </script>
 <template>
-  <span v-if="isDot || badge" :class="$attrs.class" class="absolute">
+  <div v-if="isDot || badge" :class="$attrs.class" class="absolute">
     <BadgeDot v-if="isDot" :dot-class="badgeClass" :dot-style="badgeStyle" />
     <div
       v-else
@@ -53,5 +53,5 @@ const badgeStyle = computed(() => {
     >
       {{ badge }}
     </div>
-  </span>
+  </div>
 </template>

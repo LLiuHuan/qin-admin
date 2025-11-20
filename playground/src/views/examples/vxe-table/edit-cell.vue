@@ -8,9 +8,9 @@
 <script lang="ts" setup>
 import type { VxeGridProps } from '#/adapter/vxe-table';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
-import { useArcoVxeGrid } from '#/adapter/vxe-table';
+import { useQinVxeGrid } from '#/adapter/vxe-table';
 import TableAPI from '#/api/examples/table';
 
 interface RowType {
@@ -54,7 +54,7 @@ const gridOptions: VxeGridProps<RowType> = {
   showOverflow: true,
 };
 
-const [Grid] = useArcoVxeGrid({ gridOptions });
+const [Grid] = useQinVxeGrid({ gridOptions });
 </script>
 
 <template>

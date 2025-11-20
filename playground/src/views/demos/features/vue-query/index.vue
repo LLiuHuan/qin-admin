@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Card, Empty } from '@arco-design/web-vue';
 import { refAutoReset } from '@vueuse/core';

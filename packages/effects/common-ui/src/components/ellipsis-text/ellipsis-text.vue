@@ -10,7 +10,7 @@ import {
   watchEffect,
 } from 'vue';
 
-import { ArcoTooltip } from '@arco-core/shadcn-ui';
+import { QinTooltip } from '@qin-core/shadcn-ui';
 
 import { useElementSize } from '@vueuse/core';
 
@@ -184,7 +184,7 @@ function handleExpand() {
 </script>
 <template>
   <div>
-    <ArcoTooltip
+    <QinTooltip
       :content-style="{
         ...tooltipOverlayStyle,
         maxWidth: `${defaultTooltipMaxWidth}px`,
@@ -220,7 +220,7 @@ function handleExpand() {
           <slot></slot>
         </div>
       </template>
-    </ArcoTooltip>
+    </QinTooltip>
   </div>
 </template>
 

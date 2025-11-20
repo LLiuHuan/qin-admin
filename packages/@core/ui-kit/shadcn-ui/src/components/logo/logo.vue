@@ -1,12 +1,14 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-06-04 16:21:24
+ * @LastEditTime: 2025-08-18 10:11:04
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
-import { ArcoAvatar } from '../avatar';
+<script lang="ts" setup>
+import { computed } from 'vue';
+
+import { QinAvatar } from '../avatar';
 
 interface Props {
   /**
@@ -30,6 +32,10 @@ interface Props {
    */
   src?: string;
   /**
+   * @zh_CN 暗色主题 Logo 图标 (可选，若不设置则使用 src)
+   */
+  srcDark?: string;
+  /**
    * @zh_CN Logo 文本
    */
   text: string;
@@ -40,16 +46,29 @@ interface Props {
 }
 
 defineOptions({
-  name: 'ArcoLogo',
+  name: 'QinLogo',
 });
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   collapsed: false,
   href: 'javascript:void 0',
   logoSize: 32,
   src: '',
+  srcDark: '',
   theme: 'light',
   fit: 'cover',
+});
+
+/**
+ * @zh_CN 根据主题选择合适的 logo 图标
+ */
+const logoSrc = computed(() => {
+  // 如果是暗色主题且提供了 srcDark，则使用暗色主题的 logo
+  if (props.theme === 'dark' && props.srcDark) {
+    return props.srcDark;
+  }
+  // 否则使用默认的 src
+  return props.src;
 });
 </script>
 
@@ -60,12 +79,12 @@ withDefaults(defineProps<Props>(), {
       :href="href"
       class="flex h-full items-center gap-2 overflow-hidden px-3 text-lg leading-normal transition-all duration-500"
     >
-      <ArcoAvatar
-        v-if="src"
+      <QinAvatar
+        v-if="logoSrc"
         :alt="text"
-        :src="src"
-        :size="logoSize"
         :fit="fit"
+        :size="logoSize"
+        :src="logoSrc"
         class="relative rounded-none bg-transparent"
       />
       <template v-if="!collapsed">

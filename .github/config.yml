@@ -13,7 +13,7 @@ checkPullRequestTemplate: true
 # 社区联系渠道（显示在 Issue 提交页面）
 contact_links:
   - name: ❓ 问题与讨论
-    url: https://github.com/LLiuHuan/arco-design-pro-vue/discussions
+    url: https://github.com/LLiuHuan/qin-admin/discussions
     about: 使用 GitHub 讨论区进行留言板式的问题交流
 
 # 首次提交 PR 时的欢迎评论

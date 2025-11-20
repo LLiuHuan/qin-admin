@@ -1,10 +1,17 @@
-import type { LayoutType } from '@arco-core/typings';
+/*
+ * @Description:
+ * @Author: LLiuHuan
+ * @Date: 2025-07-15 23:01:48
+ * @LastEditTime: 2025-08-18 10:14:22
+ * @LastEditors: LLiuHuan
+ */
+import type { LayoutType } from '@qin-core/typings';
 
-import type { ArcoLayoutProps } from '../arco-layout';
+import type { QinLayoutProps } from '../qin-layout';
 
 import { computed } from 'vue';
 
-export function useLayout(props: ArcoLayoutProps) {
+export function useLayout(props: QinLayoutProps) {
   const currentLayout = computed(() =>
     props.isMobile ? 'sidebar-nav' : (props.layout as LayoutType),
   );

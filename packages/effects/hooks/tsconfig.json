@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@arco/tsconfig/web.json",
+  "extends": "@qin/tsconfig/web.json",
   "compilerOptions": {
-    "types": ["vite/client", "@arco/types/global"]
+    "types": ["vite/client", "@qin/types/global"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]

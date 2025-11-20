@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@arco/tsconfig/web.json",
-  "compilerOptions": {
-    "types": ["pinia", "pinia-plugin-persistedstate"]
-  },
+  "extends": "@qin/tsconfig/web.json",
   "include": ["src", "shim-pinia.d.ts"]
 }

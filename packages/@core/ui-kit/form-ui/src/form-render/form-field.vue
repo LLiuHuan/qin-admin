@@ -1,21 +1,21 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { ZodType } from 'zod';
 
 import type { FormSchema, MaybeComponentProps } from '../types';
 
 import { computed, nextTick, onUnmounted, useTemplateRef, watch } from 'vue';
 
-import { CircleAlert } from '@arco-core/icons';
+import { CircleAlert } from '@qin-core/icons';
 import {
-  ArcoRenderContent,
-  ArcoTooltip,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormMessage,
-} from '@arco-core/shadcn-ui';
-import { cn, isFunction, isObject, isString } from '@arco-core/shared/utils';
+  QinRenderContent,
+  QinTooltip,
+} from '@qin-core/shadcn-ui';
+import { cn, isFunction, isObject, isString } from '@qin-core/shared/utils';
 
 import { toTypedSchema } from '@vee-validate/zod';
 import { useFieldError, useFormValues } from 'vee-validate';
@@ -41,6 +41,7 @@ const {
   emptyStateValue,
   fieldName,
   formFieldProps,
+  hide,
   label,
   labelClass,
   labelWidth,
@@ -59,7 +60,7 @@ const values = useFormValues();
 const errors = useFieldError(fieldName);
 const fieldComponentRef = useTemplateRef<HTMLInputElement>('fieldComponentRef');
 const formApi = formRenderProps.form;
-const compact = formRenderProps.compact;
+const compact = computed(() => formRenderProps.compact);
 const isInValid = computed(() => errors.value?.length > 0);
 
 const FieldComponent = computed(() => {
@@ -95,7 +96,7 @@ const currentRules = computed(() => {
 });
 
 const visible = computed(() => {
-  return isIf.value && isShow.value;
+  return !hide && isIf.value && isShow.value;
 });
 
 const shouldRequired = computed(() => {
@@ -281,10 +282,10 @@ onUnmounted(() => {
 
 <template>
   <FormField
-    v-if="isIf"
-    v-bind="fieldProps"
+    v-if="!hide && isIf"
     v-slot="slotProps"
     :name="fieldName"
+    v-bind="fieldProps"
   >
     <FormItem
       v-show="isShow"
@@ -311,14 +312,14 @@ onUnmounted(() => {
             labelClass,
           )
         "
-        :help="help"
         :colon="colon"
+        :help="help"
         :label="label"
         :required="shouldRequired && !hideRequiredMark"
         :style="labelStyle"
       >
         <template v-if="label">
-          <ArcoRenderContent :content="label" />
+          <QinRenderContent :content="label" />
         </template>
       </FormLabel>
       <div class="flex-auto overflow-hidden p-[1px]">
@@ -339,22 +340,22 @@ onUnmounted(() => {
                   'border-destructive focus:border-destructive hover:border-destructive/80 focus:shadow-[0_0_0_2px_rgba(255,38,5,0.06)]':
                     isInValid,
                 }"
-                v-bind="createComponentProps(slotProps)"
                 :disabled="shouldDisabled"
+                v-bind="createComponentProps(slotProps)"
               >
                 <template
                   v-for="name in renderContentKey"
                   :key="name"
                   #[name]="renderSlotProps"
                 >
-                  <ArcoRenderContent
+                  <QinRenderContent
                     :content="customContentRender[name]"
                     v-bind="{ ...renderSlotProps, formContext: slotProps }"
                   />
                 </template>
                 <!-- <slot></slot> -->
               </component>
-              <ArcoTooltip
+              <QinTooltip
                 v-if="compact && isInValid"
                 :delay-duration="300"
                 side="left"
@@ -371,19 +372,19 @@ onUnmounted(() => {
                   </slot>
                 </template>
                 <FormMessage />
-              </ArcoTooltip>
+              </QinTooltip>
             </slot>
           </FormControl>
           <!-- 自定义后缀 -->
           <div v-if="suffix" class="ml-1">
-            <ArcoRenderContent :content="suffix" />
+            <QinRenderContent :content="suffix" />
           </div>
           <FormDescription v-if="description" class="ml-1">
-            <ArcoRenderContent :content="description" />
+            <QinRenderContent :content="description" />
           </FormDescription>
         </div>
 
-        <Transition name="slide-up" v-if="!compact">
+        <Transition v-if="!compact" name="slide-up">
           <FormMessage class="absolute" />
         </Transition>
       </div>

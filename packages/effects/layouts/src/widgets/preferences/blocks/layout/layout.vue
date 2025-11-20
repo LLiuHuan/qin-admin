@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { LayoutType } from '@arco/types';
+import type { LayoutType } from '@qin/types';
 
 import type { Component } from 'vue';
 
 import { computed } from 'vue';
 
-import { CircleHelp } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { CircleHelp } from '@qin/icons';
+import { $t } from '@qin/locales';
 
-import { ArcoTooltip } from '@arco-core/shadcn-ui';
+import { QinTooltip } from '@qin-core/shadcn-ui';
 
 import {
   FullContent,
@@ -99,12 +99,12 @@ function activeClass(theme: string): string[] {
           class="text-muted-foreground flex-center hover:text-foreground mt-2 text-center text-xs"
         >
           {{ theme.name }}
-          <ArcoTooltip v-if="theme.tip" side="bottom">
+          <QinTooltip v-if="theme.tip" side="bottom">
             <template #trigger>
               <CircleHelp class="ml-1 size-3 cursor-help" />
             </template>
             {{ theme.tip }}
-          </ArcoTooltip>
+          </QinTooltip>
         </div>
       </div>
     </template>

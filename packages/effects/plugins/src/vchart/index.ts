@@ -2,7 +2,7 @@ import type { ISpec, ITheme } from '@visactor/vchart';
 
 import { effectScope, onScopeDispose, ref, watch } from 'vue';
 
-import { usePreferences } from '@arco/preferences';
+import { usePreferences } from '@qin/preferences';
 
 import VChart, { registerLiquidChart } from '@visactor/vchart';
 import dark from '@visactor/vchart-theme/public/dark.json';

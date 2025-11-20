@@ -5,18 +5,15 @@
  * @LastEditTime: 2025-08-12 15:12:52
  * @LastEditors: LLiuHuan
  */
-import type {
-  ArcoFormProps,
-  ArcoFormSchema as FormSchema,
-} from '@arco/common-ui';
+import type { QinFormSchema as FormSchema, QinFormProps } from '@qin/common-ui';
 
 import type { ComponentType } from './component';
 
-import { setupArcoForm, useArcoForm as useForm, z } from '@arco/common-ui';
-import { $t } from '@arco/locales';
+import { setupQinForm, useQinForm as useForm, z } from '@qin/common-ui';
+import { $t } from '@qin/locales';
 
-async function initSetupArcoForm() {
-  setupArcoForm<ComponentType>({
+async function initSetupQinForm() {
+  setupQinForm<ComponentType>({
     config: {
       // ant design vue组件库默认都是 v-model:value
       baseModelPropName: 'value',
@@ -48,9 +45,9 @@ async function initSetupArcoForm() {
   });
 }
 
-const useArcoForm = useForm<ComponentType>;
+const useQinForm = useForm<ComponentType>;
 
-export { initSetupArcoForm, useArcoForm, z };
+export { initSetupQinForm, useQinForm, z };
 
-export type ArcoFormSchema = FormSchema<ComponentType>;
-export type { ArcoFormProps };
+export type QinFormSchema = FormSchema<ComponentType>;
+export type { QinFormProps };

@@ -1,13 +1,13 @@
-<script setup lang="ts">
-import type { Recordable } from '@arco/types';
+<script lang="ts" setup>
+import type { Recordable } from '@qin/types';
 
 import { computed, reactive } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { useArcoForm, z } from '@arco-core/form-ui';
-import { useArcoModal } from '@arco-core/popup-ui';
-import { ArcoAvatar, ArcoButton } from '@arco-core/shadcn-ui';
+import { useQinForm, z } from '@qin-core/form-ui';
+import { useQinModal } from '@qin-core/popup-ui';
+import { QinAvatar, QinButton } from '@qin-core/shadcn-ui';
 
 interface Props {
   avatar?: string;
@@ -27,31 +27,32 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, { resetForm, validate, getValues }] = useArcoForm(
-  reactive({
-    commonConfig: {
-      hideLabel: true,
-      hideRequiredMark: true,
-    },
-    schema: computed(() => [
-      {
-        component: 'ArcoInputPassword' as const,
-        componentProps: {
-          placeholder: $t('ui.widgets.lockScreen.placeholder'),
-        },
-        fieldName: 'lockScreenPassword',
-        formFieldProps: { validateOnBlur: false },
-        label: $t('authentication.password'),
-        rules: z
-          .string()
-          .min(1, { message: $t('ui.widgets.lockScreen.placeholder') }),
+const [Form, { resetForm, validate, getValues, getFieldComponentRef }] =
+  useQinForm(
+    reactive({
+      commonConfig: {
+        hideLabel: true,
+        hideRequiredMark: true,
       },
-    ]),
-    showDefaultActions: false,
-  }),
-);
+      schema: computed(() => [
+        {
+          component: 'QinInputPassword' as const,
+          componentProps: {
+            placeholder: $t('ui.widgets.lockScreen.placeholder'),
+          },
+          fieldName: 'lockScreenPassword',
+          formFieldProps: { validateOnBlur: false },
+          label: $t('authentication.password'),
+          rules: z
+            .string()
+            .min(1, { message: $t('ui.widgets.lockScreen.placeholder') }),
+        },
+      ]),
+      showDefaultActions: false,
+    }),
+  );
 
-const [Modal] = useArcoModal({
+const [Modal] = useQinModal({
   onConfirm() {
     handleSubmit();
   },
@@ -59,6 +60,13 @@ const [Modal] = useArcoModal({
     if (isOpen) {
       resetForm();
     }
+  },
+  onOpened() {
+    requestAnimationFrame(() => {
+      getFieldComponentRef('lockScreenPassword')
+        ?.$el?.querySelector('[name="lockScreenPassword"]')
+        ?.focus();
+    });
   },
 });
 
@@ -83,7 +91,7 @@ async function handleSubmit() {
     >
       <div class="w-full">
         <div class="ml-2 flex w-full flex-col items-center">
-          <ArcoAvatar
+          <QinAvatar
             :src="avatar"
             class="size-20"
             dot-class="bottom-0 right-1 border-2 size-4 bg-green-500"
@@ -93,9 +101,9 @@ async function handleSubmit() {
           </div>
         </div>
         <Form />
-        <ArcoButton class="mt-1 w-full" @click="handleSubmit">
+        <QinButton class="mt-1 w-full" @click="handleSubmit">
           {{ $t('ui.widgets.lockScreen.screenButton') }}
-        </ArcoButton>
+        </QinButton>
       </div>
     </div>
   </Modal>

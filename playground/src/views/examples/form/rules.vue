@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Button, Card, Message } from '@arco-design/web-vue';
 
-import { useArcoForm, z } from '#/adapter/form';
+import { useQinForm, z } from '#/adapter/form';
 
-const [Form, formApi] = useArcoForm({
+const [Form, formApi] = useQinForm({
   // 所有表单项共用，可单独在表单内覆盖
   commonConfig: {
     // 所有表单项

@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-16 17:43:57
  * @LastEditors: LLiuHuan
  */
-export { default } from '@arco/uno-config/postcss';
+export { default } from '@qin/uno-config/postcss';
 // import UnoCSS from '@unocss/postcss';
 
 // export default {

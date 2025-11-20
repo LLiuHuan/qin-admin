@@ -7,7 +7,7 @@
  */
 import type { RouteRecordRaw } from 'vue-router';
 
-import { filterTree, mapTree } from '@arco-core/shared/utils';
+import { filterTree, mapTree } from '@qin-core/shared/utils';
 
 /**
  * 动态生成路由 - 前端方式

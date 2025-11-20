@@ -7,13 +7,13 @@
  */
 import { h } from 'vue';
 
-import { setupArcoVxeTable, useArcoVxeGrid } from '@arco/plugins/vxe-table';
+import { setupQinVxeTable, useQinVxeGrid } from '@qin/plugins/vxe-table';
 
 import { ElButton, ElImage } from 'element-plus';
 
-import { useArcoForm } from './form';
+import { useQinForm } from './form';
 
-setupArcoVxeTable({
+setupQinVxeTable({
   configVxeTable: (vxeUI) => {
     vxeUI.setConfig({
       grid: {
@@ -67,9 +67,9 @@ setupArcoVxeTable({
     // 这里可以自行扩展 vxe-table 的全局配置，比如自定义格式化
     // vxeUI.formats.add
   },
-  useArcoForm,
+  useQinForm,
 });
 
-export { useArcoVxeGrid };
+export { useQinVxeGrid };
 
-export type * from '@arco/plugins/vxe-table';
+export type * from '@qin/plugins/vxe-table';

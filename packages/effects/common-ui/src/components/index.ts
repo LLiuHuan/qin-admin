@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 11:59:46
+ * @LastEditTime: 2025-08-18 10:09:29
  * @LastEditors: LLiuHuan
  */
 export * from './api-component';
@@ -16,24 +16,25 @@ export * from './loading';
 export * from './page';
 export * from './resize';
 export * from './tippy';
-export * from '@arco-core/form-ui';
-export * from '@arco-core/popup-ui';
+export * from './tree';
+export * from '@qin-core/form-ui';
+export * from '@qin-core/popup-ui';
 
 // 给文档用
 export {
-  ArcoAvatar,
-  ArcoButton,
-  ArcoButtonGroup,
-  ArcoCheckButtonGroup,
-  ArcoCountToAnimator,
-  ArcoFullScreen,
-  ArcoInputPassword,
-  ArcoLoading,
-  ArcoLogo,
-  ArcoPinInput,
-  ArcoSpinner,
-  ArcoTree,
-} from '@arco-core/shadcn-ui';
+  QinAvatar,
+  QinButton,
+  QinButtonGroup,
+  QinCheckButtonGroup,
+  QinCountToAnimator,
+  QinFullScreen,
+  QinInputPassword,
+  QinLoading,
+  QinLogo,
+  QinPinInput,
+  QinSpinner,
+  // QinTree,
+} from '@qin-core/shadcn-ui';
 
-export type { FlattenedItem } from '@arco-core/shadcn-ui';
-export { globalShareState } from '@arco-core/shared/global-state';
+export type { FlattenedItem } from '@qin-core/shadcn-ui';
+export { globalShareState } from '@qin-core/shared/global-state';

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type { AnyPromiseFunction } from '@arco/types';
+import type { AnyPromiseFunction } from '@qin/types';
 
 import type { Component } from 'vue';
 
 import { computed, nextTick, ref, unref, useAttrs, watch } from 'vue';
 
-import { LoaderCircle } from '@arco/icons';
+import { LoaderCircle } from '@qin/icons';
 
-import { cloneDeep, get, isEqual, isFunction } from '@arco-core/shared/utils';
+import { cloneDeep, get, isEqual, isFunction } from '@qin-core/shared/utils';
 
 import { objectOmit } from '@vueuse/core';
 

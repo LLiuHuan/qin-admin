@@ -1,15 +1,24 @@
+<!--
+ * @Description:
+ * @Author: LLiuHuan
+ * @Date: 2025-08-12 22:48:44
+ * @LastEditTime: 2025-08-18 10:06:38
+ * @LastEditors: LLiuHuan
+-->
 <script lang="ts" setup>
 import type { NotificationItem } from './types';
 
-import { Bell, MailCheck } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { useRouter } from 'vue-router';
+
+import { Bell, CircleCheckBig, CircleX, MailCheck } from '@qin/icons';
+import { $t } from '@qin/locales';
 
 import {
-  ArcoButton,
-  ArcoIconButton,
-  ArcoPopover,
-  ArcoScrollbar,
-} from '@arco-core/shadcn-ui';
+  QinButton,
+  QinIconButton,
+  QinPopover,
+  QinScrollbar,
+} from '@qin-core/shadcn-ui';
 
 import { useToggle } from '@vueuse/core';
 
@@ -35,9 +44,11 @@ const emit = defineEmits<{
   clear: [];
   makeAll: [];
   read: [NotificationItem];
+  remove: [NotificationItem];
   viewAll: [];
 }>();
 
+const router = useRouter();
 const [open, toggle] = useToggle();
 
 function close() {
@@ -58,40 +69,61 @@ function handleClear() {
 }
 
 function handleClick(item: NotificationItem) {
-  emit('read', item);
+  // 如果通知项有链接，点击时跳转
+  if (item.link) {
+    navigateTo(item.link, item.query, item.state);
+  }
+}
+
+function navigateTo(
+  link: string,
+  query?: Record<string, any>,
+  state?: Record<string, any>,
+) {
+  if (link.startsWith('http://') || link.startsWith('https://')) {
+    // 外部链接，在新标签页打开
+    window.open(link, '_blank');
+  } else {
+    // 内部路由链接，支持 query 参数和 state
+    router.push({
+      path: link,
+      query: query || {},
+      state,
+    });
+  }
 }
 </script>
 <template>
-  <ArcoPopover
+  <QinPopover
     v-model:open="open"
     content-class="relative right-2 w-[360px] p-0"
   >
     <template #trigger>
       <div class="flex-center mr-2 h-full" @click.stop="toggle()">
-        <ArcoIconButton class="bell-button text-foreground relative">
+        <QinIconButton class="bell-button text-foreground relative">
           <span
             v-if="dot"
             class="bg-primary absolute right-0.5 top-0.5 h-2 w-2 rounded"
           ></span>
           <Bell class="size-4" />
-        </ArcoIconButton>
+        </QinIconButton>
       </div>
     </template>
 
     <div class="relative">
       <div class="flex items-center justify-between p-4 py-3">
         <div class="text-foreground">{{ $t('ui.widgets.notifications') }}</div>
-        <ArcoIconButton
+        <QinIconButton
           :disabled="notifications.length <= 0"
           :tooltip="$t('ui.widgets.markAllAsRead')"
           @click="handleMakeAll"
         >
           <MailCheck class="size-4" />
-        </ArcoIconButton>
+        </QinIconButton>
       </div>
-      <ArcoScrollbar v-if="notifications.length > 0">
+      <QinScrollbar v-if="notifications.length > 0">
         <ul class="!flex max-h-[360px] w-full flex-col">
-          <template v-for="item in notifications" :key="item.title">
+          <template v-for="item in notifications" :key="item.id ?? item.title">
             <li
               class="hover:bg-accent border-border relative flex w-full cursor-pointer items-start gap-5 border-t px-3 py-3"
               @click="handleClick(item)"
@@ -119,10 +151,34 @@ function handleClick(item: NotificationItem) {
                   {{ item.date }}
                 </p>
               </div>
+              <div
+                class="absolute right-3 top-1/2 flex -translate-y-1/2 flex-col gap-2"
+              >
+                <QinIconButton
+                  v-if="!item.isRead"
+                  :tooltip="$t('common.confirm')"
+                  class="h-6 px-2"
+                  size="xs"
+                  variant="ghost"
+                  @click.stop="emit('read', item)"
+                >
+                  <CircleCheckBig class="size-4" />
+                </QinIconButton>
+                <QinIconButton
+                  v-if="item.isRead"
+                  :tooltip="$t('common.delete')"
+                  class="text-destructive h-6 px-2"
+                  size="xs"
+                  variant="ghost"
+                  @click.stop="emit('remove', item)"
+                >
+                  <CircleX class="size-4" />
+                </QinIconButton>
+              </div>
             </li>
           </template>
         </ul>
-      </ArcoScrollbar>
+      </QinScrollbar>
 
       <template v-else>
         <div class="flex-center text-muted-foreground min-h-[150px] w-full">
@@ -133,20 +189,20 @@ function handleClick(item: NotificationItem) {
       <div
         class="border-border flex items-center justify-between border-t px-4 py-3"
       >
-        <ArcoButton
+        <QinButton
           :disabled="notifications.length <= 0"
           size="sm"
           variant="ghost"
           @click="handleClear"
         >
           {{ $t('ui.widgets.clearNotifications') }}
-        </ArcoButton>
-        <ArcoButton size="sm" @click="handleViewAll">
+        </QinButton>
+        <QinButton size="sm" @click="handleViewAll">
           {{ $t('ui.widgets.viewAll') }}
-        </ArcoButton>
+        </QinButton>
       </div>
     </div>
-  </ArcoPopover>
+  </QinPopover>
 </template>
 
 <style scoped>

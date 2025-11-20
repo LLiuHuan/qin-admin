@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-07-24 01:19:09
  * @LastEditors: LLiuHuan
  */
-import type { UserInfo } from '@arco/types';
+import type { UserInfo } from '@qin/types';
 
 import { requestClient } from '#/api/request';
 

@@ -6,7 +6,7 @@ import type {
 
 import { computed, ref, watch } from 'vue';
 
-import { isBoolean, isFunction } from '@arco-core/shared/utils';
+import { isBoolean, isFunction } from '@qin-core/shared/utils';
 
 import { useFormValues } from 'vee-validate';
 
@@ -23,7 +23,7 @@ export default function useDependencies(
   const formApi = formRenderProps.form!;
 
   if (!values) {
-    throw new Error('useDependencies should be used within <ArcoForm>');
+    throw new Error('useDependencies should be used within <QinForm>');
   }
 
   const isIf = ref(true);

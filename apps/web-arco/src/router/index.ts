@@ -11,7 +11,7 @@ import {
   createWebHistory,
 } from 'vue-router';
 
-import { resetStaticRoutes } from '@arco/utils';
+import { resetStaticRoutes } from '@qin/utils';
 
 import { createRouterGuard } from './guard';
 import { routes } from './routes';

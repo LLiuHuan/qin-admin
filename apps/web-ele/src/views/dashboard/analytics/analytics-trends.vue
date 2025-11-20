@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { useEcharts } from '@arco/plugins/echarts';
+import { useEcharts } from '@qin/plugins/echarts';
 
 const { domRef: chartRef } = useEcharts(() => {
   return {

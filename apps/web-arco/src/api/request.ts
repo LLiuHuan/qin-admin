@@ -1,17 +1,17 @@
 /**
  * 该文件可自行根据业务逻辑进行调整
  */
-import type { RequestClientOptions } from '@arco/request';
+import type { RequestClientOptions } from '@qin/request';
 
-import { useAppConfig } from '@arco/hooks';
-import { preferences } from '@arco/preferences';
+import { useAppConfig } from '@qin/hooks';
+import { preferences } from '@qin/preferences';
 import {
   authenticateResponseInterceptor,
   defaultResponseInterceptor,
   errorMessageResponseInterceptor,
   RequestClient,
-} from '@arco/request';
-import { useAccessStore } from '@arco/stores';
+} from '@qin/request';
+import { useAccessStore, useTimezoneStore } from '@qin/stores';
 
 import { Message } from '@arco-design/web-vue';
 
@@ -64,9 +64,11 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
   client.addRequestInterceptor({
     fulfilled: async (config) => {
       const accessStore = useAccessStore();
+      const timezoneStore = useTimezoneStore();
 
       config.headers.Authorization = formatToken(accessStore.accessToken);
       config.headers['Accept-Language'] = preferences.app.locale;
+      config.headers['X-Timezone'] = timezoneStore.timezone;
       return config;
     },
   });

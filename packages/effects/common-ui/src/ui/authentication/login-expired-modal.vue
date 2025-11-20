@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 11:51:46
+ * @LastEditTime: 2025-08-18 10:08:47
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
@@ -10,10 +10,10 @@ import type { AuthenticationProps } from './types';
 
 import { computed, watch } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { useArcoModal } from '@arco-core/popup-ui';
-import { ArcoAvatar, Slot } from '@arco-core/shadcn-ui';
+import { useQinModal } from '@qin-core/popup-ui';
+import { QinAvatar, Slot } from '@qin-core/shadcn-ui';
 
 interface Props extends AuthenticationProps {
   avatar?: string;
@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const open = defineModel<boolean>('open');
 
-const [Modal, modalApi] = useArcoModal();
+const [Modal, modalApi] = useQinModal();
 
 watch(
   () => open.value,
@@ -87,7 +87,7 @@ function calcZIndex() {
       :z-index="getZIndex"
       class="border-none px-10 py-6 text-center shadow-xl sm:w-[600px] sm:rounded-2xl md:h-[unset]"
     >
-      <ArcoAvatar :src="avatar" class="mx-auto mb-6 size-20" />
+      <QinAvatar :src="avatar" class="mx-auto mb-6 size-20" />
       <Slot
         :show-forget-password="false"
         :show-register="false"

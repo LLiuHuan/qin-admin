@@ -2,27 +2,27 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 15:35:10
- * @LastEditTime: 2025-05-27 15:53:26
+ * @LastEditTime: 2025-08-18 10:16:57
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { ArcoFormSchema } from '@arco/common-ui';
-import type { Recordable } from '@arco/types';
+import type { QinFormSchema } from '@qin/common-ui';
+import type { Recordable } from '@qin/types';
 
 import { computed, ref } from 'vue';
 
-import { AuthenticationCodeLogin, z } from '@arco/common-ui';
-import { $t } from '@arco/locales';
+import { AuthenticationCodeLogin, z } from '@qin/common-ui';
+import { $t } from '@qin/locales';
 
 defineOptions({ name: 'CodeLogin' });
 
 const loading = ref(false);
 const CODE_LENGTH = 6;
 
-const formSchema = computed((): ArcoFormSchema[] => {
+const formSchema = computed((): QinFormSchema[] => {
   return [
     {
-      component: 'ArcoInput',
+      component: 'QinInput',
       componentProps: {
         placeholder: $t('authentication.mobile'),
       },
@@ -36,7 +36,7 @@ const formSchema = computed((): ArcoFormSchema[] => {
         }),
     },
     {
-      component: 'ArcoPinInput',
+      component: 'QinPinInput',
       componentProps: {
         codeLength: CODE_LENGTH,
         createText: (countdown: number) => {

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { CaptchaPoint } from '@arco/common-ui';
+import type { CaptchaPoint } from '@qin/common-ui';
 
 import { reactive, ref } from 'vue';
 
-import { Page, PointSelectionCaptcha } from '@arco/common-ui';
+import { Page, PointSelectionCaptcha } from '@qin/common-ui';
 
 import {
   Card,

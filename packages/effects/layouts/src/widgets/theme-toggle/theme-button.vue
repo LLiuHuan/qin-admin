@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, nextTick, onMounted, watch } from 'vue';
 
-import { ArcoButton } from '@arco-core/shadcn-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 interface TransitionParams {
   distance: number;
@@ -88,10 +88,8 @@ function toggleTheme(event: MouseEvent) {
       `circle(0px at ${x}px ${y}px)`,
       `circle(${endRadius}px at ${x}px ${y}px)`,
     ];
-    document.documentElement.animate(
+    const animate = document.documentElement.animate(
       {
-        // TODO: 不知道什么情况，nodejs版本为20.19.0，但是还报错
-        // eslint-disable-next-line n/no-unsupported-features/es-syntax
         clipPath: isDark.value ? clipPath.toReversed() : clipPath,
       },
       {
@@ -102,6 +100,9 @@ function toggleTheme(event: MouseEvent) {
           : '::view-transition-new(theme)',
       },
     );
+    animate.onfinish = () => {
+      transition.skipTransition();
+    };
   });
 }
 
@@ -127,11 +128,11 @@ watch(
 </script>
 
 <template>
-  <ArcoButton
+  <QinButton
     :aria-label="theme"
     :class="[`is-${theme}`]"
     aria-live="polite"
-    class="theme-toggle cursor-pointer border-none bg-none"
+    class="theme-toggle cursor-pointer border-none bg-none hover:animate-[shrink_0.3s_ease-in-out]"
     v-bind="bindProps"
     @click.stop="toggleTheme"
   >
@@ -164,7 +165,7 @@ watch(
         <line x1="18.36" x2="19.78" y1="5.64" y2="4.22" />
       </g>
     </svg>
-  </ArcoButton>
+  </QinButton>
 </template>
 
 <style lang="scss" scoped>

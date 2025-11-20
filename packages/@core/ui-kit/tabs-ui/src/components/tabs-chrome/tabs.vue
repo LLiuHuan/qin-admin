@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import type { TabDefinition } from '@arco-core/typings';
+import type { TabDefinition } from '@qin-core/typings';
 
 import type { TabConfig, TabsProps } from '../../types';
 
 import { computed, ref } from 'vue';
 
-import { Pin, X } from '@arco-core/icons';
-import { ArcoContextMenu, ArcoIcon } from '@arco-core/shadcn-ui';
+import { Pin, X } from '@qin-core/icons';
+import { QinContextMenu, QinIcon } from '@qin-core/shadcn-ui';
 
 interface Props extends TabsProps {}
 
 defineOptions({
-  name: 'ArcoTabsChrome',
+  name: 'QinTabsChrome',
   inheritAttrs: false,
 });
 
 const props = withDefaults(defineProps<Props>(), {
-  contentClass: 'adp-tabs-content',
+  contentClass: 'qin-tabs-content',
   contextMenus: () => [],
   gap: 7,
   tabs: () => [],
@@ -97,7 +97,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
         @click="active = tab.key"
         @mousedown="onMouseDown($event, tab)"
       >
-        <ArcoContextMenu
+        <QinContextMenu
           :handler-data="tab"
           :menus="contextMenus"
           :modal="false"
@@ -153,7 +153,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
             <div
               class="tabs-chrome__item-main group-[.is-active]:text-primary dark:group-[.is-active]:text-accent-foreground text-accent-foreground relative z-[2] mx-[calc(var(--gap)*2)] my-0 flex h-full items-center overflow-hidden rounded-tl-[5px] rounded-tr-[5px] pl-2 pr-4 duration-150"
             >
-              <ArcoIcon
+              <QinIcon
                 v-if="showIcon"
                 :icon="tab.icon"
                 class="mr-1 flex size-4 items-center overflow-hidden"
@@ -164,7 +164,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
               </span>
             </div>
           </div>
-        </ArcoContextMenu>
+        </QinContextMenu>
       </div>
     </TransitionGroup>
   </div>

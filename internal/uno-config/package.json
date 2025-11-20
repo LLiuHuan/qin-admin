@@ -1,12 +1,12 @@
 {
-  "name": "@arco/uno-config",
+  "name": "@qin/uno-config",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/LLiuHuan/arco-design-pro-vue",
-  "bugs": "https://github.com/LLiuHuan/arco-design-pro-vue/issues",
+  "homepage": "https://github.com/LLiuHuan/qin-admin",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLiuHuan/arco-design-pro-vue.git",
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
     "directory": "internal/uno-config"
   },
   "license": "MIT",
@@ -51,6 +51,7 @@
     "unocss-preset-animations": "catalog:"
   },
   "devDependencies": {
-    "@types/postcss-import": "catalog:"
+    "@types/postcss-import": "catalog:",
+    "postcss-antd-fixes": "catalog:"
   }
 }

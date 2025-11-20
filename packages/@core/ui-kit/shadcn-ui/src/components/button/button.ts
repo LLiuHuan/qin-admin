@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-06-04 00:52:26
+ * @LastEditTime: 2025-08-18 10:12:30
  * @LastEditors: LLiuHuan
  */
 import type { AsTag } from 'reka-ui';
@@ -11,7 +11,7 @@ import type { Component } from 'vue';
 
 import type { ButtonVariants, ButtonVariantSize } from '../../ui';
 
-export interface ArcoButtonProps {
+export interface QinButtonProps {
   /**
    * The element or component this component should render as. Can be overwrite by `asChild`
    * @defaultValue "div"
@@ -20,7 +20,7 @@ export interface ArcoButtonProps {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    *
-   * Read our [Composition](https://www.reka-ui.com/guides/composition.html) guide for more details.
+   * Read our [Composition](https://www.reka-ui.com/docs/guides/composition) guide for more details.
    */
   asChild?: boolean;
   class?: any;
@@ -34,8 +34,7 @@ export type CustomRenderType = (() => Component | string) | string;
 
 export type ValueType = boolean | number | string;
 
-export interface ArcoButtonGroupProps
-  extends Pick<ArcoButtonProps, 'disabled'> {
+export interface QinButtonGroupProps extends Pick<QinButtonProps, 'disabled'> {
   /** 单选模式下允许清除选中 */
   allowClear?: boolean;
   /** 值改变前的回调 */

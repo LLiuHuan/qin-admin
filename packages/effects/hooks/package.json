@@ -1,11 +1,11 @@
 {
-  "name": "@arco/hooks",
+  "name": "@qin/hooks",
   "version": "1.0.0",
-  "homepage": "https://github.com/LLiuHuan/arco-design-pro-vue",
-  "bugs": "https://github.com/LLiuHuan/arco-design-pro-vue/issues",
+  "homepage": "https://github.com/LLiuHuan/qin-admin",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLiuHuan/arco-design-pro-vue.git",
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
     "directory": "packages/effects/hooks"
   },
   "license": "MIT",
@@ -20,11 +20,11 @@
     }
   },
   "dependencies": {
-    "@arco-core/composables": "workspace:*",
-    "@arco/preferences": "workspace:*",
-    "@arco/stores": "workspace:*",
-    "@arco/types": "workspace:*",
-    "@arco/utils": "workspace:*",
+    "@qin-core/composables": "workspace:*",
+    "@qin/preferences": "workspace:*",
+    "@qin/stores": "workspace:*",
+    "@qin/types": "workspace:*",
+    "@qin/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:",

@@ -10,13 +10,13 @@ import type { VxeGridSlots, VxeGridSlotTypes } from 'vxe-table';
 
 import type { SlotsType } from 'vue';
 
-import type { BaseFormComponentType } from '@arco-core/form-ui';
+import type { BaseFormComponentType } from '@qin-core/form-ui';
 
 import type { ExtendedVxeGridApi, VxeGridProps } from './types';
 
 import { defineComponent, h, onBeforeUnmount } from 'vue';
 
-import { useStore } from '@arco-core/shared/store';
+import { useStore } from '@qin-core/shared/store';
 
 import { VxeGridApi } from './api';
 import VxeGrid from './use-vxe-grid.vue';
@@ -27,7 +27,7 @@ type FilteredSlots<T> = {
     : K]: VxeGridSlots<T>[K];
 };
 
-export function useArcoVxeGrid<
+export function useQinVxeGrid<
   T extends Record<string, any> = any,
   D extends BaseFormComponentType = BaseFormComponentType,
 >(options: VxeGridProps<T, D>) {
@@ -47,7 +47,7 @@ export function useArcoVxeGrid<
       return () => h(VxeGrid, { ...props, ...attrs, api: extendedApi }, slots);
     },
     {
-      name: 'ArcoVxeGrid',
+      name: 'QinVxeGrid',
       inheritAttrs: false,
       slots: Object as SlotsType<
         {
@@ -75,4 +75,4 @@ export function useArcoVxeGrid<
   return [Grid, extendedApi] as const;
 }
 
-export type UseArcoVxeGrid = typeof useArcoVxeGrid;
+export type useQinVxeGrid = typeof useQinVxeGrid;

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { CaptchaPoint, PointSelectionCaptchaProps } from '../types';
 
-import { RotateCw } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { RotateCw } from '@qin/icons';
+import { $t } from '@qin/locales';
 
-import { ArcoButton, ArcoIconButton } from '@arco-core/shadcn-ui';
+import { QinButton, QinIconButton } from '@qin-core/shadcn-ui';
 
 import { useCaptchaPoints } from '../hooks/useCaptchaPoints';
 import CaptchaCard from './point-selection-captcha-card.vue';
@@ -126,14 +126,14 @@ function handleConfirm() {
     </template>
 
     <template #extra>
-      <ArcoIconButton
+      <QinIconButton
         :aria-label="$t('ui.captcha.refreshAriaLabel')"
         class="ml-1"
         @click="handleRefresh"
       >
         <RotateCw class="size-5" />
-      </ArcoIconButton>
-      <ArcoButton
+      </QinIconButton>
+      <QinButton
         v-if="showConfirm"
         :aria-label="$t('ui.captcha.confirmAriaLabel')"
         class="ml-2"
@@ -141,7 +141,7 @@ function handleConfirm() {
         @click="handleConfirm"
       >
         {{ $t('ui.captcha.confirm') }}
-      </ArcoButton>
+      </QinButton>
     </template>
 
     <div

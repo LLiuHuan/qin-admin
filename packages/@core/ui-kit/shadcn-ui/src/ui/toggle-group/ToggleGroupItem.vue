@@ -11,7 +11,7 @@ import type { ToggleGroupItemProps } from 'reka-ui';
 
 import { computed, inject } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { ToggleGroupItem, useForwardProps } from 'reka-ui';
 

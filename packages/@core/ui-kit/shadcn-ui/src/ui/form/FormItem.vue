@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { provide, useId } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { FORM_ITEM_INJECTION_KEY } from './injectionKeys';
 

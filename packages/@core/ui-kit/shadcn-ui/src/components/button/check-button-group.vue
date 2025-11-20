@@ -1,20 +1,20 @@
 <script lang="ts" setup>
 import type { Arrayable } from '@vueuse/core';
 
-import type { ArcoButtonGroupProps, ValueType } from './button';
+import type { QinButtonGroupProps, ValueType } from './button';
 
 import { computed, ref, watch } from 'vue';
 
-import { Circle, CircleCheckBig, LoaderCircle } from '@arco-core/icons';
-import { cn, isFunction } from '@arco-core/shared/utils';
+import { Circle, CircleCheckBig, LoaderCircle } from '@qin-core/icons';
+import { cn, isFunction } from '@qin-core/shared/utils';
 
 import { objectOmit } from '@vueuse/core';
 
-import { ArcoRenderContent } from '../render-content';
-import ArcoButtonGroup from './button-group.vue';
+import { QinRenderContent } from '../render-content';
+import QinButtonGroup from './button-group.vue';
 import Button from './button.vue';
 
-const props = withDefaults(defineProps<ArcoButtonGroupProps>(), {
+const props = withDefaults(defineProps<QinButtonGroupProps>(), {
   gap: 0,
   multiple: false,
   showIcon: true,
@@ -105,10 +105,10 @@ async function onBtnClick(value: ValueType) {
 }
 </script>
 <template>
-  <ArcoButtonGroup
+  <QinButtonGroup
     :size="props.size"
     :gap="props.gap"
-    class="adp-check-button-group"
+    class="qin-check-button-group"
   >
     <Button
       v-for="(btn, index) in props.options"
@@ -139,13 +139,13 @@ async function onBtnClick(value: ValueType) {
         </slot>
       </div>
       <slot name="option" :label="btn.label" :value="btn.value" :data="btn">
-        <ArcoRenderContent :content="btn.label" />
+        <QinRenderContent :content="btn.label" />
       </slot>
     </Button>
-  </ArcoButtonGroup>
+  </QinButtonGroup>
 </template>
 <style lang="scss" scoped>
-.adp-check-button-group {
+.qin-check-button-group {
   display: flex;
   flex-wrap: wrap;
 

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 
-import { useArcoModal } from '@arco/common-ui';
+import { useQinModal } from '@qin/common-ui';
 
 import { Slider } from '@arco-design/web-vue';
 
 const blur = ref(5);
-const [Modal, modalApi] = useArcoModal({
+const [Modal, modalApi] = useQinModal({
   overlayBlur: blur.value,
 });
 watch(blur, (val) => {

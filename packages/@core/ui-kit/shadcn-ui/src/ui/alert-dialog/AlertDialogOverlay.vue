@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { useScrollLock } from '@arco-core/composables';
+import { useScrollLock } from '@qin-core/composables';
 
 useScrollLock();
 </script>

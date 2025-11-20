@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-07-15 01:48:51
  * @LastEditors: LLiuHuan
  */
-import { defineConfig } from '@arco/vite-config';
+import { defineConfig } from '@qin/vite-config';
 
 export default defineConfig(async () => {
   return {

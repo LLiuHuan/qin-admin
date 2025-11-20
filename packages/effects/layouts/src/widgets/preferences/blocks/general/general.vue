@@ -1,14 +1,15 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 12:13:55
  * @LastEditTime: 2025-05-27 12:17:24
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
-import { SUPPORT_LANGUAGES } from '@arco/constants';
-import { $t } from '@arco/locales';
+<script lang="ts" setup>
+import { SUPPORT_LANGUAGES } from '@qin/constants';
+import { $t } from '@qin/locales';
 
+import InputItem from '../input-item.vue';
 import SelectItem from '../select-item.vue';
 import SwitchItem from '../switch-item.vue';
 
@@ -19,6 +20,7 @@ defineOptions({
 const appLocale = defineModel<string>('appLocale');
 const appDynamicTitle = defineModel<boolean>('appDynamicTitle');
 const appWatermark = defineModel<boolean>('appWatermark');
+const appWatermarkContent = defineModel<string>('appWatermarkContent');
 const appEnableCheckUpdates = defineModel<boolean>('appEnableCheckUpdates');
 </script>
 
@@ -29,9 +31,23 @@ const appEnableCheckUpdates = defineModel<boolean>('appEnableCheckUpdates');
   <SwitchItem v-model="appDynamicTitle">
     {{ $t('preferences.dynamicTitle') }}
   </SwitchItem>
-  <SwitchItem v-model="appWatermark">
+  <SwitchItem
+    v-model="appWatermark"
+    @update:model-value="
+      (val) => {
+        if (!val) appWatermarkContent = '';
+      }
+    "
+  >
     {{ $t('preferences.watermark') }}
   </SwitchItem>
+  <InputItem
+    v-if="appWatermark"
+    v-model="appWatermarkContent"
+    :placeholder="$t('preferences.watermarkContent')"
+  >
+    {{ $t('preferences.watermarkContent') }}
+  </InputItem>
   <SwitchItem v-model="appEnableCheckUpdates">
     {{ $t('preferences.checkUpdates') }}
   </SwitchItem>

@@ -2,29 +2,29 @@ import type { ZodRawShape } from 'zod';
 
 import type { ComputedRef } from 'vue';
 
-import type { ArcoFormProps, ExtendedFormApi, FormActions } from './types';
+import type { ExtendedFormApi, FormActions, QinFormProps } from './types';
 
 import { computed, unref, useSlots } from 'vue';
 
-import { createContext } from '@arco-core/shadcn-ui';
-import { isString, mergeWithArrayOverride, set } from '@arco-core/shared/utils';
+import { createContext } from '@qin-core/shadcn-ui';
+import { isString, mergeWithArrayOverride, set } from '@qin-core/shared/utils';
 
 import { useForm } from 'vee-validate';
 import { object, ZodIntersection, ZodNumber, ZodObject, ZodString } from 'zod';
 import { getDefaultsForSchema } from 'zod-defaults';
 
-type ExtendFormProps = ArcoFormProps & { formApi: ExtendedFormApi };
+type ExtendFormProps = QinFormProps & { formApi?: ExtendedFormApi };
 
 export const [injectFormProps, provideFormProps] =
   createContext<[ComputedRef<ExtendFormProps> | ExtendFormProps, FormActions]>(
-    'ArcoFormProps',
+    'QinFormProps',
   );
 
 export const [injectComponentRefMap, provideComponentRefMap] =
   createContext<Map<string, unknown>>('ComponentRefMap');
 
 export function useFormInitial(
-  props: ArcoFormProps | ComputedRef<ArcoFormProps>,
+  props: ComputedRef<QinFormProps> | QinFormProps,
 ) {
   const slots = useSlots();
   const initialValues = generateInitialValues();

@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-06-14 23:52:18
  * @LastEditors: LLiuHuan
  */
-import { defineConfig } from '@arco/vite-config';
+import { defineConfig } from '@qin/vite-config';
 
 import ElementPlus from 'unplugin-element-plus/vite';
 

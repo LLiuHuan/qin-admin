@@ -8,13 +8,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useArcoDrawer } from '@arco/common-ui';
+import { useQinDrawer } from '@qin/common-ui';
 
 import { Message } from '@arco-design/web-vue';
 
 const data = ref();
 
-const [Drawer, drawerApi] = useArcoDrawer({
+const [Drawer, drawerApi] = useQinDrawer({
   onCancel() {
     drawerApi.close();
   },

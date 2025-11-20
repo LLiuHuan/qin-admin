@@ -21,8 +21,8 @@ import {
   watchEffect,
 } from 'vue';
 
-import { useNamespace } from '@arco-core/composables';
-import { Ellipsis } from '@arco-core/icons';
+import { useNamespace } from '@qin-core/composables';
+import { Ellipsis } from '@qin-core/icons';
 
 import { useResizeObserver } from '@vueuse/core';
 
@@ -370,7 +370,7 @@ function getActivePaths() {
 </template>
 
 <style lang="scss">
-$namespace: adp;
+$namespace: qin;
 
 @mixin menu-item-active {
   color: var(--menu-item-active-color);

@@ -8,7 +8,7 @@
 import type { Arrayable } from '@vueuse/core';
 import type { FlattenedItem } from 'reka-ui';
 
-import type { Recordable } from '@arco-core/typings';
+import type { Recordable } from '@qin-core/typings';
 
 export interface TreeProps {
   /** 单选时允许取消已有选项 */
@@ -46,4 +46,24 @@ export interface TreeProps {
   treeData: Recordable<any>[];
   /** 值字段 */
   valueField?: string;
+}
+
+export function treePropsDefaults() {
+  return {
+    allowClear: false,
+    autoCheckParent: true,
+    bordered: false,
+    checkStrictly: false,
+    defaultExpandedKeys: () => [],
+    defaultExpandedLevel: 0,
+    disabled: false,
+    disabledField: 'disabled',
+    iconField: 'icon',
+    labelField: 'label',
+    multiple: false,
+    showIcon: true,
+    transition: true,
+    valueField: 'value',
+    childrenField: 'children',
+  };
 }

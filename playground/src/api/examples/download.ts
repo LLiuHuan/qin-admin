@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-08-01 04:30:01
  * @LastEditors: LLiuHuan
  */
-import type { RequestResponse } from '@arco/request';
+import type { RequestResponse } from '@qin/request';
 
 import { requestClient } from '../request';
 

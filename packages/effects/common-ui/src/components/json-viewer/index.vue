@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { Recordable } from '@arco/types';
+import type { Recordable } from '@qin/types';
 
 import type { SetupContext } from 'vue';
 
@@ -20,9 +20,9 @@ import type {
 import { computed, useAttrs } from 'vue'; // @ts-ignore
 import VueJsonViewer from 'vue-json-viewer';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { isBoolean } from '@arco-core/shared/utils';
+import { isBoolean } from '@qin-core/shared/utils';
 
 // @ts-ignore
 import JsonBigint from 'json-bigint';

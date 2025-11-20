@@ -2,7 +2,7 @@ import type { ConfigEnv, UserConfig } from 'vite';
 
 import type { DefineLibraryOptions } from '../typing';
 
-import { readPackageJSON } from '@arco/node-utils';
+import { readPackageJSON } from '@qin/node-utils';
 
 import { defineConfig, mergeConfig } from 'vite';
 

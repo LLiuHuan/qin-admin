@@ -6,11 +6,11 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { TabOption } from '@arco/types';
+import type { TabOption } from '@qin/types';
 
 import { computed } from 'vue';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@arco-core/shadcn-ui';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@qin-core/shadcn-ui';
 
 interface Props {
   tabs?: TabOption[];

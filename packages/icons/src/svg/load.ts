@@ -5,9 +5,9 @@
  * @LastEditTime: 2025-05-22 17:23:19
  * @LastEditors: LLiuHuan
  */
-import type { IconifyIconStructure } from '@arco-core/icons';
+import type { IconifyIconStructure } from '@qin-core/icons';
 
-import { addIcon } from '@arco-core/icons';
+import { addIcon } from '@qin-core/icons';
 
 let loaded = false;
 if (!loaded) {

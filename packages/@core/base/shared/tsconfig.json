@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@arco/tsconfig/library.json",
+  "extends": "@qin/tsconfig/library.json",
   "include": ["src"],
   "exclude": ["node_modules"]
 }

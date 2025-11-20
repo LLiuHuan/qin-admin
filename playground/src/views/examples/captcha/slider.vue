@@ -2,12 +2,12 @@
 import type {
   CaptchaVerifyPassingData,
   SliderCaptchaActionType,
-} from '@arco/common-ui';
+} from '@qin/common-ui';
 
 import { ref } from 'vue';
 
-import { Page, SliderCaptcha } from '@arco/common-ui';
-import { Bell, Sun } from '@arco/icons';
+import { Page, SliderCaptcha } from '@qin/common-ui';
+import { Bell, Sun } from '@qin/icons';
 
 import { Button, Card, Message } from '@arco-design/web-vue';
 

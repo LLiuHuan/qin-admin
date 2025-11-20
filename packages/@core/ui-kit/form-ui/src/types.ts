@@ -3,21 +3,21 @@ import type { ZodTypeAny } from 'zod';
 
 import type { Component, HtmlHTMLAttributes, Ref } from 'vue';
 
-import type { ArcoButtonProps } from '@arco-core/shadcn-ui';
-import type { ClassType, MaybeComputedRef } from '@arco-core/typings';
+import type { QinButtonProps } from '@qin-core/shadcn-ui';
+import type { ClassType, MaybeComputedRef } from '@qin-core/typings';
 
 import type { FormApi } from './form-api';
 
 export type FormLayout = 'horizontal' | 'inline' | 'vertical';
 
 export type BaseFormComponentType =
-  | 'ArcoCheckbox'
-  | 'ArcoInput'
-  | 'ArcoInputPassword'
-  | 'ArcoPinInput'
-  | 'ArcoSelect'
   | 'DefaultButton'
   | 'PrimaryButton'
+  | 'QinCheckbox'
+  | 'QinInput'
+  | 'QinInputPassword'
+  | 'QinPinInput'
+  | 'QinSelect'
   | (Record<never, never> & string);
 
 type Breakpoints = '2xl:' | '3xl:' | '' | 'lg:' | 'md:' | 'sm:' | 'xl:';
@@ -255,6 +255,8 @@ export interface FormSchema<
   fieldName: string;
   /** 帮助信息 */
   help?: CustomRenderType;
+  /** 是否隐藏表单项 */
+  hide?: boolean;
   /** 表单项 */
   label?: CustomRenderType;
   // 自定义组件内部渲染
@@ -277,7 +279,8 @@ export interface FormRenderProps<
    */
   arrayToStringFields?: ArrayToStringFields;
   /**
-   * 是否展开，在showCollapseButton=true下生效
+   * 是否折叠，在showCollapseButton=true下生效
+   * true:折叠 false:展开
    */
   collapsed?: boolean;
   /**
@@ -311,6 +314,10 @@ export interface FormRenderProps<
    */
   fieldMappingTime?: FieldMappingTime;
   /**
+   * 表单收起展开状态变化回调
+   */
+  handleCollapsedChange?: (collapsed: boolean) => void;
+  /**
    * 表单实例
    */
   form?: FormContext<GenericObject>;
@@ -338,14 +345,14 @@ export interface FormRenderProps<
   wrapperClass?: WrapperClassType;
 }
 
-export interface ActionButtonOptions extends ArcoButtonProps {
+export interface ActionButtonOptions extends QinButtonProps {
   content?: MaybeComputedRef<string>;
   show?: boolean;
 
-  [key: string]: any; // eslint-disable-line perfectionist/sort-interfaces
+  [key: string]: any;
 }
 
-export interface ArcoFormProps<
+export interface QinFormProps<
   T extends BaseFormComponentType = BaseFormComponentType,
 > extends Omit<
     FormRenderProps<T>,
@@ -428,12 +435,12 @@ export interface ArcoFormProps<
 }
 
 export type ExtendedFormApi = FormApi & {
-  useStore: <T = NoInfer<ArcoFormProps>>(
-    selector?: (state: NoInfer<ArcoFormProps>) => T,
+  useStore: <T = NoInfer<QinFormProps>>(
+    selector?: (state: NoInfer<QinFormProps>) => T,
   ) => Readonly<Ref<T>>;
 };
 
-export interface ArcoFormAdapterOptions<
+export interface QinFormAdapterOptions<
   T extends BaseFormComponentType = BaseFormComponentType,
 > {
   config?: {

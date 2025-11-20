@@ -5,7 +5,7 @@ import type { AlertProps } from './alert';
 
 import { computed, h, nextTick, ref } from 'vue';
 
-import { useSimpleLocale } from '@arco-core/composables';
+import { useSimpleLocale } from '@qin-core/composables';
 import {
   CircleAlert,
   CircleCheckBig,
@@ -13,20 +13,19 @@ import {
   CircleX,
   Info,
   X,
-} from '@arco-core/icons';
+} from '@qin-core/icons';
 import {
   AlertDialog,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogTitle,
-  ArcoButton,
-  ArcoLoading,
-  ArcoRenderContent,
-} from '@arco-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@arco-core/shared/constants';
-import { globalShareState } from '@arco-core/shared/global-state';
-import { cn } from '@arco-core/shared/utils';
+  QinButton,
+  QinLoading,
+  QinRenderContent,
+} from '@qin-core/shadcn-ui';
+import { globalShareState } from '@qin-core/shared/global-state';
+import { cn } from '@qin-core/shared/utils';
 
 import { provideAlertContext } from './alert';
 
@@ -95,12 +94,6 @@ const getIconRender = computed(() => {
   return iconRender;
 });
 
-const getAppendTo = computed(() => {
-  return props.appendToMain
-    ? `#${ELEMENT_ID_MAIN_CONTENT}>div:not(.absolute)>div`
-    : undefined;
-});
-
 function doCancel() {
   handleCancel();
   handleOpenChange(false);
@@ -146,7 +139,6 @@ async function handleOpenChange(val: boolean) {
 <template>
   <AlertDialog :open="open" @update:open="handleOpenChange">
     <AlertDialogContent
-      :append-to="getAppendTo"
       :open="open"
       :centered="centered"
       :overlay-blur="overlayBlur"
@@ -170,7 +162,7 @@ async function handleOpenChange(val: boolean) {
             <component :is="getIconRender" class="mr-2" />
             <span class="flex-auto">{{ $t(title) }}</span>
             <AlertDialogCancel v-if="showCancel" as-child>
-              <ArcoButton
+              <QinButton
                 variant="ghost"
                 size="icon"
                 class="rounded-full"
@@ -178,24 +170,24 @@ async function handleOpenChange(val: boolean) {
                 @click="handleCancel"
               >
                 <X class="text-muted-foreground size-4" />
-              </ArcoButton>
+              </QinButton>
             </AlertDialogCancel>
           </div>
         </AlertDialogTitle>
         <AlertDialogDescription>
           <div class="m-4 min-h-[30px]">
-            <ArcoRenderContent :content="content" render-br />
+            <QinRenderContent :content="content" render-br />
           </div>
-          <ArcoLoading v-if="loading && contentMasking" :spinning="loading" />
+          <QinLoading v-if="loading && contentMasking" :spinning="loading" />
         </AlertDialogDescription>
         <div
           class="flex items-center justify-end gap-x-2"
           :class="`justify-${buttonAlign}`"
         >
-          <ArcoRenderContent :content="footer" />
+          <QinRenderContent :content="footer" />
           <AlertDialogCancel v-if="showCancel" as-child>
             <component
-              :is="components.DefaultButton || ArcoButton"
+              :is="components.DefaultButton || QinButton"
               :disabled="loading"
               variant="ghost"
               @click="handleCancel"
@@ -208,7 +200,7 @@ async function handleOpenChange(val: boolean) {
           <!--          <AlertDialogAction as-child>-->
           <div>
             <component
-              :is="components.PrimaryButton || ArcoButton"
+              :is="components.PrimaryButton || QinButton"
               :loading="loading"
               @click="handleConfirm"
             >

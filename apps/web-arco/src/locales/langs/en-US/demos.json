@@ -3,13 +3,14 @@
   "naive": "Naive UI",
   "table": "Table",
   "form": "Form",
-  "adp": {
+  "qin": {
     "title": "Project",
     "about": "About",
     "document": "Document",
     "antdv": "Ant Design Vue Version",
     "arco": "Arco Design Vue Version",
     "naive-ui": "Naive UI Version",
-    "element-plus": "Element Plus Version"
+    "element-plus": "Element Plus Version",
+    "tdesign": "TDesign Vue Version"
   }
 }

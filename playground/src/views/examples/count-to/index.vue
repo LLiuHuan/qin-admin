@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { CountToProps, TransitionPresets } from '@arco/common-ui';
+import type { CountToProps, TransitionPresets } from '@qin/common-ui';
 
 import { reactive } from 'vue';
 
-import { CountTo, Page, TransitionPresetsKeys } from '@arco/common-ui';
-import { IconifyIcon } from '@arco/icons';
+import { CountTo, Page, TransitionPresetsKeys } from '@qin/common-ui';
+import { IconifyIcon } from '@qin/icons';
 
 import {
   Button,
@@ -75,7 +75,7 @@ function onFinished() {
 }
 </script>
 <template>
-  <Page title="CountTo" description="数字滚动动画组件。使用">
+  <Page description="数字滚动动画组件。使用" title="CountTo">
     <template #description>
       <span>
         使用useTransition封装的数字滚动动画组件，每次改变当前值都会产生过渡动画。
@@ -86,7 +86,7 @@ function onFinished() {
     </template>
     <Card title="基本用法">
       <div class="flex w-full items-center justify-center pb-4">
-        <CountTo v-bind="props" @started="onStarted" @finished="onFinished" />
+        <CountTo v-bind="props" @finished="onFinished" @started="onStarted" />
       </div>
       <Form :model="props">
         <Row :gutter="20">
@@ -99,8 +99,8 @@ function onFinished() {
             <FormItem label="当前值" name="endVal">
               <InputNumber
                 v-model="props.endVal"
-                class="w-full"
                 :precision="props.decimals"
+                class="w-full"
               >
                 <template #append>
                   <IconifyIcon
@@ -115,7 +115,7 @@ function onFinished() {
           </Col>
           <Col :span="8">
             <FormItem label="禁用动画" name="disabled">
-              <Switch v-model:checked="props.disabled" />
+              <Switch v-model="props.disabled" />
             </FormItem>
           </Col>
           <Col :span="8">

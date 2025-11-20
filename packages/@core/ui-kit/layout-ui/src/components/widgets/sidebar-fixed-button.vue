@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Pin, PinOff } from '@arco-core/icons';
+import { Pin, PinOff } from '@qin-core/icons';
 
 const expandOnHover = defineModel<boolean>('expandOnHover');
 

@@ -10,7 +10,7 @@ import type { TabsTriggerProps } from 'reka-ui';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { TabsTrigger, useForwardProps } from 'reka-ui';
 

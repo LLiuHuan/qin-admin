@@ -6,16 +6,16 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@arco/types';
+import type { MenuRecordRaw } from '@qin/types';
 
-import type { NormalMenuProps } from '@arco-core/menu-ui';
+import type { NormalMenuProps } from '@qin-core/menu-ui';
 
 import { onBeforeMount } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { findMenuByPath } from '@arco/utils';
+import { findMenuByPath } from '@qin/utils';
 
-import { NormalMenu } from '@arco-core/menu-ui';
+import { NormalMenu } from '@qin-core/menu-ui';
 
 interface Props extends NormalMenuProps {}
 

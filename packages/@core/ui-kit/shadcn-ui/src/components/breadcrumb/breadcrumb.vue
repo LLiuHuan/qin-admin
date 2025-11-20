@@ -2,13 +2,13 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-05-27 11:32:53
+ * @LastEditTime: 2025-08-18 10:12:45
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
 import type { BreadcrumbProps } from './types';
 
-import { ChevronDown } from '@arco-core/icons';
+import { ChevronDown } from '@qin-core/icons';
 
 import {
   Breadcrumb,
@@ -22,7 +22,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../../ui';
-import { ArcoIcon } from '../icon';
+import { QinIcon } from '../icon';
 
 interface Props extends BreadcrumbProps {}
 
@@ -52,7 +52,7 @@ function handleClick(path?: string) {
             <div v-if="item.items?.length ?? 0 > 0">
               <DropdownMenu>
                 <DropdownMenuTrigger class="flex items-center gap-1">
-                  <ArcoIcon v-if="showIcon" :icon="item.icon" class="size-5" />
+                  <QinIcon v-if="showIcon" :icon="item.icon" class="size-5" />
                   {{ item.title }}
                   <ChevronDown class="size-4" />
                 </DropdownMenuTrigger>
@@ -74,7 +74,7 @@ function handleClick(path?: string) {
               @click.stop="handleClick(item.path)"
             >
               <div class="flex-center">
-                <ArcoIcon
+                <QinIcon
                   v-if="showIcon"
                   :class="{ 'size-5': item.isHome }"
                   :icon="item.icon"
@@ -85,7 +85,7 @@ function handleClick(path?: string) {
             </BreadcrumbLink>
             <BreadcrumbPage v-else>
               <div class="flex-center">
-                <ArcoIcon
+                <QinIcon
                   v-if="showIcon"
                   :class="{ 'size-5': item.isHome }"
                   :icon="item.icon"

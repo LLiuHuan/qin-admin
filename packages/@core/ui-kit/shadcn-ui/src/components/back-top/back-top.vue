@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-05-27 10:19:16
+ * @LastEditTime: 2025-08-18 10:12:58
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -10,9 +10,9 @@ import type { BacktopProps } from './backtop';
 
 import { computed } from 'vue';
 
-import { ArrowUpToLine } from '@arco-core/icons';
+import { ArrowUpToLine } from '@qin-core/icons';
 
-import { ArcoButton } from '../button';
+import { QinButton } from '../button';
 import { useBackTop } from './use-backtop';
 
 interface Props extends BacktopProps {}
@@ -36,7 +36,7 @@ const { handleClick, visible } = useBackTop(props);
 </script>
 <template>
   <transition name="fade-down">
-    <ArcoButton
+    <QinButton
       v-if="visible"
       :style="backTopStyle"
       class="dark:bg-accent dark:hover:bg-heavy bg-background hover:bg-heavy data shadow-float z-popup fixed bottom-10 size-10 rounded-full duration-500"
@@ -45,6 +45,6 @@ const { handleClick, visible } = useBackTop(props);
       @click="handleClick"
     >
       <ArrowUpToLine class="size-4" />
-    </ArcoButton>
+    </QinButton>
   </transition>
 </template>

@@ -1,14 +1,21 @@
+<!--
+ * @Description: 
+ * @Author: LLiuHuan
+ * @Date: 2025-07-15 23:01:48
+ * @LastEditTime: 2025-08-18 10:07:15
+ * @LastEditors: LLiuHuan
+-->
 <script setup lang="ts">
-import type { BuiltinThemeType } from '@arco/types';
+import type { BuiltinThemeType } from '@qin/types';
 
-import { Palette } from '@arco/icons';
+import { Palette } from '@qin/icons';
 import {
   COLOR_PRESETS,
   preferences,
   updatePreferences,
-} from '@arco/preferences';
+} from '@qin/preferences';
 
-import { ArcoIconButton } from '@arco-core/shadcn-ui';
+import { QinIconButton } from '@qin-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationColorToggle',
@@ -30,7 +37,7 @@ function handleUpdate(colorPrimary: string, type: BuiltinThemeType) {
       class="flex w-0 overflow-hidden transition-all duration-500 ease-out group-hover:w-60"
     >
       <template v-for="preset in COLOR_PRESETS" :key="preset.color">
-        <ArcoIconButton
+        <QinIconButton
           class="flex-center flex-shrink-0"
           @click="handleUpdate(preset.color, preset.type)"
         >
@@ -53,12 +60,12 @@ function handleUpdate(colorPrimary: string, type: BuiltinThemeType) {
               />
             </svg>
           </div>
-        </ArcoIconButton>
+        </QinIconButton>
       </template>
     </div>
 
-    <ArcoIconButton>
+    <QinIconButton>
       <Palette class="text-primary size-4" />
-    </ArcoIconButton>
+    </QinIconButton>
   </div>
 </template>

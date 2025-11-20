@@ -1,19 +1,14 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { DialogContentEmits, DialogContentProps } from 'reka-ui';
 
-import type { ClassType } from '@arco-core/typings';
+import type { ClassType } from '@qin-core/typings';
 
 import { computed, ref } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { X } from 'lucide-vue-next';
-import {
-  DialogClose,
-  DialogContent,
-  DialogPortal,
-  useForwardPropsEmits,
-} from 'reka-ui';
+import { DialogClose, DialogContent, useForwardPropsEmits } from 'reka-ui';
 
 import DialogOverlay from './DialogOverlay.vue';
 
@@ -80,7 +75,7 @@ defineExpose({
 </script>
 
 <template>
-  <DialogPortal :to="appendTo">
+  <Teleport :to="appendTo" defer>
     <Transition name="fade">
       <DialogOverlay
         v-if="open && modal"
@@ -95,31 +90,31 @@ defineExpose({
     </Transition>
     <DialogContent
       ref="contentRef"
-      :style="{ ...(zIndex ? { zIndex } : {}), position }"
-      @animationend="onAnimationEnd"
-      v-bind="forwarded"
       :class="
         cn(
           'z-popup bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-top-[48%] outline-hidden w-full p-6 shadow-lg sm:rounded-xl',
           props.class,
         )
       "
+      :style="{ ...(zIndex ? { zIndex } : {}), position }"
+      v-bind="forwarded"
+      @animationend="onAnimationEnd"
     >
       <slot></slot>
 
       <DialogClose
         v-if="showClose"
-        :disabled="closeDisabled"
         :class="
           cn(
             'data-[state=open]:bg-accent data-[state=open]:text-muted-foreground hover:bg-accent hover:text-accent-foreground text-foreground/80 flex-center focus:outline-hidden absolute right-3 top-3 h-6 w-6 rounded-full px-1 text-lg opacity-70 transition-opacity hover:opacity-100 disabled:pointer-events-none',
             props.closeClass,
           )
         "
+        :disabled="closeDisabled"
         @click="() => emits('close')"
       >
         <X class="h-4 w-4" />
       </DialogClose>
     </DialogContent>
-  </DialogPortal>
+  </Teleport>
 </template>

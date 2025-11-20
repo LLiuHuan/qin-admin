@@ -1,13 +1,13 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { DialogContentEmits, DialogContentProps } from 'reka-ui';
 
 import type { SheetVariants } from './sheet';
 
 import { computed, ref } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
-import { DialogContent, DialogPortal, useForwardPropsEmits } from 'reka-ui';
+import { DialogContent, useForwardPropsEmits } from 'reka-ui';
 
 import { sheetVariants } from './sheet';
 import SheetOverlay from './SheetOverlay.vue';
@@ -73,7 +73,7 @@ function onAnimationEnd(event: AnimationEvent) {
 </script>
 
 <template>
-  <DialogPortal :to="appendTo">
+  <Teleport :to="appendTo" defer>
     <Transition name="fade">
       <SheetOverlay
         v-if="open && modal"
@@ -92,10 +92,10 @@ function onAnimationEnd(event: AnimationEvent) {
         ...(zIndex ? { zIndex } : {}),
         position,
       }"
-      @animationend="onAnimationEnd"
       v-bind="{ ...forwarded, ...$attrs }"
+      @animationend="onAnimationEnd"
     >
       <slot></slot>
     </DialogContent>
-  </DialogPortal>
+  </Teleport>
 </template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@arco-core/typings';
+import type { MenuRecordRaw } from '@qin-core/typings';
 
 import type { NormalMenuProps } from './normal-menu';
 
-import { useNamespace } from '@arco-core/composables';
-import { ArcoIcon } from '@arco-core/shadcn-ui';
+import { useNamespace } from '@qin-core/composables';
+import { QinIcon } from '@qin-core/shadcn-ui';
 
 interface Props extends NormalMenuProps {}
 
@@ -50,7 +50,7 @@ function menuIcon(menu: MenuRecordRaw) {
         @click="() => emit('select', menu)"
         @mouseenter="() => emit('enter', menu)"
       >
-        <ArcoIcon :class="e('icon')" :icon="menuIcon(menu)" fallback />
+        <QinIcon :class="e('icon')" :icon="menuIcon(menu)" fallback />
 
         <span :class="e('name')" class="truncate"> {{ menu.name }}</span>
       </li>
@@ -58,7 +58,7 @@ function menuIcon(menu: MenuRecordRaw) {
   </ul>
 </template>
 <style lang="scss" scoped>
-$namespace: adp;
+$namespace: qin;
 
 .#{$namespace}-normal-menu {
   --menu-item-margin-y: 4px;

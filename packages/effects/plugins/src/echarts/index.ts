@@ -19,7 +19,7 @@ import type {
 
 import { effectScope, nextTick, onScopeDispose, ref, watch } from 'vue';
 
-import { usePreferences } from '@arco/preferences';
+import { usePreferences } from '@qin/preferences';
 
 import { useElementSize } from '@vueuse/core';
 import {

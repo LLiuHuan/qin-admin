@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-27 15:06:51
  * @LastEditors: LLiuHuan
  */
-import type { ClassType, DeepPartial } from '@arco/types';
+import type { ClassType, DeepPartial } from '@qin/types';
 import type {
   VxeGridListeners,
   VxeGridPropTypes,
@@ -15,11 +15,11 @@ import type {
 
 import type { Ref } from 'vue';
 
-import type { ArcoFormProps, BaseFormComponentType } from '@arco-core/form-ui';
+import type { BaseFormComponentType, QinFormProps } from '@qin-core/form-ui';
 
 import type { VxeGridApi } from './api';
 
-import { useArcoForm } from '@arco-core/form-ui';
+import { useQinForm } from '@qin-core/form-ui';
 
 export interface VxePaginationInfo {
   currentPage: number;
@@ -72,7 +72,7 @@ export interface VxeGridProps<
   /**
    * 表单配置
    */
-  formOptions?: ArcoFormProps<D>;
+  formOptions?: QinFormProps<D>;
   /**
    * 显示搜索表单
    */
@@ -94,5 +94,5 @@ export type ExtendedVxeGridApi<
 
 export interface SetupVxeTable {
   configVxeTable: (ui: VxeUIExport) => void;
-  useArcoForm: typeof useArcoForm;
+  useQinForm: typeof useQinForm;
 }

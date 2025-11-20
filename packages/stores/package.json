@@ -1,11 +1,11 @@
 {
-  "name": "@arco/stores",
+  "name": "@qin/stores",
   "version": "1.0.0",
-  "homepage": "https://github.com/LLiuHuan/arco-design-pro-vue",
-  "bugs": "https://github.com/LLiuHuan/arco-design-pro-vue/issues",
+  "homepage": "https://github.com/LLiuHuan/qin-admin",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLiuHuan/arco-design-pro-vue.git",
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
     "directory": "packages/stores"
   },
   "license": "MIT",
@@ -20,9 +20,9 @@
     }
   },
   "dependencies": {
-    "@arco-core/preferences": "workspace:*",
-    "@arco-core/shared": "workspace:*",
-    "@arco-core/typings": "workspace:*",
+    "@qin-core/preferences": "workspace:*",
+    "@qin-core/shared": "workspace:*",
+    "@qin-core/typings": "workspace:*",
     "pinia": "catalog:",
     "pinia-plugin-persistedstate": "catalog:",
     "secure-ls": "catalog:",

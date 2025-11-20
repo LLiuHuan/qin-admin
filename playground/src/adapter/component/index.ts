@@ -6,15 +6,15 @@
  * @LastEditors: LLiuHuan
  */
 
-import type { BaseFormComponentType } from '@arco/common-ui';
-import type { Recordable } from '@arco/types';
+import type { BaseFormComponentType } from '@qin/common-ui';
+import type { Recordable } from '@qin/types';
 
 import type { Component, VNode } from 'vue';
 
 import { defineComponent, h, ref } from 'vue';
 
-import { ApiComponent, globalShareState, IconPicker } from '@arco/common-ui';
-import { $t } from '@arco/locales';
+import { ApiComponent, globalShareState, IconPicker } from '@qin/common-ui';
+import { $t } from '@qin/locales';
 
 import {
   Button as AButton,

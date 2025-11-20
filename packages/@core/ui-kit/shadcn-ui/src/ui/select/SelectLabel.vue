@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import type { SelectLabelProps } from 'reka-ui';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { SelectLabel } from 'reka-ui';
 

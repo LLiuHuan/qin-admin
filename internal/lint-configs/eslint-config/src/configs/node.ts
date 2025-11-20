@@ -26,11 +26,11 @@ export async function node(): Promise<Linter.Config[]> {
           {
             allowModules: [
               'unbuild',
-              '@arco/vite-config',
+              '@qin/vite-config',
               'vitest',
               'vite',
               '@vue/test-utils',
-              '@arco/uno-config',
+              '@qin/uno-config',
               '@playwright/test',
             ],
           },

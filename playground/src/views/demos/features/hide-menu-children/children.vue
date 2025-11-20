@@ -2,13 +2,13 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-08-01 03:43:04
- * @LastEditTime: 2025-08-01 04:02:41
+ * @LastEditTime: 2025-08-18 10:03:39
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { ArcoButton, Fallback } from '@arco/common-ui';
-import { useTabs } from '@arco/hooks';
-import { X } from '@arco/icons';
+import { Fallback, QinButton } from '@qin/common-ui';
+import { useTabs } from '@qin/hooks';
+import { X } from '@qin/icons';
 
 const { closeCurrentTab } = useTabs();
 </script>
@@ -21,10 +21,10 @@ const { closeCurrentTab } = useTabs();
     show-back
   >
     <template #action>
-      <ArcoButton size="lg" @click="closeCurrentTab()">
+      <QinButton size="lg" @click="closeCurrentTab()">
         <X class="mr-2 size-4" />
         关闭当前标签页
-      </ArcoButton>
+      </QinButton>
     </template>
   </Fallback>
 </template>

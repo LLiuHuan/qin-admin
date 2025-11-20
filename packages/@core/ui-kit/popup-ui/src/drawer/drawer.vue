@@ -15,13 +15,13 @@ import {
   useIsMobile,
   usePriorityValues,
   useSimpleLocale,
-} from '@arco-core/composables';
-import { X } from '@arco-core/icons';
+} from '@qin-core/composables';
+import { X } from '@qin-core/icons';
 import {
-  ArcoButton,
-  ArcoHelpTooltip,
-  ArcoIconButton,
-  ArcoLoading,
+  QinButton,
+  QinHelpTooltip,
+  QinIconButton,
+  QinLoading,
   Separator,
   Sheet,
   SheetClose,
@@ -31,10 +31,10 @@ import {
   SheetHeader,
   SheetTitle,
   VisuallyHidden,
-} from '@arco-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@arco-core/shared/constants';
-import { globalShareState } from '@arco-core/shared/global-state';
-import { cn } from '@arco-core/shared/utils';
+} from '@qin-core/shadcn-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@qin-core/shared/constants';
+import { globalShareState } from '@qin-core/shared/global-state';
+import { cn } from '@qin-core/shared/utils';
 
 interface Props extends DrawerProps {
   drawerApi?: ExtendedDrawerApi;
@@ -135,7 +135,7 @@ function pointerDownOutside(e: Event) {
   }
 }
 
-function handerOpenAutoFocus(e: Event) {
+function handleOpenAutoFocus(e: Event) {
   if (!openAutoFocus.value) {
     e?.preventDefault();
   }
@@ -167,10 +167,16 @@ watch(
     }
   },
 );
+
+function handleOpened() {
+  props.drawerApi?.onOpened();
+}
+
 function handleClosed() {
   isClosed.value = true;
   props.drawerApi?.onClosed();
 }
+
 const getForceMount = computed(() => {
   return !unref(destroyOnClose) && unref(hasOpened);
 });
@@ -190,19 +196,19 @@ const getForceMount = computed(() => {
           hidden: isClosed,
         })
       "
+      :force-mount="getForceMount"
       :modal="modal"
       :open="state?.isOpen"
+      :overlay-blur="overlayBlur"
       :side="placement"
       :z-index="zIndex"
-      :force-mount="getForceMount"
-      :overlay-blur="overlayBlur"
-      @close-auto-focus="handleFocusOutside"
       @closed="handleClosed"
+      @opened="handleOpened"
+      @close-auto-focus="handleFocusOutside"
       @escape-key-down="escapeKeyDown"
       @focus-outside="handleFocusOutside"
       @interact-outside="interactOutside"
-      @open-auto-focus="handerOpenAutoFocus"
-      @opened="() => drawerApi?.onOpened()"
+      @open-auto-focus="handleOpenAutoFocus"
       @pointer-down-outside="pointerDownOutside"
     >
       <SheetHeader
@@ -221,14 +227,14 @@ const getForceMount = computed(() => {
         <div class="flex items-center">
           <SheetClose
             v-if="closable && closeIconPlacement === 'left'"
-            as-child
             :disabled="submitting"
+            as-child
             class="data-[state=open]:bg-secondary focus:outline-hidden ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 disabled:pointer-events-none"
           >
             <slot name="close-icon">
-              <ArcoIconButton>
+              <QinIconButton>
                 <X class="size-4" />
-              </ArcoIconButton>
+              </QinIconButton>
             </slot>
           </SheetClose>
           <Separator
@@ -241,9 +247,9 @@ const getForceMount = computed(() => {
             <slot name="title">
               {{ title }}
 
-              <ArcoHelpTooltip v-if="titleTooltip" trigger-class="pb-1">
+              <QinHelpTooltip v-if="titleTooltip" trigger-class="pb-1">
                 {{ titleTooltip }}
-              </ArcoHelpTooltip>
+              </QinHelpTooltip>
             </slot>
           </SheetTitle>
           <SheetDescription v-if="description" class="mt-1 text-xs">
@@ -262,14 +268,14 @@ const getForceMount = computed(() => {
           <slot name="extra"></slot>
           <SheetClose
             v-if="closable && closeIconPlacement === 'right'"
-            as-child
             :disabled="submitting"
+            as-child
             class="data-[state=open]:bg-secondary focus:outline-hidden ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 disabled:pointer-events-none"
           >
             <slot name="close-icon">
-              <ArcoIconButton>
+              <QinIconButton>
                 <X class="size-4" />
-              </ArcoIconButton>
+              </QinIconButton>
             </slot>
           </SheetClose>
         </div>
@@ -290,7 +296,7 @@ const getForceMount = computed(() => {
       >
         <slot></slot>
       </div>
-      <ArcoLoading v-if="showLoading || submitting" spinning />
+      <QinLoading v-if="showLoading || submitting" spinning />
       <SheetFooter
         v-if="showFooter"
         :class="
@@ -303,10 +309,10 @@ const getForceMount = computed(() => {
         <slot name="prepend-footer"></slot>
         <slot name="footer">
           <component
-            :is="components.DefaultButton || ArcoButton"
+            :is="components.DefaultButton || QinButton"
             v-if="showCancelButton"
-            variant="ghost"
             :disabled="submitting"
+            variant="ghost"
             @click="() => drawerApi?.onCancel()"
           >
             <slot name="cancelText">
@@ -315,7 +321,7 @@ const getForceMount = computed(() => {
           </component>
           <slot name="center-footer"></slot>
           <component
-            :is="components.PrimaryButton || ArcoButton"
+            :is="components.PrimaryButton || QinButton"
             v-if="showConfirmButton"
             :loading="confirmLoading || submitting"
             @click="() => drawerApi?.onConfirm()"

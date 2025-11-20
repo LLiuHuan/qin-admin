@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { CircleX } from '@arco-core/icons';
+import { CircleX } from '@qin-core/icons';
 
 import {
   Select,

@@ -4,8 +4,8 @@
 
 <div align="center">
     <a href="https://www.oscs1024.com/project/oscs/LLiuHuan/arco-design-pro-vue?ref=badge_small" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/LLiuHuan/arco-design-pro-vue.svg?size=small"/></a>
-    <a href="https://github.com/LLiuHuan/arco-design-pro-vue"><img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg?sanitize=true" alt="Build Status"></a>
-    <a href="https://github.com/LLiuHuan/arco-design-pro-vue/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
+    <a href="https://github.com/LLiuHuan/qin-admin"><img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg?sanitize=true" alt="Build Status"></a>
+    <a href="https://github.com/LLiuHuan/qin-admin/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
 </div>
 
 <div align="center">
@@ -30,7 +30,7 @@
 - 旧版本
   - [在线预览](http://arco_legacy.0x3.cn/)  
     （请使用 Chrome 打开）
-  - [Github 地址](https://github.com/LLiuHuan/arco-design-pro-vue/tree/legacy)
+  - [Github 地址](https://github.com/LLiuHuan/qin-admin/tree/legacy)
 - 新版本
   - [在线预览](http://arco.0x3.cn/)
   - [文档地址] 开发中
@@ -43,7 +43,7 @@
 
 ```
 # 克隆项目
-git clone https://github.com/LLiuHuan/arco-design-pro-vue.git
+git clone https://github.com/LLiuHuan/qin-admin.git
 
 # 进入项目目录
 cd arco-design-pro-vue
@@ -243,4 +243,4 @@ pnpm dev
 
 ## License
 
-Ths project is [MIT licensed](https://github.com/LLiuHuan/arco-design-pro-vue/blob/master/LICENSE).
+Ths project is [MIT licensed](https://github.com/LLiuHuan/qin-admin/blob/master/LICENSE).

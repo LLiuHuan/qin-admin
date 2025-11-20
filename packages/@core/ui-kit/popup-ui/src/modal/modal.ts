@@ -1,6 +1,6 @@
 import type { Component, Ref } from 'vue';
 
-import type { MaybePromise } from '@arco-core/typings';
+import type { MaybePromise } from '@qin-core/typings';
 
 import type { ModalApi } from './modal-api';
 

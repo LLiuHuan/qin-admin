@@ -6,13 +6,13 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@arco/types';
+import type { MenuRecordRaw } from '@qin/types';
 
-import type { MenuProps } from '@arco-core/menu-ui';
+import type { MenuProps } from '@qin-core/menu-ui';
 
 import { useRoute } from 'vue-router';
 
-import { Menu } from '@arco-core/menu-ui';
+import { Menu } from '@qin-core/menu-ui';
 
 import { useNavigation } from './use-navigation';
 

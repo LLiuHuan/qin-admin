@@ -3,11 +3,11 @@ import type { Component } from 'vue';
 
 import { computed, onMounted, ref, unref, watch, watchEffect } from 'vue';
 
-import { isNumber } from '@arco-core/shared/utils';
+import { isNumber } from '@qin-core/shared/utils';
 
 import { TransitionPresets, useTransition } from '@vueuse/core';
 
-import { ArcoIcon } from '../icon';
+import { QinIcon } from '../icon';
 
 interface Props {
   autoplay?: boolean;
@@ -143,7 +143,7 @@ defineExpose({ reset });
     :style="{ color }"
   >
     {{ value }}
-    <ArcoIcon
+    <QinIcon
       v-if="direction"
       :icon="directionIcon(direction)"
       class="size-6 flex-shrink-0"

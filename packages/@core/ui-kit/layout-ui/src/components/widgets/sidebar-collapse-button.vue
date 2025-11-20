@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import { ChevronsLeft, ChevronsRight } from '@arco-core/icons';
+import { ChevronsLeft, ChevronsRight } from '@qin-core/icons';
 
 const collapsed = defineModel<boolean>('collapsed');
 

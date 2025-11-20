@@ -2,10 +2,10 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-08 09:38:40
- * @LastEditTime: 2025-06-15 17:02:14
+ * @LastEditTime: 2025-08-18 10:18:19
  * @LastEditors: LLiuHuan
  */
-import { defineConfig } from '@arco/vite-config';
+import { defineConfig } from '@qin/vite-config';
 
 import { vitePluginForArco } from '@arco-plugins/vite-vue';
 

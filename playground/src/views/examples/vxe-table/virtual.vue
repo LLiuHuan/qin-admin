@@ -10,9 +10,9 @@ import type { VxeGridProps } from '#/adapter/vxe-table';
 
 import { onMounted } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
-import { useArcoVxeGrid } from '#/adapter/vxe-table';
+import { useQinVxeGrid } from '#/adapter/vxe-table';
 
 interface RowType {
   id: number;
@@ -40,7 +40,7 @@ const gridOptions: VxeGridProps<RowType> = {
   showOverflow: true,
 };
 
-const [Grid, gridApi] = useArcoVxeGrid({ gridOptions });
+const [Grid, gridApi] = useQinVxeGrid({ gridOptions });
 
 // 模拟行数据
 const loadList = (size = 200) => {

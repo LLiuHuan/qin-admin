@@ -6,6 +6,6 @@
  * @LastEditors: LLiuHuan
  */
 export default {
-  extends: ['@arco/stylelint-config'],
+  extends: ['@qin/stylelint-config'],
   root: true,
 };

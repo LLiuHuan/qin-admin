@@ -1,11 +1,11 @@
-import type { Recordable, UserInfo } from '@arco/types';
+import type { Recordable, UserInfo } from '@qin/types';
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { LOGIN_PATH } from '@arco/constants';
-import { preferences } from '@arco/preferences';
-import { resetAllStores, useAccessStore, useUserStore } from '@arco/stores';
+import { LOGIN_PATH } from '@qin/constants';
+import { preferences } from '@qin/preferences';
+import { resetAllStores, useAccessStore, useUserStore } from '@qin/stores';
 
 import { notification } from 'ant-design-vue';
 import { defineStore } from 'pinia';
@@ -25,6 +25,7 @@ export const useAuthStore = defineStore('auth', () => {
    * 异步处理登录操作
    * Asynchronously handle the login process
    * @param params 登录表单数据
+   * @param onSuccess
    */
   async function authLogin(
     params: Recordable<any>,

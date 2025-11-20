@@ -1,21 +1,21 @@
-<script setup lang="ts">
-import type { Recordable } from '@arco/types';
+<script lang="ts" setup>
+import type { Recordable } from '@qin/types';
 
-import type { ArcoFormSchema } from '@arco-core/form-ui';
+import type { QinFormSchema } from '@qin-core/form-ui';
 
 import type { AuthenticationProps } from './types';
 
 import { computed, onMounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { useArcoForm } from '@arco-core/form-ui';
-import { ArcoButton, ArcoCheckbox } from '@arco-core/shadcn-ui';
+import { useQinForm } from '@qin-core/form-ui';
+import { QinButton, QinCheckbox } from '@qin-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 import ThirdPartyLogin from './third-party-login.vue';
 
 interface Props extends AuthenticationProps {
-  formSchema?: ArcoFormSchema[];
+  formSchema?: QinFormSchema[];
 }
 
 defineOptions({
@@ -44,7 +44,7 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, formApi] = useArcoForm(
+const [Form, formApi] = useQinForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -113,24 +113,24 @@ defineExpose({
       class="mb-6 flex justify-between"
     >
       <div class="flex-center">
-        <ArcoCheckbox
+        <QinCheckbox
           v-if="showRememberMe"
-          v-model:checked="rememberMe"
+          v-model="rememberMe"
           name="rememberMe"
         >
           {{ $t('authentication.rememberMe') }}
-        </ArcoCheckbox>
+        </QinCheckbox>
       </div>
 
       <span
         v-if="showForgetPassword"
-        class="adp-link text-sm font-normal"
+        class="qin-link text-sm font-normal"
         @click="handleGo(forgetPasswordPath)"
       >
         {{ $t('authentication.forgetPassword') }}
       </span>
     </div>
-    <ArcoButton
+    <QinButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -140,28 +140,28 @@ defineExpose({
       @click="handleSubmit"
     >
       {{ submitButtonText || $t('common.login') }}
-    </ArcoButton>
+    </QinButton>
 
     <div
       v-if="showCodeLogin || showQrcodeLogin"
       class="mb-2 mt-4 flex items-center justify-between"
     >
-      <ArcoButton
+      <QinButton
         v-if="showCodeLogin"
         class="w-1/2"
         variant="outline"
         @click="handleGo(codeLoginPath)"
       >
         {{ $t('authentication.mobileLogin') }}
-      </ArcoButton>
-      <ArcoButton
+      </QinButton>
+      <QinButton
         v-if="showQrcodeLogin"
         class="ml-4 w-1/2"
         variant="outline"
         @click="handleGo(qrCodeLoginPath)"
       >
         {{ $t('authentication.qrcodeLogin') }}
-      </ArcoButton>
+      </QinButton>
     </div>
 
     <!-- 第三方登录 -->
@@ -173,7 +173,7 @@ defineExpose({
       <div v-if="showRegister" class="mt-3 text-center text-sm">
         {{ $t('authentication.accountTip') }}
         <span
-          class="adp-link text-sm font-normal"
+          class="qin-link text-sm font-normal"
           @click="handleGo(registerPath)"
         >
           {{ $t('authentication.createAccount') }}

@@ -15,7 +15,7 @@ jobs:
     # - 排除 dependabot 机器人提交（避免自动依赖更新触发部署）
     # - 提交信息不包含 [skip ci]（允许手动跳过部署）
     # - 仅在官方仓库执行
-    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/qin-admin'
     runs-on: ubuntu-latest # 运行环境：Ubuntu 最新版
     steps:
       # 步骤1：拉取仓库代码
@@ -55,7 +55,7 @@ jobs:
   # 任务2：部署文档（docs）到FTP
   deploy-docs-ftp:
     name: Deploy Push Docs Ftp
-    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/qin-admin'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -82,7 +82,7 @@ jobs:
   # 任务3：部署基于 Ant Design 的应用到FTP
   deploy-antd-ftp:
     name: Deploy Push Antd Ftp
-    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/qin-admin'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -117,7 +117,7 @@ jobs:
   # 任务4：部署基于 Element Plus 的应用到FTP
   deploy-ele-ftp:
     name: Deploy Push Element Ftp
-    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/qin-admin'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -152,7 +152,7 @@ jobs:
   # 任务5：部署基于 Naive UI 的应用到FTP
   deploy-naive-ftp:
     name: Deploy Push Naive Ftp
-    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/arco-design-pro-vue'
+    if: github.actor != 'dependabot[bot]' && !contains(github.event.head_commit.message, '[skip ci]') && github.repository == 'LLiuHuan/qin-admin'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

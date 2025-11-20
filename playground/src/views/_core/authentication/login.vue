@@ -2,17 +2,17 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 15:35:10
- * @LastEditTime: 2025-08-12 09:59:13
+ * @LastEditTime: 2025-08-18 10:03:49
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { ArcoFormSchema } from '@arco/common-ui';
-import type { BasicOption } from '@arco/types';
+import type { QinFormSchema } from '@qin/common-ui';
+import type { BasicOption } from '@qin/types';
 
 import { computed, markRaw } from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@arco/common-ui';
-import { $t } from '@arco/locales';
+import { AuthenticationLogin, SliderCaptcha, z } from '@qin/common-ui';
+import { $t } from '@qin/locales';
 
 import { useAuthStore } from '#/store';
 
@@ -35,10 +35,10 @@ const MOCK_USER_OPTIONS: BasicOption[] = [
   },
 ];
 
-const formSchema = computed((): ArcoFormSchema[] => {
+const formSchema = computed((): QinFormSchema[] => {
   return [
     {
-      component: 'ArcoSelect',
+      component: 'QinSelect',
       componentProps: {
         options: MOCK_USER_OPTIONS,
         placeholder: $t('authentication.selectAccount'),
@@ -52,7 +52,7 @@ const formSchema = computed((): ArcoFormSchema[] => {
         .default('super'),
     },
     {
-      component: 'ArcoInput',
+      component: 'QinInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
@@ -77,7 +77,7 @@ const formSchema = computed((): ArcoFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'ArcoInputPassword',
+      component: 'QinInputPassword',
       componentProps: {
         placeholder: $t('authentication.password'),
       },

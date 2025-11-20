@@ -10,7 +10,7 @@ import type { SelectScrollUpButtonProps } from 'reka-ui';
 
 import { computed } from 'vue';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { ChevronUp } from 'lucide-vue-next';
 import { SelectScrollUpButton, useForwardProps } from 'reka-ui';

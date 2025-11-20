@@ -2,13 +2,13 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 09:37:08
- * @LastEditTime: 2025-08-05 09:29:11
+ * @LastEditTime: 2025-08-18 10:15:32
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { ArcoButton, confirm, Page, useArcoModal } from '@arco/common-ui';
+import { confirm, Page, QinButton, useQinModal } from '@qin/common-ui';
 
 import { NButton, NDataTable } from 'naive-ui';
 
@@ -38,7 +38,7 @@ function showIconConfirm() {
     icon: 'success',
   });
 }
-const [Modal, modalApi] = useArcoModal();
+const [Modal, modalApi] = useQinModal();
 </script>
 
 <template>
@@ -46,9 +46,9 @@ const [Modal, modalApi] = useArcoModal();
     description="表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景。"
     title="NDataTable"
   >
-    <ArcoButton @click="() => modalApi.open()">Open</ArcoButton>
+    <QinButton @click="() => modalApi.open()">Open</QinButton>
     <Modal class="w-[600px]" title="基础示例"> modal content </Modal>
-    <ArcoButton @click="showIconConfirm()"> aaa </ArcoButton>
+    <QinButton @click="showIconConfirm()"> aaa </QinButton>
     <NDataTable :columns="columns" :data="data" />
   </Page>
 </template>

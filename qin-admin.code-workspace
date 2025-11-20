@@ -1,0 +1,176 @@
+{
+  "folders": [
+    {
+      "name": "@qin/web-antd",
+      "path": "apps/web-antd",
+    },
+    {
+      "name": "@qin/web-arco",
+      "path": "apps/web-arco",
+    },
+    {
+      "name": "@qin/web-ele",
+      "path": "apps/web-ele",
+    },
+    {
+      "name": "@qin/web-naive",
+      "path": "apps/web-naive",
+    },
+    {
+      "name": "@qin/web-tdesign",
+      "path": "apps/web-tdesign",
+    },
+    {
+      "name": "@qin/docs",
+      "path": "docs",
+    },
+    {
+      "name": "@qin/commitlint-config",
+      "path": "internal/lint-configs/commitlint-config",
+    },
+    {
+      "name": "@qin/eslint-config",
+      "path": "internal/lint-configs/eslint-config",
+    },
+    {
+      "name": "@qin/prettier-config",
+      "path": "internal/lint-configs/prettier-config",
+    },
+    {
+      "name": "@qin/stylelint-config",
+      "path": "internal/lint-configs/stylelint-config",
+    },
+    {
+      "name": "@qin/node-utils",
+      "path": "internal/node-utils",
+    },
+    {
+      "name": "@qin/tsconfig",
+      "path": "internal/tsconfig",
+    },
+    {
+      "name": "@qin/uno-config",
+      "path": "internal/uno-config",
+    },
+    {
+      "name": "@qin/vite-config",
+      "path": "internal/vite-config",
+    },
+    {
+      "name": "@qin-core/design",
+      "path": "packages/@core/base/design",
+    },
+    {
+      "name": "@qin-core/icons",
+      "path": "packages/@core/base/icons",
+    },
+    {
+      "name": "@qin-core/shared",
+      "path": "packages/@core/base/shared",
+    },
+    {
+      "name": "@qin-core/typings",
+      "path": "packages/@core/base/typings",
+    },
+    {
+      "name": "@qin-core/composables",
+      "path": "packages/@core/composables",
+    },
+    {
+      "name": "@qin-core/preferences",
+      "path": "packages/@core/preferences",
+    },
+    {
+      "name": "@qin-core/form-ui",
+      "path": "packages/@core/ui-kit/form-ui",
+    },
+    {
+      "name": "@qin-core/layout-ui",
+      "path": "packages/@core/ui-kit/layout-ui",
+    },
+    {
+      "name": "@qin-core/menu-ui",
+      "path": "packages/@core/ui-kit/menu-ui",
+    },
+    {
+      "name": "@qin-core/popup-ui",
+      "path": "packages/@core/ui-kit/popup-ui",
+    },
+    {
+      "name": "@qin-core/shadcn-ui",
+      "path": "packages/@core/ui-kit/shadcn-ui",
+    },
+    {
+      "name": "@qin-core/tabs-ui",
+      "path": "packages/@core/ui-kit/tabs-ui",
+    },
+    {
+      "name": "@qin/constants",
+      "path": "packages/constants",
+    },
+    {
+      "name": "@qin/access",
+      "path": "packages/effects/access",
+    },
+    {
+      "name": "@qin/common-ui",
+      "path": "packages/effects/common-ui",
+    },
+    {
+      "name": "@qin/hooks",
+      "path": "packages/effects/hooks",
+    },
+    {
+      "name": "@qin/layouts",
+      "path": "packages/effects/layouts",
+    },
+    {
+      "name": "@qin/plugins",
+      "path": "packages/effects/plugins",
+    },
+    {
+      "name": "@qin/request",
+      "path": "packages/effects/request",
+    },
+    {
+      "name": "@qin/icons",
+      "path": "packages/icons",
+    },
+    {
+      "name": "@qin/locales",
+      "path": "packages/locales",
+    },
+    {
+      "name": "@qin/preferences",
+      "path": "packages/preferences",
+    },
+    {
+      "name": "@qin/stores",
+      "path": "packages/stores",
+    },
+    {
+      "name": "@qin/styles",
+      "path": "packages/styles",
+    },
+    {
+      "name": "@qin/types",
+      "path": "packages/types",
+    },
+    {
+      "name": "@qin/utils",
+      "path": "packages/utils",
+    },
+    {
+      "name": "@qin/playground",
+      "path": "playground",
+    },
+    {
+      "name": "@qin/turbo-run",
+      "path": "scripts/turbo-run",
+    },
+    {
+      "name": "@qin/vsh",
+      "path": "scripts/vsh",
+    },
+  ],
+}

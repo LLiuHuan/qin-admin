@@ -1,12 +1,12 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { StyleValue } from 'vue';
 
 import type { PageProps } from './types';
 
 import { computed, nextTick, onMounted, ref, useTemplateRef } from 'vue';
 
-import { CSS_VARIABLE_LAYOUT_CONTENT_HEIGHT } from '@arco-core/shared/constants';
-import { cn } from '@arco-core/shared/utils';
+import { CSS_VARIABLE_LAYOUT_CONTENT_HEIGHT } from '@qin-core/shared/constants';
+import { cn } from '@qin-core/shared/utils';
 
 defineOptions({
   name: 'Page',
@@ -25,7 +25,7 @@ const footerRef = useTemplateRef<HTMLDivElement>('footerRef');
 const contentStyle = computed<StyleValue>(() => {
   if (autoContentHeight) {
     return {
-      height: `calc(var(${CSS_VARIABLE_LAYOUT_CONTENT_HEIGHT}) - ${headerHeight.value}px - ${heightOffset}px)`,
+      height: `calc(var(${CSS_VARIABLE_LAYOUT_CONTENT_HEIGHT}) - ${headerHeight.value}px - ${footerHeight.value}px - ${typeof heightOffset === 'number' ? `${heightOffset}px` : heightOffset})`,
       overflowY: shouldAutoHeight.value ? 'auto' : 'unset',
     };
   }
@@ -50,7 +50,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative flex min-h-full flex-col">
     <div
       v-if="
         description ||
@@ -93,12 +93,7 @@ onMounted(() => {
     <div
       v-if="$slots.footer"
       ref="footerRef"
-      :class="
-        cn(
-          'bg-card align-center absolute bottom-0 left-0 right-0 flex px-6 py-4',
-          footerClass,
-        )
-      "
+      :class="cn('bg-card align-center flex px-6 py-4', footerClass)"
     >
       <slot name="footer"></slot>
     </div>

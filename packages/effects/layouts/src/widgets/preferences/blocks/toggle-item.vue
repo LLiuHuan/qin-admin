@@ -6,9 +6,9 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { SelectOption } from '@arco/types';
+import type { SelectOption } from '@qin/types';
 
-import { ToggleGroup, ToggleGroupItem } from '@arco-core/shadcn-ui';
+import { ToggleGroup, ToggleGroupItem } from '@qin-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceToggleItem',

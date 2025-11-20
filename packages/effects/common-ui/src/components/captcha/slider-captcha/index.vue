@@ -7,9 +7,9 @@ import type {
 
 import { reactive, unref, useTemplateRef, watch, watchEffect } from 'vue';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { cn } from '@arco-core/shared/utils';
+import { cn } from '@qin-core/shared/utils';
 
 import { useTimeoutFn } from '@vueuse/core';
 

@@ -9,7 +9,7 @@ import type { PluginOption } from 'vite';
 
 import type { NitroMockPluginOptions } from '../typing';
 
-import { colors, consola, getPackage } from '@arco/node-utils';
+import { colors, consola, getPackage } from '@qin/node-utils';
 
 import getPort from 'get-port';
 import { build, createDevServer, createNitro, prepare } from 'nitropack';
@@ -17,7 +17,7 @@ import { build, createDevServer, createNitro, prepare } from 'nitropack';
 const hmrKeyRe = /^runtimeConfig\.|routeRules\./;
 
 export const viteNitroMockPlugin = ({
-  mockServerPackage = '@arco/backend-mock',
+  mockServerPackage = '@qin/backend-mock',
   port = 5320,
   verbose = true,
 }: NitroMockPluginOptions = {}): PluginOption => {

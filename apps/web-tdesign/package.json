@@ -1,0 +1,54 @@
+{
+  "name": "@qin/web-tdesign",
+  "version": "1.0.0",
+  "homepage": "https://tdesign.demo.0x3.cn",
+  "bugs": "https://github.com/LLiuHuan/qin-admin/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLiuHuan/qin-admin.git",
+    "directory": "apps/web-tdesign"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "LLiuHuan",
+    "email": "liuhuan@0x3.cn",
+    "url": "https://github.com/lliuhuan"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "pnpm vite build --mode production",
+    "build:analyze": "pnpm vite build --mode analyze",
+    "dev": "pnpm vite --mode development",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "dependencies": {
+    "@qin/access": "workspace:*",
+    "@qin/common-ui": "workspace:*",
+    "@qin/constants": "workspace:*",
+    "@qin/hooks": "workspace:*",
+    "@qin/icons": "workspace:*",
+    "@qin/layouts": "workspace:*",
+    "@qin/locales": "workspace:*",
+    "@qin/plugins": "workspace:*",
+    "@qin/preferences": "workspace:*",
+    "@qin/request": "workspace:*",
+    "@qin/stores": "workspace:*",
+    "@qin/styles": "workspace:*",
+    "@qin/types": "workspace:*",
+    "@qin/utils": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "dayjs": "catalog:",
+    "lodash-es": "^4.17.21",
+    "pinia": "catalog:",
+    "tdesign-vue-next": "^1.17.1",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12"
+  }
+}

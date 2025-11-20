@@ -1,0 +1,121 @@
+import type { Recordable, UserInfo } from '@qin/types';
+
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+import { LOGIN_PATH } from '@qin/constants';
+import { preferences } from '@qin/preferences';
+import { resetAllStores, useAccessStore, useUserStore } from '@qin/stores';
+
+import { defineStore } from 'pinia';
+
+import { notification } from '#/adapter/tdesign';
+import AuthAPI from '#/api/core/auth';
+import UserAPI from '#/api/core/user';
+import { $t } from '#/locales';
+
+export const useAuthStore = defineStore('auth', () => {
+  const accessStore = useAccessStore();
+  const userStore = useUserStore();
+  const router = useRouter();
+
+  const loginLoading = ref(false);
+
+  /**
+   * 异步处理登录操作
+   * Asynchronously handle the login process
+   * @param params 登录表单数据
+   * @param onSuccess
+   */
+  async function authLogin(
+    params: Recordable<any>,
+    onSuccess?: () => Promise<void> | void,
+  ) {
+    // 异步处理用户登录操作并获取 accessToken
+    let userInfo: null | UserInfo = null;
+    try {
+      loginLoading.value = true;
+      const { accessToken } = await AuthAPI.loginApi(params);
+
+      // 如果成功获取到 accessToken
+      if (accessToken) {
+        // 将 accessToken 存储到 accessStore 中
+        accessStore.setAccessToken(accessToken);
+
+        // 获取用户信息并存储到 accessStore 中
+        const [fetchUserInfoResult, accessCodes] = await Promise.all([
+          fetchUserInfo(),
+          AuthAPI.getAccessCodesApi(),
+        ]);
+
+        userInfo = fetchUserInfoResult;
+
+        userStore.setUserInfo(userInfo);
+        accessStore.setAccessCodes(accessCodes);
+
+        if (accessStore.loginExpired) {
+          accessStore.setLoginExpired(false);
+        } else {
+          onSuccess
+            ? await onSuccess?.()
+            : await router.push(
+                userInfo.homePath || preferences.app.defaultHomePath,
+              );
+        }
+
+        if (userInfo?.realName) {
+          await notification.success({
+            title: $t('authentication.loginSuccess'),
+            content: `${$t('authentication.loginSuccessDesc')}:${userInfo?.realName}`,
+            duration: 3000,
+          });
+        }
+      }
+    } finally {
+      loginLoading.value = false;
+    }
+
+    return {
+      userInfo,
+    };
+  }
+
+  async function logout(redirect: boolean = true) {
+    try {
+      await AuthAPI.logoutApi();
+    } catch {
+      // 不做任何处理
+    }
+    resetAllStores();
+    accessStore.setLoginExpired(false);
+
+    // 回登录页带上当前路由地址
+    await router.replace({
+      path: LOGIN_PATH,
+      query: redirect
+        ? {
+            redirect: encodeURIComponent(router.currentRoute.value.fullPath),
+          }
+        : {},
+    });
+  }
+
+  async function fetchUserInfo() {
+    let userInfo: null | UserInfo = null;
+    userInfo = await UserAPI.getUserInfoApi();
+    userStore.setUserInfo(userInfo);
+    return userInfo;
+  }
+
+  function $reset() {
+    loginLoading.value = false;
+  }
+
+  return {
+    $reset,
+    authLogin,
+    fetchUserInfo,
+    loginLoading,
+    logout,
+  };
+});

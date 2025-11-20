@@ -1,10 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@arco/tsconfig/web.json",
+  "extends": "@qin/tsconfig/web.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@arco-core/shadcn-ui/*": ["./src/*"]
+      "@qin-core/shadcn-ui/*": ["./src/*"]
     }
   },
   "include": ["src"],

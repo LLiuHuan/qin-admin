@@ -1,5 +1,12 @@
+<!--
+ * @Description: 
+ * @Author: LLiuHuan
+ * @Date: 2025-08-12 22:48:44
+ * @LastEditTime: 2025-08-18 10:08:20
+ * @LastEditors: LLiuHuan
+-->
 <script lang="ts" setup>
-import { ArcoAvatar } from '@arco-core/shadcn-ui';
+import { QinAvatar } from '@qin-core/shadcn-ui';
 
 interface Props {
   avatar?: string;
@@ -15,7 +22,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 <template>
   <div class="card-box p-4 py-6 lg:flex">
-    <ArcoAvatar :src="avatar" class="size-20" />
+    <QinAvatar :src="avatar" class="size-20" />
     <div
       v-if="$slots.title || $slots.description"
       class="flex flex-col justify-center md:ml-6 md:mt-0"

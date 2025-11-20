@@ -1,17 +1,17 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-05-27 11:53:55
+ * @LastEditTime: 2025-08-18 10:08:40
  * @LastEditors: LLiuHuan
 -->
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { $t } from '@arco/locales';
+import { $t } from '@qin/locales';
 
-import { ArcoButton } from '@arco-core/shadcn-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 import { useQRCode } from '@vueuse/integrations/useQRCode';
 
@@ -42,6 +42,10 @@ interface Props {
    * @zh_CN 描述
    */
   description?: string;
+  /**
+   * @zh_CN 是否显示返回按钮
+   */
+  showBack?: boolean;
 }
 
 defineOptions({
@@ -51,6 +55,7 @@ defineOptions({
 const props = withDefaults(defineProps<Props>(), {
   description: '',
   loading: false,
+  showBack: true,
   loginPath: '/auth/login',
   submitButtonText: '',
   subTitle: '',
@@ -95,8 +100,13 @@ function goToLogin() {
       </p>
     </div>
 
-    <ArcoButton class="mt-4 w-full" variant="outline" @click="goToLogin()">
+    <QinButton
+      v-if="showBack"
+      class="mt-4 w-full"
+      variant="outline"
+      @click="goToLogin()"
+    >
       {{ $t('common.back') }}
-    </ArcoButton>
+    </QinButton>
   </div>
 </template>

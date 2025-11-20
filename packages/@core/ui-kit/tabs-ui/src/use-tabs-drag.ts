@@ -1,11 +1,11 @@
-import type { Sortable } from '@arco-core/composables';
-import type { EmitType } from '@arco-core/typings';
+import type { Sortable } from '@qin-core/composables';
+import type { EmitType } from '@qin-core/typings';
 
 import type { TabsProps } from './types';
 
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue';
 
-import { useIsMobile, useSortable } from '@arco-core/composables';
+import { useIsMobile, useSortable } from '@qin-core/composables';
 
 // 可能会找到拖拽的子元素，这里需要确保拖拽的dom时tab元素
 function findParentElement(element: HTMLElement) {

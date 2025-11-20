@@ -8,10 +8,10 @@
 import type {
   ComponentRecordType,
   GenerateMenuAndRoutesOptions,
-} from '@arco/types';
+} from '@qin/types';
 
-import { generateAccessible } from '@arco/access';
-import { preferences } from '@arco/preferences';
+import { generateAccessible } from '@qin/access';
+import { preferences } from '@qin/preferences';
 
 import { ElMessage } from 'element-plus';
 

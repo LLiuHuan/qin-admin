@@ -12,7 +12,7 @@ import type {
   PopoverRootProps,
 } from 'reka-ui';
 
-import type { ClassType } from '@arco-core/typings';
+import type { ClassType } from '@qin-core/typings';
 
 import { computed, reactive } from 'vue';
 

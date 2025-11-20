@@ -1,18 +1,18 @@
 /**
  * 该文件可自行根据业务逻辑进行调整
  */
-import type { AxiosResponseHeaders, RequestClientOptions } from '@arco/request';
+import type { AxiosResponseHeaders, RequestClientOptions } from '@qin/request';
 
-import { useAppConfig } from '@arco/hooks';
-import { preferences } from '@arco/preferences';
+import { useAppConfig } from '@qin/hooks';
+import { preferences } from '@qin/preferences';
 import {
   authenticateResponseInterceptor,
   defaultResponseInterceptor,
   errorMessageResponseInterceptor,
   RequestClient,
-} from '@arco/request';
-import { useAccessStore } from '@arco/stores';
-import { cloneDeep } from '@arco/utils';
+} from '@qin/request';
+import { useAccessStore, useTimezoneStore } from '@qin/stores';
+import { cloneDeep } from '@qin/utils';
 
 import { Message } from '@arco-design/web-vue';
 import JSONBigInt from 'json-bigint';
@@ -29,20 +29,20 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
     baseURL,
     transformResponse: (data: any, header: AxiosResponseHeaders) => {
       // storeAsString指示将BigInt存储为字符串，设为false则会存储为内置的BigInt类型
-      const contentType = header.getContentType();
-      if (!contentType?.includes('application/json')) {
-        return data;
+      if (
+        header.getContentType()?.toString().includes('application/json') &&
+        typeof data === 'string'
+      ) {
+        try {
+          return cloneDeep(
+            JSONBigInt({ storeAsString: true, strict: true }).parse(data),
+          );
+        } catch (error) {
+          console.warn('Failed to parse JSON with BigInt support:', error);
+          return data;
+        }
       }
-
-      try {
-        const parsed = JSONBigInt({ storeAsString: true, strict: true }).parse(
-          data,
-        );
-        return cloneDeep(parsed);
-      } catch (error) {
-        console.warn('Failed to parse JSON with BigInt support:', error);
-        return data;
-      }
+      return data;
     },
   });
 
@@ -83,9 +83,11 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
   client.addRequestInterceptor({
     fulfilled: async (config) => {
       const accessStore = useAccessStore();
+      const timezoneStore = useTimezoneStore();
 
       config.headers.Authorization = formatToken(accessStore.accessToken);
       config.headers['Accept-Language'] = preferences.app.locale;
+      config.headers['X-Timezone'] = timezoneStore.timezone;
       return config;
     },
   });

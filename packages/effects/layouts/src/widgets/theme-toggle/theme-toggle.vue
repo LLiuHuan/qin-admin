@@ -2,25 +2,21 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 12:13:55
- * @LastEditTime: 2025-08-12 21:57:18
+ * @LastEditTime: 2025-08-18 10:05:47
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { ThemeModeType } from '@arco/types';
+import type { ThemeModeType } from '@qin/types';
 
-import { MoonStar, Sun, SunMoon } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { MoonStar, Sun, SunMoon } from '@qin/icons';
+import { $t } from '@qin/locales';
 import {
   preferences,
   updatePreferences,
   usePreferences,
-} from '@arco/preferences';
+} from '@qin/preferences';
 
-import {
-  ArcoTooltip,
-  ToggleGroup,
-  ToggleGroupItem,
-} from '@arco-core/shadcn-ui';
+import { QinTooltip, ToggleGroup, ToggleGroupItem } from '@qin-core/shadcn-ui';
 
 import ThemeButton from './theme-button.vue';
 
@@ -91,7 +87,7 @@ const PRESETS = [
 </script>
 <template>
   <div>
-    <ArcoTooltip :disabled="!shouldOnHover" side="bottom">
+    <QinTooltip :disabled="!shouldOnHover" side="bottom">
       <template #trigger>
         <ThemeButton
           :model-value="isDark"
@@ -118,6 +114,6 @@ const PRESETS = [
           <component :is="item.icon" class="size-5" />
         </ToggleGroupItem>
       </ToggleGroup>
-    </ArcoTooltip>
+    </QinTooltip>
   </div>
 </template>

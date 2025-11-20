@@ -6,15 +6,15 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { useArcoDrawer } from '@arco/common-ui';
+import { useQinDrawer } from '@qin/common-ui';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
 defineOptions({
   name: 'FormDrawerDemo',
 });
 
-const [Form, formApi] = useArcoForm({
+const [Form, formApi] = useQinForm({
   schema: [
     {
       component: 'Input',
@@ -37,7 +37,7 @@ const [Form, formApi] = useArcoForm({
   ],
   showDefaultActions: false,
 });
-const [Drawer, drawerApi] = useArcoDrawer({
+const [Drawer, drawerApi] = useQinDrawer({
   onCancel() {
     drawerApi.close();
   },

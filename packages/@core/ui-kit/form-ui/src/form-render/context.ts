@@ -2,7 +2,7 @@ import type { FormRenderProps } from '../types';
 
 import { computed } from 'vue';
 
-import { createContext } from '@arco-core/shadcn-ui';
+import { createContext } from '@qin-core/shadcn-ui';
 
 export const [injectRenderFormProps, provideFormRenderProps] =
   createContext<FormRenderProps>('FormRenderProps');

@@ -5,8 +5,8 @@
  * @LastEditTime: 2025-05-27 15:34:48
  * @LastEditors: LLiuHuan
  */
-import { initPreferences } from '@arco/preferences';
-import { unmountGlobalLoading } from '@arco/utils';
+import { initPreferences } from '@qin/preferences';
+import { unmountGlobalLoading } from '@qin/utils';
 
 import { overridesPreferences } from './preferences';
 

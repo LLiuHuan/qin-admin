@@ -2,12 +2,12 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-05-27 10:22:58
+ * @LastEditTime: 2025-08-18 10:11:34
  * @LastEditors: LLiuHuan
  */
 import type { Component } from 'vue';
 
-interface ArcoDropdownMenuItem {
+interface QinDropdownMenuItem {
   disabled?: boolean;
   /**
    * @zh_CN 点击事件处理
@@ -33,7 +33,7 @@ interface ArcoDropdownMenuItem {
 }
 
 interface DropdownMenuProps {
-  menus: ArcoDropdownMenuItem[];
+  menus: QinDropdownMenuItem[];
 }
 
-export type { ArcoDropdownMenuItem, DropdownMenuProps };
+export type { DropdownMenuProps, QinDropdownMenuItem };

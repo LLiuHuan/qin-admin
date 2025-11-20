@@ -7,10 +7,13 @@
  */
 import { computed } from 'vue';
 
-import { preferences } from '@arco/preferences';
-import '@arco/styles';
+import { useNaiveDesignTokens } from '@qin/hooks';
+import { preferences } from '@qin/preferences';
+import '@qin/styles';
 
 import { createDiscreteApi, darkTheme, lightTheme } from 'naive-ui';
+
+const { commonTokens } = useNaiveDesignTokens();
 
 const themeOverridesProviderProps = computed(() => ({
   themeOverrides: preferences.theme.mode === 'light' ? lightTheme : darkTheme,
@@ -18,6 +21,9 @@ const themeOverridesProviderProps = computed(() => ({
 
 const themeProviderProps = computed(() => ({
   theme: preferences.theme.mode === 'light' ? lightTheme : darkTheme,
+  themeOverrides: {
+    common: commonTokens,
+  },
 }));
 
 export const { dialog, loadingBar, message, modal, notification } =

@@ -6,8 +6,8 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { Page } from '@arco/common-ui';
-import { useVChart } from '@arco/plugins/vchart';
+import { Page } from '@qin/common-ui';
+import { useVChart } from '@qin/plugins/vchart';
 
 import { Card, Grid, GridItem } from '@arco-design/web-vue';
 

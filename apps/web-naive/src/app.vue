@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 09:37:08
- * @LastEditTime: 2025-07-15 02:21:48
+ * @LastEditTime: 2025-08-18 11:32:45
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -10,8 +10,8 @@ import type { GlobalThemeOverrides } from 'naive-ui';
 
 import { computed } from 'vue';
 
-import { useNaiveDesignTokens } from '@arco/hooks';
-import { preferences } from '@arco/preferences';
+import { useNaiveDesignTokens } from '@qin/hooks';
+import { preferences } from '@qin/preferences';
 
 import {
   darkTheme,
@@ -53,6 +53,7 @@ const themeOverrides = computed((): GlobalThemeOverrides => {
     :theme="tokenTheme"
     :theme-overrides="themeOverrides"
     class="h-full"
+    id="a111"
   >
     <NNotificationProvider>
       <NMessageProvider>

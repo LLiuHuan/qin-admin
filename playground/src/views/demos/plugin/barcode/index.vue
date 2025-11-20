@@ -3,7 +3,7 @@ import type { Options } from 'jsbarcode';
 
 import { onMounted } from 'vue';
 
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Card, Grid, GridItem } from '@arco-design/web-vue';
 import JsBarcode from 'jsbarcode';

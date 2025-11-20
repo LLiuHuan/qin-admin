@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-22 17:09:28
  * @LastEditors: LLiuHuan
  */
-import type { BuiltinThemeType } from '@arco-core/typings';
+import type { BuiltinThemeType, TimezoneOption } from '@qin-core/typings';
 
 interface BuiltinThemePreset {
   color: string;
@@ -88,8 +88,39 @@ const BUILT_IN_THEME_PRESETS: BuiltinThemePreset[] = [
   },
 ];
 
+/**
+ * 时区选项
+ */
+const DEFAULT_TIME_ZONE_OPTIONS: TimezoneOption[] = [
+  {
+    offset: -5,
+    timezone: 'America/New_York',
+    label: 'America/New_York(GMT-5)',
+  },
+  {
+    offset: 0,
+    timezone: 'Europe/London',
+    label: 'Europe/London(GMT0)',
+  },
+  {
+    offset: 8,
+    timezone: 'Asia/Shanghai',
+    label: 'Asia/Shanghai(GMT+8)',
+  },
+  {
+    offset: 9,
+    timezone: 'Asia/Tokyo',
+    label: 'Asia/Tokyo(GMT+9)',
+  },
+  {
+    offset: 9,
+    timezone: 'Asia/Seoul',
+    label: 'Asia/Seoul(GMT+9)',
+  },
+];
+
 export const COLOR_PRESETS = [...BUILT_IN_THEME_PRESETS].slice(0, 7);
 
-export { BUILT_IN_THEME_PRESETS };
+export { BUILT_IN_THEME_PRESETS, DEFAULT_TIME_ZONE_OPTIONS };
 
 export type { BuiltinThemePreset };

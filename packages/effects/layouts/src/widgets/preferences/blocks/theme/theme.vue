@@ -6,12 +6,12 @@
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
-import type { ThemeModeType } from '@arco/types';
+import type { ThemeModeType } from '@qin/types';
 
 import type { Component } from 'vue';
 
-import { MoonStar, Sun, SunMoon } from '@arco/icons';
-import { $t } from '@arco/locales';
+import { MoonStar, Sun, SunMoon } from '@qin/icons';
+import { $t } from '@qin/locales';
 
 import SwitchItem from '../switch-item.vue';
 

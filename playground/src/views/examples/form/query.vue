@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { Page } from '@arco/common-ui';
+import { Page } from '@qin/common-ui';
 
 import { Card, Message } from '@arco-design/web-vue';
 
-import { useArcoForm } from '#/adapter/form';
+import { useQinForm } from '#/adapter/form';
 
-const [QueryForm] = useArcoForm({
+const [QueryForm] = useQinForm({
   // 默认展开
   collapsed: false,
   // 所有表单项共用，可单独在表单内覆盖
@@ -90,7 +90,7 @@ const [QueryForm] = useArcoForm({
   wrapperClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
 });
 
-const [InlineForm] = useArcoForm({
+const [InlineForm] = useQinForm({
   layout: 'inline',
   schema: [
     {
@@ -120,7 +120,11 @@ const [InlineForm] = useArcoForm({
       },
       fieldName: 'number',
       label: '数字(带后缀)',
-      suffix: () => '¥',
+      renderComponentContent: () => {
+        return {
+          append: () => '¥',
+        };
+      },
     },
     {
       component: 'Select',
@@ -146,7 +150,7 @@ const [InlineForm] = useArcoForm({
   ],
 });
 
-const [QueryForm1] = useArcoForm({
+const [QueryForm1] = useQinForm({
   // 默认展开
   collapsed: true,
   collapsedRows: 2,
@@ -185,7 +189,7 @@ const [QueryForm1] = useArcoForm({
   wrapperClass: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
 });
 
-const [QueryForm2] = useArcoForm({
+const [QueryForm2] = useQinForm({
   // 操作按钮组 newLine: 在新行显示。rowEnd: 在行内显示，靠右对齐（默认）。inline: 使用grid默认样式
   actionLayout: 'newLine',
   actionPosition: 'left', // 操作按钮组在左侧显示

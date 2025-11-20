@@ -10,13 +10,13 @@ import type { Component } from 'vue';
 
 import { computed } from 'vue';
 
-import { IconDefault, IconifyIcon } from '@arco-core/icons';
+import { IconDefault, IconifyIcon } from '@qin-core/icons';
 import {
   isFunction,
   isHttpUrl,
   isObject,
   isString,
-} from '@arco-core/shared/utils';
+} from '@qin-core/shared/utils';
 
 const props = defineProps<{
   // 没有是否显示默认图标

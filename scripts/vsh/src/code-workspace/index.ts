@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-06-04 17:40:06
- * @LastEditTime: 2025-08-12 15:23:34
+ * @LastEditTime: 2025-08-18 10:50:38
  * @LastEditors: LLiuHuan
  */
 import type { CAC } from 'cac';
@@ -18,9 +18,9 @@ import {
   outputJSON,
   prettierFormat,
   toPosixPath,
-} from '@arco/node-utils';
+} from '@qin/node-utils';
 
-const CODE_WORKSPACE_FILE = join('arco-admin.code-workspace');
+const CODE_WORKSPACE_FILE = join('qin-admin.code-workspace');
 
 interface CodeWorkspaceCommandOptions {
   autoCommit?: boolean;

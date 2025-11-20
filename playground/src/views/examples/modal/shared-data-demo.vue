@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import { useArcoModal } from '@arco/common-ui';
+import { useQinModal } from '@qin/common-ui';
 
 import { Message } from '@arco-design/web-vue';
 
 const data = ref();
 
-const [Modal, modalApi] = useArcoModal({
+const [Modal, modalApi] = useQinModal({
   onCancel() {
     modalApi.close();
   },

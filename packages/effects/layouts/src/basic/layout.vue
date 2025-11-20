@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { MenuRecordRaw } from '@arco/types';
+import type { MenuRecordRaw } from '@qin/types';
 
 import type { SetupContext } from 'vue';
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
@@ -7,18 +7,18 @@ import type { RouteLocationNormalizedLoaded } from 'vue-router';
 import { computed, onMounted, useSlots, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { useRefresh } from '@arco/hooks';
-import { $t, i18n } from '@arco/locales';
+import { useRefresh } from '@qin/hooks';
+import { $t, i18n } from '@qin/locales';
 import {
   preferences,
   updatePreferences,
   usePreferences,
-} from '@arco/preferences';
-import { useAccessStore } from '@arco/stores';
-import { cloneDeep, mapTree } from '@arco/utils';
+} from '@qin/preferences';
+import { useAccessStore } from '@qin/stores';
+import { cloneDeep, mapTree } from '@qin/utils';
 
-import { ArcoAdminLayout } from '@arco-core/layout-ui';
-import { ArcoBackTop, ArcoLogo } from '@arco-core/shadcn-ui';
+import { QinAdminLayout } from '@qin-core/layout-ui';
+import { QinBackTop, QinLogo } from '@qin-core/shadcn-ui';
 
 import { Breadcrumb, CheckUpdates, Preferences } from '../widgets';
 import { LayoutContent, LayoutContentSpinner } from './content';
@@ -162,7 +162,9 @@ function clickLogo() {
 function autoCollapseMenuByRouteMeta(route: RouteLocationNormalizedLoaded) {
   // 只在双列模式下生效
   if (
-    preferences.app.layout === 'sidebar-mixed-nav' &&
+    ['header-mixed-nav', 'sidebar-mixed-nav'].includes(
+      preferences.app.layout,
+    ) &&
     route.meta &&
     route.meta.hideInMenu
   ) {
@@ -200,7 +202,7 @@ const headerSlots = computed(() => {
 </script>
 
 <template>
-  <ArcoAdminLayout
+  <QinAdminLayout
     v-model:sidebar-extra-visible="sidebarExtraVisible"
     :content-compact="preferences.app.contentCompact"
     :content-compact-width="preferences.app.contentCompactWidth"
@@ -220,19 +222,19 @@ const headerSlots = computed(() => {
     :header-visible="preferences.header.enable"
     :is-mobile="preferences.app.isMobile"
     :layout="layout"
+    :side-collapse-width="preferences.sidebar.collapseWidth"
     :sidebar-collapse="preferences.sidebar.collapsed"
     :sidebar-collapse-show-title="preferences.sidebar.collapsedShowTitle"
-    :sidebar-enable="sidebarVisible"
     :sidebar-collapsed-button="preferences.sidebar.collapsedButton"
-    :sidebar-fixed-button="preferences.sidebar.fixedButton"
+    :sidebar-enable="sidebarVisible"
     :sidebar-expand-on-hover="preferences.sidebar.expandOnHover"
     :sidebar-extra-collapse="preferences.sidebar.extraCollapse"
     :sidebar-extra-collapsed-width="preferences.sidebar.extraCollapsedWidth"
+    :sidebar-fixed-button="preferences.sidebar.fixedButton"
     :sidebar-hidden="preferences.sidebar.hidden"
     :sidebar-mixed-width="preferences.sidebar.mixedWidth"
     :sidebar-theme="sidebarTheme"
     :sidebar-width="preferences.sidebar.width"
-    :side-collapse-width="preferences.sidebar.collapseWidth"
     :tabbar-enable="preferences.tabbar.enable"
     :tabbar-height="preferences.tabbar.height"
     :z-index="preferences.app.zIndex"
@@ -255,12 +257,13 @@ const headerSlots = computed(() => {
   >
     <!-- logo -->
     <template #logo>
-      <ArcoLogo
+      <QinLogo
         v-if="preferences.logo.enable"
-        :fit="preferences.logo.fit"
         :class="logoClass"
         :collapsed="logoCollapsed"
+        :fit="preferences.logo.fit"
         :src="preferences.logo.source"
+        :src-dark="preferences.logo.sourceDark"
         :text="preferences.app.name"
         :theme="showHeaderNav ? headerTheme : theme"
         @click="clickLogo"
@@ -268,7 +271,7 @@ const headerSlots = computed(() => {
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </ArcoLogo>
+      </QinLogo>
     </template>
     <!-- 头部区域 -->
     <template #header>
@@ -304,6 +307,9 @@ const headerSlots = computed(() => {
         <template #notification>
           <slot name="notification"></slot>
         </template>
+        <template #timezone>
+          <slot name="timezone"></slot>
+        </template>
         <template v-for="item in headerSlots" #[item]>
           <slot :name="item"></slot>
         </template>
@@ -330,9 +336,9 @@ const headerSlots = computed(() => {
         :menus="wrapperMenus(mixHeaderMenus, false)"
         :rounded="isMenuRounded"
         :theme="sidebarTheme"
-        @default-select="handleDefaultSelect"
         @enter="handleMenuMouseEnter"
         @select="handleMixedMenuSelect"
+        @default-select="handleDefaultSelect"
       />
     </template>
     <!-- 侧边额外区域 -->
@@ -346,16 +352,18 @@ const headerSlots = computed(() => {
       />
     </template>
     <template #side-extra-title>
-      <ArcoLogo
+      <QinLogo
         v-if="preferences.logo.enable"
         :fit="preferences.logo.fit"
+        :src="preferences.logo.source"
+        :src-dark="preferences.logo.sourceDark"
         :text="preferences.app.name"
         :theme="theme"
       >
         <template v-if="$slots['logo-text']" #text>
           <slot name="logo-text"></slot>
         </template>
-      </ArcoLogo>
+      </QinLogo>
     </template>
 
     <template #tabbar>
@@ -402,7 +410,7 @@ const headerSlots = computed(() => {
           @clear-preferences-and-logout="clearPreferencesAndLogout"
         />
       </template>
-      <ArcoBackTop />
+      <QinBackTop />
     </template>
-  </ArcoAdminLayout>
+  </QinAdminLayout>
 </template>

@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-import type { NotificationItem } from '@arco/layouts';
+import type { NotificationItem } from '@qin/layouts';
 
 import { computed, ref, watch } from 'vue';
 
-import { AuthenticationLoginExpiredModal } from '@arco/common-ui';
-import { ARCO_DOC_URL, ARCO_GITHUB_URL } from '@arco/constants';
-import { useWatermark } from '@arco/hooks';
-import { BookOpenText, CircleHelp, MdiGithub } from '@arco/icons';
+import { AuthenticationLoginExpiredModal } from '@qin/common-ui';
+import { QIN_DOC_URL, QIN_GITHUB_URL } from '@qin/constants';
+import { useWatermark } from '@qin/hooks';
+import { BookOpenText, CircleHelp, SvgGithubIcon } from '@qin/icons';
 import {
   BasicLayout,
   LockScreen,
   Notification,
   UserDropdown,
-} from '@arco/layouts';
-import { preferences } from '@arco/preferences';
-import { useAccessStore, useUserStore } from '@arco/stores';
-import { openWindow } from '@arco/utils';
+} from '@qin/layouts';
+import { preferences } from '@qin/preferences';
+import { useAccessStore, useUserStore } from '@qin/stores';
+import { openWindow } from '@qin/utils';
 
 import { $t } from '#/locales';
 import { useAuthStore } from '#/store';
@@ -63,7 +63,7 @@ const showDot = computed(() =>
 const menus = computed(() => [
   {
     handler: () => {
-      openWindow(ARCO_DOC_URL, {
+      openWindow(QIN_DOC_URL, {
         target: '_blank',
       });
     },
@@ -72,16 +72,16 @@ const menus = computed(() => [
   },
   {
     handler: () => {
-      openWindow(ARCO_GITHUB_URL, {
+      openWindow(QIN_GITHUB_URL, {
         target: '_blank',
       });
     },
-    icon: MdiGithub,
+    icon: SvgGithubIcon,
     text: 'GitHub',
   },
   {
     handler: () => {
-      openWindow(`${ARCO_GITHUB_URL}/issues`, {
+      openWindow(`${QIN_GITHUB_URL}/issues`, {
         target: '_blank',
       });
     },
@@ -106,11 +106,16 @@ function handleMakeAll() {
   notifications.value.forEach((item) => (item.isRead = true));
 }
 watch(
-  () => preferences.app.watermark,
-  async (enable) => {
+  () => ({
+    enable: preferences.app.watermark,
+    content: preferences.app.watermarkContent,
+  }),
+  async ({ enable, content }) => {
     if (enable) {
       await updateWatermark({
-        content: userStore.userInfo?.username || 'Arco Design Pro',
+        content:
+          content ||
+          `${userStore.userInfo?.username} - ${userStore.userInfo?.realName}`,
       });
     } else {
       destroyWatermark();

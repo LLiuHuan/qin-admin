@@ -5,7 +5,7 @@
  * @LastEditTime: 2025-05-27 12:08:53
  * @LastEditors: LLiuHuan
  */
-import { updatePreferences, usePreferences } from '@arco/preferences';
+import { updatePreferences, usePreferences } from '@qin/preferences';
 /**
  * 主体区域最大化
  */

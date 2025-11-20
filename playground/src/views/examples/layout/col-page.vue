@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
 
-import { ColPage } from '@arco/common-ui';
-import { IconifyIcon } from '@arco/icons';
+import { ColPage } from '@qin/common-ui';
+import { IconifyIcon } from '@qin/icons';
 
 import {
   Alert,
@@ -22,8 +22,8 @@ const props = reactive({
   leftWidth: 30,
   resizable: true,
   rightWidth: 70,
-  splitHandle: false,
-  splitLine: false,
+  splitHandle: true,
+  splitLine: true,
 });
 const leftMinWidth = ref(props.leftMinWidth || 1);
 const leftMaxWidth = ref(props.leftMaxWidth || 100);
@@ -32,8 +32,8 @@ const leftMaxWidth = ref(props.leftMaxWidth || 100);
   <ColPage
     auto-content-height
     description="ColPage 是一个双列布局组件，支持左侧折叠、拖拽调整宽度等功能。"
-    v-bind="props"
     title="ColPage 双列布局组件"
+    v-bind="props"
   >
     <template #title>
       <span class="mr-2 text-2xl font-bold">ColPage 双列布局组件</span>
@@ -42,7 +42,11 @@ const leftMaxWidth = ref(props.leftMaxWidth || 100);
     <template #left="{ isCollapsed, expand }">
       <div v-if="isCollapsed" @click="expand">
         <Tooltip content="点击展开左侧">
-          <Button shape="circle" type="primary">
+          <Button
+            class="flex items-center justify-center"
+            shape="circle"
+            type="primary"
+          >
             <template #icon>
               <IconifyIcon class="text-2xl" icon="bi:arrow-right" />
             </template>
@@ -87,7 +91,7 @@ const leftMaxWidth = ref(props.leftMaxWidth || 100);
             @change="(value: number) => (props.leftMaxWidth = value as number)"
           />
         </div>
-        <Alert title="实验性的组件" show-icon type="warning">
+        <Alert show-icon title="实验性的组件" type="warning">
           <p>
             双列布局组件是一个在Page组件上扩展的相对基础的布局组件，支持左侧折叠（当拖拽导致左侧宽度比最小宽度还要小时，还可以进入折叠状态）、拖拽调整宽度等功能。
           </p>
