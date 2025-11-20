@@ -18,7 +18,7 @@ catalog:
   '@arco-plugins/vite-vue': ^1.4.5
   '@ast-grep/napi': ^0.39.3
   '@changesets/changelog-github': ^0.5.1
-  '@changesets/cli': ^2.29.6
+  '@changesets/cli': ^2.29.7
   '@changesets/git': ^3.0.4
   '@clack/prompts': ^0.11.0
   '@commitlint/cli': ^19.8.1
@@ -35,7 +35,7 @@ catalog:
   '@jspm/generator': ^2.6.2
   '@manypkg/get-packages': ^3.1.0
   '@nolebase/vitepress-plugin-git-changelog': ^2.18.1
-  '@playwright/test': ^1.54.2
+  '@playwright/test': ^1.56.1
   '@pnpm/workspace.read-manifest': ^1000.2.2
   '@stylistic/stylelint-plugin': ^4.0.0
   '@tailwindcss/nesting': 0.0.0-insiders.565cd3e
@@ -51,7 +51,7 @@ catalog:
   '@types/lodash.get': ^4.4.9
   '@types/lodash.isequal': ^4.5.8
   '@types/lodash.set': ^4.3.9
-  '@types/node': ^24.9.2
+  '@types/node': ^24.10.1
   '@types/nprogress': ^0.2.3
   '@types/postcss-import': ^14.0.3
   '@types/qrcode': ^1.5.5
@@ -66,7 +66,7 @@ catalog:
   '@visactor/vchart-theme': ^1.12.2
   '@vite-pwa/vitepress': ^1.0.0
   '@vitejs/plugin-vue': ^6.0.1
-  '@vitejs/plugin-vue-jsx': ^5.0.1
+  '@vitejs/plugin-vue-jsx': ^5.1.1
   '@vue/reactivity': ^3.5.17
   '@vue/shared': ^3.5.18
   '@vue/test-utils': ^2.4.6
@@ -75,7 +75,7 @@ catalog:
   '@vueuse/integrations': ^14.0.0
   ant-design-vue: ^4.2.6
   archiver: ^7.0.1
-  autoprefixer: ^10.4.21
+  autoprefixer: ^10.4.22
   axios: ^1.11.0
   axios-mock-adapter: ^2.1.0
   cac: ^6.7.14
@@ -98,7 +98,7 @@ catalog:
   echarts: ^6.0.0
   element-plus: ^2.10.7
   eslint: ^9.33.0
-  eslint-config-turbo: ^2.5.5
+  eslint-config-turbo: ^2.6.1
   eslint-plugin-command: ^3.3.1
   eslint-plugin-eslint-comments: ^3.2.0
   eslint-plugin-import-x: ^4.16.1
@@ -127,6 +127,7 @@ catalog:
   jsonc-eslint-parser: ^2.4.0
   jsonwebtoken: ^9.0.2
   lint-staged: ^16.1.5
+  lefthook: ^1.13.6
   lodash.clonedeep: ^4.5.0
   lodash.get: ^4.4.2
   lodash.isequal: ^4.5.0
@@ -141,7 +142,7 @@ catalog:
   pinia: ^3.0.3
   pinia-plugin-persistedstate: ^4.5.0
   pkg-types: ^2.2.0
-  playwright: ^1.54.2
+  playwright: ^1.56.1
   postcss: ^8.5.6
   postcss-antd-fixes: ^0.2.0
   postcss-html: ^1.8.0
@@ -156,7 +157,7 @@ catalog:
   qs: ^6.14.0
   reka-ui: ^2.4.1
   resolve.exports: ^2.0.3
-  rimraf: ^6.0.1
+  rimraf: ^6.1.0
   rollup: ^4.46.2
   rollup-plugin-visualizer: ^6.0.3
   sass: ^1.90.0
@@ -184,7 +185,7 @@ catalog:
   unocss-preset-shadcn: ^0.5.0
   unplugin-element-plus: ^0.10.0
   vee-validate: ^4.15.1
-  vite: ^7.1.2
+  vite: ^7.2.2
   vite-plugin-compression: ^0.5.1
   vite-plugin-dts: ^4.5.4
   vite-plugin-html: ^3.2.2
