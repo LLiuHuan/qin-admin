@@ -32,7 +32,7 @@
     （请使用 Chrome 打开）
   - [Github 地址](https://github.com/LLiuHuan/qin-admin/tree/legacy)
 - 新版本
-  - [在线预览](http://arco.0x3.cn/)
+  - [在线预览](http://demo.0x3.cn/)
   - [文档地址] 开发中
 
 ### 1.2 有什么好的想法和思路可以提Issues

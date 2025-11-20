@@ -41,7 +41,7 @@ const defaultPreferences: Preferences = {
   },
   copyright: {
     companyName: 'Arco',
-    companySiteLink: 'https://arco.0x3.cn',
+    companySiteLink: 'https://demo.0x3.cn',
     date: '2025',
     enable: true,
     icp: '',

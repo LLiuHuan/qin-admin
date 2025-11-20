@@ -2,7 +2,7 @@
  * @Description: 项目常量
  * @Author: LLiuHuan
  * @Date: 2025-05-16 16:37:12
- * @LastEditTime: 2025-08-18 10:00:43
+ * @LastEditTime: 2025-11-20 16:15:02
  * @LastEditors: LLiuHuan
  */
 /**
@@ -13,7 +13,7 @@ export const QIN_GITHUB_URL = 'https://github.com/LLiuHuan/qin-admin';
 /**
  * @zh_CN 文档地址
  */
-export const QIN_DOC_URL = 'https://doc.arco.0x3.cn';
+export const QIN_DOC_URL = 'https://doc.demo.0x3.cn';
 
 /**
  * @zh_CN QIN Logo
@@ -24,7 +24,7 @@ export const QIN_LOGO_URL =
 /**
  * @zh_CN QIN Admin 首页地址
  */
-export const QIN_PREVIEW_URL = 'https://arco.0x3.cn';
+export const QIN_PREVIEW_URL = 'https://demo.0x3.cn';
 
 export const QIN_ELE_PREVIEW_URL = 'https://ele.demo.0x3.cn';
 

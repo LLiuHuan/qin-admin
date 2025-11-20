@@ -14,7 +14,7 @@ declare module 'vue-router' {
   interface RouteMeta extends IRouteMeta {}
 }
 
-export interface QinDesignProAppConfigRaw {
+export interface QinAdminAppConfigRaw {
   VITE_GLOB_API_URL: string;
   VITE_GLOB_AUTH_DINGDING_CLIENT_ID: string;
   VITE_GLOB_AUTH_DINGDING_CORP_ID: string;
@@ -34,6 +34,6 @@ export interface ApplicationConfig {
 
 declare global {
   interface Window {
-    _QIN_ADMIN_APP_CONF_: QinDesignProAppConfigRaw;
+    _QIN_ADMIN_APP_CONF_: QinAdminAppConfigRaw;
   }
 }
