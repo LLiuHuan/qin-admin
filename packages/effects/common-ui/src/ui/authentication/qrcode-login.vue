@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-08-18 10:08:40
+ * @LastEditTime: 2025-11-20 16:15:17
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -64,7 +64,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const router = useRouter();
 
-const text = ref('https://arco.0x3.cn');
+const text = ref('https://demo.0x3.cn');
 
 const qrcode = useQRCode(text, {
   errorCorrectionLevel: 'H',

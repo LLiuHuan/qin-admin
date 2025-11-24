@@ -31,7 +31,7 @@
     （Please use Chrome to open）
   - [Github address](https://github.com/LLiuHuan/qin-admin/tree/legacy)
 - New version
-  - [Online preview](http://arco.0x3.cn/)
+  - [Online preview](http://demo.0x3.cn/)
   - Document address Under development
 
 ### 1.2 Do you have any good ideas? Issues can be raised

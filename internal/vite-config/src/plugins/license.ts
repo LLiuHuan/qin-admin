@@ -2,7 +2,7 @@
  * @Description: 将版权信息注入到项目中
  * @Author: LLiuHuan
  * @Date: 2025-05-07 15:52:54
- * @LastEditTime: 2025-05-16 11:28:44
+ * @LastEditTime: 2025-11-20 16:14:47
  * @LastEditors: LLiuHuan
  */
 import type {
@@ -40,12 +40,12 @@ async function viteLicensePlugin(
   * Qin Admin
   * Version: ${version}
   * Author: LLiuHuan
-  * Copyright (C) 2024 Arco
+  * Copyright (C) 2025 LLiuHuan
   * License: MIT License
   * Description: ${description}
   * Date Created: ${date}
   * Homepage: ${homepage}
-  * Contact: https://arco.0x3.cn
+  * Contact: https://demo.0x3.cn
 */
               `.trim();
 

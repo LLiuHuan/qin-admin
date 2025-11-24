@@ -7,7 +7,7 @@
  */
 import type {
   ApplicationConfig,
-  ArcoDesignProAppConfigRaw,
+  QinAdminAppConfigRaw,
 } from '@qin/types/global';
 
 /**
@@ -20,7 +20,7 @@ export function useAppConfig(
   // 生产环境下，直接使用 window._QIN_ADMIN_APP_CONF_ 全局变量
   const config = isProduction
     ? window._QIN_ADMIN_APP_CONF_
-    : (env as ArcoDesignProAppConfigRaw);
+    : (env as QinAdminAppConfigRaw);
 
   const {
     VITE_GLOB_API_URL,
