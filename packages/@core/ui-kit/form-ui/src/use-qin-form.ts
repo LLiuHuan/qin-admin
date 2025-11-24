@@ -15,8 +15,8 @@ import { defineComponent, h, isReactive, onBeforeUnmount, watch } from 'vue';
 
 import { useStore } from '@qin-core/shared/store';
 
-import QinUseForm from './qin-use-form.vue';
 import { FormApi } from './form-api';
+import QinUseForm from './qin-use-form.vue';
 
 export function useQinForm<
   T extends BaseFormComponentType = BaseFormComponentType,

@@ -100,7 +100,6 @@ class SSE {
       throw new Error('No reader');
     }
     let isEnd = false;
-    let allMessage = '';
     while (!isEnd) {
       const { done, value } = await reader.read();
       if (done) {
@@ -112,7 +111,6 @@ class SSE {
       }
       const content = decoder.decode(value, { stream: true });
       requestOptions?.onMessage?.(content);
-      allMessage += content;
     }
   }
 }

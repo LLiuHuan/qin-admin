@@ -397,7 +397,7 @@ const dataSpecs = Object.keys(goldenMedals).map((year) => {
       {
         id: 'id',
         values: (goldenMedals[year as unknown as number] as any)
-          .sort((a: any, b: any) => b.value - a.value)
+          .toSorted((a: any, b: any) => b.value - a.value)
           .map((v: any) => {
             return { ...v, fill: (colors as any)[v.country] };
           }),
