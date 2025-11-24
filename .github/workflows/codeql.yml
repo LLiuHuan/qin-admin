@@ -45,7 +45,7 @@ jobs:
     steps:
       # 步骤1：拉取仓库代码到扫描环境
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       # 步骤2：初始化 CodeQL 工具（加载分析器和查询规则）
       - name: Initialize CodeQL
