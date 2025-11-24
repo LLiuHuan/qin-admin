@@ -37,7 +37,7 @@ jobs:
     steps:
       # 步骤1：拉取仓库代码到 CI 环境
       - name: Checkout code
-        uses: actions/checkout@v5 # 使用官方 checkout 动作
+        uses: actions/checkout@v6 # 使用官方 checkout 动作
         with:
           fetch-depth: 0 # 拉取完整的提交历史（避免部分测试因历史不全失败）
 
@@ -83,7 +83,7 @@ jobs:
     steps:
       # 步骤1：拉取代码
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -110,7 +110,7 @@ jobs:
     steps:
       # 步骤1：拉取代码
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 

@@ -28,7 +28,7 @@ jobs:
     steps:
       # 步骤1：拉取仓库代码（包含完整历史和标签）
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0 # 拉取完整历史，确保标签和提交记录完整
 
