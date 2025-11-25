@@ -1,3 +1,10 @@
+/*
+ * @Description:
+ * @Author: LLiuHuan
+ * @Date: 2025-07-15 23:01:48
+ * @LastEditTime: 2025-11-25 16:25:29
+ * @LastEditors: LLiuHuan
+ */
 export { default as Block } from './block.vue';
 export { default as Animation } from './general/animation.vue';
 export { default as General } from './general/general.vue';
@@ -15,5 +22,6 @@ export { default as GlobalShortcutKeys } from './shortcut-keys/global.vue';
 export { default as SwitchItem } from './switch-item.vue';
 export { default as BuiltinTheme } from './theme/builtin.vue';
 export { default as ColorMode } from './theme/color-mode.vue';
+export { default as FontSize } from './theme/font-size.vue';
 export { default as Radius } from './theme/radius.vue';
 export { default as Theme } from './theme/theme.vue';

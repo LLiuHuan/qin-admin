@@ -413,6 +413,8 @@ interface ThemePreferences {
    * @zh_CN 警告色
    */
   colorWarning: string;
+  /** 字体大小（单位：px） */
+  fontSize: number;
   /**
    * @zh_CN 当前主题
    */
