@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-28 11:47:26
- * @LastEditTime: 2025-07-24 09:56:00
+ * @LastEditTime: 2025-11-26 09:56:27
  * @LastEditors: LLiuHuan
  */
 import { initPreferences } from '@qin/preferences';

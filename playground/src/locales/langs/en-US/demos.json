@@ -84,6 +84,9 @@
       },
       "vchart": {
         "title": "VChart"
+      },
+      "vue-data-ui": {
+        "title": "Vue Data UI"
       }
     },
     "video": {

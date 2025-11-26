@@ -51,6 +51,7 @@
     "json-bigint": "catalog:",
     "pinia": "catalog:",
     "vue": "catalog:",
+    "vue-data-ui": "catalog:",
     "vue-router": "catalog:",
     "xgplayer": "catalog:"
   },
