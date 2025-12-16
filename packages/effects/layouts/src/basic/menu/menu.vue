@@ -44,7 +44,6 @@ function handleMenuOpen(key: string, path: string[]) {
     :menus="menus"
     :mode="mode"
     :rounded="rounded"
-    scroll-to-active
     :theme="theme"
     @open="handleMenuOpen"
     @select="handleMenuSelect"

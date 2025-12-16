@@ -1,5 +1,4 @@
-import { getColors } from 'theme-colors';
-
+import { colourBlend, getLightColor } from './color';
 import { convertToHslCssVar, TinyColor } from './convert';
 
 interface ColorItem {
@@ -8,32 +7,35 @@ interface ColorItem {
   name: string;
 }
 
-function generatorColorVariables(colorItems: ColorItem[]) {
+function generatorColorVariables(colorItems: ColorItem[], isDark: boolean) {
   const colorVariables: Record<string, string> = {};
-
   colorItems.forEach(({ alias, color, name }) => {
     if (color) {
-      const colorsMap = getColors(new TinyColor(color).toHexString());
+      const mainColor = convertToHslCssVar(new TinyColor(color).toHexString());
+      colorVariables[`--${name}`] = mainColor;
 
-      let mainColor = colorsMap['500'];
-
-      const colorKeys = Object.keys(colorsMap);
-
-      colorKeys.forEach((key) => {
-        const colorValue = colorsMap[key];
-
-        if (colorValue) {
-          const hslColor = convertToHslCssVar(colorValue);
-          colorVariables[`--${name}-${key}`] = hslColor;
-          if (alias) {
-            colorVariables[`--${alias}-${key}`] = hslColor;
-          }
-
-          if (key === '500') {
-            mainColor = hslColor;
-          }
+      for (let i = 1; i <= 9; i++) {
+        const hexColor = getLightColor(
+          new TinyColor(color).toHexString(),
+          i / 10,
+          isDark,
+        );
+        const hslColor = convertToHslCssVar(hexColor);
+        colorVariables[`--${name}-${i * 100}`] = hslColor;
+        if (alias) {
+          colorVariables[`--${alias}-${i * 100}`] = hslColor;
         }
-      });
+      }
+
+      if (name === 'primary') {
+        const mixColor = '#ffffff';
+        // 生成更淡一点的颜色
+        for (let i = 1; i < 16; i++) {
+          const itemColor = colourBlend(color, mixColor, i / 16);
+          colorVariables[`--${name}-custom-${i * 100}`] = itemColor;
+        }
+      }
+
       if (alias && mainColor) {
         colorVariables[`--${alias}`] = mainColor;
       }

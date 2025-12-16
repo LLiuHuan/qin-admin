@@ -81,6 +81,7 @@ catalog:
   cac: ^6.7.14
   chalk: ^5.4.1
   cheerio: ^1.1.2
+  chokidar: ^5.0.0
   circular-dependency-scanner: ^2.3.0
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1

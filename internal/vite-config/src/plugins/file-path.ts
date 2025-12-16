@@ -65,7 +65,7 @@ const extractComponentName = (
  * @param outputFilePath 映射表输出文件路径
  * @returns Vite插件对象
  */
-const filePathPlugin = (outputFilePath: string): Plugin => {
+const viteFilePathPlugin = (outputFilePath: string): Plugin => {
   let root: string; // 项目根目录
   let watcher: FSWatcher | null = null; // 文件监听器
 
@@ -110,7 +110,7 @@ const filePathPlugin = (outputFilePath: string): Plugin => {
     });
 
     // 监听所有变化事件
-    watcher.on('all', (event, path) => {
+    watcher.on('all', (event: any, path: any) => {
       console.log(`[file-path-plugin] ${event} ${path}, regenerating map...`);
       generatePathNameMap();
     });
@@ -145,4 +145,4 @@ const filePathPlugin = (outputFilePath: string): Plugin => {
   };
 };
 
-export { filePathPlugin };
+export { viteFilePathPlugin };
