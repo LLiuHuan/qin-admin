@@ -38,6 +38,6 @@ useQinDesignTokens();
 
 <template>
   <ConfigProvider :locale="tokenLocale">
-    <RouterView :key="$route.fullPath" />
+    <RouterView />
   </ConfigProvider>
 </template>

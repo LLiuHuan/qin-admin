@@ -45,6 +45,6 @@ const globalConfig = merge(zhConfig, customConfig);
 
 <template>
   <ConfigProvider :global-config="globalConfig">
-    <RouterView :key="$route.fullPath" />
+    <RouterView />
   </ConfigProvider>
 </template>

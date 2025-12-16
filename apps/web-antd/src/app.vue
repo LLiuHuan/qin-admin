@@ -40,7 +40,7 @@ const tokenTheme = computed(() => {
 <template>
   <ConfigProvider :locale="antdLocale" :theme="tokenTheme">
     <App>
-      <RouterView :key="$route.fullPath" />
+      <RouterView />
     </App>
   </ConfigProvider>
 </template>
