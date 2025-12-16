@@ -36,7 +36,7 @@ setupQinVxeTable({
             total: 'total',
             list: 'items',
           },
-          showActiveMsg: true,
+          showActionMsg: true,
           showResponseMsg: false,
         },
         round: true,
@@ -47,9 +47,10 @@ setupQinVxeTable({
 
     // 表格配置项可以用 cellRender: { name: 'CellImage' },
     vxeUI.renderer.add('CellImage', {
-      renderTableDefault(_renderOpts, params) {
+      renderTableDefault(renderOpts, params) {
+        const { props } = renderOpts;
         const { column, row } = params;
-        return h(Image, { src: row[column.field] });
+        return h(Image, { src: row[column.field], ...props });
       },
     });
 
