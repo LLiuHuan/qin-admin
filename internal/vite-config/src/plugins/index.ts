@@ -19,6 +19,7 @@ import viteVueDevTools from 'vite-plugin-vue-devtools';
 
 import { viteArchiverPlugin } from './archiver';
 import { viteExtraAppConfigPlugin } from './extra-app-config';
+import { viteFilePathPlugin } from './file-path';
 import { viteImportMapPlugin } from './importmap';
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';
 import { viteMetadataPlugin } from './inject-metadata';
@@ -112,6 +113,7 @@ async function loadApplicationPlugins(
     printInfoMap,
     pwa,
     pwaOptions,
+    toc,
     vxeTableLazyImport,
     ...commonOptions
   } = options;
@@ -214,6 +216,10 @@ async function loadApplicationPlugins(
       plugins: async () => {
         return [await viteArchiverPlugin(archiverPluginOptions)];
       },
+    },
+    {
+      condition: toc,
+      plugins: () => [viteFilePathPlugin('src/pathinfo.json')],
     },
   ]);
 }

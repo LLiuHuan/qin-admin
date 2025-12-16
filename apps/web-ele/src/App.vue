@@ -19,6 +19,6 @@ useElementPlusDesignTokens();
 
 <template>
   <ElConfigProvider :locale="elementLocale">
-    <RouterView :key="$route.fullPath" />
+    <RouterView />
   </ElConfigProvider>
 </template>

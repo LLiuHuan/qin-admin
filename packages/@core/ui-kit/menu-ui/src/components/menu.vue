@@ -351,14 +351,20 @@ function getActivePaths() {
     role="menu"
   >
     <template v-if="mode === 'horizontal' && getSlot.showSlotMore">
-      <template v-for="item in getSlot.slotDefault" :key="item.key">
+      <template
+        v-for="(item, index) in getSlot.slotDefault"
+        :key="`slot-def-${index}`"
+      >
         <component :is="item" />
       </template>
       <SubMenu is-sub-menu-more path="sub-menu-more">
         <template #title>
           <Ellipsis class="size-4" />
         </template>
-        <template v-for="item in getSlot.slotMore" :key="item.key">
+        <template
+          v-for="(item, index) in getSlot.slotMore"
+          :key="`slot-more-${index}`"
+        >
           <component :is="item" />
         </template>
       </SubMenu>
@@ -485,7 +491,7 @@ $namespace: qin;
     --menu-item-hover-color: var(--menu-item-color);
     --menu-item-hover-background-color: hsl(var(--accent));
     --menu-item-active-color: hsl(var(--primary));
-    --menu-item-active-background-color: hsl(var(--primary) / 15%);
+    --menu-item-active-background-color: hsl(var(--primary-900));
     --menu-submenu-hover-color: hsl(var(--primary));
     --menu-submenu-hover-background-color: hsl(var(--accent));
     --menu-submenu-active-color: hsl(var(--primary));

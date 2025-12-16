@@ -45,6 +45,7 @@
     "@types/html-minifier-terser": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
+    "chokidar": "catalog:",
     "dayjs": "catalog:",
     "dotenv": "catalog:",
     "rollup": "catalog:",
