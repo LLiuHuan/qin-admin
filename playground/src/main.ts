@@ -8,6 +8,7 @@
 import { initPreferences } from '@qin/preferences';
 import { unmountGlobalLoading } from '@qin/utils';
 
+import { bootstrap } from './bootstrap';
 import { overridesPreferences } from './preferences';
 
 /**
@@ -29,7 +30,6 @@ async function initApplication() {
 
     // 启动应用并挂载
     // vue应用主要逻辑及视图
-    const { bootstrap } = await import('./bootstrap');
     await bootstrap(namespace);
 
     // 移除并销毁loading
