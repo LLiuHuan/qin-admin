@@ -7,7 +7,8 @@ import { preferences, usePreferences } from '@qin/preferences';
 
 import { Copyright } from '../basic/copyright';
 import AuthenticationFormView from './form.vue';
-import SloganIcon from './icons/slogan.vue';
+import geoIntro from './geo-intro.vue';
+import simpleIntro from './simple-intro.vue';
 import Toolbar from './toolbar.vue';
 
 interface Props {
@@ -20,6 +21,7 @@ interface Props {
   toolbar?: boolean;
   copyright?: boolean;
   toolbarList?: ToolbarType[];
+  intro?: 'geo' | 'simple';
   clickLogo?: () => void;
 }
 
@@ -32,6 +34,7 @@ const props = withDefaults(defineProps<Props>(), {
   pageTitle: '',
   sloganImage: '',
   toolbar: true,
+  intro: 'geo',
   toolbarList: () => ['color', 'language', 'layout', 'theme'],
   clickLogo: () => {},
 });
@@ -58,7 +61,7 @@ const logoSrc = computed(() => {
     class="flex min-h-full flex-1 select-none overflow-x-hidden"
   >
     <template v-if="toolbar">
-      <slot name="toolbar">
+      <slot name="toolbar" class="z-100">
         <Toolbar :toolbar-list="toolbarList" />
       </slot>
     </template>
@@ -104,36 +107,28 @@ const logoSrc = computed(() => {
     </slot>
 
     <!-- 系统介绍 -->
-    <div v-if="!authPanelCenter" class="relative hidden w-0 flex-1 lg:block">
-      <div
-        class="bg-background-deep absolute inset-0 h-full w-full dark:bg-[#070709]"
-      >
-        <div class="login-background absolute left-0 top-0 size-full"></div>
-        <div
-          :key="authPanelLeft ? 'left' : authPanelRight ? 'right' : 'center'"
-          :class="{
-            'enter-x': authPanelLeft,
-            '-enter-x': authPanelRight,
-          }"
-          class="flex-col-center mr-20 h-full"
-        >
-          <template v-if="sloganImage">
-            <img
-              :alt="appName"
-              :src="sloganImage"
-              class="animate-float h-64 w-2/5"
-            />
-          </template>
-          <SloganIcon v-else :alt="appName" class="animate-float h-64 w-2/5" />
-          <div class="text-1xl text-foreground mt-6 font-sans lg:text-2xl">
-            {{ pageTitle }}
-          </div>
-          <div class="dark:text-muted-foreground mt-2">
-            {{ pageDescription }}
-          </div>
-        </div>
-      </div>
-    </div>
+    <template v-if="!authPanelCenter">
+      <geoIntro
+        v-if="intro === 'geo'"
+        :app-name="appName"
+        :page-title="pageTitle"
+        :page-description="pageDescription"
+        :slogan-image="sloganImage"
+        :panel-enter="
+          authPanelLeft ? 'left' : authPanelRight ? 'right' : 'center'
+        "
+      />
+      <simpleIntro
+        v-if="intro === 'simple'"
+        :app-name="appName"
+        :page-title="pageTitle"
+        :page-description="pageDescription"
+        :slogan-image="sloganImage"
+        :panel-enter="
+          authPanelLeft ? 'left' : authPanelRight ? 'right' : 'center'
+        "
+      />
+    </template>
 
     <!-- 中心认证面板 -->
     <div v-if="authPanelCenter" class="flex-center relative w-full">

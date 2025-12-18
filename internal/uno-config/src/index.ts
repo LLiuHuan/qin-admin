@@ -274,11 +274,43 @@ export default defineConfig({
     },
     // extend: {
     animation: {
-      'accordion-down': 'accordion-down 0.2s ease-out',
-      'accordion-up': 'accordion-up 0.2s ease-out',
-      'collapsible-down': 'collapsible-down 0.2s ease-in-out',
-      'collapsible-up': 'collapsible-up 0.2s ease-in-out',
-      float: 'float 5s linear 0ms infinite',
+      keyframes: {
+        custom:
+          '{0%, 100% { transform: scale(0.5); } 50% { transform: scale(1); }}',
+        'accordion-down':
+          '{ from: { height: 0 } to { height: var(--reka-accordion-content-height) } }',
+        'accordion-up':
+          '{ from: { height: var(--reka-accordion-content-height) } to { height: 0 } }',
+        'collapsible-down':
+          '{ from: { height: 0 } to { height: var(--reka-collapsible-content-height) } }',
+        'collapsible-up':
+          '{ from: { height: var(--reka-collapsible-content-height) } to { height: 0 } }',
+        float:
+          '{0%, 100% { transform: translateY(0) } 50% { transform: translateY(-20px)} }',
+      },
+      durations: {
+        custom: '1s',
+        float: '5s',
+        'accordion-down': '0.2s',
+        'accordion-up': '0.2s',
+        'collapsible-down': '0.2s',
+        'collapsible-up': '0.2s',
+      },
+      timingFns: {
+        custom: 'cubic-bezier(0.4,0,.6,1)',
+        float: 'linear',
+        'accordion-down': 'ease-out',
+        'accordion-up': 'ease-out',
+        'collapsible-down': 'ease-in-out',
+        'collapsible-up': 'ease-in-out',
+      },
+      properties: {
+        custom: { 'transform-origin': 'center' },
+      },
+      counts: {
+        custom: 'infinite',
+        float: 'infinite',
+      },
     },
 
     animationDuration: {
@@ -305,29 +337,6 @@ export default defineConfig({
         'var(--font-family)',
         //  ...defaultTheme.fontFamily.sans
       ],
-    },
-    keyframes: {
-      'accordion-down': {
-        from: { height: '0' },
-        to: { height: 'var(--reka-accordion-content-height)' },
-      },
-      'accordion-up': {
-        from: { height: 'var(--reka-accordion-content-height)' },
-        to: { height: '0' },
-      },
-      'collapsible-down': {
-        from: { height: '0' },
-        to: { height: 'var(--reka-collapsible-content-height)' },
-      },
-      'collapsible-up': {
-        from: { height: 'var(--reka-collapsible-content-height)' },
-        to: { height: '0' },
-      },
-      float: {
-        '0%': { transform: 'translateY(0)' },
-        '50%': { transform: 'translateY(-20px)' },
-        '100%': { transform: 'translateY(0)' },
-      },
     },
     zIndex: {
       '100': '100',
