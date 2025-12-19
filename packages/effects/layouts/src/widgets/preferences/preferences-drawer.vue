@@ -62,6 +62,7 @@ const appDynamicTitle = defineModel<boolean>('appDynamicTitle');
 const appLayout = defineModel<LayoutType>('appLayout');
 const appColorGrayMode = defineModel<boolean>('appColorGrayMode');
 const appColorWeakMode = defineModel<boolean>('appColorWeakMode');
+const appColorSimpleMode = defineModel<boolean>('appColorSimpleMode');
 const appContentCompact = defineModel<ContentCompactType>('appContentCompact');
 const appWatermark = defineModel<boolean>('appWatermark');
 const appWatermarkContent = defineModel<string>('appWatermarkContent');
@@ -333,6 +334,7 @@ async function handleReset() {
               <ColorMode
                 v-model:app-color-gray-mode="appColorGrayMode"
                 v-model:app-color-weak-mode="appColorWeakMode"
+                v-model:app-color-simple-mode="appColorSimpleMode"
               />
             </Block>
           </template>

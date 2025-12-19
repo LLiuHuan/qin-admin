@@ -34,7 +34,7 @@ const typeWithClass = computed(() => {
     },
     card: {
       content:
-        'h-[calc(100%-6px)] rounded-md ml-2 border border-border  transition-all',
+        'h-[calc(100%-10px)] rounded-md ml-2 border border-border  transition-all',
     },
     plain: {
       content:
@@ -89,7 +89,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
         :key="tab.key"
         :class="[
           {
-            'is-active dark:bg-accent bg-primary/15': tab.key === active,
+            'is-active dark:bg-accent': tab.key === active,
             draggable: !tab.affixTab,
             'affix-tab': tab.affixTab,
           },
@@ -127,7 +127,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
 
             <!-- tab-item-main -->
             <div
-              class="text-accent-foreground group-[.is-active]:text-primary dark:group-[.is-active]:text-accent-foreground mx-3 mr-4 flex h-full items-center overflow-hidden rounded-tl-[5px] rounded-tr-[5px] pr-3 transition-all duration-300"
+              class="text-accent-foreground group-[.is-active]:text-primary mx-3 mr-4 flex h-full items-center overflow-hidden rounded-tl-[5px] rounded-tr-[5px] pr-3 transition-all duration-300"
             >
               <QinIcon
                 v-if="showIcon"
@@ -136,7 +136,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
                 fallback
               />
 
-              <span class="flex-1 overflow-hidden whitespace-nowrap text-sm">
+              <span class="flex-1 overflow-hidden whitespace-nowrap text-xs">
                 {{ tab.title }}
               </span>
             </div>

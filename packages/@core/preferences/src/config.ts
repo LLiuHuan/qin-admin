@@ -7,6 +7,7 @@ const defaultPreferences: Preferences = {
     checkUpdatesInterval: 1,
     colorGrayMode: false,
     colorWeakMode: false,
+    colorSimpleMode: false,
     compact: false,
     contentCompact: 'wide',
     contentCompactWidth: 1200,

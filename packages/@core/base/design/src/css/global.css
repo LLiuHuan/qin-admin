@@ -232,6 +232,31 @@ html.grayscale-mode {
   @apply grayscale;
 }
 
+html.simple-mode {
+  /* --foreground: 219 18% 55; */
+  /* --accent-foreground: 219 18% 55; */
+  aside {
+    @apply shadow-none;
+  }
+  header {
+    @apply bg-background-deep border-transparent;
+  }
+  section {
+    @apply bg-background-deep border-transparent;
+  }
+
+  .bg-card {
+    /* @apply bg-background-deep border-transparent; */
+  }
+}
+
+
+html.simple-mode.dark {
+  section {
+    @apply bg-transparent;
+  }
+}
+
 button {
   cursor: pointer;
   background-color: transparent;
