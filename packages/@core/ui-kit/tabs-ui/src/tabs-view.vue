@@ -55,7 +55,7 @@ useTabsDrag(props, emit);
 </script>
 
 <template>
-  <div class="flex h-full flex-1 overflow-hidden">
+  <div class="flex-y-c h-full flex-1 overflow-hidden">
     <!-- 左侧滚动按钮 -->
     <span
       v-show="showScrollButton"
