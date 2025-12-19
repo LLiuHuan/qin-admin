@@ -37,6 +37,7 @@
     "@qin/hooks": "workspace:*",
     "@qin/icons": "workspace:*",
     "@qin/locales": "workspace:*",
+    "@qin/plugins": "workspace:*",
     "@qin/types": "workspace:*",
     "@vueuse/core": "catalog:",
     "@vueuse/integrations": "catalog:",

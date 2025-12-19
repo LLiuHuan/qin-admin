@@ -100,7 +100,7 @@ useScrollLock();
           />
           <span>{{ $t('ui.widgets.lockScreen.unlock') }}</span>
         </div>
-        <div class="flex h-full w-full items-center justify-center">
+        <div class="flex wh-full items-center justify-center">
           <div class="flex w-full justify-center gap-4 px-4 sm:gap-6 md:gap-8">
             <div
               class="bg-accent relative flex h-[140px] w-[140px] items-center justify-center rounded-xl text-[36px] sm:h-[160px] sm:w-[160px] sm:text-[42px] md:h-[200px] md:w-[200px] md:text-[72px]"

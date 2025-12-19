@@ -230,19 +230,27 @@ export default defineConfig({
     }),
   ],
   shortcuts: {
+    'flex-c': 'flex items-center',
+    'flex-b': 'flex justify-between',
+    'flex-cc': 'flex items-center justify-center',
+    'flex-cb': 'flex items-center justify-between',
     'flex-center': 'flex justify-center items-center',
-    'flex-x-center': 'flex justify-center',
-    'flex-y-center': 'flex items-center',
-    'flex-x-between': 'flex items-center justify-between',
-    'flex-x-end': 'flex items-center justify-end',
+    'flex-x-c': 'flex justify-center',
+    'flex-y-c': 'flex items-center',
+    'flex-x-b': 'flex items-center justify-between',
+    'flex-x-e': 'flex items-center justify-end',
+    'flex-xc': 'flex justify-center',
+    'flex-yc': 'flex items-center',
+    'flex-xb': 'flex items-center justify-between',
+    'flex-xe': 'flex items-center justify-end',
     'wh-full': 'w-full h-full',
     'text-truncate': 'whitespace-nowrap overflow-hidden text-ellipsis',
     'bg-no-repeat-contain': 'bg-no-repeat bg-contain',
     'bg-no-repeat-cover': 'bg-no-repeat bg-cover',
     'abs-full': 'absolute left-0 right-0 top-0 bottom-0',
-    'abs-x-center': 'absolute left-50% top-0 translate-x--1/2',
-    'abs-y-center': 'absolute left-0 top-50% translate-y--1/2',
-    'abs-center': 'absolute left-50% top-50% translate-x--1/2 translate-y--1/2',
+    'abs-x-c': 'absolute left-50% top-0 translate-x--1/2',
+    'abs-y-c': 'absolute left-0 top-50% translate-y--1/2',
+    'abs-c': 'absolute left-50% top-50% translate-x--1/2 translate-y--1/2',
   },
   transformers: [transformerDirectives(), transformerVariantGroup()],
   // By default, `.ts` and `.js` files are NOT extracted.
@@ -287,6 +295,8 @@ export default defineConfig({
           '{ from: { height: var(--reka-collapsible-content-height) } to { height: 0 } }',
         float:
           '{0%, 100% { transform: translateY(0) } 50% { transform: translateY(-20px)} }',
+        progress:
+          '{ 0% { background-position: 0 0 } 100% { background-position: 30px 30px } }',
       },
       durations: {
         custom: '1s',
@@ -295,6 +305,7 @@ export default defineConfig({
         'accordion-up': '0.2s',
         'collapsible-down': '0.2s',
         'collapsible-up': '0.2s',
+        progress: '1s',
       },
       timingFns: {
         custom: 'cubic-bezier(0.4,0,.6,1)',
@@ -303,6 +314,7 @@ export default defineConfig({
         'accordion-up': 'ease-out',
         'collapsible-down': 'ease-in-out',
         'collapsible-up': 'ease-in-out',
+        progress: 'linear',
       },
       properties: {
         custom: { 'transform-origin': 'center' },
@@ -310,6 +322,7 @@ export default defineConfig({
       counts: {
         custom: 'infinite',
         float: 'infinite',
+        progress: 'infinite',
       },
     },
 

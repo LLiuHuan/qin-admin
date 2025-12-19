@@ -17,7 +17,9 @@ import type {
   TooltipComponentOption,
 } from 'echarts/components';
 
-import { effectScope, nextTick, onScopeDispose, ref, watch } from 'vue';
+import type { ShallowRef } from 'vue';
+
+import { effectScope, nextTick, onScopeDispose, watch } from 'vue';
 
 import { usePreferences } from '@qin/preferences';
 
@@ -92,10 +94,12 @@ interface ChartHooks {
 /**
  * use echarts
  *
+ * @param domRef dom ref
  * @param optionsFactory echarts 工厂函数
  * @param hooks 钩子函数
  */
 export function useEcharts<T extends ECOption>(
+  domRef: Readonly<ShallowRef<HTMLElement | null>>,
   optionsFactory: () => T,
   hooks: ChartHooks = {},
 ) {
@@ -103,7 +107,8 @@ export function useEcharts<T extends ECOption>(
 
   const { isDark } = usePreferences();
 
-  const domRef = ref<HTMLElement | null>(null);
+  // const domRef = ref<HTMLElement | null>(null);
+  // const domRef = useTemplateRef<HTMLElement>(refKey);
   const initialSize = { width: 0, height: 0 };
   const { width, height } = useElementSize(domRef, initialSize);
 
@@ -257,3 +262,5 @@ export function useEcharts<T extends ECOption>(
     setOptions,
   };
 }
+
+export const graphic = echarts.graphic;

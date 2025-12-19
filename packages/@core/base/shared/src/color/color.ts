@@ -113,3 +113,12 @@ export function getDarkColor(color: string, level: number): string {
     b: lightenValue(b),
   }).toHexString();
 }
+
+/**
+ * 获取TinyColor对象
+ * @param color 颜色值
+ * @returns TinyColor对象
+ */
+export function getTinyColor(color: string) {
+  return new TinyColor(color);
+}

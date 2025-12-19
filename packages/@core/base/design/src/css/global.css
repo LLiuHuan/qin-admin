@@ -213,7 +213,7 @@ html:not([data-platform='macOs']) {
 }
 
 .outline-box:not(.outline-box-active):hover::after {
-  @apply outline-primary left-0 top-0 h-full w-full p-1 opacity-100;
+  @apply outline-primary left-0 top-0 wh-full p-1 opacity-100;
 }
 
 .qin-link {
@@ -276,4 +276,12 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+
+.qin-card {
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
 }

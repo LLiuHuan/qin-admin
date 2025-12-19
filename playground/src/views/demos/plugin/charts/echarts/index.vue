@@ -6,7 +6,7 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, useTemplateRef } from 'vue';
 
 import { Page } from '@qin/common-ui';
 import { useEcharts } from '@qin/plugins/echarts';
@@ -24,12 +24,13 @@ import {
   treeOptions,
 } from './data';
 
-const { domRef: lineRef } = useEcharts(() => lineOptions);
-const { domRef: barRef } = useEcharts(() => barOptions);
-const { domRef: pieRef } = useEcharts(() => pieOptions);
-const { domRef: scatterRef } = useEcharts(() => scatterOptions);
-const { domRef: treeRef } = useEcharts(() => treeOptions);
-const { domRef: gaugeRef, setOptions: setGaugeOptions } = useEcharts(
+useEcharts(useTemplateRef('lineRef'), () => lineOptions);
+useEcharts(useTemplateRef('barRef'), () => barOptions);
+useEcharts(useTemplateRef('pieRef'), () => pieOptions);
+useEcharts(useTemplateRef('scatterRef'), () => scatterOptions);
+useEcharts(useTemplateRef('treeRef'), () => treeOptions);
+const { setOptions: setGaugeOptions } = useEcharts(
+  useTemplateRef('gaugeRef'),
   () => gaugeOptions,
 );
 

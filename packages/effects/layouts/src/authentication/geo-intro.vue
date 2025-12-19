@@ -80,7 +80,7 @@ function toggleTheme(event: MouseEvent) {
     :class="`panel-enter-${panelEnter}`"
   >
     <div
-      class="pb-80px container relative z-10 flex h-full w-full flex-col items-center justify-end"
+      class="pb-80px wh-full container relative z-10 flex flex-col items-center justify-end"
     >
       <div class="left-img w-35% mb-3vh">
         <template v-if="sloganImage">
@@ -88,7 +88,7 @@ function toggleTheme(event: MouseEvent) {
         </template>
         <SloganIcon
           v-else
-          class="slogan-icon h-full w-full object-contain"
+          class="slogan-icon wh-full object-contain"
           :alt="pageTitle"
         />
       </div>

@@ -14,6 +14,7 @@ export * from './input-password';
 export * from './logo';
 export * from './pin-input';
 export * from './popover';
+export * from './progress';
 export * from './render-content';
 export * from './scrollbar';
 export * from './segmented';

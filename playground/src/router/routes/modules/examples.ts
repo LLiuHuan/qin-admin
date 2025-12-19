@@ -232,6 +232,26 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       {
+        name: 'BannerExample',
+        path: '/examples/banners',
+        component: () => import('#/views/examples/banners/index.vue'),
+        meta: {
+          icon: 'ri:rectangle-line',
+          keepAlive: true,
+          title: $t('examples.banner.title'),
+        },
+      },
+      {
+        name: 'CardExample',
+        path: '/examples/cards',
+        component: () => import('#/views/examples/cards/index.vue'),
+        meta: {
+          icon: 'ri:wallet-line',
+          keepAlive: true,
+          title: $t('examples.card.title'),
+        },
+      },
+      {
         name: 'ModalExample',
         path: '/examples/modal',
         component: () => import('#/views/examples/modal/index.vue'),
