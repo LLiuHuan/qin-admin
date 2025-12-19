@@ -128,6 +128,7 @@
     "darkHeader": "Semi Dark Header",
     "weakMode": "Weak Mode",
     "grayMode": "Gray Mode",
+    "simpleMode": "Simple Mode",
     "builtin": {
       "title": "Built-in",
       "default": "Default",

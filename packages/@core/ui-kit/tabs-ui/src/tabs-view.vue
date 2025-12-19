@@ -86,7 +86,7 @@ useTabsDrag(props, emit);
         shadow-left
         shadow-right
         @scroll-at="handleScrollAt"
-        @wheel.passive="onWheel"
+        @wheel.stop="onWheel"
       >
         <TabsChrome
           v-if="styleType === 'chrome'"

@@ -36,6 +36,10 @@ interface AppPreferences {
    */
   colorGrayMode: boolean;
   /**
+   * @zh_CN 是否开启简单模式
+   */
+  colorSimpleMode: boolean;
+  /**
    * @zh_CN 是否开启色弱模式
    */
   colorWeakMode: boolean;
