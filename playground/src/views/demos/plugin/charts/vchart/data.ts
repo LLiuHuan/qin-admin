@@ -346,7 +346,7 @@ const goldenMedals: Record<number, any[]> = {
     { country: 'France', value: 11 },
     { country: 'Australia', value: 8 },
     { country: 'Italy', value: 8 },
-    { country: 'Hungary', value: 8 },
+    { country: 'Hungray', value: 8 },
   ],
   2016: [
     { country: 'USA', value: 46 },
@@ -388,7 +388,7 @@ const colors = {
   'South Korea': '#DDC5FA',
   'Russian Olympic Committee': '#B2CFFF',
   Netherlands: '#FFC400',
-  Hungary: '#FAE878',
+  Hungray: '#FAE878',
 };
 
 const dataSpecs = Object.keys(goldenMedals).map((year) => {

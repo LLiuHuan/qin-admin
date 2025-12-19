@@ -16,7 +16,7 @@ withDefaults(defineProps<Props>(), {
     <span
       :class="dotClass"
       :style="dotStyle"
-      class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+      class="absolute inline-flex wh-full animate-ping rounded-full opacity-75"
     >
     </span>
     <span

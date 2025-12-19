@@ -6,7 +6,7 @@ import type { BasicMeteor, BasicPannerProps } from '../types';
 import { computed, onMounted, ref } from 'vue';
 
 import { usePreferences } from '@qin-core/preferences';
-import { Button } from '@qin-core/shadcn-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 defineOptions({ name: 'QinBasicBanner' });
 // 组件属性默认值设置
@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<BasicPannerProps>(), {
   height: '11rem',
   titleColor: 'white',
   subtitleColor: 'white',
-  boxStyle: 'bg-[hsl(var(--primary)/60%)]',
+  boxStyle: '!bg-[hsl(var(--primary)/60%)]',
   decoration: true,
   buttonConfig: () => ({
     show: true,
@@ -72,8 +72,8 @@ function generateMeteors(count: number): BasicMeteor[] {
 
 <template>
   <div
-    class="qin-card basic-banner"
     :class="[{ 'has-decoration': decoration }, boxStyle]"
+    class="qin-card basic-banner"
     :style="{ height }"
     @click="emit('click')"
   >
@@ -117,7 +117,7 @@ function generateMeteors(count: number): BasicMeteor[] {
 
       <!-- button slot -->
       <slot name="button">
-        <Button
+        <QinButton
           v-if="buttonConfig?.show"
           class="basic-banner__button"
           :style="{
@@ -128,7 +128,7 @@ function generateMeteors(count: number): BasicMeteor[] {
           @click.stop="emit('buttonClick')"
         >
           {{ buttonConfig?.text }}
-        </Button>
+        </QinButton>
       </slot>
 
       <!-- default slot -->

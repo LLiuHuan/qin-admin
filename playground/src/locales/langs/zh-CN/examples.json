@@ -12,6 +12,12 @@
   "resize": {
     "title": "拖动调整"
   },
+  "banner": {
+    "title": "横幅"
+  },
+  "card": {
+    "title": "卡片"
+  },
   "form": {
     "title": "表单",
     "basic": "基础表单",

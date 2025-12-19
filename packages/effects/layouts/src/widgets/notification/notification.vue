@@ -138,7 +138,7 @@ function navigateTo(
               >
                 <img
                   :src="item.avatar"
-                  class="aspect-square h-full w-full object-cover"
+                  class="aspect-square wh-full object-cover"
                   role="img"
                 />
               </span>

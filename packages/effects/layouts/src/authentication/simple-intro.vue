@@ -21,7 +21,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div class="relative hidden w-0 flex-1 lg:block">
     <div
-      class="bg-background-deep absolute inset-0 h-full w-full dark:bg-[#070709]"
+      class="bg-background-deep absolute inset-0 wh-full dark:bg-[#070709]"
     >
       <div class="login-background absolute left-0 top-0 size-full"></div>
       <div

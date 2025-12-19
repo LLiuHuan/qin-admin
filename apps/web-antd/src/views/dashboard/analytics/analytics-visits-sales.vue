@@ -6,9 +6,11 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
+import { useTemplateRef } from 'vue';
+
 import { useEcharts } from '@qin/plugins/echarts';
 
-const { domRef: chartRef } = useEcharts(() => {
+useEcharts(useTemplateRef('chartRef'), () => {
   return {
     series: [
       {

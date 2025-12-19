@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { CheckboxRootEmits, CheckboxRootProps } from 'reka-ui';
 
-import { useId } from 'vue';
+import { computed, reactive, useId } from 'vue';
 
 import { useForwardPropsEmits } from 'reka-ui';
 
@@ -13,7 +13,13 @@ const emits = defineEmits<CheckboxRootEmits>();
 
 const checked = defineModel<boolean>();
 
-const forwarded = useForwardPropsEmits(props, emits);
+const delegatedProps = computed(() => {
+  const { id: _id, modelValue: _, ...delegated } = props;
+
+  return reactive(delegated);
+});
+
+const forwarded = useForwardPropsEmits(delegatedProps, emits);
 
 const id = useId();
 </script>

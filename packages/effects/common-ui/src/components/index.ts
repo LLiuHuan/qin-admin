@@ -8,6 +8,7 @@
 export * from './api-component';
 export * from './banners';
 export * from './captcha';
+export * from './cards';
 export * from './col-page';
 export * from './count-to';
 export * from './ellipsis-text';

@@ -4,7 +4,7 @@
 // import defaultIcon from '@imgs/3d/icon1.webp';
 import type { CardBannerProps } from '../types';
 
-import { Button } from '@qin-core/shadcn-ui';
+import { QinButton } from '@qin-core/shadcn-ui';
 
 defineOptions({ name: 'QinCardBanner' });
 
@@ -48,20 +48,17 @@ const handleCancel = () => {
 </script>
 
 <template>
-  <div
-    class="qin-card-sm flex flex-col items-center justify-center"
-    :style="{ height }"
-  >
-    <div class="flex flex-col items-center gap-4 text-center">
+  <div class="qin-card-sm flex-cc flex-col" :style="{ height }">
+    <div class="flex-yc flex-col gap-4 text-center">
       <div class="w-45">
-        <img :src="image" :alt="title" class="h-full w-full object-contain" />
+        <img :src="image" :alt="title" class="wh-full object-contain" />
       </div>
       <div class="box-border px-4">
         <p class="text-g-800 mb-2 text-lg font-semibold">{{ title }}</p>
         <p class="text-g-600 m-0 text-sm">{{ description }}</p>
       </div>
-      <div class="flex items-center gap-3">
-        <Button
+      <div class="flex-yc gap-3">
+        <QinButton
           v-if="cancelButton?.show"
           class="pointer border-g-300 inline-block h-9 select-none rounded-md border px-3 text-sm/9 !leading-none"
           :style="{
@@ -71,15 +68,15 @@ const handleCancel = () => {
           @click="handleCancel"
         >
           {{ cancelButton?.text }}
-        </Button>
-        <Button
+        </QinButton>
+        <QinButton
           v-if="button?.show"
           class="pointer inline-block h-9 select-none rounded-md px-3 text-sm/9 !leading-none"
           :style="{ backgroundColor: button?.color, color: button?.textColor }"
           @click="handleClick"
         >
           {{ button?.text }}
-        </Button>
+        </QinButton>
       </div>
     </div>
   </div>

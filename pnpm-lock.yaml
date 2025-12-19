@@ -1635,6 +1635,9 @@ importers:
       '@qin/locales':
         specifier: workspace:*
         version: link:../../locales
+      '@qin/plugins':
+        specifier: workspace:*
+        version: link:../plugins
       '@qin/types':
         specifier: workspace:*
         version: link:../../types
