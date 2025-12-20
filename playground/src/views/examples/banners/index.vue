@@ -187,7 +187,7 @@ const PresetBanners = {
           <CardBanner
             image="https://unpkg.com/arco-static@0.0.6/source/3d-icon4.webp"
             title="版本更新提醒"
-            description="Art Design Pro v2.1.0 已发布，包含性能优化和新功能。"
+            description="Qin Admin v1.0.0 已发布，包含性能优化和新功能。"
             :button="{
               show: true,
               text: '立即更新',

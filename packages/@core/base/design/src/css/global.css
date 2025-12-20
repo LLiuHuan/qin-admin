@@ -253,7 +253,7 @@ html.simple-mode {
 
 html.simple-mode.dark {
   section {
-    @apply bg-transparent;
+    /* @apply bg-transparent; */
   }
 }
 
