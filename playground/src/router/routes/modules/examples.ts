@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-21 01:21:50
- * @LastEditTime: 2025-08-13 15:40:07
+ * @LastEditTime: 2025-12-26 15:02:50
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -278,6 +278,15 @@ const routes: RouteRecordRaw[] = [
         meta: {
           icon: 'ion:ellipsis-horizontal',
           title: $t('examples.ellipsis.title'),
+        },
+      },
+      {
+        name: 'WangEditorExample',
+        path: '/examples/editor',
+        component: () => import('#/views/examples/editor/index.vue'),
+        meta: {
+          icon: 'ri:t-box-line',
+          title: $t('examples.richText.title'),
         },
       },
       {

@@ -9,6 +9,9 @@
   "ellipsis": {
     "title": "EllipsisText"
   },
+  "richText": {
+    "title": "Rich Text"
+  },
   "banner": {
     "title": "Banner"
   },

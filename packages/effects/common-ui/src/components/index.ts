@@ -11,6 +11,7 @@ export * from './captcha';
 export * from './cards';
 export * from './col-page';
 export * from './count-to';
+export * from './editor';
 export * from './ellipsis-text';
 export * from './icon-picker';
 export * from './json-viewer';

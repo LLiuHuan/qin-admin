@@ -9,6 +9,9 @@
   "ellipsis": {
     "title": "文本省略"
   },
+  "richText": {
+    "title": "富文本"
+  },
   "resize": {
     "title": "拖动调整"
   },

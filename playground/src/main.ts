@@ -11,6 +11,8 @@ import { unmountGlobalLoading } from '@qin/utils';
 import { bootstrap } from './bootstrap';
 import { overridesPreferences } from './preferences';
 
+import 'uno.css';
+
 /**
  * 应用初始化完成之后再进行页面加载渲染
  */
