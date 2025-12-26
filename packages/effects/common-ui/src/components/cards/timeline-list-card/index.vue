@@ -6,7 +6,7 @@ import { computed } from 'vue';
 
 import { QinScrollbar } from '@qin-core/shadcn-ui';
 
-defineOptions({ name: 'ArtTimelineListCard' });
+defineOptions({ name: 'TimelineListCard' });
 
 // Props 定义和验证
 const props = withDefaults(defineProps<TimelineProps>(), {

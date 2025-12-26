@@ -69,12 +69,6 @@ const logoStyle = computed((): CSSProperties => {
 
 <template>
   <header
-    :class="[
-      theme,
-      {
-        '!bg-[hsl(var(--header))]': theme === 'dark',
-      },
-    ]"
     :style="style"
     class="border-border bg-header top-0 flex w-full flex-[0_0_auto] items-center border-b pl-2 transition-[margin-top] duration-200"
   >

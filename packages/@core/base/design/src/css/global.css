@@ -239,10 +239,23 @@ html.simple-mode {
     @apply shadow-none;
   }
   header {
+    --background-deep: var(--qin-gray-100);
+    --foreground: var(--qin-gray-600);
     @apply bg-background-deep border-transparent;
   }
   section {
+    --background-deep: var(--qin-gray-100);
+    --accent-foreground: var(--qin-gray-600);
+
     @apply bg-background-deep border-transparent;
+
+    .draggable:hover {
+      --accent-foreground: var(--primary);
+    }
+  }
+
+  main {
+    --background-deep: var(--qin-gray-100);
   }
 
   .bg-card {
@@ -252,8 +265,14 @@ html.simple-mode {
 
 
 html.simple-mode.dark {
+  header {
+    --background-deep: var(--qin-gray-100);
+    --foreground: var(--qin-gray-800);
+  }
   section {
-    @apply bg-transparent;
+    --background-deep: var(--qin-gray-100);
+    --accent-foreground: var(--qin-gray-800);
+    --accent: 240 4% 9%;
   }
 }
 

@@ -8,7 +8,7 @@ import { useEcharts } from '@qin/plugins/echarts';
 
 import { getCssVar } from '@qin-core/shared/color';
 
-defineOptions({ name: 'ArtDonutChartCard' });
+defineOptions({ name: 'DonutChartCard' });
 
 const props = withDefaults(defineProps<DonutProps>(), {
   height: 9,
@@ -55,13 +55,11 @@ useEcharts(useTemplateRef('chartRef'), () => {
     <div class="box-border flex h-full p-5 pr-2">
       <div class="flex w-full items-start gap-5">
         <div class="flex-b h-full flex-1 flex-col">
-          <p class="m-0 text-xl font-medium leading-tight text-gray-900">
+          <p class="m-0 text-xl font-medium leading-tight">
             {{ title }}
           </p>
           <div>
-            <p
-              class="m-0 mt-2.5 text-xl font-medium leading-tight text-gray-900"
-            >
+            <p class="m-0 mt-2.5 text-xl font-medium leading-tight">
               {{ formatNumber(value) }}
             </p>
             <div

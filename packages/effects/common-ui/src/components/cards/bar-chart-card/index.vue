@@ -55,7 +55,7 @@ useEcharts(useTemplateRef('chartRef'), () => {
   >
     <div class="flex-b mb-5 px-5 pt-5">
       <div>
-        <p class="m-0 text-2xl font-medium leading-tight text-gray-900">
+        <p class="m-0 text-2xl font-medium leading-tight">
           {{ value }}
         </p>
         <p class="mt-1 text-sm text-gray-600">{{ label }}</p>

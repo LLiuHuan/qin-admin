@@ -6,18 +6,18 @@
     arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
 
-  /* Default background color of <body />...etc */
+  /* Body默认背景色 */
   --background: 0 0% 100%;
 
   /* 主体区域背景色 */
   --background-deep: 216 20.11% 95.47%;
   --foreground: 210 6% 21%;
 
-  /* Background color for <Card /> */
+  /* Card的背景色 */
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
 
-  /* Background color for popovers such as <DropdownMenu />, <HoverCard />, <Popover /> */
+  /* 背景颜色的弹出窗口，如<DropdownMenu />, <HoverCard />, <Popover /> */
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
 
@@ -28,6 +28,9 @@
 
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
+
+  --border: oklab(92.81700000000001% -0.0039 -0.00974);
+  --border-dashed: oklab(90.352% -0.00037 -0.01439);
 
   /* 主题颜色 */
 
