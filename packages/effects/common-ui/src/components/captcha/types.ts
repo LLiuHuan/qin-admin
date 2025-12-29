@@ -209,3 +209,26 @@ export interface SliderRotateVerifyPassingData {
   moveDistance: number;
   moveX: number;
 }
+
+export interface ImageCaptchaProps {
+  /**
+   * @description 验证码
+   */
+  modelValue: [number | string, string];
+  /**
+   * @description 验证码图片
+   */
+  captchaImage: string;
+
+  /**
+   * @description 验证码图片高度
+   * @default '40px'
+   */
+  height?: number | string;
+
+  /**
+   * @description 验证码图片宽度
+   * @default '100px'
+   */
+  width?: number | string;
+}

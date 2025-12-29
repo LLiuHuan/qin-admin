@@ -76,7 +76,7 @@ function toggleTheme(event: MouseEvent) {
 
 <template>
   <div
-    class="login-left-view w-65vh h-100vh p-15px relative box-border min-h-full overflow-hidden"
+    class="login-left-view h-100vh p-15px relative box-border min-h-full flex-1 overflow-hidden"
     :class="`panel-enter-${panelEnter}`"
   >
     <div

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-21 01:21:50
- * @LastEditTime: 2025-12-26 15:02:50
+ * @LastEditTime: 2025-12-30 00:43:22
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -227,6 +227,14 @@ const routes: RouteRecordRaw[] = [
               import('#/views/examples/captcha/point-selection.vue'),
             meta: {
               title: $t('examples.captcha.pointSelection'),
+            },
+          },
+          {
+            name: 'CaptchaImageExample',
+            path: '/examples/captcha/image',
+            component: () => import('#/views/examples/captcha/image.vue'),
+            meta: {
+              title: $t('examples.captcha.imageCaptcha'),
             },
           },
         ],
