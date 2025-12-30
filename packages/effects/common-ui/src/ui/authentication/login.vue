@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Recordable } from '@qin/types';
 
-import type { QinFormSchema } from '@qin-core/form-ui';
+import type { QinFormProps, QinFormSchema } from '@qin-core/form-ui';
 
 import type { AuthenticationProps } from './types';
 
@@ -16,6 +16,7 @@ import ThirdPartyLogin from './third-party-login.vue';
 
 interface Props extends AuthenticationProps {
   formSchema?: QinFormSchema[];
+  formOptions?: QinFormProps;
 }
 
 defineOptions({
@@ -25,6 +26,7 @@ defineOptions({
 const props = withDefaults(defineProps<Props>(), {
   codeLoginPath: '/auth/code-login',
   forgetPasswordPath: '/auth/forget-password',
+  formOptions: () => ({}),
   formSchema: () => [],
   loading: false,
   qrCodeLoginPath: '/auth/qrcode-login',
@@ -46,6 +48,7 @@ const emit = defineEmits<{
 
 const [Form, formApi] = useQinForm(
   reactive({
+    ...props.formOptions,
     commonConfig: {
       hideLabel: true,
       hideRequiredMark: true,

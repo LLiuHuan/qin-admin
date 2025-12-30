@@ -1,24 +1,26 @@
 <!--
  * @Description: 
  * @Author: LLiuHuan
- * @Date: 2025-05-27 15:35:10
- * @LastEditTime: 2025-12-30 00:44:14
+ * @Date: 2025-12-29 16:13:53
+ * @LastEditTime: 2025-12-30 00:42:21
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
 import type { QinFormSchema } from '@qin/common-ui';
 import type { BasicOption } from '@qin/types';
 
-import { computed, markRaw } from 'vue';
+import { computed, markRaw, ref, useTemplateRef } from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@qin/common-ui';
+import { AuthenticationLogin, ImageCaptcha, Page, z } from '@qin/common-ui';
 import { $t } from '@qin/locales';
 
-import { useAuthStore } from '#/store';
+import { Card, Message } from '@arco-design/web-vue';
 
-defineOptions({ name: 'Login' });
+import CaptchaAPI from '#/api/examples/captcha';
 
-const authStore = useAuthStore();
+const authFormRef = useTemplateRef('authFormRef');
+
+const loading = ref(false);
 
 const MOCK_USER_OPTIONS: BasicOption[] = [
   {
@@ -34,6 +36,8 @@ const MOCK_USER_OPTIONS: BasicOption[] = [
     value: 'user',
   },
 ];
+
+const captcha = ref('');
 
 const formSchema = computed((): QinFormSchema[] => {
   return [
@@ -86,20 +90,57 @@ const formSchema = computed((): QinFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
     },
     {
-      component: markRaw(SliderCaptcha),
-      fieldName: 'captcha',
-      rules: z.boolean().refine((value) => value, {
-        message: $t('authentication.verifyRequiredTip'),
-      }),
+      component: markRaw(ImageCaptcha),
+      defaultValue: ['', ''],
+      componentProps: {
+        captchaImage: captcha.value,
+        onResetCaptcha: resetCaptcha,
+      },
+      fieldName: 'captchaImg',
+      // rules: z.number(),
     },
   ];
 });
+
+/**
+ * 异步处理登录操作
+ * Asynchronously handle the login process
+ * @param params 登录表单数据
+ */
+async function authLogin(params: any, onSuccess?: () => Promise<void> | void) {
+  Message.success(JSON.stringify(params));
+  await resetCaptcha();
+  onSuccess?.();
+}
+
+const resetCaptcha = async () => {
+  // 随机0-4之间的数字
+  const res = await CaptchaAPI.getCaptcha(Math.floor(Math.random() * 5));
+  // console.log(res);
+
+  const formApi = authFormRef.value?.getFormApi();
+
+  // captchaId.value = res?.id;
+  const values = await formApi?.getValues();
+  captcha.value = res?.captcha;
+  formApi?.setFieldValue('captchaImg', [values?.captcha, res?.id]);
+};
+
+resetCaptcha();
 </script>
 
 <template>
-  <AuthenticationLogin
-    :form-schema="formSchema"
-    :loading="authStore.loginLoading"
-    @submit="authStore.authLogin"
-  />
+  <Page description="用于后端简单的图片校验场景" title="图片验证">
+    <Card class="mb-5" title="基础示例">
+      <AuthenticationLogin
+        ref="authFormRef"
+        :form-options="{
+          fieldMappingTime: [['captchaImg', ['captcha', 'captchaId'], null]],
+        }"
+        :form-schema="formSchema"
+        :loading="loading"
+        @submit="authLogin"
+      />
+    </Card>
+  </Page>
 </template>

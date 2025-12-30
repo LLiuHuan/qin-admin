@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 12:13:55
- * @LastEditTime: 2025-05-27 12:15:46
+ * @LastEditTime: 2025-12-26 14:41:06
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -57,7 +57,6 @@ if (!preferences.tabbar.persist) {
 <template>
   <TabsView
     :active="currentActive"
-    :class="theme"
     :context-menus="createContextMenus"
     :draggable="preferences.tabbar.draggable"
     :show-icon="showIcon"

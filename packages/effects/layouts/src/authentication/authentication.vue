@@ -58,7 +58,7 @@ const logoSrc = computed(() => {
 <template>
   <div
     :class="[isDark ? 'dark' : '']"
-    class="flex min-h-full flex-1 select-none overflow-x-hidden"
+    class="flex min-h-full w-full flex-1 select-none overflow-x-hidden"
   >
     <template v-if="toolbar">
       <slot name="toolbar" class="z-100">

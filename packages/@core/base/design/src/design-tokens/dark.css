@@ -2,14 +2,14 @@
 .dark[data-theme='custom'],
 .dark[data-theme='default'] {
   /* Default background color of <body />...etc */
-  --background: 222.34deg 10.43% 12.27%;
+  --background: 222.34 10.43% 12.27%;
 
   /* 主体区域背景色 */
-  --background-deep: 220deg 13.06% 9%;
+  --background-deep: 220 13.06% 9%;
   --foreground: 0 0% 95%;
 
   /* Background color for <Card /> */
-  --card: 222.34deg 10.43% 12.27%;
+  --card: 222.34 10.43% 12.27%;
 
   /* --card: 222.2 84% 4.9%; */
   --card-foreground: 210 40% 98%;
@@ -30,6 +30,9 @@
 
   --muted: 240 3.7% 15.9%;
   --muted-foreground: 240 5% 64.9%;
+
+  /* --border: oklab(100% 0 -0.00011 / 0.102);
+  --border-dashed: oklab(34.319% 0.00243 -0.01927); */
 
   /* 主题颜色 */
 
