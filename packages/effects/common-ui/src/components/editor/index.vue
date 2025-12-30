@@ -325,7 +325,7 @@ $font-color: rgba(#fff, 0.85);
 
   /* 代码块 */
   .w-e-text-container [data-slate-editor] pre > code {
-    @apply px-1rem py-0.6rem bg-[hsl(var(--qin-gray-50))];
+    @apply px-1rem py-0.6rem bg-[hsl(var(--qin-gray-100))];
 
     border-radius: $box-radius;
   }
