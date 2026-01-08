@@ -40,7 +40,7 @@ jobs:
     steps:
       # 步骤 1：拉取仓库代码
       - name: Checkout code
-        uses: actions/checkout@v5 # 使用官方 checkout 动作拉取代码
+        uses: actions/checkout@v6 # 使用官方 checkout 动作拉取代码
         with:
           fetch-depth: 0 # 拉取完整历史记录（避免部分操作因历史不全失败）
 
