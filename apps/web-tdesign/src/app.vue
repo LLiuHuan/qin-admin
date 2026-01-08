@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Author: LLiuHuan
+ * @Date: 2025-08-03 04:13:19
+ * @LastEditTime: 2025-11-25 16:46:07
+ * @LastEditors: LLiuHuan
+-->
 <script lang="ts" setup>
 import type { GlobalConfigProvider } from 'tdesign-vue-next';
 

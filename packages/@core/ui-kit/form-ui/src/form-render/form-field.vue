@@ -337,7 +337,7 @@ onUnmounted(() => {
                 :is="FieldComponent"
                 ref="fieldComponentRef"
                 :class="{
-                  'border-destructive focus:border-destructive hover:border-destructive/80 focus:shadow-[0_0_0_2px_rgba(255,38,5,0.06)]':
+                  'border-destructive hover:border-destructive/80 focus:border-destructive focus:shadow-[0_0_0_2px_rgba(255,38,5,0.06)]':
                     isInValid,
                 }"
                 :disabled="shouldDisabled"
@@ -379,10 +379,10 @@ onUnmounted(() => {
           <div v-if="suffix" class="ml-1">
             <QinRenderContent :content="suffix" />
           </div>
-          <FormDescription v-if="description" class="ml-1">
-            <QinRenderContent :content="description" />
-          </FormDescription>
         </div>
+        <FormDescription v-if="description" class="ml-1">
+          <QinRenderContent :content="description" />
+        </FormDescription>
 
         <Transition v-if="!compact" name="slide-up">
           <FormMessage class="absolute" />

@@ -47,10 +47,13 @@
     "@visactor/vchart": "catalog:",
     "@vueuse/core": "catalog:",
     "dayjs": "catalog:",
+    "dompurify": "catalog:",
     "jsbarcode": "catalog:",
     "json-bigint": "catalog:",
     "pinia": "catalog:",
+    "unocss": "catalog:",
     "vue": "catalog:",
+    "vue-data-ui": "catalog:",
     "vue-router": "catalog:",
     "xgplayer": "catalog:"
   },

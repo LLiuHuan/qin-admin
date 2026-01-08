@@ -144,23 +144,21 @@ export async function arcoPrompt<T = any>(
 
   const modelValue = ref<T | undefined>(defaultValue);
   const inputComponentRef = ref<null | VNode>(null);
-  const staticContents: Component[] = [];
-
-  staticContents.push(h(QinRenderContent, { content, renderBr: true }));
+  const staticContents: Component[] = [
+    h(QinRenderContent, { content, renderBr: true }),
+  ];
 
   const modelPropName = _modelPropName || 'modelValue';
   const componentProps = { ..._componentProps };
 
   // 每次渲染时都会重新计算的内容函数
   const contentRenderer = () => {
-    const currentProps = { ...componentProps };
-
-    // 设置当前值
-    currentProps[modelPropName] = modelValue.value;
-
-    // 设置更新处理函数
-    currentProps[`onUpdate:${modelPropName}`] = (val: T) => {
-      modelValue.value = val;
+    const currentProps = {
+      ...componentProps,
+      [modelPropName]: modelValue.value, // 设置当前值
+      [`onUpdate:${modelPropName}`]: (val: T) => {
+        modelValue.value = val;
+      }, // 设置更新处理函数
     };
 
     // 创建输入组件

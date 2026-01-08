@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-16 10:24:21
- * @LastEditTime: 2025-08-14 09:45:07
+ * @LastEditTime: 2025-11-24 15:00:08
  * @LastEditors: LLiuHuan
  */
 import type { Linter } from 'eslint';
@@ -42,7 +42,7 @@ export async function node(): Promise<Linter.Config[]> {
           'error',
           {
             ignores: [],
-            // version: '>=20.0.0',
+            version: '>=20.12.0',
           },
         ],
         'n/prefer-global/buffer': ['error', 'never'],

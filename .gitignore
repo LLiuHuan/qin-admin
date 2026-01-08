@@ -27,6 +27,7 @@ package-lock.json
 .env.local
 .env.*.local
 .eslintcache
+pathinfo.json
 
 logs
 *.log

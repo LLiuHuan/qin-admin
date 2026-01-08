@@ -39,6 +39,7 @@ import {
   ColorMode,
   Content,
   Copyright,
+  FontSize,
   Footer,
   General,
   GlobalShortcutKeys,
@@ -61,6 +62,7 @@ const appDynamicTitle = defineModel<boolean>('appDynamicTitle');
 const appLayout = defineModel<LayoutType>('appLayout');
 const appColorGrayMode = defineModel<boolean>('appColorGrayMode');
 const appColorWeakMode = defineModel<boolean>('appColorWeakMode');
+const appColorSimpleMode = defineModel<boolean>('appColorSimpleMode');
 const appContentCompact = defineModel<ContentCompactType>('appContentCompact');
 const appWatermark = defineModel<boolean>('appWatermark');
 const appWatermarkContent = defineModel<string>('appWatermarkContent');
@@ -81,6 +83,7 @@ const themeColorPrimary = defineModel<string>('themeColorPrimary');
 const themeBuiltinType = defineModel<BuiltinThemeType>('themeBuiltinType');
 const themeMode = defineModel<ThemeModeType>('themeMode');
 const themeRadius = defineModel<string>('themeRadius');
+const themeFontSize = defineModel<number>('themeFontSize');
 const themeSemiDarkSidebar = defineModel<boolean>('themeSemiDarkSidebar');
 const themeSemiDarkHeader = defineModel<boolean>('themeSemiDarkHeader');
 
@@ -324,10 +327,14 @@ async function handleReset() {
             <Block :title="$t('preferences.theme.radius')">
               <Radius v-model="themeRadius" />
             </Block>
+            <Block :title="$t('preferences.theme.fontSize')">
+              <FontSize v-model="themeFontSize" />
+            </Block>
             <Block :title="$t('preferences.other')">
               <ColorMode
                 v-model:app-color-gray-mode="appColorGrayMode"
                 v-model:app-color-weak-mode="appColorWeakMode"
+                v-model:app-color-simple-mode="appColorSimpleMode"
               />
             </Block>
           </template>

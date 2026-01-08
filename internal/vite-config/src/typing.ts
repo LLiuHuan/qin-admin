@@ -270,6 +270,11 @@ interface ApplicationPluginOptions extends CommonPluginOptions {
    */
   pwaOptions?: Partial<PwaPluginOptions>;
   /**
+   * 是否开启自动生成目录
+   * @default true
+   */
+  toc?: boolean;
+  /**
    * 是否开启 VXE Table 懒加载
    * @default false
    */

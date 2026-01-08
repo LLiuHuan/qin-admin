@@ -2,13 +2,16 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-28 11:47:26
- * @LastEditTime: 2025-07-24 09:56:00
+ * @LastEditTime: 2025-11-26 09:56:27
  * @LastEditors: LLiuHuan
  */
 import { initPreferences } from '@qin/preferences';
 import { unmountGlobalLoading } from '@qin/utils';
 
+import { bootstrap } from './bootstrap';
 import { overridesPreferences } from './preferences';
+
+import 'uno.css';
 
 /**
  * 应用初始化完成之后再进行页面加载渲染
@@ -29,7 +32,6 @@ async function initApplication() {
 
     // 启动应用并挂载
     // vue应用主要逻辑及视图
-    const { bootstrap } = await import('./bootstrap');
     await bootstrap(namespace);
 
     // 移除并销毁loading

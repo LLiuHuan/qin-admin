@@ -141,13 +141,17 @@ class PreferenceManager {
   private handleUpdates(updates: DeepPartial<Preferences>) {
     const themeUpdates = updates.theme || {};
     const appUpdates = updates.app || {};
-    if (themeUpdates && Object.keys(themeUpdates).length > 0) {
+    if (
+      (themeUpdates && Object.keys(themeUpdates).length > 0) ||
+      Reflect.has(themeUpdates, 'fontSize')
+    ) {
       updateCSSVariables(this.state);
     }
 
     if (
       Reflect.has(appUpdates, 'colorGrayMode') ||
-      Reflect.has(appUpdates, 'colorWeakMode')
+      Reflect.has(appUpdates, 'colorWeakMode') ||
+      Reflect.has(appUpdates, 'colorSimpleMode')
     ) {
       this.updateColorMode(this.state);
     }
@@ -217,16 +221,14 @@ class PreferenceManager {
    */
   private updateColorMode(preference: Preferences) {
     if (preference.app) {
-      const { colorGrayMode, colorWeakMode } = preference.app;
+      const { colorGrayMode, colorWeakMode, colorSimpleMode } = preference.app;
       const dom = document.documentElement;
       const COLOR_WEAK = 'invert-mode';
       const COLOR_GRAY = 'grayscale-mode';
-      colorWeakMode
-        ? dom.classList.add(COLOR_WEAK)
-        : dom.classList.remove(COLOR_WEAK);
-      colorGrayMode
-        ? dom.classList.add(COLOR_GRAY)
-        : dom.classList.remove(COLOR_GRAY);
+      const COLOR_SIMPLE = 'simple-mode';
+      dom.classList.toggle(COLOR_WEAK, colorWeakMode);
+      dom.classList.toggle(COLOR_GRAY, colorGrayMode);
+      dom.classList.toggle(COLOR_SIMPLE, colorSimpleMode);
     }
   }
 }

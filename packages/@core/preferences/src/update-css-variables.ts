@@ -67,6 +67,19 @@ function updateCSSVariables(preferences: Preferences) {
   if (Reflect.has(theme, 'radius')) {
     document.documentElement.style.setProperty('--radius', `${radius}rem`);
   }
+
+  // 更新字体大小
+  if (Reflect.has(theme, 'fontSize')) {
+    const fontSize = theme.fontSize;
+    document.documentElement.style.setProperty(
+      '--font-size-base',
+      `${fontSize}px`,
+    );
+    document.documentElement.style.setProperty(
+      '--menu-font-size',
+      `calc(${fontSize}px * 0.875)`,
+    );
+  }
 }
 
 /**
@@ -80,19 +93,22 @@ function updateMainColorVariables(preference: Preferences) {
   const { colorDestructive, colorPrimary, colorSuccess, colorWarning } =
     preference.theme;
 
-  const colorVariables = generatorColorVariables([
-    { color: colorPrimary, name: 'primary' },
-    { alias: 'warning', color: colorWarning, name: 'yellow' },
-    { alias: 'success', color: colorSuccess, name: 'green' },
-    { alias: 'destructive', color: colorDestructive, name: 'red' },
-  ]);
+  const colorVariables = generatorColorVariables(
+    [
+      { color: colorPrimary, name: 'primary' },
+      { alias: 'warning', color: colorWarning, name: 'yellow' },
+      { alias: 'success', color: colorSuccess, name: 'green' },
+      { alias: 'destructive', color: colorDestructive, name: 'red' },
+    ],
+    preference.theme.mode === 'dark',
+  );
 
   // 要设置的 CSS 变量映射
   const colorMappings = {
-    '--green-500': '--success',
-    '--primary-500': '--primary',
-    '--red-500': '--destructive',
-    '--yellow-500': '--warning',
+    '--green': '--success',
+    '--primary': '--primary',
+    '--red': '--destructive',
+    '--yellow': '--warning',
   };
 
   // 统一处理颜色变量的更新

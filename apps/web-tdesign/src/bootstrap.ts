@@ -12,7 +12,6 @@ import { registerLoadingDirective } from '@qin/common-ui';
 import { preferences } from '@qin/preferences';
 import { initStores } from '@qin/stores';
 import '@qin/styles';
-import 'tdesign-vue-next/es/style/index.css';
 
 import { useTitle } from '@vueuse/core';
 
@@ -22,6 +21,8 @@ import { initComponentAdapter } from './adapter/component';
 import { initSetupQinForm } from './adapter/form';
 import App from './app.vue';
 import { router } from './router';
+
+import 'tdesign-vue-next/es/style/index.css';
 
 async function bootstrap(namespace: string) {
   // 初始化组件适配器

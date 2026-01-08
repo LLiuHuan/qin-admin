@@ -11,8 +11,9 @@
 }
 
 html {
-  @apply text-foreground bg-background font-sans text-[100%];
+  @apply text-foreground bg-background font-sans;
 
+  font-size: var(--font-size-base, 16px);
   font-variation-settings: normal;
   line-height: 1.15;
   text-size-adjust: 100%;
@@ -212,7 +213,7 @@ html:not([data-platform='macOs']) {
 }
 
 .outline-box:not(.outline-box-active):hover::after {
-  @apply outline-primary left-0 top-0 h-full w-full p-1 opacity-100;
+  @apply outline-primary left-0 top-0 wh-full p-1 opacity-100;
 }
 
 .qin-link {
@@ -229,6 +230,50 @@ html.invert-mode {
 
 html.grayscale-mode {
   @apply grayscale;
+}
+
+html.simple-mode {
+  /* --foreground: 219 18% 55; */
+  /* --accent-foreground: 219 18% 55; */
+  aside {
+    @apply shadow-none;
+  }
+  header {
+    --background-deep: var(--qin-gray-100);
+    --foreground: var(--qin-gray-600);
+    @apply bg-background-deep border-transparent;
+  }
+  section {
+    --background-deep: var(--qin-gray-100);
+    --accent-foreground: var(--qin-gray-600);
+
+    @apply bg-background-deep border-transparent;
+
+    .draggable:hover {
+      --accent-foreground: var(--primary);
+    }
+  }
+
+  main {
+    --background-deep: var(--qin-gray-100);
+  }
+
+  .bg-card {
+    /* @apply bg-background-deep border-transparent; */
+  }
+}
+
+
+html.simple-mode.dark {
+  header {
+    --background-deep: var(--qin-gray-100);
+    --foreground: var(--qin-gray-800);
+  }
+  section {
+    --background-deep: var(--qin-gray-100);
+    --accent-foreground: var(--qin-gray-800);
+    --accent: 240 4% 9%;
+  }
 }
 
 button {
@@ -275,4 +320,12 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+
+.qin-card {
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
 }

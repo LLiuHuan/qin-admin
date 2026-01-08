@@ -36,6 +36,10 @@ interface AppPreferences {
    */
   colorGrayMode: boolean;
   /**
+   * @zh_CN 是否开启简单模式
+   */
+  colorSimpleMode: boolean;
+  /**
    * @zh_CN 是否开启色弱模式
    */
   colorWeakMode: boolean;
@@ -413,6 +417,8 @@ interface ThemePreferences {
    * @zh_CN 警告色
    */
   colorWarning: string;
+  /** 字体大小（单位：px） */
+  fontSize: number;
   /**
    * @zh_CN 当前主题
    */

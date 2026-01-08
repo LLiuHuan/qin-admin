@@ -40,6 +40,10 @@ interface Props {
   valueField?: string;
   /** value使用的key */
   valueKey?: string;
+  /** disabled字段名 */
+  disabledField?: string;
+  /** disabled使用的key */
+  disabledKey?: string;
   /** 组件接收options数据的属性名 */
   optionsPropName?: string;
   /** 是否立即调用api */
@@ -81,6 +85,8 @@ const props = withDefaults(defineProps<Props>(), {
   labelKey: 'label',
   valueField: 'value',
   valueKey: 'value',
+  disabledField: 'disabled',
+  disabledKey: 'disabled',
   childrenField: '',
   optionsPropName: 'options',
   resultField: '',
@@ -114,17 +120,25 @@ const isFirstLoaded = ref(false);
 const hasPendingRequest = ref(false);
 
 const getOptions = computed(() => {
-  const { labelField, valueField, childrenField, numberToString } = props;
+  const {
+    labelField,
+    valueField,
+    childrenField,
+    numberToString,
+    disabledField,
+  } = props;
 
   const refOptionsData = unref(refOptions);
 
   function transformData(data: OptionsItem[]): OptionsItem[] {
     return data.map((item) => {
       const value = get(item, valueField);
+      const disabled = get(item, disabledField);
       return {
         ...objectOmit(item, [labelField, valueField, childrenField]),
         [props.labelKey]: get(item, labelField),
         [props.valueKey]: numberToString ? `${value}` : value,
+        [props.disabledKey]: get(item, disabledField),
         ...(childrenField && item[childrenField]
           ? { children: transformData(item[childrenField]) }
           : {}),
@@ -280,9 +294,9 @@ defineExpose({
 <template>
   <component
     :is="component"
-    v-bind="bindProps"
-    :placeholder="$attrs.placeholder"
     ref="componentRef"
+    :placeholder="$attrs.placeholder"
+    v-bind="bindProps"
   >
     <template v-for="item in Object.keys($slots)" #[item]="data">
       <slot :name="item" v-bind="data || {}"></slot>

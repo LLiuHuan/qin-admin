@@ -2,13 +2,15 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 15:35:10
- * @LastEditTime: 2025-05-27 15:37:25
+ * @LastEditTime: 2025-11-24 15:27:34
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
+import { useTemplateRef } from 'vue';
+
 import { useEcharts } from '@qin/plugins/echarts';
 
-const { domRef: chartRef } = useEcharts(() => {
+useEcharts(useTemplateRef('chartRef'), () => {
   return {
     series: [
       {
@@ -24,7 +26,7 @@ const { domRef: chartRef } = useEcharts(() => {
           { name: '定制', value: 310 },
           { name: '技术支持', value: 274 },
           { name: '远程', value: 400 },
-        ].sort((a, b) => {
+        ].toSorted((a, b) => {
           return a.value - b.value;
         }),
         name: '商业占比',

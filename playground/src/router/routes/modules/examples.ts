@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-21 01:21:50
- * @LastEditTime: 2025-08-13 15:40:07
+ * @LastEditTime: 2025-12-30 00:43:22
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -229,7 +229,35 @@ const routes: RouteRecordRaw[] = [
               title: $t('examples.captcha.pointSelection'),
             },
           },
+          {
+            name: 'CaptchaImageExample',
+            path: '/examples/captcha/image',
+            component: () => import('#/views/examples/captcha/image.vue'),
+            meta: {
+              title: $t('examples.captcha.imageCaptcha'),
+            },
+          },
         ],
+      },
+      {
+        name: 'BannerExample',
+        path: '/examples/banners',
+        component: () => import('#/views/examples/banners/index.vue'),
+        meta: {
+          icon: 'ri:rectangle-line',
+          keepAlive: true,
+          title: $t('examples.banner.title'),
+        },
+      },
+      {
+        name: 'CardExample',
+        path: '/examples/cards',
+        component: () => import('#/views/examples/cards/index.vue'),
+        meta: {
+          icon: 'ri:wallet-line',
+          keepAlive: true,
+          title: $t('examples.card.title'),
+        },
       },
       {
         name: 'ModalExample',
@@ -258,6 +286,15 @@ const routes: RouteRecordRaw[] = [
         meta: {
           icon: 'ion:ellipsis-horizontal',
           title: $t('examples.ellipsis.title'),
+        },
+      },
+      {
+        name: 'WangEditorExample',
+        path: '/examples/editor',
+        component: () => import('#/views/examples/editor/index.vue'),
+        meta: {
+          icon: 'ri:t-box-line',
+          title: $t('examples.richText.title'),
         },
       },
       {

@@ -2,10 +2,11 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-28 11:47:26
- * @LastEditTime: 2025-08-01 04:44:38
+ * @LastEditTime: 2025-11-26 09:55:50
  * @LastEditors: LLiuHuan
  */
 import { createApp, watchEffect } from 'vue';
+import 'vue-data-ui/style.css';
 
 import { registerAccessDirective } from '@qin/access';
 import {

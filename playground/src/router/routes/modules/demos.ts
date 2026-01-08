@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-28 12:17:56
- * @LastEditTime: 2025-08-13 16:51:03
+ * @LastEditTime: 2025-11-26 09:52:14
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -642,6 +642,17 @@ const routes: RouteRecordRaw[] = [
                   icon: 'oui:vis-pie',
                   keepAlive: true,
                   title: $t('demos.plugin.charts.vchart.title'),
+                },
+              },
+              {
+                name: 'VueDataUIDemo',
+                path: '/demos/plugin/charts/vue-data-ui',
+                component: () =>
+                  import('#/views/demos/plugin/charts/vue-data-ui/index.vue'),
+                meta: {
+                  icon: 'oui:vis-pie',
+                  keepAlive: true,
+                  title: $t('demos.plugin.charts.vue-data-ui.title'),
                 },
               },
             ],
