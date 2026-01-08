@@ -1964,6 +1964,9 @@ importers:
       '@qin-core/menu-ui':
         specifier: workspace:*
         version: link:../packages/@core/ui-kit/menu-ui
+      '@qin-core/shadcn-ui':
+        specifier: workspace:*
+        version: link:../packages/@core/ui-kit/shadcn-ui
       '@qin/access':
         specifier: workspace:*
         version: link:../packages/effects/access

@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-05-27 10:16:51
+ * @LastEditTime: 2026-01-08 11:17:12
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
@@ -80,6 +80,7 @@ function handleClick(menu: IContextMenuItem) {
     >
       <template v-for="menu in menusView" :key="menu.key">
         <ContextMenuItem
+          v-if="!menu.hidden"
           :class="itemClass"
           :disabled="menu.disabled"
           :inset="menu.inset || !menu.icon"

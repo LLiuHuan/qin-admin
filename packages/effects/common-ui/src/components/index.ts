@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2025-08-18 10:09:29
+ * @LastEditTime: 2026-01-08 11:20:30
  * @LastEditors: LLiuHuan
  */
 export * from './api-component';
@@ -29,6 +29,7 @@ export {
   QinButton,
   QinButtonGroup,
   QinCheckButtonGroup,
+  QinContextMenu,
   QinCountToAnimator,
   QinFullScreen,
   QinInputPassword,

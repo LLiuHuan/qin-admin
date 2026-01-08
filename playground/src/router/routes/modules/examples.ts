@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-21 01:21:50
- * @LastEditTime: 2025-12-30 00:43:22
+ * @LastEditTime: 2026-01-08 11:21:54
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -369,6 +369,15 @@ const routes: RouteRecordRaw[] = [
         meta: {
           icon: 'mdi:check-circle',
           title: $t('examples.button-group.title'),
+        },
+      },
+      {
+        name: 'ContextMenu',
+        path: '/examples/context-menu',
+        component: () => import('#/views/examples/context-menu/index.vue'),
+        meta: {
+          icon: 'mdi:menu',
+          title: $t('examples.function.contentMenu'),
         },
       },
     ],
