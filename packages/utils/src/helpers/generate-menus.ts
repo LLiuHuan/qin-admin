@@ -2,7 +2,7 @@
  * @Description: 生成菜单列表
  * @Author: LLiuHuan
  * @Date: 2025-05-16 16:10:01
- * @LastEditTime: 2025-11-24 15:36:46
+ * @LastEditTime: 2026-01-08 11:11:57
  * @LastEditors: LLiuHuan
  */
 import type { Router, RouteRecordRaw } from 'vue-router';
@@ -13,7 +13,7 @@ import type {
   RouteMeta,
 } from '@qin-core/typings';
 
-import { filterTree, mapTree } from '@qin-core/shared/utils';
+import { filterTree, mapTree, sortTree } from '@qin-core/shared/utils';
 
 /**
  * 根据 routes 生成菜单列表
@@ -88,7 +88,7 @@ function generateMenus(
   });
 
   // 对菜单进行排序，避免order=0时被替换成999的问题
-  menus = menus.toSorted((a, b) => (a?.order ?? 999) - (b?.order ?? 999));
+  menus = sortTree(menus, (a, b) => (a?.order ?? 999) - (b?.order ?? 999));
 
   // 过滤掉隐藏的菜单项
   return filterTree(menus, (menu) => !!menu.show);
