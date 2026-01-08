@@ -1,16 +1,10 @@
 <script lang="ts" setup>
-import type { GenericObject } from 'vee-validate';
-import type { ZodTypeAny } from 'zod';
-
 import type {
   FormCommonConfig,
   FormRenderProps,
   FormSchema,
   FormShape,
 } from '../types';
-
-import { computed } from 'vue';
-
 import { Form } from '@qin-core/shadcn-ui';
 import {
   cn,
@@ -18,11 +12,18 @@ import {
   isString,
   mergeWithArrayOverride,
 } from '@qin-core/shared/utils';
+import type { GenericObject } from 'vee-validate';
+import { computed } from 'vue';
+
+import { ZodType } from 'zod';
 
 import { provideFormRenderProps } from './context';
 import { useExpandable } from './expandable';
 import FormField from './form-field.vue';
-import { getBaseRules, getDefaultValueInZodStack } from './helper';
+import {
+  getBaseRules_byZodSchema,
+  getDefaultValue_byZodSchema,
+} from './helper';
 
 interface Props extends FormRenderProps {}
 
@@ -56,26 +57,31 @@ provideFormRenderProps(props);
 const { isCalculated, keepFormItemIndex, wrapperRef } = useExpandable(props);
 
 const shapes = computed(() => {
-  const resultShapes: FormShape[] = [];
-  props.schema?.forEach((schema) => {
-    const { fieldName } = schema;
-    const rules = schema.rules as ZodTypeAny;
-
-    let typeName = '';
-    if (rules && !isString(rules)) {
-      typeName = rules._def.typeName;
-    }
-
-    const baseRules = getBaseRules(rules) as ZodTypeAny;
-
-    resultShapes.push({
-      default: getDefaultValueInZodStack(rules),
-      fieldName,
-      required: !['ZodNullable', 'ZodOptional'].includes(typeName),
-      rules: baseRules,
-    });
-  });
-  return resultShapes;
+  return (
+    props.schema?.map((schema) => {
+      const { fieldName } = schema;
+      const shape: FormShape = {
+        default: schema.defaultValue,
+        fieldName,
+        required: false,
+        rules: undefined as undefined | ZodType,
+      };
+      if (isString(schema.rules)) {
+        shape.required = ['required', 'selectRequired'].includes(schema.rules);
+      } else if (schema.rules instanceof ZodType) {
+        const zodSchema = schema.rules as ZodType;
+        const defaultValue = getDefaultValue_byZodSchema(zodSchema);
+        if (defaultValue !== undefined) {
+          shape.default = defaultValue;
+        }
+        const isRequired = !zodSchema.safeParse(undefined).success;
+        shape.required = isRequired;
+        const baseZodSchema = getBaseRules_byZodSchema(zodSchema) as ZodType;
+        shape.rules = baseZodSchema;
+      }
+      return shape;
+    }) ?? []
+  );
 });
 
 const formComponent = computed(() => (props.form ? 'form' : Form));

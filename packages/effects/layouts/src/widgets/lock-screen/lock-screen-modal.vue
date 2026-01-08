@@ -1,13 +1,11 @@
 <script lang="ts" setup>
-import type { Recordable } from '@qin/types';
-
-import { computed, reactive } from 'vue';
-
-import { $t } from '@qin/locales';
-
 import { useQinForm, z } from '@qin-core/form-ui';
 import { useQinModal } from '@qin-core/popup-ui';
 import { QinAvatar, QinButton } from '@qin-core/shadcn-ui';
+import { computed, markRaw, reactive } from 'vue';
+
+import { $t } from '@qin/locales';
+import type { Recordable } from '@qin/types';
 
 interface Props {
   avatar?: string;
@@ -43,9 +41,11 @@ const [Form, { resetForm, validate, getValues, getFieldComponentRef }] =
           fieldName: 'lockScreenPassword',
           formFieldProps: { validateOnBlur: false },
           label: $t('authentication.password'),
-          rules: z
-            .string()
-            .min(1, { message: $t('ui.widgets.lockScreen.placeholder') }),
+          rules: markRaw(
+            z
+              .string()
+              .min(1, { error: $t('ui.widgets.lockScreen.placeholder') }),
+          ),
         },
       ]),
       showDefaultActions: false,

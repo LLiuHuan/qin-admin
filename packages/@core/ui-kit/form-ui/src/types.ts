@@ -1,12 +1,9 @@
-import type { FieldOptions, FormContext, GenericObject } from 'vee-validate';
-import type { ZodTypeAny } from 'zod';
-
-import type { Component, HtmlHTMLAttributes, Ref } from 'vue';
-
+import type { FormApi } from './form-api';
 import type { QinButtonProps } from '@qin-core/shadcn-ui';
 import type { ClassType, MaybeComputedRef } from '@qin-core/typings';
-
-import type { FormApi } from './form-api';
+import type { FieldOptions, FormContext, GenericObject } from 'vee-validate';
+import type { Component, HtmlHTMLAttributes, Ref } from 'vue';
+import type { ZodType } from 'zod';
 
 export type FormLayout = 'horizontal' | 'inline' | 'vertical';
 
@@ -51,7 +48,7 @@ export interface FormShape {
   fieldName: string;
   /** 是否必填 */
   required?: boolean;
-  rules?: ZodTypeAny;
+  rules?: ZodType;
 }
 
 export type MaybeComponentPropKey =
@@ -72,7 +69,7 @@ export type FormSchemaRuleType =
   | 'selectRequired'
   | null
   | (Record<never, never> & string)
-  | ZodTypeAny;
+  | ZodType;
 
 type FormItemDependenciesCondition<T = boolean | PromiseLike<boolean>> = (
   value: Partial<Record<string, any>>,
@@ -355,9 +352,9 @@ export interface ActionButtonOptions extends QinButtonProps {
 export interface QinFormProps<
   T extends BaseFormComponentType = BaseFormComponentType,
 > extends Omit<
-    FormRenderProps<T>,
-    'componentBindEventMap' | 'componentMap' | 'form'
-  > {
+  FormRenderProps<T>,
+  'componentBindEventMap' | 'componentMap' | 'form'
+> {
   /**
    * 操作按钮是否反转（提交按钮前置）
    */

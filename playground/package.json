@@ -26,6 +26,7 @@
     "#/*": "./src/*"
   },
   "dependencies": {
+    "@alova/adapter-axios": "catalog:",
     "@arco-design/web-vue": "catalog:",
     "@arco-plugins/vite-vue": "catalog:",
     "@qin-core/menu-ui": "workspace:*",

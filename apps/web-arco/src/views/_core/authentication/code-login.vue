@@ -2,17 +2,16 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 15:35:10
- * @LastEditTime: 2025-08-18 10:16:57
+ * @LastEditTime: 2026-01-08 18:34:59
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
+import { computed, markRaw, ref } from 'vue';
+
 import type { QinFormSchema } from '@qin/common-ui';
-import type { Recordable } from '@qin/types';
-
-import { computed, ref } from 'vue';
-
 import { AuthenticationCodeLogin, z } from '@qin/common-ui';
 import { $t } from '@qin/locales';
+import type { Recordable } from '@qin/types';
 
 defineOptions({ name: 'CodeLogin' });
 
@@ -28,12 +27,14 @@ const formSchema = computed((): QinFormSchema[] => {
       },
       fieldName: 'phoneNumber',
       label: $t('authentication.mobile'),
-      rules: z
-        .string()
-        .min(1, { message: $t('authentication.mobileTip') })
-        .refine((v) => /^\d{11}$/.test(v), {
-          message: $t('authentication.mobileErrortip'),
-        }),
+      rules: markRaw(
+        z
+          .string()
+          .min(1, { error: $t('authentication.mobileTip') })
+          .refine((v) => /^\d{11}$/.test(v), {
+            error: $t('authentication.mobileErrortip'),
+          }),
+      ),
     },
     {
       component: 'QinPinInput',
@@ -50,9 +51,11 @@ const formSchema = computed((): QinFormSchema[] => {
       },
       fieldName: 'code',
       label: $t('authentication.code'),
-      rules: z.string().length(CODE_LENGTH, {
-        message: $t('authentication.codeTip', [CODE_LENGTH]),
-      }),
+      rules: markRaw(
+        z.string().length(CODE_LENGTH, {
+          error: $t('authentication.codeTip', [CODE_LENGTH]),
+        }),
+      ),
     },
   ];
 });

@@ -2,12 +2,12 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-08-01 04:06:37
- * @LastEditTime: 2025-08-01 04:30:01
+ * @LastEditTime: 2026-01-08 16:34:31
  * @LastEditors: LLiuHuan
  */
 import type { RequestResponse } from '@qin/request';
 
-import { requestClient } from '../request';
+import { client } from '../request';
 
 const DownloadAPI = {
   /**
@@ -15,7 +15,7 @@ const DownloadAPI = {
    * @returns Blob
    */
   file1() {
-    return requestClient.download<Blob>(
+    return client.get<Blob>(
       `https://unpkg.com/arco-static@0.0.3/source/logo.png`,
     );
   },
@@ -24,7 +24,7 @@ const DownloadAPI = {
    * @returns RequestResponse<Blob>
    */
   file2() {
-    return requestClient.download<RequestResponse<Blob>>(
+    return client.get<RequestResponse<Blob>>(
       `https://unpkg.com/arco-static@0.0.3/source/logo.png`,
       {
         responseReturn: 'raw',
