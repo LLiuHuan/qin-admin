@@ -81,8 +81,37 @@ export function getLightColor(
 
   const tc = new TinyColor(color);
   const { r, g, b } = tc.toRgb();
+  const lightenValue = (v: number) => {
+    return Math.floor((255 - v) * level + v);
+  };
+  const convertToHslCssVar = (color: string): string => {
+    const { a, h, l, s } = new TinyColor(color).toHsl();
+    const hsl = `${Math.round(h)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+    return a < 1 ? `${hsl} / ${a}` : hsl;
+  };
 
-  const lightenValue = (v: number) => Math.floor((255 - v) * level + v);
+  console.log(
+    color,
+    r,
+    g,
+    b,
+    lightenValue(r),
+    lightenValue(g),
+    lightenValue(b),
+    new TinyColor({
+      r: lightenValue(r),
+      g: lightenValue(g),
+      b: lightenValue(b),
+    }).toHexString(),
+    convertToHslCssVar(color),
+    convertToHslCssVar(
+      new TinyColor({
+        r: lightenValue(r),
+        g: lightenValue(g),
+        b: lightenValue(b),
+      }).toHexString(),
+    ),
+  );
 
   return new TinyColor({
     r: lightenValue(r),
@@ -107,6 +136,34 @@ export function getDarkColor(color: string, level: number): string {
 
   const lightenValue = (v: number) => Math.floor(v * (1 - level));
 
+  const convertToHslCssVar = (color: string): string => {
+    const { a, h, l, s } = new TinyColor(color).toHsl();
+    const hsl = `${Math.round(h)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+    return a < 1 ? `${hsl} / ${a}` : hsl;
+  };
+
+  console.log(
+    color,
+    r,
+    g,
+    b,
+    lightenValue(r),
+    lightenValue(g),
+    lightenValue(b),
+    new TinyColor({
+      r: lightenValue(r),
+      g: lightenValue(g),
+      b: lightenValue(b),
+    }).toHexString(),
+    convertToHslCssVar(color),
+    convertToHslCssVar(
+      new TinyColor({
+        r: lightenValue(r),
+        g: lightenValue(g),
+        b: lightenValue(b),
+      }).toHexString(),
+    ),
+  );
   return new TinyColor({
     r: lightenValue(r),
     g: lightenValue(g),
@@ -122,3 +179,38 @@ export function getDarkColor(color: string, level: number): string {
 export function getTinyColor(color: string) {
   return new TinyColor(color);
 }
+
+export function tint(color: string, level: number) {
+  if (!isValidColor(color)) {
+    throw new Error('Invalid hex color format');
+  }
+
+  const tc = new TinyColor(color);
+  const { r, g, b } = tc.toRgb();
+  const tint = (c: number) => Math.round(c + (255 - c) * level);
+  return new TinyColor({
+    r: tint(r),
+    g: tint(g),
+    b: tint(b),
+  }).toHexString();
+}
+
+export function shade(color: string, level: number) {
+  if (!isValidColor(color)) {
+    throw new Error('Invalid hex color format');
+  }
+
+  const tc = new TinyColor(color);
+  const { r, g, b } = tc.toRgb();
+  const shade = (c: number) => Math.round(c * level);
+  return new TinyColor({
+    r: shade(r),
+    g: shade(g),
+    b: shade(b),
+  }).toHexString();
+}
+
+export const withTint = (level: number) => (color: string) =>
+  tint(color, level);
+export const withShade = (level: number) => (color: string) =>
+  shade(color, level);

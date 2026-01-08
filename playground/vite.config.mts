@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-08 09:38:40
- * @LastEditTime: 2025-08-18 10:18:26
+ * @LastEditTime: 2026-01-05 18:15:11
  * @LastEditors: LLiuHuan
  */
 import { defineConfig } from '@qin/vite-config';
@@ -17,9 +17,9 @@ export default defineConfig(async () => {
         proxy: {
           '/api': {
             changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/api/, ''),
+            // rewrite: (path) => path.replace(/^\/api/, ''),
             // mock代理目标地址
-            target: 'https://m1.apifoxmock.com/m1/3402401-1018037-default',
+            target: 'http://localhost:8989',
             ws: true,
           },
         },

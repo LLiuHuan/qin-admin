@@ -75,6 +75,7 @@ catalog:
   '@vueuse/motion': ^3.0.3
   '@wangeditor/editor': '^5.1.23'
   '@wangeditor/editor-for-vue': 'next'
+  alova: ^3.4.1
   ant-design-vue: ^4.2.6
   archiver: ^7.0.1
   autoprefixer: ^10.4.22
@@ -100,7 +101,7 @@ catalog:
   dompurify: ^3.3.1
   dotenv: ^16.6.1
   echarts: ^6.0.0
-  element-plus: ^2.10.7
+  element-plus: ^2.13.0
   es-toolkit: ^1.41.0
   eslint: ^9.39.1
   eslint-config-turbo: ^2.6.1
@@ -190,7 +191,7 @@ catalog:
   unocss: ^66.5.7
   unocss-preset-animations: ^1.2.1
   unocss-preset-shadcn: ^0.5.0
-  unplugin-element-plus: ^0.10.0
+  unplugin-element-plus: ^0.11.2
   vee-validate: ^4.15.1
   vite: ^7.2.4
   vite-plugin-compression: ^0.5.1
@@ -204,6 +205,7 @@ catalog:
   vitest: ^3.2.4
   vue: ^3.5.24
   vue-data-ui: ^3.7.11
+  vue-draggable-plus: 0.6.0
   vue-eslint-parser: ^10.2.0
   vue-i18n: ^11.1.10
   vue-json-viewer: ^3.0.4

@@ -29,6 +29,10 @@
     "./motion": {
       "types": "./src/motion/index.ts",
       "default": "./src/motion/index.ts"
+    },
+    "./alova": {
+      "types": "./src/alova/index.ts",
+      "default": "./src/alova/index.ts"
     }
   },
   "dependencies": {
@@ -45,6 +49,7 @@
     "@visactor/vchart-theme": "catalog:",
     "@vueuse/core": "catalog:",
     "@vueuse/motion": "catalog:",
+    "alova": "catalog:",
     "echarts": "catalog:",
     "vue": "catalog:",
     "vxe-pc-ui": "catalog:",

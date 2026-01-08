@@ -2,13 +2,13 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:33:35
- * @LastEditTime: 2025-05-27 11:45:21
+ * @LastEditTime: 2026-01-08 10:09:34
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
 import type { ExtendedFormApi, QinFormProps } from './types';
 
-import { ref, watchEffect } from 'vue';
+import { computed, ref, watchEffect } from 'vue';
 
 import { useForwardPropsEmits } from '@qin-core/composables';
 
@@ -42,6 +42,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 const forward = useForwardPropsEmits(props);
 
+// 过滤掉 collapsed 属性，避免重复绑定
+const filteredForward = computed(() => {
+  const { collapsed: _, ...rest } = forward.value || {};
+  return rest;
+});
+
 const currentCollapsed = ref(false);
 
 const { delegatedSlots, form } = useFormInitial(props);
@@ -66,7 +72,7 @@ watchEffect(() => {
     :component-map="COMPONENT_MAP"
     :form="form"
     :global-common-config="DEFAULT_FORM_COMMON_CONFIG"
-    v-bind="forward"
+    v-bind="filteredForward"
   >
     <template
       v-for="slotName in delegatedSlots"

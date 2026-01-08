@@ -2,10 +2,10 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-15 23:01:48
- * @LastEditTime: 2025-08-12 22:02:59
+ * @LastEditTime: 2026-01-06 11:26:29
  * @LastEditors: LLiuHuan
  */
-import { baseRequestClient, requestClient } from '#/api/request';
+import { baseRequestClient, client, requestClient } from '#/api/request';
 
 const AUTH_BASE_URL = '/auth';
 
@@ -43,6 +43,20 @@ const AuthAPI = {
    */
   async getAccessCodesApi() {
     return requestClient.get<string[]>(`${AUTH_BASE_URL}/codes`);
+  },
+
+  /**
+   * 获取用户权限码
+   */
+  async getAccessCodesApi1() {
+    return requestClient.get(`${AUTH_BASE_URL}/codes`);
+  },
+
+  getT1(params: { page: number; size: number }) {
+    console.log(params);
+    return client.get(`/v1/roles/page`, {
+      params,
+    });
   },
 };
 

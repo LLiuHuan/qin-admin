@@ -2,47 +2,61 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-15 23:01:48
- * @LastEditTime: 2025-08-12 22:04:44
+ * @LastEditTime: 2026-01-05 18:14:35
  * @LastEditors: LLiuHuan
  */
-import { baseRequestClient, requestClient } from '#/api/request';
+import { client } from '#/api/request';
 
-const AUTH_BASE_URL = '/auth';
+const AUTH_BASE_URL = '/v1/auth';
 
 const AuthAPI = {
   /**
    * 登录
    */
   async loginApi(data: LoginParams) {
-    return requestClient.post<LoginResult>(`${AUTH_BASE_URL}/login`, data);
+    const method = client.post<LoginResult>(`${AUTH_BASE_URL}/login`, data);
+    method.meta = {
+      authRole: 'login',
+    };
+    return method;
   },
 
   /**
    * 刷新accessToken
    */
   async refreshTokenApi() {
-    return baseRequestClient.post<RefreshTokenResult>(
-      `${AUTH_BASE_URL}/refresh`,
-      {
-        withCredentials: true,
-      },
+    const method = client.post<RefreshTokenResult>(
+      `${AUTH_BASE_URL}/refresh-token`,
     );
+    method.meta = {
+      authRole: 'refreshToken',
+    };
+    return method;
   },
 
   /**
    * 退出登录
    */
   async logoutApi() {
-    return baseRequestClient.post(`${AUTH_BASE_URL}/logout`, {
-      withCredentials: true,
-    });
+    const method = client.post(`${AUTH_BASE_URL}/logout`);
+    method.meta = {
+      authRole: 'logout',
+    };
+    return method;
+  },
+
+  /**
+   * 获取验证码
+   */
+  async getCaptchaApi() {
+    return client.get<CaptchaResult>(`${AUTH_BASE_URL}/captcha`);
   },
 
   /**
    * 获取用户权限码
    */
   async getAccessCodesApi() {
-    return requestClient.get<string[]>(`${AUTH_BASE_URL}/codes`);
+    return client.get<string[]>(`${AUTH_BASE_URL}/codes`);
   },
 };
 
@@ -62,4 +76,9 @@ export interface LoginResult {
 export interface RefreshTokenResult {
   data: string;
   status: number;
+}
+
+export interface CaptchaResult {
+  captchaBase64: string;
+  captchaKey: string;
 }

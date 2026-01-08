@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-12-29 15:02:23
- * @LastEditTime: 2025-12-29 16:54:41
+ * @LastEditTime: 2026-01-05 18:18:31
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -44,6 +44,7 @@ function onChange() {
 
     <img
       :src="captchaImage"
+      class="rounded-md"
       :style="{
         width: typeof width === 'number' ? `${width}px` : width,
         height: typeof height === 'number' ? `${height}px` : height,

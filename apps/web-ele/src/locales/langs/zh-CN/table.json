@@ -1,0 +1,28 @@
+{
+  "form": {
+    "reset": "重置",
+    "submit": "提交"
+  },
+  "searchBar": {
+    "reset": "重置",
+    "search": "查询",
+    "expand": "展开",
+    "collapse": "收起",
+    "searchInputPlaceholder": "请输入",
+    "searchSelectPlaceholder": "请选择"
+  },
+  "selection": "选择",
+  "sizeOptions": {
+    "small": "紧凑",
+    "default": "默认",
+    "large": "宽松"
+  },
+  "column": {
+    "selection": "勾选",
+    "expand": "展开",
+    "index": "序号"
+  },
+  "zebra": "斑马纹",
+  "border": "边框",
+  "headerBackground": "表头背景"
+}
