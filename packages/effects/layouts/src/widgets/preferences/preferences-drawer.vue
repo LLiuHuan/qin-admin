@@ -19,7 +19,7 @@ import { computed, ref } from 'vue';
 import { Copy, Pin, PinOff, RotateCw } from '@qin/icons';
 import { $t, loadLocaleMessages } from '@qin/locales';
 import {
-  clearPreferencesCache,
+  clearCache,
   preferences,
   resetPreferences,
   usePreferences,
@@ -225,7 +225,7 @@ async function handleCopy() {
 
 async function handleClearCache() {
   resetPreferences();
-  clearPreferencesCache();
+  clearCache();
   emit('clearPreferencesAndLogout');
 }
 
