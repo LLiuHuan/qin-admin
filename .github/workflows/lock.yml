@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest # 运行环境：Ubuntu最新版
     steps:
       # 步骤1：使用第三方工具自动锁定长期未活动的线程
-      - uses: dessant/lock-threads@v5 # 引用lock-threads工具（专门用于锁定议题）
+      - uses: dessant/lock-threads@v6 # 引用lock-threads工具（专门用于锁定议题）
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }} # 内置令牌，用于授权操作
           issue-inactive-days: '14' # Issues超过14天未活动则锁定
