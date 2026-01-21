@@ -42,7 +42,7 @@
     "@qin/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "dayjs": "catalog:",
-    "lodash-es": "^4.17.21",
+    "lodash-es": "^4.17.22",
     "pinia": "catalog:",
     "tdesign-vue-next": "catalog:",
     "vue": "catalog:",
