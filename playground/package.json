@@ -29,6 +29,7 @@
     "@arco-design/web-vue": "catalog:",
     "@arco-plugins/vite-vue": "catalog:",
     "@qin-core/menu-ui": "workspace:*",
+    "@qin-core/shadcn-ui": "workspace:*",
     "@qin/access": "workspace:*",
     "@qin/common-ui": "workspace:*",
     "@qin/constants": "workspace:*",

@@ -2,7 +2,7 @@
  * @Description: unocss配置
  * @Author: LLiuHuan
  * @Date: 2025-05-07 16:16:41
- * @LastEditTime: 2025-06-13 17:22:14
+ * @LastEditTime: 2026-01-06 13:41:19
  * @LastEditors: LLiuHuan
  */
 

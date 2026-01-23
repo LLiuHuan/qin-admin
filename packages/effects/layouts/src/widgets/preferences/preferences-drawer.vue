@@ -19,7 +19,7 @@ import { computed, ref } from 'vue';
 import { Copy, Pin, PinOff, RotateCw } from '@qin/icons';
 import { $t, loadLocaleMessages } from '@qin/locales';
 import {
-  clearPreferencesCache,
+  clearCache,
   preferences,
   resetPreferences,
   usePreferences,
@@ -225,7 +225,7 @@ async function handleCopy() {
 
 async function handleClearCache() {
   resetPreferences();
-  clearPreferencesCache();
+  clearCache();
   emit('clearPreferencesAndLogout');
 }
 
@@ -255,7 +255,7 @@ async function handleReset() {
           >
             <span
               v-if="diffPreference"
-              class="bg-primary absolute right-0.5 top-0.5 h-2 w-2 rounded"
+              class="bg-primary absolute top-0.5 right-0.5 h-2 w-2 rounded"
             ></span>
             <RotateCw class="size-4" />
           </QinIconButton>
@@ -487,6 +487,6 @@ async function handleReset() {
 :deep(.sticky-tabs-header [role='tablist']) {
   position: sticky;
   top: -12px;
-  z-index: 10;
+  z-index: 9999;
 }
 </style>

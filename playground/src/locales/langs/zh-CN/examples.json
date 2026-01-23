@@ -82,5 +82,8 @@
   },
   "button-group": {
     "title": "按钮组"
+  },
+  "function": {
+    "contentMenu": "上下文菜单"
   }
 }

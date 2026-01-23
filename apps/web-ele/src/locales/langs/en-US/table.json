@@ -1,0 +1,28 @@
+{
+  "form": {
+    "reset": "Reset",
+    "submit": "Submit"
+  },
+  "searchBar": {
+    "reset": "Reset",
+    "search": "Search",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "searchInputPlaceholder": "Please enter",
+    "searchSelectPlaceholder": "Please select"
+  },
+  "selection": "Select",
+  "sizeOptions": {
+    "small": "Compact",
+    "default": "Default",
+    "large": "Loose"
+  },
+  "column": {
+    "selection": "Select",
+    "expand": "Expand",
+    "index": "Index"
+  },
+  "zebra": "Zebra",
+  "border": "Border",
+  "headerBackground": "Header BG"
+}

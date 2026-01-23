@@ -1,3 +1,10 @@
+/*
+ * @Description:
+ * @Author: LLiuHuan
+ * @Date: 2025-12-16 12:18:03
+ * @LastEditTime: 2026-01-08 11:17:32
+ * @LastEditors: LLiuHuan
+ */
 import type { Component } from 'vue';
 
 interface IContextMenuItem {
@@ -10,6 +17,10 @@ interface IContextMenuItem {
    * @param data
    */
   handler?: (data: any) => void;
+  /**
+   * @zh_CN 是否隐藏
+   */
+  hidden?: boolean;
   /**
    * @zh_CN 图标
    */

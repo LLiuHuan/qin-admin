@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Author: LLiuHuan
+ * @Date: 2025-12-16 12:18:03
+ * @LastEditTime: 2026-01-08 11:25:10
+ * @LastEditors: LLiuHuan
+-->
 <script lang="ts" setup>
 import type { DropdownMenuProps } from './interface';
 
@@ -27,7 +34,7 @@ function handleItemClick(value: string) {
     </DropdownMenuTrigger>
     <DropdownMenuContent align="start">
       <DropdownMenuGroup>
-        <template v-for="menu in menus" :key="menu.key">
+        <template v-for="menu in menus" :key="menu.value">
           <DropdownMenuItem
             :class="
               menu.value === modelValue

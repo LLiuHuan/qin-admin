@@ -11,7 +11,7 @@
 }
 
 html {
-  @apply text-foreground bg-background font-sans;
+  @apply text-foreground bg-background font-sans ;
 
   font-size: var(--font-size-base, 16px);
   font-variation-settings: normal;
@@ -29,7 +29,7 @@ html {
 #app,
 body,
 html {
-  @apply size-full;
+  @apply size-full bg-background-deep;
 
   /* scrollbar-gutter: stable; */
 }
@@ -249,6 +249,7 @@ html.simple-mode {
 
     @apply bg-background-deep border-transparent;
 
+    .affix-tab:hover,
     .draggable:hover {
       --accent-foreground: var(--primary);
     }
@@ -258,9 +259,16 @@ html.simple-mode {
     --background-deep: var(--qin-gray-100);
   }
 
+  .qin-layout-content {
+    --background-deep: var(--qin-gray-100);
+    
+    @apply bg-background-deep
+  }
+
   .bg-card {
     /* @apply bg-background-deep border-transparent; */
   }
+
 }
 
 
@@ -328,4 +336,35 @@ video {
   border: 1px solid hsl(var(--border)) !important;
   border-radius: var(--radius) !important;
   box-shadow: none !important;
+}
+
+
+/*滚动条*/
+/*滚动条整体部分,必须要设置*/
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 0 !important;
+}
+
+/*滚动条的轨道*/
+::-webkit-scrollbar-track {
+  background-color: var(--art-gray-200);
+}
+
+/*滚动条的滑块按钮*/
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #cccccc !important;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b0abab !important;
+}
+
+/*滚动条的上下两端的按钮*/
+::-webkit-scrollbar-button {
+  height: 0px;
+  width: 0;
 }

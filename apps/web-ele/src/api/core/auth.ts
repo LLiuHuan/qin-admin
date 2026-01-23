@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-15 23:01:48
- * @LastEditTime: 2025-08-12 22:02:59
+ * @LastEditTime: 2026-01-23 08:38:52
  * @LastEditors: LLiuHuan
  */
 import { baseRequestClient, requestClient } from '#/api/request';
@@ -43,6 +43,13 @@ const AuthAPI = {
    */
   async getAccessCodesApi() {
     return requestClient.get<string[]>(`${AUTH_BASE_URL}/codes`);
+  },
+
+  /**
+   * 获取用户权限码
+   */
+  async getAccessCodesApi1() {
+    return requestClient.get(`${AUTH_BASE_URL}/codes`);
   },
 };
 

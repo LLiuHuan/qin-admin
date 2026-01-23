@@ -7,6 +7,9 @@
   --primary-6: transparent; /* 临时定义，不影响运行时 */
   --color-bg-5: transparent; /* 临时定义，不影响运行时 */
   --color-text-1: transparent; /* 临时定义，不影响运行时 */
+  --qin-gray-600: transparent; /* 临时定义，不影响运行时 */
+  --qin-gray-100: transparent; /* 临时定义，不影响运行时 */
+  --qin-gray-200: transparent; /* 临时定义，不影响运行时 */
 }
 
 .arco-trigger-popup {

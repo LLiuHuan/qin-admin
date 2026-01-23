@@ -45,6 +45,7 @@
     "element-plus": "catalog:",
     "pinia": "catalog:",
     "vue": "catalog:",
+    "vue-draggable-plus": "catalog:",
     "vue-router": "catalog:"
   },
   "devDependencies": {

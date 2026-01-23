@@ -110,7 +110,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
           <div class="relative flex size-full items-center">
             <!-- extra -->
             <div
-              class="absolute right-1.5 top-1/2 z-[3] translate-y-[-50%] overflow-hidden"
+              class="absolute top-1/2 right-1.5 z-[3] translate-y-[-50%] overflow-hidden"
             >
               <!-- close-icon -->
               <X
@@ -120,7 +120,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
               />
               <Pin
                 v-show="tab.affixTab && tabsView.length > 1 && tab.closable"
-                class="hover:bg-accent hover:stroke-accent-foreground group-[.is-active]:text-primary dark:group-[.is-active]:text-accent-foreground mt-[1px] size-3.5 cursor-pointer rounded-full transition-all"
+                class="hover:bg-accent stroke-accent-foreground/80 hover:stroke-accent-foreground group-[.is-active]:text-primary dark:group-[.is-active]:text-accent-foreground mt-[1px] size-3.5 cursor-pointer rounded-full transition-all"
                 @click.stop="() => emit('unpin', tab)"
               />
             </div>
@@ -136,7 +136,7 @@ function onMouseDown(e: MouseEvent, tab: TabConfig) {
                 fallback
               />
 
-              <span class="flex-1 overflow-hidden whitespace-nowrap text-xs">
+              <span class="flex-1 overflow-hidden text-xs whitespace-nowrap">
                 {{ tab.title }}
               </span>
             </div>

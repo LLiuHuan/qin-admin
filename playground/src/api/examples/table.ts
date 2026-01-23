@@ -2,10 +2,11 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-31 22:39:13
- * @LastEditTime: 2025-07-31 22:42:39
+ * @LastEditTime: 2026-01-05 16:53:41
  * @LastEditors: LLiuHuan
  */
-import { requestClient } from '../request';
+
+import { client } from '../request';
 
 const TABLE_BASE_URL = '/table';
 
@@ -19,7 +20,13 @@ export namespace TableParams {
 
 const TableAPI = {
   list(params: TableParams.PageFetchParams) {
-    return requestClient.get(`${TABLE_BASE_URL}/list`, { params });
+    const method = client.get(`${TABLE_BASE_URL}/list`, { params });
+    // const method = client.post<AuthApi.LoginResult>('/auth/login', params);
+    // method.meta = {
+    //   authRole: 'login',
+    // };
+    return method;
+    // return requestClient.get(`${TABLE_BASE_URL}/list`, { params });
   },
 };
 

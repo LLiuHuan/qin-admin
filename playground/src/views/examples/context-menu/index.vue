@@ -1,0 +1,66 @@
+<!--
+ * @Description: 
+ * @Author: LLiuHuan
+ * @Date: 2026-01-08 11:22:13
+ * @LastEditTime: 2026-01-08 11:22:22
+ * @LastEditors: LLiuHuan
+-->
+<script setup lang="ts">
+import { Page } from '@qin/common-ui';
+
+import { QinContextMenu } from '@qin-core/shadcn-ui';
+
+import { Button, Card, Message } from '@arco-design/web-vue';
+
+const needHidden = (role: string) => {
+  return role === 'user';
+};
+
+const contextMenus = () => {
+  return [
+    {
+      text: '刷新',
+      key: 'refresh',
+      handler: (data: any) => {
+        Message.success('刷新成功', data);
+      },
+      hidden: needHidden('admin'),
+    },
+    {
+      text: '关闭当前',
+      key: 'close-current',
+      handler: (data: any) => {
+        Message.success('关闭当前', data);
+      },
+      hidden: needHidden('user'),
+    },
+    {
+      text: '关闭其他',
+      key: 'close-other',
+      handler: (data: any) => {
+        Message.success('关闭其他', data);
+      },
+    },
+    {
+      text: '关闭所有',
+      key: 'close-all',
+      handler: (data: any) => {
+        Message.success('关闭所有', data);
+      },
+    },
+  ];
+};
+</script>
+
+<template>
+  <Page title="Context Menu 上下文菜单">
+    <Card title="基本使用">
+      <div>一共四个菜单（刷新、关闭当前、关闭其他、关闭所有）</div>
+      <br />
+      <br />
+      <QinContextMenu :menus="contextMenus" :modal="true" item-class="pr-6">
+        <Button> 右键点击我打开上下文菜单(有隐藏项) </Button>
+      </QinContextMenu>
+    </Card>
+  </Page>
+</template>

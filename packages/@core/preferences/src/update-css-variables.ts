@@ -93,15 +93,12 @@ function updateMainColorVariables(preference: Preferences) {
   const { colorDestructive, colorPrimary, colorSuccess, colorWarning } =
     preference.theme;
 
-  const colorVariables = generatorColorVariables(
-    [
-      { color: colorPrimary, name: 'primary' },
-      { alias: 'warning', color: colorWarning, name: 'yellow' },
-      { alias: 'success', color: colorSuccess, name: 'green' },
-      { alias: 'destructive', color: colorDestructive, name: 'red' },
-    ],
-    preference.theme.mode === 'dark',
-  );
+  const colorVariables = generatorColorVariables([
+    { color: colorPrimary, name: 'primary' },
+    { alias: 'warning', color: colorWarning, name: 'yellow' },
+    { alias: 'success', color: colorSuccess, name: 'green' },
+    { alias: 'destructive', color: colorDestructive, name: 'red' },
+  ]);
 
   // 要设置的 CSS 变量映射
   const colorMappings = {

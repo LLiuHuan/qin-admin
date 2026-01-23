@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@manypkg/get-packages": "catalog:",
+    "@unocss/postcss": "catalog:",
     "unocss": "catalog:",
     "unocss-preset-animations": "catalog:"
   },
