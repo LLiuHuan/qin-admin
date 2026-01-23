@@ -304,7 +304,7 @@ onUnmounted(() => {
                 :class="{ 'fixed-column': item.fixed }"
               >
                 <div
-                  class="drag-icon h-4.5 flex-cc text-g-500 mr-2"
+                  class="drag-icon flex-cc text-g-500 mr-2 h-4.5"
                   :class="
                     item.fixed ? 'text-g-300 cursor-default' : 'cursor-move'
                   "
@@ -368,6 +368,8 @@ onUnmounted(() => {
 /* @reference '@styles/core/tailwind.css'; */
 
 .button {
-  @apply bg-g-300/55 dark:bg-g-300/40 text-g-700 hover:bg-g-300 ml-2 flex size-8 cursor-pointer items-center justify-center rounded-md md:ml-0 md:mr-2.5;
+  @apply ml-2 flex size-8 cursor-pointer items-center justify-center rounded-md bg-gray-100 text-gray-500 hover:bg-gray-200 md:mr-2.5 md:ml-0 dark:bg-gray-700/40 dark:text-gray-400 dark:hover:bg-gray-800;
+
+  /* background: red; */
 }
 </style>

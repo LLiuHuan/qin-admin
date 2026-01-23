@@ -122,7 +122,7 @@ watch(
 </script>
 
 <template>
-  <div class="flex w-full flex-wrap justify-between">
+  <div class="grid grid-cols-4 gap-6">
     <template v-for="theme in builtinThemePresets" :key="theme.type">
       <div class="flex cursor-pointer flex-col" @click="handleSelect(theme)">
         <div
@@ -134,14 +134,17 @@ watch(
           <template v-if="theme.type !== 'custom'">
             <div
               :style="{ backgroundColor: theme.color }"
-              class="mx-9 my-2 size-5 rounded-md"
+              class="mx-5 my-2 size-5 rounded-md"
             ></div>
           </template>
           <template v-else>
-            <div class="size-full px-9 py-2" @click.stop="selectColor">
+            <div
+              class="flex-center size-full px-5 py-2"
+              @click.stop="selectColor"
+            >
               <div class="flex-center relative size-5 rounded-sm">
                 <UserRoundPen
-                  class="z-1 absolute size-5 opacity-60 group-hover:opacity-100"
+                  class="absolute z-1 size-5 opacity-60 group-hover:opacity-100"
                 />
                 <input
                   ref="colorInput"

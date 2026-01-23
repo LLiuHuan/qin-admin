@@ -171,7 +171,8 @@ const { onAuthRequired, onResponseRefreshToken, waitingList } =
       },
     },
   });
-export const client = new AlovaClient({ baseURL: '/api111' });
+
+export const client = new AlovaClient({ baseURL: apiURL });
 
 client.addResponseSuccessInterceptor(async (response, method) => {
   const { config } = method;

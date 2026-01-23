@@ -144,7 +144,9 @@ class PreferenceManager {
 
     if (
       app &&
-      (Reflect.has(app, 'colorGrayMode') || Reflect.has(app, 'colorWeakMode'))
+      (Reflect.has(app, 'colorGrayMode') ||
+        Reflect.has(app, 'colorWeakMode') ||
+        Reflect.has(app, 'colorSimpleMode'))
     ) {
       this.updateColorMode(this.state);
     }
@@ -220,11 +222,12 @@ class PreferenceManager {
    * @param preference - 偏好设置
    */
   private updateColorMode(preference: Preferences) {
-    const { colorGrayMode, colorWeakMode } = preference.app;
+    const { colorGrayMode, colorWeakMode, colorSimpleMode } = preference.app;
     const dom = document.documentElement;
 
     dom.classList.toggle('invert-mode', colorWeakMode);
     dom.classList.toggle('grayscale-mode', colorGrayMode);
+    dom.classList.toggle('simple-mode', colorSimpleMode);
   }
 }
 

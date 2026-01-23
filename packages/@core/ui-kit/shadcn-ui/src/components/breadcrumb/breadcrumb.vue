@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-08-18 10:12:45
+ * @LastEditTime: 2026-01-23 14:28:13
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -73,7 +73,9 @@ function handleClick(path?: string) {
               href="javascript:void 0"
               @click.stop="handleClick(item.path)"
             >
-              <div class="flex-center">
+              <div
+                class="flex-center hover:text-accent-foreground text-foreground/80"
+              >
                 <QinIcon
                   v-if="showIcon"
                   :class="{ 'size-5': item.isHome }"
