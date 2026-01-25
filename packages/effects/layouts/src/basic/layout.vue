@@ -355,8 +355,6 @@ const headerSlots = computed(() => {
       <QinLogo
         v-if="preferences.logo.enable"
         :fit="preferences.logo.fit"
-        :src="preferences.logo.source"
-        :src-dark="preferences.logo.sourceDark"
         :text="preferences.app.name"
         :theme="theme"
       >
@@ -406,7 +404,7 @@ const headerSlots = computed(() => {
 
       <template v-if="preferencesButtonPosition.fixed">
         <Preferences
-          class="z-100 fixed bottom-20 right-0"
+          class="fixed right-0 bottom-20 z-100"
           @clear-preferences-and-logout="clearPreferencesAndLogout"
         />
       </template>
