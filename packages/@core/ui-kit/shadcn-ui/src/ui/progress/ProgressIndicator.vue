@@ -24,7 +24,7 @@ const forwardedProps = useForwardProps(delegatedProps);
     v-bind="forwardedProps"
     :class="
       cn(
-        'indicator ease-[cubic-bezier(0.65, 0, 0.35, 1)] after-animate-progress after-content-[quoted:123] relative block wh-full overflow-hidden rounded-full bg-green-500 transition-transform duration-[660ms] after:absolute after:inset-0 after:bg-[linear-gradient(-45deg,_rgba(255,255,255,0.2)_25%,_transparent_25%,_transparent_50%,_rgba(255,255,255,0.2)_50%,_rgba(255,255,255,0.2)_75%,_transparent_75%,_transparent)] after:bg-[length:30px_30px]',
+        'indicator ease-[cubic-bezier(0.65, 0, 0.35, 1)] after-animate-progress after-content-[quoted:123] wh-full relative block overflow-hidden rounded-full bg-green-500 transition-transform duration-[660ms] after:absolute after:inset-0 after:bg-[linear-gradient(-45deg,_rgba(255,255,255,0.2)_25%,_transparent_25%,_transparent_50%,_rgba(255,255,255,0.2)_50%,_rgba(255,255,255,0.2)_75%,_transparent_75%,_transparent)] after:bg-[length:30px_30px]',
         props.class,
       )
     "

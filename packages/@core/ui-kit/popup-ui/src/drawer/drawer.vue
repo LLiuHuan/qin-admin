@@ -229,7 +229,7 @@ const getForceMount = computed(() => {
             v-if="closable && closeIconPlacement === 'left'"
             :disabled="submitting"
             as-child
-            class="data-[state=open]:bg-secondary focus:outline-hidden ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 disabled:pointer-events-none"
+            class="data-[state=open]:bg-secondary ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 focus:outline-hidden disabled:pointer-events-none"
           >
             <slot name="close-icon">
               <QinIconButton>
@@ -239,7 +239,7 @@ const getForceMount = computed(() => {
           </SheetClose>
           <Separator
             v-if="closable && closeIconPlacement === 'left'"
-            class="ml-1 mr-2 h-8"
+            class="mr-2 ml-1 h-8"
             decorative
             orientation="vertical"
           />
@@ -270,7 +270,7 @@ const getForceMount = computed(() => {
             v-if="closable && closeIconPlacement === 'right'"
             :disabled="submitting"
             as-child
-            class="data-[state=open]:bg-secondary focus:outline-hidden ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 disabled:pointer-events-none"
+            class="data-[state=open]:bg-secondary ml-[2px] cursor-pointer rounded-full opacity-80 transition-opacity hover:opacity-100 focus:outline-hidden disabled:pointer-events-none"
           >
             <slot name="close-icon">
               <QinIconButton>

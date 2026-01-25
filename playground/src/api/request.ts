@@ -2,7 +2,7 @@
  * @Description: 该文件可自行根据业务逻辑进行调整
  * @Author: LLiuHuan
  * @Date: 2025-12-16 12:18:03
- * @LastEditTime: 2026-01-08 10:58:50
+ * @LastEditTime: 2026-01-25 16:54:47
  * @LastEditors: LLiuHuan
  */
 import type { VueHook } from '@qin/plugins/alova';
@@ -41,7 +41,7 @@ const { onAuthRequired, onResponseRefreshToken, waitingList } =
         : null;
     },
     logout(response, method) {
-      console.log(response, method);
+      console.warn(response, method);
     },
     refreshTokenOnSuccess: {
       // 在请求前触发，将接收到method参数，并返回boolean表示token是否过期
@@ -56,6 +56,7 @@ const { onAuthRequired, onResponseRefreshToken, waitingList } =
       // 当token过期时触发，在此函数中触发刷新token
       handler: async (method) => {
         try {
+          console.warn(method);
           const accessStore = useAccessStore();
           const { data } = await AuthAPI.refreshTokenApi();
           accessStore.setAccessToken(data);

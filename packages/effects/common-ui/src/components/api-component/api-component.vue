@@ -133,7 +133,7 @@ const getOptions = computed(() => {
   function transformData(data: OptionsItem[]): OptionsItem[] {
     return data.map((item) => {
       const value = get(item, valueField);
-      const disabled = get(item, disabledField);
+      // const disabled = get(item, disabledField);
       return {
         ...objectOmit(item, [labelField, valueField, childrenField]),
         [props.labelKey]: get(item, labelField),

@@ -60,7 +60,7 @@ const handleCancel = () => {
       <div class="flex-yc gap-3">
         <QinButton
           v-if="cancelButton?.show"
-          class="pointer border-g-300 inline-block h-9 select-none rounded-md border px-3 text-sm/9 !leading-none"
+          class="pointer border-g-300 inline-block h-9 rounded-md border px-3 text-sm/9 !leading-none select-none"
           :style="{
             backgroundColor: cancelButton?.color,
             color: cancelButton?.textColor,
@@ -71,7 +71,7 @@ const handleCancel = () => {
         </QinButton>
         <QinButton
           v-if="button?.show"
-          class="pointer inline-block h-9 select-none rounded-md px-3 text-sm/9 !leading-none"
+          class="pointer inline-block h-9 rounded-md px-3 text-sm/9 !leading-none select-none"
           :style="{ backgroundColor: button?.color, color: button?.textColor }"
           @click="handleClick"
         >

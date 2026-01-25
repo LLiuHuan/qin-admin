@@ -40,7 +40,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     v-bind="forwarded"
   >
     <CheckboxIndicator
-      class="flex wh-full items-center justify-center text-current"
+      class="wh-full flex items-center justify-center text-current"
     >
       <slot>
         <component :is="indeterminate ? Minus : Check" class="h-4 w-4" />

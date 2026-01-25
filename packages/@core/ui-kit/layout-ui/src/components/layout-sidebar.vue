@@ -268,7 +268,7 @@ function handleMouseleave() {
       },
     ]"
     :style="style"
-    class="fixed left-0 top-0 h-full transition-all duration-150"
+    class="fixed top-0 left-0 h-full transition-all duration-150"
     @mouseenter="handleMouseenter"
     @mouseleave="handleMouseleave"
   >

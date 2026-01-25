@@ -92,7 +92,7 @@ useScrollLock();
     <transition name="slide-left">
       <div v-show="!showUnlockForm" class="size-full">
         <div
-          class="flex-col-center text-foreground/80 hover:text-foreground group fixed left-1/2 top-6 z-[2001] -translate-x-1/2 cursor-pointer text-xl font-semibold"
+          class="flex-col-center text-foreground/80 hover:text-foreground group fixed top-6 left-1/2 z-[2001] -translate-x-1/2 cursor-pointer text-xl font-semibold"
           @click="toggleUnlockForm"
         >
           <LockKeyhole
@@ -100,13 +100,13 @@ useScrollLock();
           />
           <span>{{ $t('ui.widgets.lockScreen.unlock') }}</span>
         </div>
-        <div class="flex wh-full items-center justify-center">
+        <div class="wh-full flex items-center justify-center">
           <div class="flex w-full justify-center gap-4 px-4 sm:gap-6 md:gap-8">
             <div
               class="bg-accent relative flex h-[140px] w-[140px] items-center justify-center rounded-xl text-[36px] sm:h-[160px] sm:w-[160px] sm:text-[42px] md:h-[200px] md:w-[200px] md:text-[72px]"
             >
               <span
-                class="absolute left-3 top-3 text-xs font-semibold sm:text-sm md:text-xl"
+                class="absolute top-3 left-3 text-xs font-semibold sm:text-sm md:text-xl"
               >
                 {{ meridiem }}
               </span>

@@ -7,21 +7,21 @@ import { Button, Card, Col, Row } from '@arco-design/web-vue';
  * 处理横幅点击事件
  */
 const handleBannerClick = () => {
-  console.log('banner clicked');
+  console.warn('banner clicked');
 };
 
 /**
  * 处理确认按钮点击事件
  */
 const handleConfirm = () => {
-  console.log('confirm clicked');
+  console.warn('confirm clicked');
 };
 
 /**
  * 处理取消按钮点击事件
  */
 const handleCancel = () => {
-  console.log('cancel clicked');
+  console.warn('cancel clicked');
 };
 
 /**

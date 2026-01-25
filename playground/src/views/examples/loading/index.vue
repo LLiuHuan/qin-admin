@@ -41,7 +41,7 @@ const loadingV = refAutoReset(false, 3000);
           <Loading
             :spinning="loading"
             text="正在加载..."
-            class="flex wh-full items-center justify-center"
+            class="wh-full flex items-center justify-center"
           >
             <Button type="primary" @click="loading = true">默认动画</Button>
           </Loading>
@@ -49,7 +49,7 @@ const loadingV = refAutoReset(false, 3000);
         <div class="size-40">
           <Loading
             :spinning="loading"
-            class="flex wh-full items-center justify-center"
+            class="wh-full flex items-center justify-center"
           >
             <Button type="primary" @click="loading = true">自定义动画1</Button>
             <template #icon>
@@ -63,7 +63,7 @@ const loadingV = refAutoReset(false, 3000);
         <div class="size-40">
           <Loading
             :spinning="loading"
-            class="flex wh-full items-center justify-center"
+            class="wh-full flex items-center justify-center"
           >
             <Button type="primary" @click="loading = true">自定义动画2</Button>
             <template #icon>

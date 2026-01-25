@@ -55,7 +55,7 @@ useEcharts(useTemplateRef('chartRef'), () => {
   >
     <div class="flex-b mb-5 px-5 pt-5">
       <div>
-        <p class="m-0 text-2xl font-medium leading-tight">
+        <p class="m-0 text-2xl leading-tight font-medium">
           {{ value }}
         </p>
         <p class="mt-1 text-sm text-gray-600">{{ label }}</p>
@@ -69,16 +69,16 @@ useEcharts(useTemplateRef('chartRef'), () => {
       >
         {{ percentage > 0 ? '+' : '' }}{{ percentage }}%
       </div>
-      <div v-if="date" class="absolute bottom-5 right-5 text-xs text-gray-600">
+      <div v-if="date" class="absolute right-5 bottom-5 text-xs text-gray-600">
         {{ date }}
       </div>
     </div>
     <div
       ref="chartRef"
-      class="absolute bottom-0 left-0 right-0 mx-auto"
+      class="absolute right-0 bottom-0 left-0 mx-auto"
       :class="
         isMiniChart
-          ? '!h-15 !w-4/10 !absolute !bottom-auto !left-auto !right-5 !top-5'
+          ? '!absolute !top-5 !right-5 !bottom-auto !left-auto !h-15 !w-4/10'
           : ''
       "
       :style="{ height: isMiniChart ? '60px' : `calc(${height}rem - 5rem)` }"

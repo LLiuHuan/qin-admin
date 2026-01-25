@@ -114,7 +114,8 @@ const shouldShow = (componentName: string) => {
 
 /**
  * 拖拽移动事件处理 - 防止固定列位置改变
- * @param evt move事件对象
+ *
+ * @param event move事件对象
  * @returns 是否允许移动
  */
 const checkColumnMove = (event: any) => {

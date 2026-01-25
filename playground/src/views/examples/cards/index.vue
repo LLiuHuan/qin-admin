@@ -254,7 +254,7 @@ interface ImageCardItem {
  * @param card 卡片数据
  */
 const handleImageCardClick = (card: ImageCardItem) => {
-  console.log('点击卡片:', card);
+  console.warn('点击卡片:', card);
 };
 </script>
 
