@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-15 23:01:48
- * @LastEditTime: 2025-08-12 09:59:54
+ * @LastEditTime: 2026-01-25 16:26:44
  * @LastEditors: LLiuHuan
  */
 import { TinyColor } from '@ctrl/tinycolor';
@@ -60,10 +60,34 @@ function isValidColor(color?: string) {
   return new TinyColor(color).isValid;
 }
 
+/**
+ * 将CSS变量转换为RGBA颜色字符串,可用于echarts动态更改主题颜色
+ *
+ * @param cssVar - CSS自定义属性变量名（例如 '--primary-color'）
+ * @param alpha - 透明度值，默认为1（不透明）
+ * @returns 返回RGBA格式的颜色字符串
+ */
+function cssVarToRgba(cssVar: string, alpha = 1): string {
+  if (typeof document === 'undefined') {
+    console.warn('cssVarToRgba: document is not available in this environment');
+    return `rgba(0, 0, 0, ${alpha})`;
+  }
+  const el = document.documentElement;
+  const hslVal = getComputedStyle(el).getPropertyValue(cssVar).trim();
+  if (!hslVal) {
+    console.warn(`cssVarToRgba: CSS variable "${cssVar}" not found or empty`);
+    return `rgba(0, 0, 0, ${alpha})`;
+  }
+  const color = convertToRgb(`hsl(${hslVal})`);
+  const rgba = new TinyColor(color).setAlpha(alpha).toRgbString();
+  return rgba;
+}
+
 export {
   convertToHsl,
   convertToHslCssVar,
   convertToRgb,
+  cssVarToRgba,
   isValidColor,
   TinyColor,
 };
