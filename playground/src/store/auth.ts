@@ -78,14 +78,21 @@ export const useAuthStore = defineStore('auth', () => {
     };
   }
 
+  const isLoggingOut = ref(false); // 正在 logout 标识, 防止 /logout 死循环.
+
   async function logout(redirect: boolean = true) {
+    if (isLoggingOut.value) return; // 如果已经在 logout 中, 则直接返回.
+    isLoggingOut.value = true; // 设置正在 logout 标识
     try {
       await AuthAPI.logoutApi();
     } catch {
       // 不做任何处理
+    } finally {
+      isLoggingOut.value = false; // 恢复正在 logout 标识
+
+      resetAllStores();
+      accessStore.setLoginExpired(false);
     }
-    resetAllStores();
-    accessStore.setLoginExpired(false);
 
     // 回登录页带上当前路由地址
     await router.replace({
