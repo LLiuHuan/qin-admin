@@ -2,10 +2,10 @@
  * @Description: vite 配置文件
  * @Author: LLiuHuan
  * @Date: 2025-05-07 15:52:54
- * @LastEditTime: 2025-05-07 16:05:56
+ * @LastEditTime: 2026-01-25 16:41:32
  * @LastEditors: LLiuHuan
  */
-import type { DefineConfig } from '../typing';
+import type { DefineConfig, QinViteConfig } from '../typing';
 
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -19,7 +19,7 @@ export * from './library';
 function defineConfig(
   userConfigPromise?: DefineConfig,
   type: 'application' | 'auto' | 'library' = 'auto',
-) {
+): QinViteConfig {
   let projectType = type;
 
   // 根据包是否存在 index.html,自动判断类型
