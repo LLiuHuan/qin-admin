@@ -99,13 +99,13 @@ function toggleTheme(event: MouseEvent) {
       >
         <h1
           v-if="pageTitle"
-          class="mb-12px text-28px font-500 tracking-0.3px text-foreground"
+          class="mb-12px text-28px font-500 tracking-0.3px text-primary"
         >
           {{ pageTitle }}
         </h1>
         <p
           v-if="pageDescription"
-          class="text-15px leading-1.6 text-muted-foreground m-0"
+          class="text-15px leading-1.6 m-0 text-gray-500"
         >
           {{ pageDescription }}
         </p>

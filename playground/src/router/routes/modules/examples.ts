@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-07-21 01:21:50
- * @LastEditTime: 2026-01-08 11:21:54
+ * @LastEditTime: 2026-01-25 16:59:31
  * @LastEditors: LLiuHuan
  */
 import type { RouteRecordRaw } from 'vue-router';
@@ -378,6 +378,15 @@ const routes: RouteRecordRaw[] = [
         meta: {
           icon: 'mdi:menu',
           title: $t('examples.function.contentMenu'),
+        },
+      },
+      {
+        name: 'CropperDemo',
+        path: '/examples/cropper',
+        component: () => import('#/views/examples/cropper/index.vue'),
+        meta: {
+          icon: 'mdi:crop',
+          title: $t('examples.cropper.title'),
         },
       },
     ],
