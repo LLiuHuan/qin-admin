@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 09:39:01
- * @LastEditTime: 2025-07-02 10:54:44
+ * @LastEditTime: 2026-01-23 15:21:20
  * @LastEditors: LLiuHuan
 -->
 <script setup lang="ts">
@@ -25,7 +25,7 @@ const delegatedProps = computed(() => {
 
 <template>
   <DialogTitle
-    :class="cn('text-foreground font-medium', props.class)"
+    :class="cn('text-foreground mr-2 text-xl font-medium', props.class)"
     v-bind="delegatedProps"
   >
     <slot></slot>

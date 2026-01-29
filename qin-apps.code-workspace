@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "name": "@qin/web-antd",
+      "path": "apps/web-antd",
+    },
+    {
+      "name": "@qin/web-arco",
+      "path": "apps/web-arco",
+    },
+    {
+      "name": "@qin/web-ele",
+      "path": "apps/web-ele",
+    },
+    {
+      "name": "@qin/web-naive",
+      "path": "apps/web-naive",
+    },
+    {
+      "name": "@qin/web-tdesign",
+      "path": "apps/web-tdesign",
+    },
+  ],
+}

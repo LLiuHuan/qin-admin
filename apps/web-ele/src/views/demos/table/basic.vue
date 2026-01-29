@@ -2,17 +2,25 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-12-31 13:51:33
- * @LastEditTime: 2026-01-08 11:01:32
+ * @LastEditTime: 2026-01-23 10:44:56
  * @LastEditors: LLiuHuan
 -->
 <!-- 基础表格 -->
 <script setup lang="ts">
 import { Page } from '@qin/common-ui';
+import { IconifyIcon } from '@qin/icons';
 
-import { ElButton, ElCard } from 'element-plus';
+import {
+  ElAvatar,
+  ElButton,
+  ElCard,
+  ElIcon,
+  ElTag,
+  ElTooltip,
+} from 'element-plus';
 
 import { useQinForm } from '#/adapter/form';
-import AuthAPI from '#/api/core/auth';
+import { TableAPI } from '#/api';
 import { QinTable, QinTableHeader } from '#/components';
 import { useTable } from '#/hooks/useTable';
 
@@ -72,7 +80,7 @@ const {
   columns, // 表格列配置
   columnChecks, // 列显示、拖拽配置
 } = useTable({
-  apiFn: AuthAPI.getT1,
+  apiFn: TableAPI.getTableDataApi,
   apiParams: {
     pageNum: 1,
     pageSize: 10,
@@ -89,7 +97,7 @@ const {
   columnsFactory: () => [
     { type: 'selection', width: 50 },
     // { type: 'index', width: 60, label: '序号' }, // 本地序号列
-    { type: 'globalIndex', width: 60, label: '序号' }, // 全局序号列
+    { type: 'globalIndex', width: 100, label: '序号' }, // 全局序号列
     {
       prop: 'name',
       label: '用户信息',
@@ -100,20 +108,19 @@ const {
       // visible: false, // 隐藏列
     },
     {
-      prop: 'code',
+      prop: 'phone',
       label: '手机号',
       useHeaderSlot: true,
       sortable: true,
     },
     {
-      prop: 'createTime',
-      label: '部门',
+      prop: 'gender',
+      label: '性别',
       sortable: true,
     },
     {
-      prop: 'sort',
-      label: '评分',
-      useSlot: true,
+      prop: 'email',
+      label: '邮箱',
       sortable: true,
     },
     {
@@ -159,10 +166,55 @@ const {
           @pagination-size-change="handleSizeChange"
           @pagination-current-change="handleCurrentChange"
         >
+          <!-- 用户信息列 -->
+          <template #name="{ row }">
+            <div class="user-info flex gap-3">
+              <ElAvatar :src="row.avatar" :size="40" />
+              <div class="min-w-0 flex-1">
+                <p
+                  class="m-0 overflow-hidden font-medium text-ellipsis whitespace-nowrap"
+                >
+                  {{ row.name }}
+                </p>
+                <p
+                  class="text-g-700 m-0 mt-1 overflow-hidden text-xs text-ellipsis whitespace-nowrap"
+                >
+                  {{ row.email }}
+                </p>
+              </div>
+            </div>
+          </template>
+
+          <!-- 自定义用户信息表头 -->
+          <template #name-header="{ column }">
+            <div class="flex-c gap-1">
+              <span>{{ column.label }}</span>
+              <ElTooltip content="包含头像、姓名和邮箱" placement="top">
+                <ElIcon>
+                  <IconifyIcon icon="ri:question-fill" />
+                </ElIcon>
+              </ElTooltip>
+            </div>
+          </template>
+          <!-- 状态列 -->
+          <template #status="{ row }">
+            <ElTag :type="row.status ? 'success' : 'info'">
+              {{ row.status ? '启用' : '禁用' }}
+            </ElTag>
+          </template>
           <!-- 操作列 -->
           <template #operation="{ row }">
             <div class="flex">
-              <ElButton size="small"> 编辑 </ElButton>
+              <ElButton
+                size="small"
+                @click="
+                  () => {
+                    console.log(row);
+                  }
+                "
+              >
+                编辑
+              </ElButton>
             </div>
           </template>
         </QinTable>

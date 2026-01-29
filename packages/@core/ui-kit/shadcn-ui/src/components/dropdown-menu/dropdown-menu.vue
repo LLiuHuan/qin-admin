@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 10:14:12
- * @LastEditTime: 2025-08-18 10:11:44
+ * @LastEditTime: 2026-01-23 15:06:38
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
@@ -33,7 +33,7 @@ function handleItemClick(menu: IDropdownMenuItem) {
 }
 </script>
 <template>
-  <DropdownMenu>
+  <DropdownMenu class="qin-dropdown-menu">
     <DropdownMenuTrigger class="flex h-full items-center gap-1">
       <slot></slot>
     </DropdownMenuTrigger>
@@ -42,10 +42,10 @@ function handleItemClick(menu: IDropdownMenuItem) {
         <template v-for="menu in menus" :key="menu.value">
           <DropdownMenuItem
             :disabled="menu.disabled"
-            class="data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground text-foreground/80 mb-1 cursor-pointer"
+            class="data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground text-foreground/80 mb-1 cursor-pointer text-xs"
             @click="handleItemClick(menu)"
           >
-            <component :is="menu.icon" v-if="menu.icon" class="mr-2 size-4" />
+            <component :is="menu.icon" v-if="menu.icon" class="mr-2 !size-3" />
             {{ menu.label }}
           </DropdownMenuItem>
           <DropdownMenuSeparator v-if="menu.separator" class="bg-border" />

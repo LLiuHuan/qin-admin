@@ -293,8 +293,7 @@ defineExpose({
       <template v-if="$slots.default" #default><slot></slot></template>
 
       <template #empty>
-        <div v-if="loading"></div>
-        <ElEmpty v-else :description="emptyText" :image-size="120" />
+        <ElEmpty :description="emptyText" :image-size="120" />
       </template>
     </ElTable>
 

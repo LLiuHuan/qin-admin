@@ -526,12 +526,12 @@ const idMainContent = ELEMENT_ID_MAIN_CONTENT;
 
     <div
       ref="contentRef"
-      class="flex flex-1 flex-col overflow-hidden transition-all duration-300 ease-in"
+      class="qin-layout-content flex flex-1 flex-col overflow-hidden transition-all duration-300 ease-in"
     >
       <div
         :class="[
           {
-            'shadow-[0_16px_24px_hsl(var(--background))]': scrollY > 20,
+            'shadow-[0_6px_14px_hsl(var(--background))]': scrollY > 20,
           },
           SCROLL_FIXED_CLASS,
         ]"
@@ -610,7 +610,7 @@ const idMainContent = ELEMENT_ID_MAIN_CONTENT;
     <div
       v-if="maskVisible"
       :style="maskStyle"
-      class="bg-overlay/40 wh-full fixed left-0 top-0 transition-[background-color] duration-200"
+      class="bg-overlay/40 wh-full fixed top-0 left-0 transition-[background-color] duration-200"
       @click="handleClickMask"
     ></div>
   </div>

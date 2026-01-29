@@ -50,7 +50,7 @@ catalog:
   '@types/lodash.get': ^4.4.9
   '@types/lodash.isequal': ^4.5.8
   '@types/lodash.set': ^4.3.9
-  '@types/node': ^25.0.3
+  '@types/node': ^25.0.9
   '@types/nprogress': ^0.2.3
   '@types/postcss-import': ^14.0.3
   '@types/qrcode': ^1.5.5
@@ -58,8 +58,8 @@ catalog:
   '@types/sortablejs': ^1.15.8
   '@typescript-eslint/eslint-plugin': ^8.39.1
   '@typescript-eslint/parser': ^8.39.1
-  '@unocss/postcss': ^66.5.7
-  '@unocss/preset-wind4': ^66.5.7
+  '@unocss/postcss': ^66.6.0
+  '@unocss/preset-wind4': ^66.6.0
   '@vee-validate/zod': ^4.15.1
   '@visactor/vchart': ^2.0.3
   '@visactor/vchart-theme': ^1.12.2
@@ -153,12 +153,12 @@ catalog:
   postcss-antd-fixes: ^0.2.0
   postcss-html: ^1.8.0
   postcss-import: ^16.1.1
-  postcss-preset-env: ^10.2.4
+  postcss-preset-env: ^11.1.1
   postcss-pxtorem: ^6.1.0
   postcss-scss: ^4.0.9
   prettier: ^3.6.2
   prettier-plugin-tailwindcss: ^0.7.2
-  publint: ^0.3.16
+  publint: ^0.3.12
   qrcode: ^1.5.4
   qs: ^6.14.0
   reka-ui: ^2.7.0
@@ -169,15 +169,15 @@ catalog:
   sass: ^1.90.0
   secure-ls: ^2.0.0
   sortablejs: ^1.15.6
-  stylelint: ^16.26.1
-  stylelint-config-recess-order: ^7.4.0
-  stylelint-config-recommended: ^17.0.0
-  stylelint-config-recommended-scss: ^16.0.2
+  stylelint: ^16.23.1
+  stylelint-config-recess-order: ^5.1.1
+  stylelint-config-recommended: ^18.0.0
+  stylelint-config-recommended-scss: ^17.0.0
   stylelint-config-recommended-vue: ^1.6.1
   stylelint-config-standard: ^39.0.1
   stylelint-order: ^7.0.1
   stylelint-prettier: ^5.0.3
-  stylelint-scss: ^6.14.0
+  stylelint-scss: ^7.0.0
   tailwind-merge: ^3.3.1
   tailwindcss: ^4.1.11
   tailwindcss-animate: ^1.0.7
@@ -187,12 +187,12 @@ catalog:
   turbo: ^2.6.1
   typescript: ^5.9.3
   unbuild: ^3.6.1
-  unocss: ^66.5.7
+  unocss: ^66.6.0
   unocss-preset-animations: ^1.2.1
   unocss-preset-shadcn: ^1.0.1
   unplugin-element-plus: ^0.11.2
   vee-validate: ^4.15.1
-  vite: ^7.2.4
+  vite: ^7.3.1
   vite-plugin-compression: ^0.5.1
   vite-plugin-dts: ^4.5.4
   vite-plugin-html: ^3.2.2
@@ -201,8 +201,8 @@ catalog:
   vite-plugin-vue-devtools: ^8.0.3
   vitepress: ^1.6.4
   vitepress-plugin-group-icons: ^1.6.3
-  vitest: ^4.0.16
-  vue: ^3.5.24
+  vitest: ^4.0.17
+  vue: ^3.5.27
   vue-data-ui: ^3.7.11
   vue-draggable-plus: 0.6.0
   vue-eslint-parser: ^10.2.0
