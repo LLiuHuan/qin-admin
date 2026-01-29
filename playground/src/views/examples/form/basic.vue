@@ -1,19 +1,16 @@
 <script lang="ts" setup>
-import type { FileItem } from '@arco-design/web-vue/es';
-
-import { h, ref, toRaw } from 'vue';
-
-import { Page } from '@qin/common-ui';
-
 import { Button, Card, Message, Spin, Tag } from '@arco-design/web-vue';
-import { useDebounceFn } from '@vueuse/core';
-import dayjs from 'dayjs';
+import type { FileItem } from '@arco-design/web-vue/es';
+import { h, markRaw, ref, toRaw } from 'vue';
 
 import { useQinForm, z } from '#/adapter/form';
 import MenuAPI from '#/api/core/menu';
 import DocButton from '#/components/DocButton/index.vue';
 // import { upload_file } from '#/api/examples/upload';
 import { $t } from '#/locales';
+import { Page } from '@qin/common-ui';
+import { useDebounceFn } from '@vueuse/core';
+import dayjs from 'dayjs';
 
 const keyword = ref('');
 const fetching = ref(false);
@@ -244,9 +241,9 @@ const [BaseForm, baseFormApi] = useQinForm({
           default: () => ['我已阅读并同意'],
         };
       },
-      rules: z
-        .boolean()
-        .refine((v) => v, { message: '为什么不同意？勾上它！' }),
+      rules: markRaw(
+        z.boolean().refine((v) => v, { error: '为什么不同意？勾上它！' }),
+      ),
     },
     {
       component: 'Mention',

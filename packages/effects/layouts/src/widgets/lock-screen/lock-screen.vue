@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-import { computed, reactive, ref } from 'vue';
+import { useScrollLock } from '@qin-core/composables';
+import { useQinForm, z } from '@qin-core/form-ui';
+import { QinAvatar, QinButton } from '@qin-core/shadcn-ui';
+import { computed, markRaw, reactive, ref } from 'vue';
 
 import { LockKeyhole } from '@qin/icons';
 import { $t, useI18n } from '@qin/locales';
 import { storeToRefs, useAccessStore } from '@qin/stores';
-
-import { useScrollLock } from '@qin-core/composables';
-import { useQinForm, z } from '@qin-core/form-ui';
-import { QinAvatar, QinButton } from '@qin-core/shadcn-ui';
-
 import { useDateFormat, useNow } from '@vueuse/core';
 
 interface Props {
@@ -51,7 +49,9 @@ const [Form, { form, validate, getFieldComponentRef }] = useQinForm(
         },
         fieldName: 'password',
         label: $t('authentication.password'),
-        rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
+        rules: markRaw(
+          z.string().min(1, { error: $t('authentication.passwordTip') }),
+        ),
       },
     ]),
     showDefaultActions: false,

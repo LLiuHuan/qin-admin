@@ -1,5 +1,9 @@
-/**
- * 该文件可自行根据业务逻辑进行调整
+/*
+ * @Description: 该文件可自行根据业务逻辑进行调整
+ * @Author: LLiuHuan
+ * @Date: 2025-12-16 12:18:03
+ * @LastEditTime: 2026-01-08 16:28:13
+ * @LastEditors: LLiuHuan
  */
 import type { AxiosResponseHeaders, RequestClientOptions } from '@qin/request';
 
