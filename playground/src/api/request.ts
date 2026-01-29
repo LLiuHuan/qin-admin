@@ -2,7 +2,7 @@
  * @Description: 该文件可自行根据业务逻辑进行调整
  * @Author: LLiuHuan
  * @Date: 2025-12-16 12:18:03
- * @LastEditTime: 2026-01-08 10:58:50
+ * @LastEditTime: 2026-01-08 16:28:13
  * @LastEditors: LLiuHuan
  */
 import type { VueHook } from '@qin/plugins/alova';
@@ -12,6 +12,7 @@ import {
   AlovaClient,
   createServerTokenAuthentication,
 } from '@qin/plugins/alova';
+import { axiosRequestAdapter } from '@alova/adapter-axios';
 import { preferences } from '@qin/preferences';
 import { useAccessStore } from '@qin/stores';
 
@@ -70,7 +71,7 @@ const { onAuthRequired, onResponseRefreshToken, waitingList } =
     },
   });
 export const client = new AlovaClient(
-  { baseURL: apiURL },
+  { baseURL: apiURL, requestAdapter: axiosRequestAdapter() },
   { onAuthRequired, onResponseRefreshToken, waitingList },
 );
 

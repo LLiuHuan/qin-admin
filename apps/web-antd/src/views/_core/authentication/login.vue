@@ -2,19 +2,17 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 09:37:08
- * @LastEditTime: 2025-08-18 10:17:28
+ * @LastEditTime: 2026-01-08 19:13:13
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { QinFormSchema } from '@qin/common-ui';
-import type { BasicOption } from '@qin/types';
-
 import { computed, markRaw } from 'vue';
 
+import { useAuthStore } from '#/store';
+import type { QinFormSchema } from '@qin/common-ui';
 import { AuthenticationLogin, SliderCaptcha, z } from '@qin/common-ui';
 import { $t } from '@qin/locales';
-
-import { useAuthStore } from '#/store';
+import type { BasicOption } from '@qin/types';
 
 defineOptions({ name: 'Login' });
 
@@ -45,11 +43,13 @@ const formSchema = computed((): QinFormSchema[] => {
       },
       fieldName: 'selectAccount',
       label: $t('authentication.selectAccount'),
-      rules: z
-        .string()
-        .min(1, { message: $t('authentication.selectAccount') })
-        .optional()
-        .default('super'),
+      rules: markRaw(
+        z
+          .string()
+          .min(1, { error: $t('authentication.selectAccount') })
+          .default('super')
+          .optional(),
+      ),
     },
     {
       component: 'QinInput',
@@ -74,7 +74,9 @@ const formSchema = computed((): QinFormSchema[] => {
       },
       fieldName: 'username',
       label: $t('authentication.username'),
-      rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
+      rules: markRaw(
+        z.string().min(1, { error: $t('authentication.usernameTip') }),
+      ),
     },
     {
       component: 'QinInputPassword',
@@ -83,14 +85,18 @@ const formSchema = computed((): QinFormSchema[] => {
       },
       fieldName: 'password',
       label: $t('authentication.password'),
-      rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
+      rules: markRaw(
+        z.string().min(1, { error: $t('authentication.passwordTip') }),
+      ),
     },
     {
       component: markRaw(SliderCaptcha),
       fieldName: 'captcha',
-      rules: z.boolean().refine((value) => value, {
-        message: $t('authentication.verifyRequiredTip'),
-      }),
+      rules: markRaw(
+        z.boolean().refine((value) => value, {
+          error: $t('authentication.verifyRequiredTip'),
+        }),
+      ),
     },
   ];
 });

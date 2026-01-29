@@ -6,15 +6,13 @@
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import type { QinFormSchema } from '@qin/common-ui';
-
 import { computed, markRaw, ref, useTemplateRef } from 'vue';
-
-import { AuthenticationLogin, ImageCaptcha, z } from '@qin/common-ui';
-import { $t } from '@qin/locales';
 
 import AuthAPI from '#/api/core/auth';
 import { useAuthStore } from '#/store';
+import type { QinFormSchema } from '@qin/common-ui';
+import { AuthenticationLogin, ImageCaptcha, z } from '@qin/common-ui';
+import { $t } from '@qin/locales';
 
 defineOptions({ name: 'Login' });
 
@@ -45,7 +43,9 @@ const formSchema = computed((): QinFormSchema[] => {
       },
       fieldName: 'username',
       label: $t('authentication.username'),
-      rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
+      rules: markRaw(
+        z.string().min(1, { error: $t('authentication.usernameTip') }),
+      ),
     },
     {
       component: 'QinInputPassword',
@@ -54,7 +54,9 @@ const formSchema = computed((): QinFormSchema[] => {
       },
       fieldName: 'password',
       label: $t('authentication.password'),
-      rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
+      rules: markRaw(
+        z.string().min(1, { error: $t('authentication.passwordTip') }),
+      ),
     },
     {
       component: markRaw(ImageCaptcha),

@@ -1,10 +1,5 @@
 <script lang="ts" setup>
-import type { ZodType } from 'zod';
-
 import type { FormSchema, MaybeComponentProps } from '../types';
-
-import { computed, nextTick, onUnmounted, useTemplateRef, watch } from 'vue';
-
 import { CircleAlert } from '@qin-core/icons';
 import {
   FormControl,
@@ -16,9 +11,12 @@ import {
   QinTooltip,
 } from '@qin-core/shadcn-ui';
 import { cn, isFunction, isObject, isString } from '@qin-core/shared/utils';
+import { computed, nextTick, onUnmounted, useTemplateRef, watch } from 'vue';
+import type { ZodType } from 'zod';
 
-import { toTypedSchema } from '@vee-validate/zod';
+// import { toTypedSchema } from '@vee-validate/zod';
 import { useFieldError, useFormValues } from 'vee-validate';
+import { ZodDefault } from 'zod';
 
 import { injectComponentRefMap } from '../use-form-context';
 import { injectRenderFormProps, useFormContext } from './context';
@@ -104,7 +102,9 @@ const shouldRequired = computed(() => {
     return false;
   }
 
-  if (!currentRules.value) {
+  const zodSchema = currentRules.value;
+
+  if (!zodSchema) {
     return isRequired.value;
   }
 
@@ -112,18 +112,17 @@ const shouldRequired = computed(() => {
     return true;
   }
 
-  if (isString(currentRules.value)) {
-    return ['required', 'selectRequired'].includes(currentRules.value);
+  if (isString(zodSchema)) {
+    return ['required', 'selectRequired'].includes(zodSchema);
   }
 
-  let isOptional = currentRules?.value?.isOptional?.();
+  let isOptional = zodSchema.safeParse(undefined)?.success;
 
   // 如果有设置默认值，则不是必填，需要特殊处理
-  const typeName = currentRules?.value?._def?.typeName;
-  if (typeName === 'ZodDefault') {
-    const innerType = currentRules?.value?._def.innerType;
+  if (zodSchema instanceof ZodDefault) {
+    const innerType = zodSchema._zod.def.innerType as ZodType;
     if (innerType) {
-      isOptional = innerType.isOptional?.();
+      isOptional = innerType.safeParse(undefined)?.success;
     }
   }
 
@@ -151,7 +150,7 @@ const fieldRules = computed(() => {
       rules = unwrappedRules;
     }
   }
-  return toTypedSchema(rules as ZodType);
+  return rules ?? null;
 });
 
 const computedProps = computed(() => {
@@ -269,6 +268,7 @@ function autofocus() {
     fieldComponentRef.value?.focus?.();
   }
 }
+
 const componentRefMap = injectComponentRefMap();
 watch(fieldComponentRef, (componentRef) => {
   componentRefMap?.set(fieldName, componentRef);
