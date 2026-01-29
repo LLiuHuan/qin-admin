@@ -36,7 +36,7 @@ const forwardedProps = useForwardProps(delegatedProps);
     v-bind="forwardedProps"
   >
     <div
-      class="bg-background text-foreground focus-visible:outline-hidden inline-flex wh-full items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+      class="bg-background text-foreground focus-visible:outline-hidden wh-full inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
     >
       <slot></slot>
     </div>

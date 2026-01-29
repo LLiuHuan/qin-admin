@@ -80,7 +80,7 @@ function toggleTheme(event: MouseEvent) {
     :class="`panel-enter-${panelEnter}`"
   >
     <div
-      class="pb-80px wh-full container relative z-10 flex flex-col items-center justify-end"
+      class="pb-80px wh-full relative z-10 container flex flex-col items-center justify-end"
     >
       <div class="left-img w-35% mb-3vh">
         <template v-if="sloganImage">
@@ -94,18 +94,18 @@ function toggleTheme(event: MouseEvent) {
       </div>
 
       <div
-        class="max-w-600px py-20px text-wrap text-center"
+        class="max-w-600px py-20px text-center text-wrap"
         v-if="pageTitle || pageDescription"
       >
         <h1
           v-if="pageTitle"
-          class="mb-12px text-28px font-500 tracking-0.3px text-foreground"
+          class="mb-12px text-28px font-500 tracking-0.3px text-primary"
         >
           {{ pageTitle }}
         </h1>
         <p
           v-if="pageDescription"
-          class="text-15px leading-1.6 text-muted-foreground m-0"
+          class="text-15px leading-1.6 m-0 text-gray-500"
         >
           {{ pageDescription }}
         </p>
@@ -135,13 +135,13 @@ function toggleTheme(event: MouseEvent) {
 
       <!-- 背景泡泡 -->
       <div
-        class="geo-element bg-bubble w-360px h-360px rounded-50% animate-scale-in absolute right-[-120px] top-[-120px]"
+        class="geo-element bg-bubble w-360px h-360px rounded-50% animate-scale-in absolute top-[-120px] right-[-120px]"
         style="animation-delay: 0.5"
       ></div>
 
       <!-- 太阳/月亮 -->
       <div
-        class="geo-element circle-top-right top-3% right-3% z-100 w-50px h-50px rounded-50% animate-fade-in-down absolute cursor-pointer"
+        class="geo-element circle-top-right top-3% right-3% w-50px h-50px rounded-50% animate-fade-in-down absolute z-100 cursor-pointer"
         style="animation-delay: 0.5"
         @click="toggleTheme"
       ></div>
@@ -165,15 +165,15 @@ function toggleTheme(event: MouseEvent) {
         class="squares-group bottom-18px left-20px w-140px h-140px pointer-events-none absolute"
       >
         <i
-          class="geo-element square rounded-8px square-blue top-12px left-30px z-2 w-50px h-50px animate-fade-in-left-rotated-blue absolute block opacity-0"
+          class="geo-element square rounded-8px square-blue top-12px left-30px w-50px h-50px animate-fade-in-left-rotated-blue absolute z-2 block opacity-0"
           style="animation-delay: 0.2s"
         ></i>
         <i
-          class="geo-element square rounded-8px square-pink top-30px left-48px z-1 w-70px h-70px animate-fade-in-left-rotated-pink absolute block opacity-0"
+          class="geo-element square rounded-8px square-pink top-30px left-48px w-70px h-70px animate-fade-in-left-rotated-pink absolute z-1 block opacity-0"
           style="animation-delay: 0.4s"
         ></i>
         <i
-          class="geo-element square rounded-8px square-purple top-66px left-86px z-3 w-32px h-32px animate-fade-in-left-no-rotation absolute block opacity-0"
+          class="geo-element square rounded-8px square-purple top-66px left-86px w-32px h-32px animate-fade-in-left-no-rotation absolute z-3 block opacity-0"
           style="animation-delay: 0.6s"
         ></i>
       </div>

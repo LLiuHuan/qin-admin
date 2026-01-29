@@ -108,7 +108,7 @@ const onCreateEditor = (editor: IDomEditor) => {
 
   // 监听全屏事件
   editor.on('fullScreen', () => {
-    console.log('编辑器进入全屏模式');
+    console.warn('编辑器进入全屏模式');
   });
 
   // 确保在编辑器创建后应用自定义图标
@@ -407,11 +407,11 @@ $font-color: rgba(#fff, 0.85);
     }
 
     .left-top {
-      @apply left-[-6px] top-[-6px];
+      @apply top-[-6px] left-[-6px];
     }
 
     .right-top {
-      @apply right-[-6px] top-[-6px];
+      @apply top-[-6px] right-[-6px];
     }
 
     .left-bottom {
@@ -419,7 +419,7 @@ $font-color: rgba(#fff, 0.85);
     }
 
     .right-bottom {
-      @apply bottom-[-6px] right-[-6px];
+      @apply right-[-6px] bottom-[-6px];
     }
   }
 }

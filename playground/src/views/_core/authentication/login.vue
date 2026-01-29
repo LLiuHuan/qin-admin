@@ -2,13 +2,18 @@
  * @Description: 
  * @Author: LLiuHuan
  * @Date: 2025-05-27 15:35:10
- * @LastEditTime: 2026-01-05 18:19:35
+ * @LastEditTime: 2026-01-25 17:06:33
  * @LastEditors: LLiuHuan
 -->
 <script lang="ts" setup>
-import { computed, markRaw, ref, useTemplateRef } from 'vue';
+import type { QinFormSchema } from '@qin/common-ui';
+import type { BasicOption } from '@qin/types';
 
-import AuthAPI from '#/api/core/auth';
+import { computed, markRaw } from 'vue';
+
+import { AuthenticationLogin, SliderCaptcha, z } from '@qin/common-ui';
+import { $t } from '@qin/locales';
+
 import { useAuthStore } from '#/store';
 import type { QinFormSchema } from '@qin/common-ui';
 import { AuthenticationLogin, ImageCaptcha, z } from '@qin/common-ui';
@@ -18,28 +23,57 @@ defineOptions({ name: 'Login' });
 
 const authStore = useAuthStore();
 
-const captcha = ref('');
-const authFormRef = useTemplateRef('authFormRef');
-
-const resetCaptcha = async () => {
-  // 随机0-4之间的数字
-  const res = await AuthAPI.getCaptchaApi();
-  // console.log(res);
-
-  const formApi = authFormRef.value?.getFormApi();
-
-  // captchaId.value = res?.id;
-  const values = await formApi?.getValues();
-  captcha.value = res?.captchaBase64;
-  formApi?.setFieldValue('captchaImg', [values?.captcha, res?.captchaKey]);
-};
+const MOCK_USER_OPTIONS: BasicOption[] = [
+  {
+    label: 'Super',
+    value: 'super',
+  },
+  {
+    label: 'Admin',
+    value: 'admin',
+  },
+  {
+    label: 'User',
+    value: 'user',
+  },
+];
 
 const formSchema = computed((): QinFormSchema[] => {
   return [
     {
+      component: 'QinSelect',
+      componentProps: {
+        options: MOCK_USER_OPTIONS,
+        placeholder: $t('authentication.selectAccount'),
+      },
+      fieldName: 'selectAccount',
+      label: $t('authentication.selectAccount'),
+      rules: z
+        .string()
+        .min(1, { message: $t('authentication.selectAccount') })
+        .optional()
+        .default('super'),
+    },
+    {
       component: 'QinInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
+      },
+      dependencies: {
+        trigger(values, form) {
+          if (values.selectAccount) {
+            const findUser = MOCK_USER_OPTIONS.find(
+              (item) => item.value === values.selectAccount,
+            );
+            if (findUser) {
+              form.setValues({
+                password: '123456',
+                username: findUser.value,
+              });
+            }
+          }
+        },
+        triggerFields: ['selectAccount'],
       },
       fieldName: 'username',
       label: $t('authentication.username'),
@@ -59,19 +93,14 @@ const formSchema = computed((): QinFormSchema[] => {
       ),
     },
     {
-      component: markRaw(ImageCaptcha),
-      defaultValue: ['', ''],
-      componentProps: {
-        captchaImage: captcha.value,
-        onResetCaptcha: resetCaptcha,
-      },
-      fieldName: 'captchaImg',
-      // rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
+      component: markRaw(SliderCaptcha),
+      fieldName: 'captcha',
+      rules: z.boolean().refine((value) => value, {
+        message: $t('authentication.verifyRequiredTip'),
+      }),
     },
   ];
 });
-
-resetCaptcha();
 </script>
 
 <template>

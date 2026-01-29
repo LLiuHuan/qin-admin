@@ -103,7 +103,7 @@ function navigateTo(
         <QinIconButton class="bell-button text-foreground relative">
           <span
             v-if="dot"
-            class="bg-primary absolute right-0.5 top-0.5 h-2 w-2 rounded"
+            class="bg-primary absolute top-0.5 right-0.5 h-2 w-2 rounded"
           ></span>
           <Bell class="size-4" />
         </QinIconButton>
@@ -130,7 +130,7 @@ function navigateTo(
             >
               <span
                 v-if="!item.isRead"
-                class="bg-primary absolute right-2 top-2 h-2 w-2 rounded"
+                class="bg-primary absolute top-2 right-2 h-2 w-2 rounded"
               ></span>
 
               <span
@@ -138,7 +138,7 @@ function navigateTo(
               >
                 <img
                   :src="item.avatar"
-                  class="aspect-square wh-full object-cover"
+                  class="wh-full aspect-square object-cover"
                   role="img"
                 />
               </span>
@@ -152,7 +152,7 @@ function navigateTo(
                 </p>
               </div>
               <div
-                class="absolute right-3 top-1/2 flex -translate-y-1/2 flex-col gap-2"
+                class="absolute top-1/2 right-3 flex -translate-y-1/2 flex-col gap-2"
               >
                 <QinIconButton
                   v-if="!item.isRead"

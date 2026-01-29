@@ -219,7 +219,7 @@ defineExpose({ toggleOpenState, open, close });
           />
           <QinIcon
             :icon="currentSelect || Grip"
-            class="absolute right-1 top-1 size-6"
+            class="absolute top-1 right-1 size-6"
             aria-hidden="true"
           />
         </div>

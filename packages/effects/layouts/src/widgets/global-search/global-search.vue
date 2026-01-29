@@ -108,7 +108,7 @@ onMounted(() => {
             ref="searchInputRef"
             v-model="keyword"
             :placeholder="$t('ui.widgets.search.searchNavigate')"
-            class="ring-none placeholder:text-muted-foreground outline-hidden w-[80%] rounded-md border border-none bg-transparent p-2 pl-0 text-sm font-normal ring-0 ring-offset-transparent focus-visible:ring-transparent"
+            class="ring-none placeholder:text-muted-foreground w-[80%] rounded-md border border-none bg-transparent p-2 pl-0 text-sm font-normal ring-0 ring-offset-transparent outline-hidden focus-visible:ring-transparent"
           />
         </div>
       </template>
@@ -133,7 +133,7 @@ onMounted(() => {
       </template>
     </Modal>
     <div
-      class="md:bg-accent outline-hidden border-1 group flex h-8 cursor-pointer items-center gap-3 rounded-2xl bg-none px-2 py-0.5"
+      class="md:bg-accent group flex h-8 cursor-pointer items-center gap-3 rounded-2xl border-1 bg-none px-2 py-0.5 outline-hidden"
       @click="toggleOpen()"
     >
       <Search

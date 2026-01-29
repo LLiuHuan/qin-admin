@@ -11,7 +11,7 @@
 }
 
 html {
-  @apply text-foreground bg-background font-sans ;
+  @apply text-foreground bg-background font-sans;
 
   font-size: var(--font-size-base, 16px);
   font-variation-settings: normal;
@@ -29,7 +29,7 @@ html {
 #app,
 body,
 html {
-  @apply size-full bg-background-deep;
+  @apply bg-background-deep size-full;
 
   /* scrollbar-gutter: stable; */
 }
@@ -201,7 +201,7 @@ html:not([data-platform='macOs']) {
 }
 
 .outline-box::after {
-  @apply absolute left-1/2 top-1/2 z-20 h-0 w-[1px] rounded-sm opacity-0 outline outline-2 outline-transparent transition-all duration-300 content-[""];
+  @apply absolute top-1/2 left-1/2 z-20 h-0 w-[1px] rounded-sm opacity-0 outline outline-2 outline-transparent transition-all duration-300 content-[""];
 }
 
 .outline-box.outline-box-active {
@@ -213,7 +213,7 @@ html:not([data-platform='macOs']) {
 }
 
 .outline-box:not(.outline-box-active):hover::after {
-  @apply outline-primary left-0 top-0 wh-full p-1 opacity-100;
+  @apply outline-primary wh-full top-0 left-0 p-1 opacity-100;
 }
 
 .qin-link {
@@ -234,15 +234,19 @@ html.grayscale-mode {
 
 html.simple-mode {
   /* --foreground: 219 18% 55; */
+
   /* --accent-foreground: 219 18% 55; */
   aside {
     @apply shadow-none;
   }
+
   header {
     --background-deep: var(--qin-gray-100);
     --foreground: var(--qin-gray-600);
+
     @apply bg-background-deep border-transparent;
   }
+
   section {
     --background-deep: var(--qin-gray-100);
     --accent-foreground: var(--qin-gray-600);
@@ -261,22 +265,21 @@ html.simple-mode {
 
   .qin-layout-content {
     --background-deep: var(--qin-gray-100);
-    
-    @apply bg-background-deep
+
+    @apply bg-background-deep;
   }
 
   .bg-card {
     /* @apply bg-background-deep border-transparent; */
   }
-
 }
-
 
 html.simple-mode.dark {
   header {
     --background-deep: var(--qin-gray-100);
     --foreground: var(--qin-gray-800);
   }
+
   section {
     --background-deep: var(--qin-gray-100);
     --accent-foreground: var(--qin-gray-800);
@@ -330,7 +333,6 @@ video {
   height: auto;
 }
 
-
 .qin-card {
   background: hsl(var(--background));
   border: 1px solid hsl(var(--border)) !important;
@@ -338,33 +340,32 @@ video {
   box-shadow: none !important;
 }
 
+/* 滚动条 */
 
-/*滚动条*/
-/*滚动条整体部分,必须要设置*/
+/* 滚动条整体部分,必须要设置 */
 ::-webkit-scrollbar {
   width: 8px !important;
   height: 0 !important;
 }
 
-/*滚动条的轨道*/
+/* 滚动条的轨道 */
 ::-webkit-scrollbar-track {
-  background-color: var(--art-gray-200);
+  background-color: var(--qin-gray-200);
 }
 
-/*滚动条的滑块按钮*/
+/* 滚动条的滑块按钮 */
 ::-webkit-scrollbar-thumb {
+  background-color: #ccc !important;
   border-radius: 5px;
-  background-color: #cccccc !important;
   transition: all 0.2s;
-  -webkit-transition: all 0.2s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #b0abab !important;
 }
 
-/*滚动条的上下两端的按钮*/
+/* 滚动条的上下两端的按钮 */
 ::-webkit-scrollbar-button {
-  height: 0px;
   width: 0;
+  height: 0;
 }

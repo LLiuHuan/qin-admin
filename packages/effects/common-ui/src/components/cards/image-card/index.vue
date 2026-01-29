@@ -39,7 +39,7 @@ const handleClick = () => {
           />
         </div>
         <div
-          class="absolute bottom-3.5 right-3.5 rounded bg-gray-200 px-2 py-1 text-xs dark:bg-gray-600"
+          class="absolute right-3.5 bottom-3.5 rounded bg-gray-200 px-2 py-1 text-xs dark:bg-gray-600"
           v-if="props.readTime"
         >
           {{ props.readTime }} 阅读

@@ -85,5 +85,8 @@
   },
   "function": {
     "contentMenu": "上下文菜单"
+  },
+  "cropper": {
+    "title": "图片裁剪"
   }
 }

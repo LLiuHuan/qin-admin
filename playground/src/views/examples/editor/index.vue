@@ -18,9 +18,9 @@ import DOMPurify from 'dompurify';
 const fullEditorRef = useTemplateRef('fullEditorRef');
 const simpleEditorRef = useTemplateRef('simpleEditorRef');
 
-const fullActiveTab = ref('preview');
-const simpleActiveTab = ref('preview');
-const activeCollapse = ref(['basic']);
+// const fullActiveTab = ref('preview');
+// const simpleActiveTab = ref('preview');
+// const activeCollapse = ref(['basic']);
 
 /**
  * 简化工具栏配置
@@ -131,7 +131,7 @@ const clearFullEditor = () => {
  */
 const getFullEditorContent = () => {
   const content = fullEditorRef.value?.getHtml();
-  console.log('完整编辑器内容:', content);
+  console.warn('完整编辑器内容:', content);
   Message.success('完整编辑器内容已输出到控制台');
 };
 
@@ -169,7 +169,7 @@ const clearSimpleEditor = () => {
  */
 const getSimpleEditorContent = () => {
   const content = simpleEditorRef.value?.getHtml();
-  console.log('简化编辑器内容:', content);
+  console.warn('简化编辑器内容:', content);
   Message.success('简化编辑器内容已输出到控制台');
 };
 
@@ -251,6 +251,7 @@ const setSimpleEditorDemo = () => {
           <h3>完整编辑器内容</h3>
           <Tabs default-active-key="1">
             <TabPane key="1" title="Tab 1">
+              <!-- eslint-disable-next-line vue/no-v-html -->
               <div
                 class="content-preview"
                 v-html="DOMPurify.sanitize(fullEditorHtml)"
@@ -269,6 +270,7 @@ const setSimpleEditorDemo = () => {
           <h3>简化编辑器内容</h3>
           <Tabs default-active-key="1">
             <TabPane key="1" title="Tab 1">
+              <!-- eslint-disable-next-line vue/no-v-html -->
               <div
                 class="content-preview"
                 v-html="DOMPurify.sanitize(simpleEditorHtml)"

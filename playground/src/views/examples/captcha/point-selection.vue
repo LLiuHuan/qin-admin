@@ -73,7 +73,7 @@ const handleClick = (point: CaptchaPoint) => {
             v-model="params.showHintImage"
             :checked-text="$t('examples.captcha.hintImage')"
             :unchecked-text="$t('examples.captcha.hintText')"
-            class="w-30 mr-4"
+            class="mr-4 w-30"
           />
           <Input
             v-show="params.showHintImage"

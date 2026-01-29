@@ -55,11 +55,11 @@ useEcharts(useTemplateRef('chartRef'), () => {
     <div class="box-border flex h-full p-5 pr-2">
       <div class="flex w-full items-start gap-5">
         <div class="flex-b h-full flex-1 flex-col">
-          <p class="m-0 text-xl font-medium leading-tight">
+          <p class="m-0 text-xl leading-tight font-medium">
             {{ title }}
           </p>
           <div>
-            <p class="m-0 mt-2.5 text-xl font-medium leading-tight">
+            <p class="m-0 mt-2.5 text-xl leading-tight font-medium">
               {{ formatNumber(value) }}
             </p>
             <div

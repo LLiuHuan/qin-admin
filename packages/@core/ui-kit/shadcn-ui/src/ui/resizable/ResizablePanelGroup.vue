@@ -34,7 +34,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
     v-bind="forwarded"
     :class="
       cn(
-        'flex wh-full data-[panel-group-direction=vertical]:flex-col',
+        'wh-full flex data-[panel-group-direction=vertical]:flex-col',
         props.class,
       )
     "

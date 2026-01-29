@@ -84,34 +84,11 @@ export function getLightColor(
   const lightenValue = (v: number) => {
     return Math.floor((255 - v) * level + v);
   };
-  const convertToHslCssVar = (color: string): string => {
-    const { a, h, l, s } = new TinyColor(color).toHsl();
-    const hsl = `${Math.round(h)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
-    return a < 1 ? `${hsl} / ${a}` : hsl;
-  };
-
-  console.log(
-    color,
-    r,
-    g,
-    b,
-    lightenValue(r),
-    lightenValue(g),
-    lightenValue(b),
-    new TinyColor({
-      r: lightenValue(r),
-      g: lightenValue(g),
-      b: lightenValue(b),
-    }).toHexString(),
-    convertToHslCssVar(color),
-    convertToHslCssVar(
-      new TinyColor({
-        r: lightenValue(r),
-        g: lightenValue(g),
-        b: lightenValue(b),
-      }).toHexString(),
-    ),
-  );
+  // const convertToHslCssVar = (color: string): string => {
+  //   const { a, h, l, s } = new TinyColor(color).toHsl();
+  //   const hsl = `${Math.round(h)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+  //   return a < 1 ? `${hsl} / ${a}` : hsl;
+  // };
 
   return new TinyColor({
     r: lightenValue(r),
@@ -136,34 +113,12 @@ export function getDarkColor(color: string, level: number): string {
 
   const lightenValue = (v: number) => Math.floor(v * (1 - level));
 
-  const convertToHslCssVar = (color: string): string => {
-    const { a, h, l, s } = new TinyColor(color).toHsl();
-    const hsl = `${Math.round(h)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
-    return a < 1 ? `${hsl} / ${a}` : hsl;
-  };
+  // const convertToHslCssVar = (color: string): string => {
+  //   const { a, h, l, s } = new TinyColor(color).toHsl();
+  //   const hsl = `${Math.round(h)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+  //   return a < 1 ? `${hsl} / ${a}` : hsl;
+  // };
 
-  console.log(
-    color,
-    r,
-    g,
-    b,
-    lightenValue(r),
-    lightenValue(g),
-    lightenValue(b),
-    new TinyColor({
-      r: lightenValue(r),
-      g: lightenValue(g),
-      b: lightenValue(b),
-    }).toHexString(),
-    convertToHslCssVar(color),
-    convertToHslCssVar(
-      new TinyColor({
-        r: lightenValue(r),
-        g: lightenValue(g),
-        b: lightenValue(b),
-      }).toHexString(),
-    ),
-  );
   return new TinyColor({
     r: lightenValue(r),
     g: lightenValue(g),

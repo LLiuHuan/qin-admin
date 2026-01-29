@@ -2,7 +2,7 @@
  * @Description:
  * @Author: LLiuHuan
  * @Date: 2025-05-27 11:47:53
- * @LastEditTime: 2026-01-08 11:20:30
+ * @LastEditTime: 2026-01-25 16:58:27
  * @LastEditors: LLiuHuan
  */
 export * from './api-component';
@@ -11,6 +11,7 @@ export * from './captcha';
 export * from './cards';
 export * from './col-page';
 export * from './count-to';
+export * from './cropper';
 export * from './editor';
 export * from './ellipsis-text';
 export * from './icon-picker';
